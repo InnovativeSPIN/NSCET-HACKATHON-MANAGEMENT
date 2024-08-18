@@ -670,64 +670,62 @@ h6,
     border-right: none; /* Remove border for the last column */
 }
 
-
-.container-fluid {
-    padding: 0; /* Remove default padding to align the container correctly */
+.heading-logo {
+    width: 60px; /* Adjust the width of the logo */
+    height: 60px; /* Adjust the height of the logo */
+    margin-right: 10px; /* Space between the logo and the text */
+    vertical-align: middle; /* Align the logo vertically with the text */
 }
 
-.container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.committee-member {
-    border: 2px solid #13768f;
-    border-radius: 10px; /* Slightly rounded corners for the box */
-    padding: 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    text-align: center; /* Center text inside the box */
+.feature-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 350px; /* Fixed height for consistent container size */
-    width: 250px; /* Fixed width for consistent container size */
-    margin: auto; /* Center the items within their column */
+    align-items: center; /* Aligns logo and text vertically */
 }
 
-.committee-member img {
-    width: 120px; /* Fixed width for consistent image size */
-    height: 120px; /* Fixed height for consistent image size */
-    border: 2px solid #13768f;
-    border-radius: 50%;
-    margin-bottom: 15px;
+.feature-logo {
+    width: 24px; /* Adjust the width of the logo */
+    height: 24px; /* Adjust the height of the logo */
+    margin-right: 10px; /* Space between the logo and the text */
 }
 
-.committee-member h5 {
-    margin: 10px 0 5px;
-    color: #13768f;
+.feature-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-.committee-member p {
-    margin: 0;
-    color: #555;
+.feature-box:hover {
+    transform: translateY(-5px);
 }
-
 
 
 .logo-wrapper {
-    background-color: #f8f9fa; /* Light background color */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding around the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin: auto; /* Center align */
-    max-width: 220px; /* Max width to prevent overflow */
-}
-.logo-wrapper img {
-    display: block; /* Ensure the image is centered */
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    max-width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
 }
 
+.logo-img {
+    max-width: 180px;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    padding: 10px;
+}
 
 
 
@@ -850,48 +848,94 @@ footer a:hover {
 /* Total Statements Styles */
 .total-statement {
     padding: 60px 0;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+
+.heading-spacing {
+    margin-top: 20px; /* Adjust this value to move the heading further down */
 }
 
 .statement-box {
-    background: #fff;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.statement-box:hover {
+    transform: translateY(-10px);
 }
 
 .statement-box h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
+    font-size: 26px;
+    margin-bottom: 12px;
+    color: #1f1f1f;
 }
 
 .statement-box p {
-    font-size: 16px;
-    color: #666;
+    font-size: 18px;
+    color: #4a4a4a;
 }
 
-.hard, .soft {
+.statement-type {
     text-align: center;
-    background: #e9ecef;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px 0; /* Added margin for spacing */
+    background: #f4faff;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 15px 0;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hard h3 {
-    color: #007bff;
+.statement-type:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
-.soft h3 {
-    color: #28a745;
+.statement-type .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
 }
 
-.hard p, .soft p {
-    font-size: 16px;
-    color: #666;
+.hard .icon {
+    background: linear-gradient(45deg, #ff7f50, #ff6347);
 }
 
+.soft .icon {
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.statement-type h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.statement-type p {
+    font-size: 18px;
+    color: #555;
+}
+
+.ts {
+    margin-top: 60px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+  
 /* Theme Selection Styles */
 .theme-selection {
     margin-top: 30px;
@@ -1017,3 +1061,39 @@ form {
 
 
 }
+
+
+.committee-member {
+    border: 2px solid #13768f;
+    border-radius: 10px; /* Slightly rounded corners for the box */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center text inside the box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 350px; /* Fixed height for consistent container size */
+    width: 250px; /* Fixed width for consistent container size */
+    margin: auto; /* Center the items within their column */
+}
+
+.committee-member img {
+    width: 120px; /* Fixed width for consistent image size */
+    height: 120px; /* Fixed height for consistent image size */
+    border: 2px solid #13768f;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.committee-member h5 {
+    margin: 10px 0 5px;
+    color: #13768f;
+}
+
+.committee-member p {
+    margin: 0;
+    color: #555;
+}
+
