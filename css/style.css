@@ -1068,6 +1068,9 @@ tbody tr:nth-child(even) {
 /* Registration Form Styles */
 .container.mt-5 {
     margin-top: 3rem; /* Adjust spacing from top */
+    width: 520px;
+    padding-bottom: 30px;
+    
 }
 
 h2.text-center.mb-4 {
@@ -1081,6 +1084,7 @@ form {
     padding: 2rem; /* Padding inside the form */
     border-radius: 0.5rem; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border: 1px solid black;
 }
 
 .form-label {
