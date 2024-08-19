@@ -29,46 +29,45 @@
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top" style="background-color: #1363C6;">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <a href="index.html" class="navbar-brand">
-                    <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" >
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Hackathon</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="index.html#process-timeline" class="dropdown-item">Hackathon Process Flow</a>
-                                <a href="index.html#themes-section" class="dropdown-item">Hackathon Themes</a>
-                            </div>
+<!-- Navbar Start -->
+<div class="container-fluid sticky-top" style="background-color: #1363C6;">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+            <a href="index.html" class="navbar-brand">
+                <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo">
+            </a>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Hackathon</a>
+                        <div class="dropdown-menu bg-light mt-2">
+                            <a href="index.html#process-timeline" class="dropdown-item">Hackathon Process Flow</a>
+                            <a href="index.html#themes-section" class="dropdown-item">Hackathon Themes</a>
                         </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Guidelines</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="#idea-ppt.html" class="dropdown-item">Idea PPT</a>
-                                <a href="#internal-hackathon-process.html" class="dropdown-item">Hackathon Process</a>
-                                <a href="img/Rules%20&%20Regulations%20for%20Hackathon.pdf" class="dropdown-item">Hackathon Guidelines</a>
-                            </div>
-                        </div>
-                        <a href="Problem_Statements.html" class="nav-item nav-link">Problem Statements</a>
-                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
-                        <a href="Register.html" class="nav-item nav-link">Login/Register us</a>
                     </div>
-                    <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Guidelines</a>
+                        <div class="dropdown-menu bg-light mt-2">
+                            <a href="#idea-ppt.html" class="dropdown-item">Idea PPT</a>
+                            <a href="#internal-hackathon-process.html" class="dropdown-item">Hackathon Process</a>
+                            <a href="img/Rules%20&%20Regulations%20for%20Hackathon.pdf" class="dropdown-item">Hackathon Guidelines</a>
+                        </div>
+                    </div>
+                    <a href="Problem_Statements.html" class="nav-item nav-link">Problem Statements</a>
+                    <a href="faq.html" class="nav-item nav-link">FAQs</a>
+                    <a href="Project_Implementation.html" class="nav-item nav-link">Project Implementation</a>
+                    <a href="Register.html" class="nav-item nav-link">Hackathon Register</a>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </div>
-
+</div>
+<!-- Navbar End -->
 
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
@@ -134,36 +133,63 @@
         </div>
     </section>
     
-
+<!-- Container for all selection sections -->
+<div class="container mt-5">
+    <div class="row">
         <!-- Theme Selection -->
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <div class="theme-selection">
-                    <label for="theme-select">Select Theme</label>
-                    <select id="theme-select" class="form-select">
-                        <option value="">Choose a Theme</option>
-                        <option value="Agriculture, FoodTech & Rural Development">Agriculture, FoodTech & Rural Development</option>
-                        <option value="Blockchain & Cybersecurity">Blockchain & Cybersecurity</option>
-                        <option value="Clean & Green Technology">Clean & Green Technology</option>
-                        <option value="Fitness & Sports">Fitness & Sports</option>
-                        <option value="Heritage & Culture">Heritage & Culture</option>
-                        <option value="MedTech/BioTech / Health Tech">MedTech/BioTech / Health Tech</option>
-                        <option value="Miscellaneous">Miscellaneous</option>
-                        <option value="Renewable / Sustainable Energy">Renewable / Sustainable Energy</option>
-                        <option value="Robotics and Drones">Robotics and Drones</option>
-                        <option value="Smart Automation">Smart Automation</option>
-                        <option value="Smart Vehicles">Smart Vehicles</option>
-                        <option value="Travel & Tourism">Travel & Tourism</option>
-                        <option value="Transportation & Logistics">Transportation & Logistics</option>
-                        <option value="Disaster Management">Disaster Management</option>
-                        <option value="Smart Education">Smart Education</option>
-                        <option value="Toys & Games">Toys & Games</option>
-                        <option value="Space Technology">Space Technology</option>
-                        <option value="Smart Resource Conservation">Smart Resource Conservation</option>
-                    </select>
-                </div>
+        <div class="col-md-4 mb-4">
+            <div class="theme-selection">
+                <label for="theme-select">Select Theme</label>
+                <select id="theme-select" class="form-select">
+                    <option value="">Choose a Theme</option>
+                    <option value="Agriculture, FoodTech & Rural Development">Agriculture, FoodTech & Rural Development</option>
+                    <option value="Blockchain & Cybersecurity">Blockchain & Cybersecurity</option>
+                    <option value="Clean & Green Technology">Clean & Green Technology</option>
+                    <option value="Fitness & Sports">Fitness & Sports</option>
+                    <option value="Heritage & Culture">Heritage & Culture</option>
+                    <option value="MedTech/BioTech / Health Tech">MedTech/BioTech / Health Tech</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                    <option value="Renewable / Sustainable Energy">Renewable / Sustainable Energy</option>
+                    <option value="Robotics and Drones">Robotics and Drones</option>
+                    <option value="Smart Automation">Smart Automation</option>
+                    <option value="Smart Vehicles">Smart Vehicles</option>
+                    <option value="Travel & Tourism">Travel & Tourism</option>
+                    <option value="Transportation & Logistics">Transportation & Logistics</option>
+                    <option value="Disaster Management">Disaster Management</option>
+                    <option value="Smart Education">Smart Education</option>
+                    <option value="Toys & Games">Toys & Games</option>
+                    <option value="Space Technology">Space Technology</option>
+                    <option value="Smart Resource Conservation">Smart Resource Conservation</option>
+                </select>
             </div>
         </div>
+
+        <!-- Category Selection -->
+        <div class="col-md-4 mb-4">
+            <div class="theme-selection">
+                <label for="category-select">Category</label>
+                <select id="category-select" class="form-select">
+                    <option value="">Choose a Category</option>
+                    <option value="Hardware">Hardware</option>
+                    <option value="Software">Software</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Organization Selection -->
+        <div class="col-md-4 mb-4">
+            <div class="theme-selection">
+                <label for="organization-select">Organization</label>
+                <select id="organization-select" class="form-select">
+                    <option value="">Choose an Organization</option>
+                    <option value="All">All</option>
+                    <option value="AICET">AICET</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Table Start -->
         <div class="row mt-5">
@@ -221,7 +247,8 @@
                     <h3>Follow Us</h3>
                     <ul class="follow-box-copyright">
                         <li>
-                            <a href="https://www.facebook.com/nscetofficial" target="_blank">
+                            <a href="https://www.facebook.com/nscetofficial" target="_blank" rel="noopener noreferrer">
+
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="#3b5998" d="M22 12c0-5.522-4.477-10-10-10s-10 4.478-10 10c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54v-2.19c0-2.505 1.492-3.89 3.777-3.89 1.095 0 2.24.195 2.24.195v2.461h-1.262c-1.243 0-1.63.774-1.63 1.565v1.859h2.773l-.443 2.89h-2.33v6.988c4.781-.75 8.438-4.887 8.438-9.878z"/>
                                 </svg>

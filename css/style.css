@@ -5,7 +5,10 @@
     --light: #F4F7FE;
     --dark: #14183E;
 }
+body{
 
+    overflow-x: hidden !important;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -28,7 +31,22 @@
     bottom: 45px;
     z-index: 99;
 }
-
+.scroll-container {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 10px 0 5px 0;
+    font-family: 'Book Antiqua', serif;
+    font-weight: bold;
+    position: relative;
+    margin-top: -48px;
+}
+.img_scroll {
+    width: 20px;
+    height: 20px;
+}
 
 /*** Heading ***/
 h1,
@@ -47,9 +65,27 @@ h6,
 
 
 /*** Button ***/
+
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid  #ffffff;
+    border-radius: 50px;
+    color:rgb(255, 255, 255);
+    background-color:  #1363C6;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+
+}
+.btn-custom:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
 .btn {
     font-weight: 500;
     transition: .5s;
+    
 }
 
 .btn-square {
@@ -84,18 +120,30 @@ h6,
     top: -150px;
     transition: .5s;
 }
-
+/*** Navbar ***/
 .navbar {
     padding: 11px 0 !important;
-    height: 75px;
+    height: 70px;
+}
 
+.navbar .navbar-nav {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+    flex-wrap: nowrap; /* Prevents items from wrapping to the next line */
+    flex-grow: 1; /* Allows the navbar items to take available space */
 }
 
 .navbar .navbar-nav .nav-link {
-    margin-right: 35px;
-    padding: 0;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin-right: 15px; /* Decreased spacing between menu items */
+    padding: 0 10px; /* Adjusts padding for more compact layout */
     color: rgba(255, 255, 255, .7);
     outline: none;
+    text-align: center; /* Ensures text is centered */
+}
+
+.navbar .navbar-nav .nav-link:last-child {
+    margin-right: 0; /* Removes margin from the last item */
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -116,9 +164,10 @@ h6,
     .navbar .navbar-nav {
         padding: 0 15px;
         background: var(--primary);
+        flex-direction: column; /* Stacks items vertically on smaller screens */
     }
 
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -143,7 +192,6 @@ h6,
     }
 }
 
-    
 /*** Hero Header ***/
 .hero-header {
     margin-top: -75px;
@@ -810,6 +858,8 @@ footer a:hover {
 .total-statement {
     padding: 60px 0;
     background-color: #f8f9fa;
+    
+   
 }
 
 .statement-box {
@@ -855,11 +905,14 @@ footer a:hover {
 .total-statement {
     padding: 60px 0;
     background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    
+    
 }
 
 .heading-spacing {
     margin-top: 20px; /* Adjust this value to move the heading further down */
 }
+
 
 .statement-box {
     background: #ffffff;
@@ -945,12 +998,13 @@ footer a:hover {
 /* Theme Selection Styles */
 .theme-selection {
     margin-top: 30px;
-    width: 600px;
-    margin-left: 350px;
+    width: 420px;
+    padding-left: 100px;
+    margin-left: -90px;
 }
 
 .theme-selection label {
-    display: block;
+    display: inline-block;
     font-size: 18px;
     margin-bottom: 10px;
     color: #333;
@@ -963,6 +1017,7 @@ footer a:hover {
     border-radius: 4px;
     background-color: #fff; /* Background color for select */
     font-size: 16px; /* Font size inside the select */
+    
 }
 
 /* Table Styles */
@@ -1103,18 +1158,7 @@ form {
     color: #555;
 }
 
-
-
-
-
-
-
-
-
-
-/* foter*/
-
-
+/* foter*/  
 
 .footer-section {
     background-color: #104565;
@@ -1251,3 +1295,81 @@ form {
 
 
 
+.hi{
+
+    width: 1350px;
+    height: 500px;
+}
+
+.content-container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.content-container h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Paragraph Styling */
+.content-container p {
+    font-size: 16px;
+    color: #34495e;
+}
+
+/* Ordered List Styling */
+.content-container ol {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.content-container ol li {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Important Note Styling */
+.important-note {
+    background-color: #f9f9f9;
+    border-left: 5px solid #2980b9;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.important-note h4 {
+    margin-top: 0;
+    color: #2980b9;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.important-note p {
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+/* Additional Styles for Visual Enhancement */
+.content-container h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+
+.content-container ol li::marker {
+    font-size: 18px;
+    color: #2980b9;
+}
+
+.content-container ol li {
+    padding-left: 5px;
+    border-left: 3px solid #2980b9;
+}
