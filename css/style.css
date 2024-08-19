@@ -995,20 +995,46 @@ footer a:hover {
 }
 
   
-/* Theme Selection Styles */
-.theme-selection {
-    margin-top: 30px;
-    width: 420px;
-    padding-left: 100px;
-    margin-left: -90px;
+/* Section One Styles */
+.section-one {
+    /* Custom styles for Section One */
+    padding: 10px;
+   
+    border-radius: 5px;
+    width: 350px;
+    margin-left: -380px;
 }
 
-.theme-selection label {
-    display: inline-block;
+/* Section Two Styles */
+.section-two {
+    /* Custom styles for Section Two */
+    padding: 10px;
+   
+    border-radius: 5px;
+    width: 350px;
+    margin-left:-140px;
+}
+
+/* Section Three Styles */
+.section-three {
+    /* Custom styles for Section Three */
+    padding: 10px;
+   
+    border-radius: 5px;
+    width: 350px;
+    margin-left: 120px;
+}
+
+/* Common Styles for Labels */
+.section-one label, 
+.section-two label, 
+.section-three label {
+    display: block;
     font-size: 18px;
     margin-bottom: 10px;
     color: #333;
 }
+
 
 #theme-select {
     width: 100%;
