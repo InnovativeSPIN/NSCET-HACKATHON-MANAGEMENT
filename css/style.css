@@ -32,7 +32,6 @@ body{
 }
 .scroll-container {
     width: 100%;
-    height: 40px;
     overflow: hidden;
     background: #000000;
     color: #FFFFFF;
@@ -40,7 +39,8 @@ body{
     font-family: 'Book Antiqua', serif;
     font-weight: bold;
     position: relative;
-    margin-top: -48px;
+    font-size: 1.4vw;
+
 }
 .img_scroll {
     width: 30px;
