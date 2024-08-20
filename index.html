@@ -24,12 +24,18 @@
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">   
+    <link rel="stylesheet" href="./css/base.css">
+
+
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+ 
 </head>
 
 <body>
@@ -41,7 +47,7 @@
         </div>
     </div>
     <!-- Spinner End -->
-<!-- Navbar Start -->
+<!-- Navbar Start
 <div class="container-fluid sticky-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
@@ -78,7 +84,7 @@
             </div>
         </nav>
     </div>  
-</div>
+</div> -->
 <!-- Navbar End -->
 
 
@@ -86,7 +92,7 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+    <!-- <div class="container-fluid pt-5 bg-primary hero-header mb-5">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
@@ -103,8 +109,74 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>  -->
     <!-- Hero End -->
+     <!-- Main section -->
+      <div class="demo-1">
+     <main>
+        <div class="frame">
+            <div class="frame__title"> 
+                <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
+
+            </div>
+            
+            <nav class="frame__demos">
+                <!-- <span class="frame__demos-item">Variations: </span>	 -->
+                <span class="frame__demos-item">Home</span>
+                <a class="frame__demos-item" href="">About Hackathon</a>
+                <a class="frame__demos-item" href="">Guidelines</a>
+                <a class="frame__demos-item" href="">Problem Statements</a>
+                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="">Project Implementation</a>
+
+                <div class="up">
+                <div class="new">
+                    <div class="new1">
+                        <a class="frame__demos-item vutton-custine" href=""">Register</a>
+                    </div>
+                </div>
+            </div>
+                
+                
+                <!-- <a class="frame__demos-item" href="index8.html">8</a> -->
+            </nav>
+        </div>
+        <div class="content">
+            <h2><i>N S C E T</i> <i>H</i>ackathon</h2>
+            <p>A 36 Hours Tech MARATHON</p>
+        </div>
+    </main>
+    <div class="cursor">
+        <div class="cursor__inner">
+            <!-- cursor__inner-box elements come here -->
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3.2" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+</div>
+    <!-- Main End -->
+
+    <div class="cursor">
+        <div class="cursor__inner">
+            <!-- cursor__inner-box elements come here -->
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3.2" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
 
 
     <!-- Full Screen Search Start -->
@@ -471,6 +543,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/gsap.min.js"></script>
+		<script type="module" src="js/index.js"></script>
 </body>
 
 </html>
