@@ -43,8 +43,8 @@ body{
     margin-top: -48px;
 }
 .img_scroll {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 /*** Heading ***/
@@ -608,11 +608,11 @@ h6,
     flex: 0 0 auto;
     width: 500px;
     height: 400px;
-    background: rgb(255, 248, 237);
+    background: rgb(255, 255, 255);
     padding: 30px;
     margin-right: 30px;
     text-align: center;
-    border: 1.2px solid rgb(246, 121, 11);
+    border: 1.2px solid rgb(228, 4, 4);
     border-radius: 9px;
     box-shadow: rgba(255, 255, 255, 0.44) -6.44px -7.25px 11.27px, rgba(0, 0, 0, 0.07) 7.25px 6.44px 24.96px;
     box-sizing: border-box;
