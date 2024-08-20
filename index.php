@@ -11,6 +11,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <meta name="generator" content="Geany 1.37.1" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -37,9 +38,28 @@
     <link href="css/style.css" rel="stylesheet">   
     <link rel="stylesheet" href="./css/base.css">
 
-
+     
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
- 
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const navicon=document.querySelector('.nav-icon')
+            const navbar=document.querySelector('.frame__demos')
+            navicon.addEventListener('click',()=>{
+                 if(navbar.style.display=='none'){
+                    navbar.style.display='flex'
+                 }
+                 else{
+                    navbar.style.display='none'
+                 }
+            })
+        })
+
+    </script>
+        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    
 </head>
 
 <body>
@@ -91,10 +111,6 @@
 </div> -->
 <!-- Navbar End -->
 
-
-
-
-
     <!-- Hero Start -->
     <!-- <div class="container-fluid pt-5 bg-primary hero-header mb-5">
         <div class="container pt-5">
@@ -115,21 +131,33 @@
         </div>
     </div>  -->
     <!-- Hero End -->
+
      <!-- Main section -->
       <div class="demo-1">
      <main>
         <div class="frame">
             <div class="frame__title"> 
-                <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
+                <img class="logonscet" src="img/nscetlogo.png" alt="nscetLogo" >
             </div>
             <div class="nav-icon">
 
+      <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+        <path
+              class="line top"
+              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+        <path
+              class="line middle"
+              d="m 70,50 h -40" />
+        <path
+              class="line bottom"
+              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+      </svg>
+    
             </div>
-            
             <nav class="frame__demos">
                 <!-- <span class="frame__demos-item">Variations: </span>	 -->
                 <span class="frame__demos-item">Home</span>
-                <a class="frame__demos-item" href="">About Hackathon</a>
+                <a class="frame__demos-item" href="">About</a>
                 <a class="frame__demos-item" href="">Guidelines</a>
                 <a class="frame__demos-item" href="">Problem Statements</a>
                 <a class="frame__demos-item" href="">FAQs</a>
@@ -142,19 +170,19 @@
                     </div>
                 </div>
             </div>
-                
-                
-                <!-- <a class="frame__demos-item" href="index8.html">8</a> -->
-            </nav>
+                    </nav>
         </div>
         <div class="content">
             <h2><i>N S C E T</i> <i>H</i>ackathon</h2>
             <p>A 36 Hours Tech MARATHON</p>
         </div>
+        <div class="robo-content" id="model-container">
+        <model-viewer src="./robo/scene.gltf" alt="A 3D model of a car" shadow-intensity="1"   disable-zoom  camera-controls auto-rotate   camera-orbit="4000deg  " style=" height: 80%;">
+        </model-viewer>
+        </div>
     </main>
     <div class="cursor">
         <div class="cursor__inner">
-            <!-- cursor__inner-box elements come here -->
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
@@ -179,6 +207,10 @@
                 NSCET HACKTHON 2024 Problem Statements are live
             </a>
         </marquee>
+    </div>
+
+    <div class="animation">
+        
     </div>
 
 <!-- WHAT IS NSCET HACKATHON 2024? Start -->
@@ -517,6 +549,7 @@
     <script src="js/main.js"></script>
     <script src="js/gsap.min.js"></script>
 		<script type="module" src="js/index.js"></script>
+    
 </body>
 
 </html>
