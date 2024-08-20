@@ -9,7 +9,6 @@ body{
 
     overflow-x: hidden !important;
 }
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -114,7 +113,6 @@ h6,
     border-radius: 50px;
 }
 
-
 /*** Navbar ***/
 .sticky-top {
     top: -150px;
@@ -122,15 +120,17 @@ h6,
 }
 /*** Navbar ***/
 .navbar {
-    padding: 11px 0 !important;
-    height: 70px;
+    padding: 11px;
+    margin-top: -10px;
 }
 
 .navbar .navbar-nav {
     display: flex;
     align-items: center; /* Ensures vertical alignment */
     flex-wrap: nowrap; /* Prevents items from wrapping to the next line */
-    flex-grow: 1; /* Allows the navbar items to take available space */
+    flex-grow: 1;
+    justify-content: center;
+; /* Allows the navbar items to take available space */
 }
 
 .navbar .navbar-nav .nav-link {
@@ -197,6 +197,7 @@ h6,
     margin-top: -75px;
     background: url(../img/bg-hero.png) center center no-repeat;
     background-size: cover;
+    
 }
 
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
@@ -752,27 +753,31 @@ h6,
     transform: translateY(-5px);
 }
 
-
+.logo-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-wrap: wrap;
+    gap: 10px;
+}
 .logo-wrapper {
     background-color: #f8f9fa;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto;
-    max-width: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 220px;
+    max-width: 480px;
+    width: 100%;
+   
 }
 
 .logo-img {
-    max-width: 180px;
-    max-height: 180px;
+    max-width: 480px;
+    max-height: 280px;
     object-fit: contain;
     border-radius: 10px;
-    
     padding: 10px;
+    width: 100%;
 }
 
 
