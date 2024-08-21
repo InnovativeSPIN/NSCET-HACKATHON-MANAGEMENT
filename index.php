@@ -159,8 +159,7 @@
                 <span class="frame__demos-item">Home</span>
                 <a class="frame__demos-item" href="">About</a>
                 <a class="frame__demos-item" href="">Guidelines</a>
-                <a class="frame__demos-item" href="">Problem Statements</a>
-                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="problem_statements.html">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
                 <a class="frame__demos-item" href="">Project Implementation</a>
 
                 <div class="up">
@@ -176,10 +175,10 @@
             <h2><i>N S C E T</i> <i>H</i>ackathon</h2>
             <p>A 36 Hours Tech MARATHON</p>
         </div>
-        <div class="robo-content" id="model-container">
+        <!-- <div class="robo-content" id="model-container">
         <model-viewer src="./robo/scene.gltf" alt="A 3D model of a car" shadow-intensity="1"   disable-zoom  camera-controls auto-rotate   camera-orbit="4000deg  " style=" height: 80%;">
         </model-viewer>
-        </div>
+        </div> -->
     </main>
     <div class="cursor">
         <div class="cursor__inner">
