@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Logo</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.3/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .circle img {
+            display: none;
+          
+        width: 200px;
+            border: 5px solid transparent;
+            transition: border 0.3s ease, transform 0.3s ease;
+        }
+
+        .circle.clicked {
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+
+        .circle.clicked img {
+            display: block;
+            animation: bounce 0.5s ease;
+            
+            transform: rotate(360deg);
+        }
+
+        .circle.clicked .placeholder {
+            display: none;
+        }
+
+        .placeholder {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            animation: fadeIn 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="circle" id="circle">
+    <div class="placeholder">Click</div>
+    <img src="img/logoHack.png" alt="Logo" id="logo">
+</div>
+
+<script>
+    const circle = document.getElementById('circle');
+    const logo = document.getElementById('logo');
+
+    circle.addEventListener('click', function() {
+        if (circle.classList.contains('clicked')) {
+            window.location.href = 'NSCET-HACKATHON-MANAGEMENT/index.php';
+        } else {
+            circle.classList.add('clicked');
+        }
+    });
+</script>
+
+</body>
+</html>
