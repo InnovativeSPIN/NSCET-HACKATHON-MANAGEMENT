@@ -64,6 +64,7 @@
 .ag-courses_item {
   flex-basis: calc(33.33333% - 30px);
   margin: 0 15px 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important ;
   width: 50px;
   overflow: hidden;
   border-radius: 28px;
@@ -287,8 +288,49 @@
       width: 100%;
       height: 210%;
       z-index: -1;
-      opacity: 0.9;
+      opacity: 0.8;
     }
+
+    .ag-courses-item_link {
+    position: relative;
+    display: block;
+    color: #fff; /* White text color for contrast */
+    text-decoration: none;
+    overflow: hidden; /* Prevents tint from spilling out */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    background-color: rgba(0, 0, 0, 0.3); /* Light black tint with 30% opacity */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Ensure background color remains consistent on hover */
+.ag-courses-item_link:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker light black tint on hover with 50% opacity */
+}
+
+/* Optional: Remove or modify the :active styling if it affects the background */
+.ag-courses-item_link:active {
+    background-color: rgba(0, 0, 0, 0.3); /* Ensure background color is consistent on click */
+}
+
+/* Ensure text is not affected by click */
+.ag-courses-item_title,
+.ag-courses-item_designation,
+.ag-courses-item_date-box {
+    position: relative;
+    z-index: 2; /* Ensure text is above the tint */
+    padding: 10px;
+}
+
+.ag-courses-item_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: transparent; /* Keep it transparent since the tint is on the link */
+}
+
 
 
     </style>
@@ -360,7 +402,7 @@
 
   <!-- CSE Staffs -->
   <div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
+    <a href="#" class="ag-courses-item_link bl ">
         <div class="ag-courses-item_bg"></div>
         <div class="ag-courses-item_title">J.Mathalai Raj  </div>
         <div class="ag-courses-item_designation">Professor</div>
@@ -369,7 +411,7 @@
 </div>
 
 <div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
+    <a href="#" class="ag-courses-item_link bl ">
         <div class="ag-courses-item_bg"></div>
         <div class="ag-courses-item_title">Arul Jothi S  </div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
