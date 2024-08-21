@@ -291,7 +291,7 @@
         paginatedData.forEach(row => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>${row.id}</td>
+                <td>${row.id - 1}</td>
                 <td>${row.ps_id}</td>
                 <td class="problem-title" data-description="${'Description: '+row.ps_description}">${row.ps}</td>
                 <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
