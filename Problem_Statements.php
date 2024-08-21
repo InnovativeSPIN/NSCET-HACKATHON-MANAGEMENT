@@ -1,6 +1,3 @@
-<?php 
-    require_once('./resources/connection.php')
-?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -14,6 +11,55 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
+
+    <style>
+    /* Modal Container */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        max-width: 600px; /* Maximum width of the modal */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow effect */
+    }
+
+    /* Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Modal Description */
+    #modal-description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+</style>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
@@ -38,20 +84,22 @@
                     <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
                 </div>
                 <nav class="frame__demos">
-                    <span class="frame__demos-item">Home</span>
-                    <a class="frame__demos-item" href="index2.html">About Hackathon</a>
-                    <a class="frame__demos-item" href="rules_and_regulations.php">Guidelines</a>
-                    <a class="frame__demos-item" href="problem_statements.php">Problem Statements</a>
-                    <a class="frame__demos-item" href="index5.html">FAQs</a>
-                    <a class="frame__demos-item" href="index6.html">Project Implementation</a>
-                    <div class="up">
-                        <div class="new">
-                            <div class="new1">
-                                <a class="frame__demos-item vutton-custine" href="index6.html">Register</a>
-                            </div>
-                        </div>
+                <!-- <span class="frame__demos-item">Variations: </span>	 -->
+                <span class="frame__demos-item">Home</span>
+                <!-- <a class="frame__demos-item" href="">About</a> -->
+                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
+                <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
+                         <!-- <a class="frame__demos-item" href="">FAQs</a> -->
+                <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
+                <div class="up">
+                <div class="new">
+                    <div class="new1">
+                        <a class="frame__demos-item vutton-custine" href="">Register</a>
                     </div>
-                </nav>
+                </div>
+            </div>
+                    </nav>
             </div>
         </div>
     </main>
@@ -77,13 +125,13 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="hard statement-type">
-                                        <h3>00</h3>
+                                        <h3>25</h3>
                                         <p>Hardware</p>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="soft statement-type">
-                                        <h3>00</h3>
+                                        <h3>25</h3>
                                         <p>Software</p>
                                     </div>
                                 </div>
@@ -141,11 +189,11 @@
             <!-- Table Start -->
             <div class="row mt-5">
                 <div class="col-md-12">
-                    <h2>Submitted Ideas</h2>
+                    <h2>Problem Statement List</h2>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>S.No.</th>
+                                <!-- <th>S.No.</th> -->
                                 <th>Problem Statement ID</th>
                                 <th>Problem Statement Title</th>
                                 <th>Category</th>
@@ -228,6 +276,13 @@
     </div>
 </footer>
 
+<div id="problemModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
     <!-- End of PS Section -->
     <script src="js/gsap.min.js"></script>
     <!-- <script type="module" src="js/index.js"></script> -->
@@ -247,125 +302,8 @@
   color: 0xfffe3f,
   backgroundColor: 0x0
     })
-});
-
-// _strk.push(function() {
-//   setVanta()
-//   window.edit_page.Event.subscribe( "Page.beforeNewOneFadeIn", setVanta )
-// })
+})
 </script>
-
-
-<!-- <script>
-        //  const tableData = Array.from({ length: 50 }, (_, i) => ({
-        //     sno: i + 1,
-        //     id: `PS${100 + i}`,
-        //     title: `Problem Statement ${i + 1}`,
-        //     category: `Category ${i % 5 + 1}`,
-        //     count: Math.floor(Math.random() * 10) + 1,
-        //     theme: `Theme ${i % 5 + 1}`
-        // }));
-
-        let tableData = [];
-    let currentPage = 1;
-    const rowsPerPage = 10;
-
-    async function fetchData() {
-        try {
-            const response = await fetch('./resources/ps_fetch.php');
-            tableData = await response.json();
-            console.log(tableData)
-            displayTable(currentPage); // Display data after fetching
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    }
-
-        const totalPages = Math.ceil(tableData.length / rowsPerPage);
-
-        console.log(tableData)
-
-        async function displayTable(page) {
-            const start = (page - 1) * rowsPerPage;
-            const end = start + rowsPerPage;
-
-            const tableBody = document.getElementById('table-body');
-            tableBody.innerHTML = '';
-
-            const paginatedData = tableData.slice(start, end);
-
-            paginatedData.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${row.id}</td>
-                    <td>${row.ps_id}</td>
-                    <td>${row.ps}</td>
-                    <td>${row.ps_type}</td>
-                    <td>${row.count}</td>
-                    <td>${row.ps_domain}</td>
-                `;
-                tableBody.appendChild(tr);
-            });
-
-            updatePagination();
-        }
-
-        function updatePagination() {
-            const paginationDiv = document.getElementById('pagination');
-            paginationDiv.innerHTML = '';
-
-            // Previous button
-            const prevBtn = document.createElement('button');
-            prevBtn.id = 'prev-btn';
-            prevBtn.innerText = 'Previous';
-            prevBtn.onclick = prevPage;
-            prevBtn.disabled = currentPage === 1;
-            paginationDiv.appendChild(prevBtn);
-
-            // Page number links
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement('span');
-                pageLink.innerText = i;
-                pageLink.className = 'page-link';
-                if (i === currentPage) {
-                    pageLink.classList.add('active');
-                }
-                pageLink.onclick = () => goToPage(i);
-                paginationDiv.appendChild(pageLink);
-            }
-
-            // Next button
-            const nextBtn = document.createElement('button');
-            nextBtn.id = 'next-btn';
-            nextBtn.innerText = 'Next';
-            nextBtn.onclick = nextPage;
-            nextBtn.disabled = currentPage === totalPages;
-            paginationDiv.appendChild(nextBtn);
-        }
-
-        function goToPage(page) {
-            currentPage = page;
-            displayTable(currentPage);
-        }
-
-        function prevPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                displayTable(currentPage);
-            }
-        }
-
-        function nextPage() {
-            if (currentPage < totalPages) {
-                currentPage++;
-                displayTable(currentPage);
-            }
-        }
-
-        // Initial display
-        // displayTable(currentPage);
-        fetchData();
-</script> -->
 
 <script>
     let tableData = [];
@@ -393,17 +331,45 @@
         paginatedData.forEach(row => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>${row.id}</td>
+                // <td>${row.id}</td>
                 <td>${row.ps_id}</td>
-                <td>${row.ps}</td>
+                <td class="problem-title" data-description="${'Description: '+row.ps_description}">${row.ps}</td>
                 <td>${row.ps_type}</td>
-                <td>${0}</td>
+                <td>${'Software'}</td>
                 <td>${row.ps_domain}</td>
             `;
             tableBody.appendChild(tr);
         });
 
+        attachTitleClickEvents();
+
         updatePagination();
+    }
+
+    function attachTitleClickEvents() {
+        const titles = document.querySelectorAll('.problem-title');
+        titles.forEach(title => {
+            title.addEventListener('click', function() {
+                // Get the description from the data attribute
+                const description = this.getAttribute('data-description');
+                
+                // Set the description in the modal
+                document.getElementById('modal-description').textContent = description;
+
+                // Open the modal
+                openModal();
+            });
+        });
+    }
+
+    function openModal() {
+        const modal = document.getElementById('problemModal');
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('problemModal');
+        modal.style.display = "none";
     }
 
     function updatePagination() {
@@ -457,6 +423,14 @@
         if (currentPage < totalPages) {
             currentPage++;
             displayTable(currentPage);
+        }
+    }
+
+    document.querySelector('.close').onclick = closeModal;
+    window.onclick = function(event) {
+        const modal = document.getElementById('problemModal');
+        if (event.target == modal) {
+            closeModal();
         }
     }
 

@@ -102,20 +102,22 @@
                     <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
                 </div>
                 <nav class="frame__demos">
-                    <span class="frame__demos-item">Home</span>
-                    <a class="frame__demos-item" href="index2.html">About Hackathon</a>
-                    <a class="frame__demos-item" href="rules_and_regulations.php">Guidelines</a>
-                    <a class="frame__demos-item" href="problem_statements.php">Problem Statements</a>
-                    <a class="frame__demos-item" href="index5.html">FAQs</a>
-                    <a class="frame__demos-item" href="index6.html">Project Implementation</a>
-                    <div class="up">
-                        <div class="new">
-                            <div class="new1">
-                                <a class="frame__demos-item vutton-custine" href="index6.html">Register</a>
-                            </div>
-                        </div>
+                <!-- <span class="frame__demos-item">Variations: </span>	 -->
+                <span class="frame__demos-item">Home</span>
+                <!-- <a class="frame__demos-item" href="">About</a> -->
+                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
+                <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
+                         <!-- <a class="frame__demos-item" href="">FAQs</a> -->
+                <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
+                <div class="up">
+                <div class="new">
+                    <div class="new1">
+                        <a class="frame__demos-item vutton-custine" href="">Register</a>
                     </div>
-                </nav>
+                </div>
+            </div>
+                    </nav>
             </div>
         </div>
     </main>

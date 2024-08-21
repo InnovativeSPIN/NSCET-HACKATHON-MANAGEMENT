@@ -158,11 +158,12 @@
             <nav class="frame__demos">
                 <!-- <span class="frame__demos-item">Variations: </span>	 -->
                 <span class="frame__demos-item">Home</span>
-                <a class="frame__demos-item" href="">About</a>
+                <!-- <a class="frame__demos-item" href="">About</a> -->
                 <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
                 <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
-                <a class="frame__demos-item" href="">Project Implementation</a>
-
+                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
+                         <!-- <a class="frame__demos-item" href="">FAQs</a> -->
+                <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
                 <div class="up">
                 <div class="new">
                     <div class="new1">
