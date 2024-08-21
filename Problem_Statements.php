@@ -14,10 +14,6 @@
 
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
     <script>
@@ -31,34 +27,55 @@
             return e;
         };
         supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
+
     </script>
+    <style>
+        .demo-1{
+ background: none;
+
+}
+.frame{
+    display: flex;
+    flex-direction: row;
+    background: black;
+    width: 100%;
+}
+.frame__title{
+    grid-area: title;
+	position: relative;
+	flex-basis: 60%;
+	display: flex;
+	justify-content: start;	
+	align-items: center;
+    z-index: 99;
+    height: 130px;
+}
+.frame__demos{
+ display: inline-block;
+}
+.frame__demos-item{
+	font-family: "source-code-pro", monospace;
+    font-size: clamp(12px, 2.5vw, 17px) !important;
+    margin-right:40px ;
+    color: white !important;
+
+}
+.up{
+    position: absolute !important;
+    right: 40px;
+    top: 50px;
+
+}
+    </style>
 </head>
 <body>
-    <main>
-        <div class="demo-1">
-            <div class="frame frameNEW">
-                <div class="frame__title"> 
-                    <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
-                </div>
-                <nav class="frame__demos">
-                <!-- <span class="frame__demos-item">Variations: </span>	 -->
-                <span class="frame__demos-item">Home</span>
-                <!-- <a class="frame__demos-item" href="">About</a> -->
-                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
-                <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
-                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
-                         <!-- <a class="frame__demos-item" href="">FAQs</a> -->
-                <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
-                <div class="up">
-                <div class="new">
-                    <div class="new1">
-                        <a class="frame__demos-item vutton-custine" href="">Register</a>
-                    </div>
-                </div>
-            </div>
-                    </nav>
-            </div>
-        </div>
+<div class="demo-1">
+     <main>
+     <?php include('./resources/header.php') ?> 
+        <!-- <div class="robo-content" id="model-container">
+        <model-viewer src="./robo/scene.gltf" alt="A 3D model of a car" shadow-intensity="1"   disable-zoom  camera-controls auto-rotate   camera-orbit="4000deg  " style=" height: 80%;">
+        </model-viewer>
+        </div> -->
     </main>
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
     
