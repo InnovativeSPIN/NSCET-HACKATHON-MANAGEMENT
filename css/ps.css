@@ -18,7 +18,7 @@
 
 
 *{
-    font-family: "source-code-pro", monospace;
+    font-family: "source-code-pro", monospace ;
 }
 
 
@@ -448,6 +448,7 @@ a.frame__demos-item {
     margin-bottom: 30px;
     font-size: 24px;
     color: #333;
+    font-family: "source-code-pro", monospace !important;
 }
 
 .table-container {
@@ -530,6 +531,7 @@ form {
     border-radius: 0.375rem;
     border: 1px solid #ced4da; 
     padding: 0.75rem; 
+    
 }
 
 .form-control:focus,
@@ -578,7 +580,7 @@ form {
 
 .statement-type {
     text-align: center;
-    background: linear-gradient(to left, #ffffff 0%, #ffffff 100%);
+     background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 25px;
     margin: 15px 0;
@@ -740,53 +742,55 @@ form {
 
 /* Table Styles */
 .custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border-top: 3px solid #000; /* Top border */
-    border-bottom: 3px solid #000; /* Bottom border */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border-collapse: separate; /* Ensures that border-spacing works */
+    border-spacing: 0 20px; /* Adds vertical space between rows */
 }
 
 .custom-header {
-    background-color: #ffffff; /* White background for header */
+    background-color: #ffffff;
 }
 
 .custom-header-cell {
-    color: #000000; /* Black text color for header cells */
+    color: #f1d639; 
     font-size: 16px;
-    font-weight: bold; /* Bold text for headers */
+    font-weight: bold; 
     padding: 12px;
-    padding-left: 30px; /* Add left padding */
-    text-align: center; /* Center text alignment */
-    border: 1px solid #000000; /* Black border for header cells */
-    background-color: #ffffff; /* White background for header cells */
+    padding-left: 30px; 
+    text-align: center;
+    border: 1px solid #000000; 
+    background-color: #ffffff; 
 }
 
-/* Add margin and padding to thead */
+/* Styling for table header */
 .custom-table thead {
-    margin: 1px solid #000; /* Black margin around thead */
-    padding: 4px; /* Padding around thead */
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border: 1px solid #000; /* Border around thead */
+    
+    
+}
+
+.custom-table th {
+    color: #f5da40; 
+    font-size: 16px;
+    font-weight: bold; 
+    padding: 12px;
+    padding-left: 30px; 
+    text-align: center;
+    border: 1px solid #000000; 
+    background-color: #ffffff; 
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Light grey for even rows */
+    background-color: #f2f2f2;
 }
 
 tbody tr:hover {
-    background-color: #ddd; /* Light grey background on hover */
+    background-color: #ddd; 
 }
 
 .custom-table td {
-    border: 1px solid #000000; /* Black border for table cells */
+    border: 1px solid #000000; 
     padding: 12px;
-    text-align: center; /* Center text alignment for cells */
+    text-align: center; 
 }
 
 /* Pagination Styles */
@@ -800,7 +804,7 @@ tbody tr:hover {
     padding: 8px 16px;
     margin: 0 5px;
     background-color: white; /* White background for buttons and links */
-    color: black; /* Black text color */
+    color: rgb(0, 0, 0); /* Black text color */
     border: 1px solid black; /* Black border for buttons and links */
     border-radius: 4px;
     cursor: pointer;
@@ -823,8 +827,8 @@ tbody tr:hover {
 }
 
 .pagination .page-link.active {
-    background-color: black; /* Black background for active page */
-    color: white; /* White text color for active page */
+    background-color: rgb(248, 225, 120); /* Black background for active page */
+    color: rgb(0, 0, 0); /* White text color for active page */
 }
 
 /* Registration Form Styles */
@@ -1205,7 +1209,7 @@ body {
     }
 
     .section-one, .section-two {
-        width: 200%;
+        width: 100%;
         margin: 0;
         padding: 10px;
     }
