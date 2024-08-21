@@ -181,10 +181,12 @@ body #cdawrap {
 .frame__title {
 	grid-area: title;
 	position: relative;
-	flex-basis: 58%;
+	flex-basis: 60%;
 	display: flex;
 	justify-content: start;	
 	align-items: center;
+    z-index: 99;
+    
 }
 .frame__title img{
 margin-left: 20px;
@@ -314,8 +316,8 @@ a.frame__demos-item {
 
   @media  screen and (max-width:786px) {
 	.frame__title{
-		flex-basis: 100%;
-		width: 500px;
+		flex-basis: 150%;
+		width: 800px;
 	}
 	
   }

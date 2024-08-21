@@ -1,4 +1,6 @@
 /********** Template CSS **********/
+@import url("./footer.css");
+@import url("./nav.css");
 :root {
     --primary: #1363C6;
     --secondary: #15ACE1;
@@ -39,14 +41,43 @@ body{
     font-family: 'Book Antiqua', serif;
     font-weight: bold;
     position: relative;
-    font-size: 1.4vw;
+    font-size: clamp(19px,3vw,28px);
 
 }
 .img_scroll {
     width: 52px;
     height: 52px;
 }
+.text-justify{
+    text-align: justify;
+}
 
+
+#pointer {
+    content: '';
+    background: var(--primary);
+    width: var(--pointer-size);
+    height: var(--pointer-size);
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 0;
+    display: block;
+    outline-color: var(--primary);
+    outline-style: solid;
+    outline-width: 2px;
+    animation: cursor 1s infinite;
+    box-shadow: 0px 0px 20px var(--primary);
+  }
+  
+  @keyframes cursor {
+    from {
+      outline-offset: 0px;
+    }
+    to {
+      outline-offset: 10px;
+      outline-color: transparent;
+    }
+  }
 /*** Heading ***/
 h1,
 h2,
@@ -513,81 +544,7 @@ h6,
 }
 
 
-/*** Footer ***/
-.footer {
-    background: url(../img/footer.png) center center no-repeat;
-    background-size: contain;
-}
 
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,.5);
-    border: 1px solid rgba(256, 256, 256, .1);
-    border-radius: 40px;
-    transition: .3s;
-}
-
-.footer .btn.btn-social:hover {
-    color: var(--primary);
-}
-
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 10px;
-    padding: 0;
-    text-align: left;
-    color: rgba(255,255,255,.5);
-    font-weight: normal;
-    transition: .3s;
-}
-
-.footer .btn.btn-link:hover {
-    color: #FFFFFF;
-}
-
-.footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.footer .btn.btn-link:hover {
-    letter-spacing: 1px;
-    box-shadow: none;
-}
-
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 14px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
-}
-
-.footer .copyright a {
-    color: rgba(255,255,255,.5);
-}
-
-.footer .copyright a:hover {
-    color: #FFFFFF;
-}
-
-.footer .footer-menu a {
-    margin-right: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
-}
-
-.footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-}
 
 /* new*/
 
@@ -619,10 +576,16 @@ h6,
 }
 
 .slider-item img {
-    max-width: 100%;
-    height: auto;
+   width: 130px;
+   height: 130px;
+   border-radius: 50%;
     margin-bottom: 15px;
-    width: 100px;
+    object-fit: cover;
+    
+}
+.img-item{
+    width: 130px !important;
+
 }
 
 .slider-btn {
@@ -783,10 +746,6 @@ h6,
 
 
 
-footer {
-    background-color: #0d2844; /* Dark background for footer */
-    color: #fff; /* White text color */
-}
 
 .follow-box {
     padding: 20px;
