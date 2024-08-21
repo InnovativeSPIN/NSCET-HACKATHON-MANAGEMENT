@@ -353,9 +353,9 @@
 </section> -->
 
 <div class="col-md-12 text-center mb-4">
-        <h2 class="heading-spacing">
-            <i>M</i>entors
-        </h2>
+        <h1 class="heading-spacing" style='padding: 100px;margin:0px'>
+        <i>H</i>ackathon <i>M</i>entors
+        </h1>
     </div>
 
 <div class="button-container">

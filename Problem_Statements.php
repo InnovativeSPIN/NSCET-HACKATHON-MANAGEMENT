@@ -44,7 +44,7 @@
     </main>
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
     
-    <div id="vanta-background" style="width: 100vw; height: 100vh;">
+    <div id="vanta-background" style="width: 100vw; height: 70vh;">
        
         <section class="total-statement totstat">
             <div class="container">
@@ -91,23 +91,23 @@
         </section>
     </div>
     <div class="container mt-5">
-    <div class="section-container">
+    <!-- <div class="section-container">
     
         <div class="section-one">
             <label for="theme-select">Select Theme</label>
             <select id="theme-select" class="form-select">
          
                 <option value="MTAx">Artificial Intelligence (AI)</option>
-    <option value="MTAy">Augmented Reality (AR)</option>
-    <option value="MTAz">Cybersecurity</option>
-    <option value="MTA0">HealthTech</option>
-    <option value="MTA1">Internet of Things (IoT)</option>
-    <option value="MTA2">Robotics and Automation</option>
-    <option value="MTA3">Safety</option>
-    <option value="MTA4">Signal Processing</option>
-    <option value="MTA5">Smart City</option>
-    <option value="MTA2">Sustainable Energy</option>
-    <option value="MTA3">Waste Management</option>
+                <option value="MTAy">Augmented Reality (AR)</option>
+                <option value="MTAz">Cybersecurity</option>
+                <option value="MTA0">HealthTech</option>
+                <option value="MTA1">Internet of Things (IoT)</option>
+                <option value="MTA2">Robotics and Automation</option>
+                <option value="MTA3">Safety</option>
+                <option value="MTA4">Signal Processing</option>
+                <option value="MTA5">Smart City</option>
+                <option value="MTA2">Sustainable Energy</option>
+                <option value="MTA3">Waste Management</option>
             </select>
         </div>
     
@@ -122,14 +122,18 @@
                 <option value="Software">Software</option>
             </select>
         </div>
-    </div>
+    </div> -->
 </div>
 
 
 
 <div class="table-section">
     <div class="table-container">
-        <h2>Problem Statement List</h2>
+    <div class="col-md-12 text-center mb-4">
+        <h2 class="heading-spacing" style='margin:0px'>
+            <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
+        </h2>
+    </div>
         <table class="custom-table">
             <thead class="custom-header">
                 <tr>

@@ -327,9 +327,13 @@ form {
 
 }
 
+.statement-box .row .col-md-6{
+    align-items: center;
+    align-self: center;
+}
 
 .ts {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     font-weight: bold;
     color: #333;
     text-transform: uppercase;
