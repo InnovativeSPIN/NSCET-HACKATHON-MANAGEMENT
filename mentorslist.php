@@ -26,127 +26,132 @@
         supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
     <style>
-        .ag-format-container {
+
+      
+.ag-format-container {
   width: 1142px;
   margin: 0 auto;
 }
-.ag-format-container{
-    margin-top: 10%;
+/* Container styling */
+.ag-format-container {
+  
+  width: 1142px;
+  margin: 0 auto;
+  padding-top: none;
 }
 
-body {
- 
-}
+/* Box styling */
 .ag-courses_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  flex-direction: column;
- width: 100%;
- max-width: 980px;
- margin: 0 auto;
   padding: 50px 0;
-
 }
+
+/* Individual card styling */
 .ag-courses_item {
-  -ms-flex-preferred-size: calc(33.33333% - 30px);
   flex-basis: calc(33.33333% - 30px);
-
   margin: 0 15px 30px;
-width: 780px;
+  width: 50px;
   overflow: hidden;
-
   border-radius: 28px;
+  position: relative; /* Required for background positioning */
 }
+
+/* Link styling inside cards */
 .ag-courses-item_link {
   display: block;
   padding: 30px 20px;
   background-color: #121212;
-
   overflow: hidden;
-
   position: relative;
-}
-.ag-courses-item_link:hover,
-.ag-courses-item_link:hover .ag-courses-item_date {
   text-decoration: none;
   color: #FFF;
 }
+
+/* Hover effects */
+.ag-courses-item_link:hover {
+  color: #FFF;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_date {
+  color: #f9b234;
+}
+
 .ag-courses-item_link:hover .ag-courses-item_bg {
-  -webkit-transform: scale(10);
-  -ms-transform: scale(10);
   transform: scale(10);
 }
+
+/* Title styling */
 .ag-courses-item_title {
   min-height: 87px;
   margin: 0 0 25px;
-
   overflow: hidden;
-
   font-weight: bold;
   font-size: 30px;
   color: #FFF;
-
   z-index: 2;
   position: relative;
 }
+
+/* Date box styling */
 .ag-courses-item_date-box {
   font-size: 18px;
   color: #FFF;
-
   z-index: 2;
   position: relative;
 }
-.ag-courses-item_date {
-  font-weight: bold;
-  color: #f9b234;
 
-  -webkit-transition: color .5s ease;
-  -o-transition: color .5s ease;
-  transition: color .5s ease
-}
+/* Background styling */
 .ag-courses-item_bg {
   height: 128px;
   width: 128px;
   background-color: #f9b234;
-
   z-index: 1;
   position: absolute;
   top: -75px;
   right: -75px;
-
   border-radius: 50%;
-
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
   transition: all .5s ease;
 }
+
+.ag-courses-item_designation {
+
+  min-height: 50px;
+  margin: 0 0 0px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+
+}
+
+/* Optional color variations for different course items */
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
   background-color: #3ecd5e;
 }
+
 .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
   background-color: #e44002;
 }
+
 .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
   background-color: #952aff;
 }
+
 .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
   background-color: #cd3e94;
 }
+
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
   background-color: #4c49ea;
 }
 
-
-
+/* Media Queries */
 @media only screen and (max-width: 979px) {
   .ag-courses_item {
-    -ms-flex-preferred-size: calc(50% - 30px);
     flex-basis: calc(50% - 30px);
   }
   .ag-courses-item_title {
@@ -158,17 +163,15 @@ width: 780px;
   .ag-format-container {
     width: 96%;
   }
-
 }
+
 @media only screen and (max-width: 639px) {
   .ag-courses_item {
-    -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
   }
   .ag-courses-item_title {
     min-height: 72px;
     line-height: 1;
-
     font-size: 24px;
   }
   .ag-courses-item_link {
@@ -178,6 +181,94 @@ width: 780px;
     font-size: 16px;
   }
 }
+
+
+/*department button */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.department-btn {
+  background-color: #121212;
+  color: #FFF;
+  border: 2px solid #f9b234;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.department-btn:hover {
+  background-color: #f9b234;
+  color: #000;
+}
+
+/* Specific color for active states */
+.department-btn.cse.active,
+.department-btn.cse.active:hover {
+  background-color: #f4a460; /* Sandal */
+}
+
+.department-btn.it.active,
+.department-btn.it.active:hover {
+  background-color: #e6e6fa; /* Lavender */
+}
+
+.department-btn.aids.active,
+.department-btn.aids.active:hover {
+  background-color: #007ba7; /* Cerulean */
+}
+
+.department-btn.eee.active,
+.department-btn.eee.active:hover {
+  background-color: #c0c0c0; /* Silver */
+}
+
+.department-btn.ece.active,
+.department-btn.ece.active:hover {
+  background-color: #ffc0cb; /* Pink */
+}
+
+.department-btn.mech.active,
+.department-btn.mech.active:hover {
+  background-color: #add8e6; /* Light Blue */
+}
+
+.department-btn.civil.active,
+.department-btn.civil.active:hover {
+  background-color: #ffff00; /* Yellow */
+}
+
+.department-btn.sh.active,
+.department-btn.sh.active:hover {
+  background-color: #add8e6; /* Light Blue */
+}
+
+
+/* Title Container */
+.title-container {
+  text-align: center; /* Center align the title */
+  margin: 0px 0; /* Add margin to separate from other content */
+  padding: 150px ;
+}
+
+/* Title Styling */
+.title {
+  font-size: 100px; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #f9b234; /* Match with your existing color scheme or adjust */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better readability */
+  margin: 0;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -207,223 +298,737 @@ width: 780px;
             </div>
         </div>
     </main>
-<section class="content">
+<!-- <section class="content">
     <iframe src="./updatd.pdf" width="100%" height="600px">
     This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.
 </iframe>
-</section>
-    <!-- <section class="content">
-    <div class="ag-format-container">
-  <div class="ag-courses_box">
+</section> -->
 
-    <div class="ag-courses_item">
-      <a href="mailto:prthpraja@gmail.com" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
 
-        <div class="ag-courses-item_title">
-          PRATHAP S - ECE - Assistant Professor
-        </div>
 
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Network, Communication, Embedded
-          </span>
-        </div>
-      </a>
-    </div>
 
-    <div class="ag-courses_item">
-      <a href="mailto:hodcse@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          J.Mathalai Raj - CSE - Assistant Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Internet of Things, Artificial Intelligence
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:athilingam@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Dr R ATHILINGAM - EEE - Associate Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            IOT, Image processing, Embedded system
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:venishkumar@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Dr T Venish Kumar - ECE - Associate Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            VLSI DESIGN, Embedded systems, Image processing
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:cmathalaisundaram@gmail.com" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Dr.C.Mathalai Sundaram - Mechanical Engineering - Professor & Principal
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Composite tool material, Optimization, IoT, Reverse Engineering
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:vpadmin@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Mathavan - ECE - Vice Principal
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Internet of Things, RFID, Sensor
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:aruljothi@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Arul Jothi S - CSE - Assistant Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Machine Learning, Deep learning
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:radhakrishnan@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Dr B.Radha Krishnan - Mechanical Engineering - Associate Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Materials Science, Manufacturing Process, Waste Management, E Car Technology
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:deepiga.kece@gmail.com" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          K.Deepiga - CSE - Assistant Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Networks
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:solairaj@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Dr.A.Solairaj - CSE - ASP
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Artificial Intelligence, Machine Learning, Deep Learning
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:prathapc@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          PRATHAP.C - CSE - HOD/S&H
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            IMAGE PROCESSING, AI&ML
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="mailto:nishethajeflinixon@nscet.org" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Nishetha Jeflin Nixon - EEE - Assistant Professor
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Expertise:
-          <span class="ag-courses-item_date">
-            Power electronics, Renewable energy systems, Inverter and converters, Power and energy systems
-          </span>
-        </div>
-      </a>
-    </div>
-
-  </div>
+<!-- Title Section -->
+<div class="title-container">
+  <h1 class="title">Mentors</h1>
 </div>
 
-    </section> -->
+
+<div class="button-container">
+  <button class="department-btn cse active" onclick="selectButton(this)">CSE</button>
+  <button class="department-btn it" onclick="selectButton(this)">IT</button>
+  <button class="department-btn aids" onclick="selectButton(this)">AI&DS</button>
+  <button class="department-btn eee" onclick="selectButton(this)">EEE</button>
+  <button class="department-btn ece" onclick="selectButton(this)">ECE</button>
+  <button class="department-btn mech" onclick="selectButton(this)">MECH</button>
+  <button class="department-btn civil" onclick="selectButton(this)">CIVIL</button>
+  <button class="department-btn sh" onclick="selectButton(this)">S&H</button>
+</div>
+
+    
+
+
+<section class="content">
+    <div class="ag-format-container">
+    <div class="ag-courses_box">
+    
+
+
+
+
+  <!-- CSE Staffs -->
+  <div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">J.Mathalai Raj  </div>
+        <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_date-box">Software Engineering, Data Structures, Algorithms, Machine Learning</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Arul Jothi S  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Database Management Systems, Cloud Computing, Web Technologies</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">K.Deepiga  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Artificial Intelligence, Computer Networks, Cybersecurity</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr.A.Solairaj  </div>
+        <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_date-box">Computer Vision, Pattern Recognition, Data Mining</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">AYYANAPRABU J  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Embedded Systems, Internet of Things (IoT), Software Development</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Kesavamoorthy N  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Theoretical Computer Science, Compiler Design, Operating Systems</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">KEERTHANA. R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Human-Computer Interaction, Mobile Computing, Augmented Reality</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Udhaya Kumar R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Software Project Management, Agile Methodologies, System Design</div>
+    </a>
+</div>
+
+<div class="ag-courses_item cse" data-department="cse">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">ARUNJUNAI KARTHICK K  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Computer Architecture, Networking, Quantum Computing</div>
+    </a>
+</div>
+
+
+<!-- IT Staffs -->
+
+<div class="ag-courses_item it" data-department="it">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Keerthana G  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">DBMS, OOPs, HTML</div>
+    </a>
+</div>
+
+<div class="ag-courses_item it" data-department="it">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">J. KANIMOLI  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Artificial Intelligence, Computer Networks, IoT</div>
+    </a>
+</div>
+
+<div class="ag-courses_item it" data-department="it">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Sangeetha  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Computer Network, Data Science, Artificial Intelligence</div>
+    </a>
+</div>
+
+<!-- AI&DS Staffs -->
+
+<div class="ag-courses_item aids" data-department="aids">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Vignesh L S  </div>
+        <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_date-box">Artificial Intelligence and Machine Learning, Data Science and Big Data Analytics</div>
+    </a>
+</div>
+
+<div class="ag-courses_item aids" data-department="aids">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Archana R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Data Science, Artificial Intelligence</div>
+    </a>
+</div>
+
+<div class="ag-courses_item aids" data-department="aids">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Vinoth Kumar J  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</div>
+    </a>
+</div>
+
+
+<!-- EEE Staffs -->
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr R ATHILINGAM  </div>
+        <div class="ag-courses-item_designation">Head of Department</div>
+        <div class="ag-courses-item_date-box">IOT, Image Processing, Embedded System</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Nishetha Jeflin Nixon  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Power Electronics, Renewable Energy System, Inverter and Converters, Power and Energy Systems</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">SHIVA C  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Power Electronics, Renewable Energy Resources, Power Quality, Smart Automation</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Chitra R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Smart Grid, Wireless Communication, Power System Management, Renewable Energy</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">ABIRAMI N  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Digital Electronics, VLSI Design, Machine Learning</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">K.Ganesh  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Power Systems, Renewable Energy, Energy Management</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Vijayalakshmi M  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Power Factor Improvement through Capacitor Placement, Smart Grid, Restructuring of Power System, Robotics</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">RAJA KARTHICK R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Distributed Control System, Renewable Energy, Electronic Devices and Circuits, PLC and SCADA</div>
+    </a>
+</div>
+
+<div class="ag-courses_item eee" data-department="eee">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">PANDI PRABAKARAN R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">IOT, Arduino - Node Mcu, ESP32, Smart Grid, Embedded System</div>
+    </a>
+</div>
+
+
+<!-- ECE Staffs -->
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr T Venish Kumar  </div>
+        <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_date-box">VLSI Design, Embedded Systems (Both Hardware and Software), Image Processing</div>
+    </a>
+</div>
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">PRATHAP S  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Network, Communication, Embedded</div>
+    </a>
+</div>
+
+
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Mathavan  </div>
+        <div class="ag-courses-item_designation">Vice Principal</div>
+        <div class="ag-courses-item_date-box">Internet of Things, RFID, Sensor</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">IDHAYACHANDRAN M  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">VLSI Design, Electronic Circuit Analysis, Digital Electronics, Digital Signal Processing</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Pradeep Kumar R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Nanoparticles, Digital Systems Design, Digital Image Processing, Internet of Things</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">TAMILSELVI T  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">VLSI Design, Wireless Communication, Signal Processing, Internet of Things</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">S.Kalaivani  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Signal Processing, Communication</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">P.Shantha Devi  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">VLSI Design, Image Processing, IoT</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Gowthami P  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Image Processing, Communication Systems, Digital Electronics, Nanotechnology</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">M.Monica Dhana Ranjini  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Image Processing, Embedded Systems, Wearable Device</div>
+    </a>
+</div>
+
+<div class="ag-courses_item ece" data-department="ece">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">K.Bharathi Kannan  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">VLSI Design, Signal Processing, Embedded Systems, Communication System</div>
+    </a>
+</div>
+
+ 
+
+<!-- MECH Staffs -->
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr.C.Mathalai Sundaram  </div>
+        <div class="ag-courses-item_designation">Professor & Principal</div>
+        <div class="ag-courses-item_date-box">Composite Tool Material, Optimization, Internet of Things, Reverse Engineering</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr B.Radha Krishnan  </div>
+        <div class="ag-courses-item_designation">Associate Professor</div>
+        <div class="ag-courses-item_date-box">Materials Science, Manufacturing Process, Waste Management, E-Car Technology</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">A. Vembathurajesh  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Materials, Thermal Engineering, Composites, High Temperature Application Materials</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">A. VENNIMALAI RAJAN  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Composite Materials</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Surulimani P  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Manufacturing, Welding</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">S.Harikishore  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Automated Manufacturing, Development of Tools, Optimization Process, Quality Control</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">SIVAGANESAN V  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Engineering Design, Manufacturing Technology, Design Softwares</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">ARU KUMAR G  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Manufacturing Engineering</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Santhaseelan R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Manufacturing, Safety, Design</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">NAGARAJA R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Engineering Design, Composite Material, Machine Vision, Optimization</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">NAGARAJAN B  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Coating, Composites, Manufacturing, Material Testing</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">V.Thirumalairaj  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Engineering Design, Manufacturing, Analysis</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Mr. J. CHAKRAVARTHY SAMY DURAI  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Automobile Engineering, Manufacturing Engineering, Production Engineering, Thermal Engineering</div>
+    </a>
+</div>
+
+<div class="ag-courses_item mech" data-department="mech">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">A. VENNIMALAI RAJAN  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Composite Materials, Production Engineering</div>
+    </a>
+</div>
+
+<!-- CIVIL Staffs -->
+
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr. E. Ananthakrishnan  </div>
+        <div class="ag-courses-item_designation">HOD</div>
+        <div class="ag-courses-item_date-box">Water analysis/structural engineer mni, Municipal solid waste</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Kanimozhi M  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Reinforced concrete structures, Waste Management</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Nathirun Sabinash R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Waste Management, Water analysis</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Shanmugapriyan R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Structural analysis, Water treatment, Prototype creation</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">P. Arul Jebaraj  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Structural engineering, Disaster management, Construction waste management</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">SINDHU M  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Construction Materials, Smart Irrigation, Concrete Technology</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Manimaran S  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Concrete / hardware, Concrete / software</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Sowmiya B  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Environmental Engineering</div>
+    </a>
+</div>
+
+<div class="ag-courses_item civil" data-department="civil">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Gayathri S  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Hydraulic engineering, Structural engineering</div>
+    </a>
+</div>
+
+
+<!-- S&H Staffs -->
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">PRATHAP.C </div>
+        <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_date-box">Image Processing, Artificial Intelligence & Machine Learning</div>
+    </a>
+</div>
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr. C. Chithra  </div>
+        <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_date-box">Statistics and Numerical Methods, Graph Theory, Applications of Differential Equations, Linear Algebra</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">M.Arulvizhi  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Graph Theory, Stochastic Processes, Statistics, Real Analysis</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">R. C. Richard Britto   </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">English Language Teaching</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">S. Jothi  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Indian Writing in English, Language and Linguistics, Feminism, Children's Literature</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dhandayuthapani. R  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Electronics, Semiconductor Physics, Atomic Physics, Crystal Physics</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr. S. R. KRISHNAMOORTHI  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Physics Models, Electronics, MFIS / MOS Device Fabrications</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Mahalakshmi M  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Operations Research, Differential Calculus, Complex Analysis, Linear Algebra</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">M.Fathima Beevi  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">English Language Teaching, Technical English, English Literature, Linguistics</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">R. Karunyah  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Mathematics</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr.V. ANANTHI  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Operations Research, Topology, Discrete Mathematics, Statistics and Numerical Methods</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">RAJAGURU K  </div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_date-box">Thin Film, Electronics</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr. N. David Mathan  </div>
+        <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_date-box">Composites, Water Treatment, Polymers for Medicines, Municipal Solid Waste Management</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">MALLAIYASAMY B  </div>
+        <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_date-box">Topology, Graph Theory, Statistics, Operation Research</div>
+    </a>
+</div>
+
+<div class="ag-courses_item sh" data-department="sh">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">B.Abinaya  </div>
+        <div class="ag-courses-item_designation">Teaching Fellow</div>
+        <div class="ag-courses-item_date-box">Water Treatment, Synthesis of Nanoparticles Based on Green Engineering</div>
+    </a>
+</div>
+
+  
+
+ 
+
+  
+
+
+  
+
+
+
+  
+</div>
+
+    </section>
     
 <footer style="padding-top: 30px;">
     <div class="container">
@@ -718,6 +1323,54 @@ width: 780px;
 
     // Initial fetch and display
     fetchData();
+
+//department button
+
+function selectButton(clickedButton, department) {
+  // Remove the 'active' class from all buttons
+  const buttons = document.querySelectorAll('.department-btn');
+  buttons.forEach(button => {
+    button.classList.remove('active');
+  });
+
+  // Add the 'active' class to the clicked button with its specific department color
+  clickedButton.classList.add('active');
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".department-btn");
+  const cards = document.querySelectorAll(".ag-courses_item");
+
+  function selectButton(button) {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const department = button.classList[1];
+
+    cards.forEach(card => {
+      if (card.dataset.department === department) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // Attach event listeners to buttons
+  buttons.forEach(button => {
+    button.addEventListener("click", function() {
+      selectButton(button);
+    });
+  });
+
+  // Initially display CSE department cards
+  selectButton(document.querySelector(".department-btn.cse"));
+});
+
+
+
+
 </script>
 
 
