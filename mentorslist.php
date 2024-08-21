@@ -1,6 +1,3 @@
-<?php 
-    require_once('./resources/connection.php')
-?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -12,7 +9,6 @@
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" type="text/css" href="css/ps.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -30,68 +26,158 @@
         supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
     <style>
-        /* Hero Section */
-        .hero {
-            background: url('img/hero-bg.jpg') no-repeat center center/cover;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
+        .ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+.ag-format-container{
+    margin-top: 10%;
+}
 
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        .section {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .section h2 {
-            font-size: 1.75em;
-            color: #2980b9;
-            margin-bottom: 15px;
-        }
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .section ul li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        .section ul li:before {
-            content: "\2022";
-            color: #2980b9;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
-        }
+body {
+ 
+}
+.ag-courses_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: column;
+ width: 100%;
+ max-width: 980px;
+ margin: 0 auto;
+  padding: 50px 0;
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav {
-                float: none;
-                text-align: center;
-                padding-top: 10px;
-            }
-            .container {
-                padding: 10px;
-            }
-        }
+}
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+width: 780px;
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+
+  overflow: hidden;
+
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #e44002;
+}
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #952aff;
+}
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #cd3e94;
+}
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #4c49ea;
+}
+
+
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
+}
     </style>
 </head>
 <body>
@@ -121,83 +207,223 @@
             </div>
         </div>
     </main>
-    <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
-    
-    <section class="hero">
-        <h1 style='margin-top: 128px'>Hackathon Rules & Regulations</h1>
-    </section>
+<section class="content">
+    <iframe src="./updatd.pdf" width="100%" height="600px">
+    This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.
+</iframe>
+</section>
+    <!-- <section class="content">
+    <div class="ag-format-container">
+  <div class="ag-courses_box">
 
-    <div class="container">
-        <div class="section">
-            <h2>Team Composition</h2>
-            <ul>
-                <li>Each team must consist of <span class="highlight">6 members</span>.</li>
-                <li>Teams must include members from at least <span class="highlight">two different departments</span>.</li>
-                <li>If a team primarily consists of male members, it must include at least <span class="highlight">2 female members</span>.</li>
-                <li>If a team primarily consists of female members, it must include at least <span class="highlight">2 male members</span>.</li>
-            </ul>
+    <div class="ag-courses_item">
+      <a href="mailto:prthpraja@gmail.com" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          PRATHAP S - ECE - Assistant Professor
         </div>
 
-        <div class="section">
-            <h2>Team Registration</h2>
-            <ul>
-                <li>Each team must register with a <span class="highlight">unique team name</span>.</li>
-                <li>Teams must provide details of each member during registration, including their name, department, and year of study.</li>
-                <li>The team must nominate a <span class="highlight">team leader</span> who will serve as the primary point of contact.</li>
-                <li>A registration fee of <span class="highlight">₹500 per member</span> is required.</li>
-            </ul>
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Network, Communication, Embedded
+          </span>
         </div>
-
-        <div class="section">
-            <h2>Inter-Departmental Collaboration</h2>
-            <ul>
-                <li>Teams must include members from at least two different engineering departments to foster collaboration.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Team Registration and Participation</h2>
-            <ul>
-                <li>No changes in team composition are allowed once registered.</li>
-                <li>Each team can participate in only one edition of the hackathon, either <span class="highlight">Software or Hardware</span>.</li>
-                <li>Teams must select and work on <span class="highlight">one problem statement only</span> for the duration of the hackathon.</li>
-                <li>The problem statements will be allotted on a <span class="highlight">First Come First Serve</span> basis.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Team Responsibilities</h2>
-            <ul>
-                <li>Teams are responsible for managing their internal communication and task distribution.</li>
-                <li>All members should contribute equally to the project.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Disqualification Criteria</h2>
-            <ul>
-                <li>Teams that do not adhere to the team composition rules or attempt unauthorized changes will be disqualified.</li>
-                <li><span class="highlight">Plagiarism</span> or any form of unethical behavior will lead to immediate disqualification.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Code of Conduct</h2>
-            <ul>
-                <li>All participants must maintain a <span class="highlight">respectful and collaborative environment</span> throughout the hackathon.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Mentor Responsibilities</h2>
-            <ul>
-                <li>Each mentor can guide a maximum of two teams.</li>
-                <li>Mentors should encourage equal contribution among team members.</li>
-            </ul>
-        </div>
+      </a>
     </div>
 
-    
+    <div class="ag-courses_item">
+      <a href="mailto:hodcse@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          J.Mathalai Raj - CSE - Assistant Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Internet of Things, Artificial Intelligence
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:athilingam@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Dr R ATHILINGAM - EEE - Associate Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            IOT, Image processing, Embedded system
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:venishkumar@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Dr T Venish Kumar - ECE - Associate Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            VLSI DESIGN, Embedded systems, Image processing
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:cmathalaisundaram@gmail.com" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Dr.C.Mathalai Sundaram - Mechanical Engineering - Professor & Principal
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Composite tool material, Optimization, IoT, Reverse Engineering
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:vpadmin@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Mathavan - ECE - Vice Principal
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Internet of Things, RFID, Sensor
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:aruljothi@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Arul Jothi S - CSE - Assistant Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Machine Learning, Deep learning
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:radhakrishnan@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Dr B.Radha Krishnan - Mechanical Engineering - Associate Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Materials Science, Manufacturing Process, Waste Management, E Car Technology
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:deepiga.kece@gmail.com" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          K.Deepiga - CSE - Assistant Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Networks
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:solairaj@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Dr.A.Solairaj - CSE - ASP
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Artificial Intelligence, Machine Learning, Deep Learning
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:prathapc@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          PRATHAP.C - CSE - HOD/S&H
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            IMAGE PROCESSING, AI&ML
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ag-courses_item">
+      <a href="mailto:nishethajeflinixon@nscet.org" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+
+        <div class="ag-courses-item_title">
+          Nishetha Jeflin Nixon - EEE - Assistant Professor
+        </div>
+
+        <div class="ag-courses-item_date-box">
+          Expertise:
+          <span class="ag-courses-item_date">
+            Power electronics, Renewable energy systems, Inverter and converters, Power and energy systems
+          </span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+    </section> -->
     
 <footer style="padding-top: 30px;">
     <div class="container">

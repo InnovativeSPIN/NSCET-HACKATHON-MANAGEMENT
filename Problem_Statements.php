@@ -1,12 +1,11 @@
-<?php 
-    require_once('./resources/connection.php')
-?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
     <title>Problem Statements</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
@@ -14,54 +13,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
-    /* Modal Container */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0,0,0,0.4); /* Black with opacity */
-    }
 
-    /* Modal Content */
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-        max-width: 600px; /* Maximum width of the modal */
-        border-radius: 10px; /* Rounded corners */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow effect */
-    }
-
-    /* Close Button */
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    /* Modal Description */
-    #modal-description {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-</style>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -87,97 +41,101 @@
                     <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
                 </div>
                 <nav class="frame__demos">
-                    <span class="frame__demos-item">Home</span>
-                    <a class="frame__demos-item" href="index2.html">About Hackathon</a>
-                    <a class="frame__demos-item" href="rules_and_regulations.php">Guidelines</a>
-                    <a class="frame__demos-item" href="problem_statements.php">Problem Statements</a>
-                    <a class="frame__demos-item" href="index5.html">FAQs</a>
-                    <a class="frame__demos-item" href="index6.html">Project Implementation</a>
-                    <div class="up">
-                        <div class="new">
-                            <div class="new1">
-                                <a class="frame__demos-item vutton-custine" href="index6.html">Register</a>
-                            </div>
-                        </div>
+                <!-- <span class="frame__demos-item">Variations: </span>	 -->
+                <span class="frame__demos-item">Home</span>
+                <!-- <a class="frame__demos-item" href="">About</a> -->
+                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
+                <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
+                         <!-- <a class="frame__demos-item" href="">FAQs</a> -->
+                <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
+                <div class="up">
+                <div class="new">
+                    <div class="new1">
+                        <a class="frame__demos-item vutton-custine" href="">Register</a>
                     </div>
-                </nav>
+                </div>
+            </div>
+                    </nav>
             </div>
         </div>
     </main>
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
     
     <div id="vanta-background" style="width: 100vw; height: 100vh;">
-        <!-- PS START -->
+       
         <section class="total-statement totstat">
             <div class="container">
-                <!-- Centered Heading -->
+                <
                 <div class="row">
-                    <div class="col-md-12 text-center mb-4">
-                        <h2 class="heading-spacing">Problem Statement</h2>
+    <div class="col-md-12 text-center mb-4">
+        <h2 class="heading-spacing">
+            <i>P</i>roblem <i>S</i>tatement
+        </h2>
+    </div>
+</div>
+
+               
+                <div class="row">
+    <div class="col-md-12">
+        <div class="statement-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="ts">Total Statements</h3>
+                </div>
+                <div class="col-md-3">
+                    <div class="hard statement-type">
+                        <div class="icon-container">
+                            <i class="fas fa-cogs"></i> 
+                        </div>
+                        <h3>25</h3>
+                        <p>Hardware</p>
                     </div>
                 </div>
-                <!-- Total Statements Content -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="statement-box">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h3 class="ts">Total Statements</h3>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="hard statement-type">
-                                        <h3>25</h3>
-                                        <p>Hardware</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="soft statement-type">
-                                        <h3>25</h3>
-                                        <p>Software</p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-md-3">
+                    <div class="soft statement-type">
+                        <div class="icon-container">
+                            <i class="fas fa-laptop-code"></i> 
                         </div>
+                        <h3>25</h3>
+                        <p>Software</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
         </section>
     </div>
-
-<div class="container mt-5">
-    
+    <div class="container mt-5">
     <div class="section-container">
-        
+    
         <div class="section-one">
             <label for="theme-select">Select Theme</label>
             <select id="theme-select" class="form-select">
-                <option value="">Choose a Theme</option>
-                <option value="QWxs">All</option>
-                <option value="MQ==">Agriculture, FoodTech & Rural Development</option>
-                <option value="Mg==">Blockchain & Cybersecurity</option>
-                <option value="Mw==" selected="">Clean & Green Technology</option>
-                <option value="NA==">Fitness & Sports</option>
-                <option value="NQ==">Heritage & Culture</option>
-                <option value="Ng==">MedTech / BioTech / HealthTech</option>
-                <option value="Nw==">Miscellaneous</option>
-                <option value="OA==">Renewable / Sustainable Energy</option>
-                <option value="OQ==">Robotics and Drones</option>
-                <option value="MTA=">Smart Automation</option>
-                <option value="MTE=">Smart Vehicles</option>
-                <option value="MTI=">Travel & Tourism</option>
-                <option value="MTM=">Transportation & Logistics</option>
-                <option value="MTQ=">Disaster Management</option>
-                <option value="MTU=">Smart Education</option>
-                <option value="MTY=">Toys & Games</option>
-                <option value="MTc=">Space Technology</option>
-                <option value="MTg=">Smart Resource Conservation</option>
+         
+                <option value="MTAx">Artificial Intelligence (AI)</option>
+    <option value="MTAy">Augmented Reality (AR)</option>
+    <option value="MTAz">Cybersecurity</option>
+    <option value="MTA0">HealthTech</option>
+    <option value="MTA1">Internet of Things (IoT)</option>
+    <option value="MTA2">Robotics and Automation</option>
+    <option value="MTA3">Safety</option>
+    <option value="MTA4">Signal Processing</option>
+    <option value="MTA5">Smart City</option>
+    <option value="MTA2">Sustainable Energy</option>
+    <option value="MTA3">Waste Management</option>
             </select>
         </div>
-        <!-- Section 2 (Right Aligned) -->
+    
+
+
         <div class="section-two">
-            <label for="category-select">Category</label>
+            <label for="category-select">Select Category</label>
             <select id="category-select" class="form-select">
-                <option value="">Choose a Category</option>
+             
+                <option value="" disabled selected hidden>Select Category</option>
                 <option value="Hardware">Hardware</option>
                 <option value="Software">Software</option>
             </select>
@@ -185,36 +143,33 @@
     </div>
 </div>
 
-        <!-- Table Start -->
-        <div class="table-section">
-            <!-- Table Start -->
-            <div class="row mt-5">
-                <div class="col-md-12">
-                    <h2>Problem Statement List</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Problem Statement ID</th>
-                                <th>Problem Statement Title</th>
-                                <th>Category</th>
-                                <th>Submitted Idea(s) Count</th>
-                                <th>Theme</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
-                            <!-- Rows will be populated by JavaScript -->
-                        </tbody>
-                    </table>
-    
-                    <!-- Pagination -->
-                    <div class="pagination" id="pagination">
-                        <!-- Pagination buttons will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    
+
+
+<div class="table-section">
+    <div class="table-container">
+        <h2>Problem Statement List</h2>
+        <table class="custom-table">
+            <thead class="custom-header">
+                <tr>
+                    <th class="custom-header-cell">S.No.</th>
+                    <th class="custom-header-cell">Problem Statement ID</th>
+                    <th class="custom-header-cell">Problem Statement Title</th>
+                    <th class="custom-header-cell">Category</th>
+                    <th class="custom-header-cell">Submitted Idea(s) Count</th>
+                    <th class="custom-header-cell">Theme</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+        <!-- Pagination buttons will be populated by JavaScript -->
+    </div>
+</div>
+
 
     
     
@@ -280,7 +235,25 @@
 <div id="problemModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p id="modal-description"></p>
+        <div class="modal-header">
+            <h2>Problem Statement Details</h2>
+        </div>
+        <div class="modal-body">
+            <table class="modal-table">
+                <tr>
+                    <th>Problem Statement ID</th>
+                    <td id="modal-ps-id"></td>
+                </tr>
+                <tr>
+                    <th>Problem Statement Title</th>
+                    <td id="modal-ps-title"></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td id="modal-description"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -336,7 +309,7 @@
                 <td>${row.ps_id}</td>
                 <td class="problem-title" data-description="${'Description: '+row.ps_description}">${row.ps}</td>
                 <td>${row.ps_type}</td>
-                <td>${0}</td>
+                <td>${'Software'}</td>
                 <td>${row.ps_domain}</td>
             `;
             tableBody.appendChild(tr);
@@ -437,6 +410,31 @@
 
     // Initial fetch and display
     fetchData();
+
+
+
+    // animation H,S
+
+    document.addEventListener("DOMContentLoaded", function() {
+    function animateCount(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            element.innerText = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    const hardwareElement = document.querySelector('.hard h3');
+    const softwareElement = document.querySelector('.soft h3');
+    animateCount(hardwareElement, 0, 25, 2500);
+    animateCount(softwareElement, 0, 25, 2500);
+});
+
 </script>
 
 
