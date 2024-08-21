@@ -294,8 +294,8 @@
                 <td>${row.id}</td>
                 <td>${row.ps_id}</td>
                 <td class="problem-title" data-description="${'Description: '+row.ps_description}">${row.ps}</td>
-                <td>${row.ps_type}</td>
-                <td>${'Software'}</td>
+                <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
+                <td>${'0'}</td>
                 <td>${row.ps_domain}</td>
             `;
             tableBody.appendChild(tr);
