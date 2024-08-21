@@ -20,11 +20,11 @@
             </div>
             <nav class="frame__demos">
                 <!-- <span class="frame__demos-item">Variations: </span>	 -->
-                <a class="frame__demos-item">Home</a>
+                <a class="frame__demos-item" href="/">Home</a>
                 <!-- <a class="frame__demos-item" href="">About</a> -->
-                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
-                <a class="frame__demos-item" href="">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
-                <a class="frame__demos-item" href="">Mentors</a>       
+                <a class="frame__demos-item" href="./rules_and_regulations.php">Rules & Guidelines</a>
+                <a class="frame__demos-item" href="./problem_statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="./mentorslist.php">Mentors</a>       
                          <!-- <a class="frame__demos-item" href="">FAQs</a> -->
                 <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
                 <div class="up">
