@@ -11,8 +11,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
     <script>
         document.documentElement.className="js";
         var supportsCssVars=function(){
@@ -25,6 +25,18 @@
         };
         supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
+      <script>
+    window.addEventListener('load', function () {
+      VANTA.WAVES({
+        el: "#vanta-background",
+        color: 0x111111,
+        shininess: 50,
+        waveHeight: 20,
+        waveSpeed: 1.5,
+        zoom: 1
+      });
+    });
+  </script>
     <style>
 
       
@@ -267,11 +279,22 @@
   margin: 0;
 }
 
+/* vanta js animation */
+#vanta-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 210%;
+      z-index: -1;
+      opacity: 0.9;
+    }
 
 
     </style>
 </head>
 <body>
+<div id="vanta-background"></div>
     <main>
         <div class="demo-1">
             <div class="frame frameNEW">
