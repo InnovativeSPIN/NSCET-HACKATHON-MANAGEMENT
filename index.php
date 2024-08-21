@@ -160,8 +160,8 @@
                 <span class="frame__demos-item">Home</span>
                 <!-- <a class="frame__demos-item" href="">About</a> -->
                 <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
-                <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
-                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
+                <a class="frame__demos-item" href="">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="">Mentors</a>       
                          <!-- <a class="frame__demos-item" href="">FAQs</a> -->
                 <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
                 <div class="up">
@@ -205,7 +205,7 @@
         <marquee>
             <a href="Problem_Statements.html" style="text-decoration: none; color: inherit;">
                 <img class="img_scroll" src="img/newstar.gif" alt="Announcement"> 
-                NSCET HACKTHON 2024 Problem Statements are live
+                The problem statements for NSCET Hackathon 2024 will be released at 8:00 PM, and the full website will be live right after that.
             </a>
         </marquee>
     </div>
@@ -236,7 +236,7 @@
         <h1 class="mb-3">THEMES</h1>
         <p>No problem is too big... No idea is too small</p>
     </div>
-   <div class="slider-container">
+   <!-- <div class="slider-container">
     <div class="slider">
         <div class="slider-item">
             <img src="img/icon_communication.png" alt="Smart Automation" title="">
@@ -323,7 +323,9 @@
             <h3>Space Technology</h3>
             <p>Space technology refers to the application of engineering principles to the design, development, manufacture, and operation of devices and systems for space travel and exploration.</p>
         </div>
-    </div>
+    </div> -->
+
+    <h1 style='text-align:center'>To be Updated !!</h1>
     <button class="slider-btn left-btn">&lt;</button>
     <button class="slider-btn right-btn">&gt;</button>
 </div>
@@ -341,7 +343,8 @@
         <h1 class="mb-4">NSCET Hackathon Process Flow and Timeline</h1>
         <div class="row g-5 align-items-center">
             <div class="col-12">
-                <img src="img/flow-chart.png" alt="Nscet hackathon Process Flow and Timeline" class="img-fluid w-100">
+                <h1 style='text-align:center'>To be Updated !!</h1>
+                <!-- <img src="img/flow-chart.png" alt="Nscet hackathon Process Flow and Timeline" class="img-fluid w-100"> -->
             </div>
         </div>
     </div>
