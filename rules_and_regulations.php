@@ -29,6 +29,70 @@
         };
         supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
+    <style>
+        /* Hero Section */
+        .hero {
+            background: url('img/hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .section h2 {
+            font-size: 1.75em;
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .section ul li:before {
+            content: "\2022";
+            color: #2980b9;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                float: none;
+                text-align: center;
+                padding-top: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -57,115 +121,79 @@
     </main>
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
     
-    <div id="vanta-background" style="width: 100vw; height: 100vh;">
-        <!-- PS START -->
-        <section class="total-statement totstat">
-            <div class="container">
-                <!-- Centered Heading -->
-                <div class="row">
-                    <div class="col-md-12 text-center mb-4">
-                        <h2 class="heading-spacing">Problem Statement</h2>
-                    </div>
-                </div>
-                <!-- Total Statements Content -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="statement-box">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h3 class="ts">Total Statements</h3>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="hard statement-type">
-                                        <h3>00</h3>
-                                        <p>Hardware</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="soft statement-type">
-                                        <h3>00</h3>
-                                        <p>Software</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+    <section class="hero">
+        <h1 style='margin-top: 128px'>Hackathon Rules & Regulations</h1>
+    </section>
 
-<div class="container mt-5">
-    
-    <div class="section-container">
-        
-        <div class="section-one">
-            <label for="theme-select">Select Theme</label>
-            <select id="theme-select" class="form-select">
-                <option value="">Choose a Theme</option>
-                <option value="QWxs">All</option>
-                <option value="MQ==">Agriculture, FoodTech & Rural Development</option>
-                <option value="Mg==">Blockchain & Cybersecurity</option>
-                <option value="Mw==" selected="">Clean & Green Technology</option>
-                <option value="NA==">Fitness & Sports</option>
-                <option value="NQ==">Heritage & Culture</option>
-                <option value="Ng==">MedTech / BioTech / HealthTech</option>
-                <option value="Nw==">Miscellaneous</option>
-                <option value="OA==">Renewable / Sustainable Energy</option>
-                <option value="OQ==">Robotics and Drones</option>
-                <option value="MTA=">Smart Automation</option>
-                <option value="MTE=">Smart Vehicles</option>
-                <option value="MTI=">Travel & Tourism</option>
-                <option value="MTM=">Transportation & Logistics</option>
-                <option value="MTQ=">Disaster Management</option>
-                <option value="MTU=">Smart Education</option>
-                <option value="MTY=">Toys & Games</option>
-                <option value="MTc=">Space Technology</option>
-                <option value="MTg=">Smart Resource Conservation</option>
-            </select>
+    <div class="container">
+        <div class="section">
+            <h2>Team Composition</h2>
+            <ul>
+                <li>Each team must consist of <span class="highlight">6 members</span>.</li>
+                <li>Teams must include members from at least <span class="highlight">two different departments</span>.</li>
+                <li>If a team primarily consists of male members, it must include at least <span class="highlight">2 female members</span>.</li>
+                <li>If a team primarily consists of female members, it must include at least <span class="highlight">2 male members</span>.</li>
+            </ul>
         </div>
-        <!-- Section 2 (Right Aligned) -->
-        <div class="section-two">
-            <label for="category-select">Category</label>
-            <select id="category-select" class="form-select">
-                <option value="">Choose a Category</option>
-                <option value="Hardware">Hardware</option>
-                <option value="Software">Software</option>
-            </select>
+
+        <div class="section">
+            <h2>Team Registration</h2>
+            <ul>
+                <li>Each team must register with a <span class="highlight">unique team name</span>.</li>
+                <li>Teams must provide details of each member during registration, including their name, department, and year of study.</li>
+                <li>The team must nominate a <span class="highlight">team leader</span> who will serve as the primary point of contact.</li>
+                <li>A registration fee of <span class="highlight">₹500 per member</span> is required.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Inter-Departmental Collaboration</h2>
+            <ul>
+                <li>Teams must include members from at least two different engineering departments to foster collaboration.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Team Registration and Participation</h2>
+            <ul>
+                <li>No changes in team composition are allowed once registered.</li>
+                <li>Each team can participate in only one edition of the hackathon, either <span class="highlight">Software or Hardware</span>.</li>
+                <li>Teams must select and work on <span class="highlight">one problem statement only</span> for the duration of the hackathon.</li>
+                <li>The problem statements will be allotted on a <span class="highlight">First Come First Serve</span> basis.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Team Responsibilities</h2>
+            <ul>
+                <li>Teams are responsible for managing their internal communication and task distribution.</li>
+                <li>All members should contribute equally to the project.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Disqualification Criteria</h2>
+            <ul>
+                <li>Teams that do not adhere to the team composition rules or attempt unauthorized changes will be disqualified.</li>
+                <li><span class="highlight">Plagiarism</span> or any form of unethical behavior will lead to immediate disqualification.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Code of Conduct</h2>
+            <ul>
+                <li>All participants must maintain a <span class="highlight">respectful and collaborative environment</span> throughout the hackathon.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Mentor Responsibilities</h2>
+            <ul>
+                <li>Each mentor can guide a maximum of two teams.</li>
+                <li>Mentors should encourage equal contribution among team members.</li>
+            </ul>
         </div>
     </div>
-</div>
-
-        <!-- Table Start -->
-        <div class="table-section">
-            <!-- Table Start -->
-            <div class="row mt-5">
-                <div class="col-md-12">
-                    <h2>Submitted Ideas</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Problem Statement ID</th>
-                                <th>Problem Statement Title</th>
-                                <th>Category</th>
-                                <th>Submitted Idea(s) Count</th>
-                                <th>Theme</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
-                            <!-- Rows will be populated by JavaScript -->
-                        </tbody>
-                    </table>
-    
-                    <!-- Pagination -->
-                    <div class="pagination" id="pagination">
-                        <!-- Pagination buttons will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    
 
     
     
