@@ -30,42 +30,7 @@
 
     </script>
     <style>
-        .demo-1{
- background: none;
-
-}
-.frame{
-    display: flex;
-    flex-direction: row;
-    background: black;
-    width: 100%;
-}
-.frame__title{
-    grid-area: title;
-	position: relative;
-	flex-basis: 60%;
-	display: flex;
-	justify-content: start;	
-	align-items: center;
-    z-index: 99;
-    height: 130px;
-}
-.frame__demos{
- display: inline-block;
-}
-.frame__demos-item{
-	font-family: "source-code-pro", monospace;
-    font-size: clamp(12px, 2.5vw, 17px) !important;
-    margin-right:40px ;
-    color: white !important;
-
-}
-.up{
-    position: absolute !important;
-    right: 40px;
-    top: 50px;
-
-}
+     
     </style>
 </head>
 <body>
@@ -83,7 +48,7 @@
        
         <section class="total-statement totstat">
             <div class="container">
-                <
+                
                 <div class="row">
     <div class="col-md-12 text-center mb-4">
         <h2 class="heading-spacing">

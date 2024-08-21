@@ -36,3 +36,20 @@
             </div>
                     </nav>
         </div>
+
+        <script>
+             document.addEventListener("DOMContentLoaded",()=>{
+            
+            const navicon=document.querySelector('.nav-icon')
+            const navbar=document.querySelector('.frame__demos')
+            navicon.addEventListener('click',()=>{
+                 if(navbar.style.display=='none' || navbar.style.display==''){
+                    navbar.style.display='flex'
+                 }
+                 else{
+                    navbar.style.display='none'
+                 }
+            })
+        })
+
+        </script>

@@ -42,20 +42,7 @@
      
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     <script>
-         document.addEventListener("DOMContentLoaded",()=>{
-            
-            const navicon=document.querySelector('.nav-icon')
-            const navbar=document.querySelector('.frame__demos')
-            navicon.addEventListener('click',()=>{
-                 if(navbar.style.display=='none' || navbar.style.display==''){
-                    navbar.style.display='flex'
-                 }
-                 else{
-                    navbar.style.display='none'
-                 }
-            })
-        })
-
+        
     </script>
         <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
