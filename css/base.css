@@ -180,7 +180,7 @@ body #cdawrap {
 .frame__title {
 	grid-area: title;
 	position: relative;
-	flex-basis: 50%;
+	flex-basis: 45%;
 	display: flex;
 	justify-content: start;	
 	align-items: center;
