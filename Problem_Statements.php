@@ -41,7 +41,7 @@
                     <span class="frame__demos-item">Home</span>
                     <a class="frame__demos-item" href="index2.html">About Hackathon</a>
                     <a class="frame__demos-item" href="index3.html">Guidelines</a>
-                    <a class="frame__demos-item" href="Problem_StatementsNEW.html">Problem Statements</a>
+                    <a class="frame__demos-item" href="problem_statements.php">Problem Statements</a>
                     <a class="frame__demos-item" href="index5.html">FAQs</a>
                     <a class="frame__demos-item" href="index6.html">Project Implementation</a>
                     <div class="up">

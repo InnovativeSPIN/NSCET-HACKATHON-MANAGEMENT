@@ -152,6 +152,7 @@
               class="line bottom"
               d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
       </svg>
+
     
             </div>
             <nav class="frame__demos">
@@ -159,7 +160,7 @@
                 <span class="frame__demos-item">Home</span>
                 <a class="frame__demos-item" href="">About</a>
                 <a class="frame__demos-item" href="">Guidelines</a>
-                <a class="frame__demos-item" href="problem_statements.html">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
+                <a class="frame__demos-item" href="problem_statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
                 <a class="frame__demos-item" href="">Project Implementation</a>
 
                 <div class="up">
