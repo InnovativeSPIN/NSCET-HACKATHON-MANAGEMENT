@@ -159,7 +159,7 @@
                 <!-- <span class="frame__demos-item">Variations: </span>	 -->
                 <span class="frame__demos-item">Home</span>
                 <a class="frame__demos-item" href="">About</a>
-                <a class="frame__demos-item" href="">Guidelines</a>
+                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
                 <a class="frame__demos-item" href="problem_statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
                 <a class="frame__demos-item" href="">Project Implementation</a>
 
