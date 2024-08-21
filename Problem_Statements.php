@@ -1,6 +1,3 @@
-<?php 
-    require_once('./resources/connection.php')
-?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -196,7 +193,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>S.No.</th>
+                                <!-- <th>S.No.</th> -->
                                 <th>Problem Statement ID</th>
                                 <th>Problem Statement Title</th>
                                 <th>Category</th>
@@ -334,11 +331,11 @@
         paginatedData.forEach(row => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>${row.id}</td>
+                // <td>${row.id}</td>
                 <td>${row.ps_id}</td>
                 <td class="problem-title" data-description="${'Description: '+row.ps_description}">${row.ps}</td>
                 <td>${row.ps_type}</td>
-                <td>${0}</td>
+                <td>${'Software'}</td>
                 <td>${row.ps_domain}</td>
             `;
             tableBody.appendChild(tr);

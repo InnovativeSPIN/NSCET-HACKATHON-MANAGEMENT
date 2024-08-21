@@ -207,8 +207,12 @@ width: 780px;
             </div>
         </div>
     </main>
-
-    <section class="content">
+<section class="content">
+    <iframe src="./updatd.pdf" width="100%" height="600px">
+    This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/file.pdf">Download PDF</a>.
+</iframe>
+</section>
+    <!-- <section class="content">
     <div class="ag-format-container">
   <div class="ag-courses_box">
 
@@ -419,7 +423,7 @@ width: 780px;
   </div>
 </div>
 
-    </section>
+    </section> -->
     
 <footer style="padding-top: 30px;">
     <div class="container">
