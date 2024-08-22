@@ -13,6 +13,7 @@
 /* PS  */
 .total-statement {
     padding: 60px 0;
+    font-family: "source-code-pro", monospace !important;
     
     /* background-color: #f8f9fa; */
     
@@ -25,6 +26,7 @@
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-left: -20px;
+    font-family: "source-code-pro", monospace !important;
 }
 
 .statement-box h3 {
@@ -93,7 +95,7 @@
     font-weight: 200;
     font-style: normal;
     
-    font-size: 3.25vw;
+    font-size: clamp(28px,3.25vw,35px);
   
 }
 
@@ -266,7 +268,6 @@ form {
 
 .statement-box {
 	background: linear-gradient(to right, #d8bdbd 0%, #eed35c 100%);
-
     border-radius: 12px;
     padding: 40px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -382,11 +383,14 @@ form {
     color: #333;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: "source-code-pro", monospace !important;
 }
 
 
+@media screen and (max-width:768px) {
 
-
+    
+}
 
 
 
@@ -973,6 +977,7 @@ body {
     .statement-box {
         padding: 20px;
         margin-top: 30px;
+        font-family: "source-code-pro", monospace !important;
     }
 
     .statement-box h3 {
@@ -989,6 +994,18 @@ body {
 
     .statement-type p {
         font-size: 16px;
+    }
+    .statement-box{
+    transform: scale(0.8);
+    }
+    .heading-spacing{
+        margin-top: 20px;
+    }
+    .heading-spacing i {
+        font-size: ; 
+    }
+    .heading{
+        font-size: 28px;
     }
 }
 

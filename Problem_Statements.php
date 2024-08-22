@@ -51,7 +51,7 @@
                 
                 <div class="row">
     <div class="col-md-12 text-center mb-4">
-        <h2 class="heading-spacing">
+        <h2 class="heading-spacing heading">
             <i>P</i>roblem <i>S</i>tatement
         </h2>
     </div>
