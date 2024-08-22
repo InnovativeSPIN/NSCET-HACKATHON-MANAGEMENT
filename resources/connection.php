@@ -10,7 +10,7 @@
     // Uncomment this in production
     $db_host = "localhost";
     $db_user = "nscet_webadmin";
-    $db_pass = "x}2^7Wk^H^.n";  
+    $db_pass = "x}2^7Wk^H^.n";
     $db_name = "nscet_hackathon";
 
     $conn = mysqli_connect($db_host,$db_user,$db_pass,$db_name);

@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" type="text/css" href="css/ps.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
     <script>
@@ -125,15 +125,23 @@
     </div> -->
 </div>
 
-
-
 <div class="table-section">
     <div class="table-container">
-    <div class="col-md-12 text-center mb-4">
-        <h2 class="heading-spacing" style='margin:0px'>
-            <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
-        </h2>
-    </div>
+        <div class="col-md-12 text-center mb-4">
+            <h2 class="heading-spacing  psl" style="margin:0px">
+                <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
+            </h2>
+        </div>
+
+        <div class="table-filter">
+            <h4>Category:</h4>
+            <select class="category-dropdown" id="category-filter">
+                <option value="all">All</option>
+                <option value="software">Software</option>
+                <option value="hardware">Hardware</option>
+            </select>
+        </div>
+
         <table class="custom-table">
             <thead class="custom-header">
                 <tr>
@@ -150,6 +158,8 @@
             </tbody>
         </table>
     </div>
+</div>
+
     <!-- Pagination -->
     <div class="pagination" id="pagination">
         <!-- Pagination buttons will be populated by JavaScript -->
@@ -204,11 +214,11 @@
                     <h3>Contact Us</h3>
                     <ul class="follow-box-contact">
                         <li>
-                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <i class="fa fa-phone" style="color: black;" aria-hidden="true"></i>
                             <a href="tel:+91 4546 263900">+91 4546 263900</a>
                         </li>
                         <li>
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-envelope " style="color: black;">  </i>
                             <a href="mailto:principal@nscet.org">principal@nscet.org</a>
                         </li>
                     </ul>
@@ -266,137 +276,150 @@
 </script>
 
 <script>
-    let tableData = [];
-    let currentPage = 1;
-    const rowsPerPage = 10;
+ let tableData = [];
+let currentPage = 1;
+const rowsPerPage = 10;
 
-    async function fetchData() {
-        try {
-            const response = await fetch('./resources/ps_fetch.php');
-            tableData = await response.json();
-            displayTable(currentPage); // Display data after fetching
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+async function fetchData() {
+    try {
+        const response = await fetch('./resources/ps_fetch.php');
+        tableData = await response.json();
+        displayTable(currentPage); // Display data after fetching
+    } catch (error) {
+        console.error('Error fetching data:', error);
     }
+}
 
-    function displayTable(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
-        const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = '';
+function displayTable(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const tableBody = document.getElementById('table-body');
+    tableBody.innerHTML = '';
 
-        const paginatedData = tableData.slice(start, end);
+    const filteredData = filterData();
+    const paginatedData = filteredData.slice(start, end);
 
-        paginatedData.forEach(row => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${row.id - 1}</td>
-                <td>${row.ps_id}</td>
-                <td class="problem-title" data-description="${'Description: '+row.ps_description}">${row.ps}</td>
-                <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
-                <td>${'0'}</td>
-                <td>${row.ps_domain}</td>
-            `;
-            tableBody.appendChild(tr);
-        });
+    paginatedData.forEach((row, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${index + start + 1}</td>
+            <td>${row.ps_id}</td>
+            <td class="problem-title" data-description="${row.ps_description}" data-ps-id="${row.ps_id}" data-ps-title="${row.ps}">${row.ps}</td>
+            <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
+            <td>${'0'}</td>
+            <td>${row.ps_domain}</td>
+        `;
+        tableBody.appendChild(tr);
+    });
 
-        attachTitleClickEvents();
+    attachTitleClickEvents();
+    updatePagination(filteredData.length);
+}
 
-        updatePagination();
-    }
-
-    function attachTitleClickEvents() {
-        const titles = document.querySelectorAll('.problem-title');
-        titles.forEach(title => {
-            title.addEventListener('click', function() {
-                // Get the description from the data attribute
-                const description = this.getAttribute('data-description');
-                
-                // Set the description in the modal
-                document.getElementById('modal-description').textContent = description;
-
-                // Open the modal
-                openModal();
-            });
+function filterData() {
+    const selectedCategory = document.getElementById('category-filter').value.toLowerCase();
+    if (selectedCategory === 'all') {
+        return tableData;
+    } else {
+        return tableData.filter(row => {
+            return row.ps_type == (selectedCategory === 'software' ? 0 : 1);
         });
     }
+}
 
-    function openModal() {
-        const modal = document.getElementById('problemModal');
-        modal.style.display = "block";
-    }
+function attachTitleClickEvents() {
+    const titles = document.querySelectorAll('.problem-title');
+    titles.forEach(title => {
+        title.addEventListener('click', function() {
+            const description = this.getAttribute('data-description');
+            document.getElementById('modal-description').textContent = description;
 
-    function closeModal() {
-        const modal = document.getElementById('problemModal');
-        modal.style.display = "none";
-    }
+            const ps_id = this.getAttribute('data-ps-id');
+            document.getElementById('modal-ps-id').textContent = ps_id;
 
-    function updatePagination() {
-        const totalPages = Math.ceil(tableData.length / rowsPerPage);
-        const paginationDiv = document.getElementById('pagination');
-        paginationDiv.innerHTML = '';
+            const ps_title = this.getAttribute('data-ps-title');
+            document.getElementById('modal-ps-title').textContent = ps_title;
+            openModal();
+        });
+    });
+}
 
-        // Previous button
-        const prevBtn = document.createElement('button');
-        prevBtn.id = 'prev-btn';
-        prevBtn.innerText = 'Previous';
-        prevBtn.onclick = prevPage;
-        prevBtn.disabled = currentPage === 1;
-        paginationDiv.appendChild(prevBtn);
+function openModal() {
+    const modal = document.getElementById('problemModal');
+    modal.style.display = "block";
+}
 
-        // Page number links
-        for (let i = 1; i <= totalPages; i++) {
-            const pageLink = document.createElement('span');
-            pageLink.innerText = i;
-            pageLink.className = 'page-link';
-            if (i === currentPage) {
-                pageLink.classList.add('active');
-            }
-            pageLink.onclick = () => goToPage(i);
-            paginationDiv.appendChild(pageLink);
+function closeModal() {
+    const modal = document.getElementById('problemModal');
+    modal.style.display = "none";
+}
+
+function updatePagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / rowsPerPage);
+    const paginationDiv = document.getElementById('pagination');
+    paginationDiv.innerHTML = '';
+
+    const prevBtn = document.createElement('button');
+    prevBtn.id = 'prev-btn';
+    prevBtn.innerText = 'Previous';
+    prevBtn.onclick = prevPage;
+    prevBtn.disabled = currentPage === 1;
+    paginationDiv.appendChild(prevBtn);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('span');
+        pageLink.innerText = i;
+        pageLink.className = 'page-link';
+        if (i === currentPage) {
+            pageLink.classList.add('active');
         }
-
-        // Next button
-        const nextBtn = document.createElement('button');
-        nextBtn.id = 'next-btn';
-        nextBtn.innerText = 'Next';
-        nextBtn.onclick = nextPage;
-        nextBtn.disabled = currentPage === totalPages;
-        paginationDiv.appendChild(nextBtn);
+        pageLink.onclick = () => goToPage(i);
+        paginationDiv.appendChild(pageLink);
     }
 
-    function goToPage(page) {
-        currentPage = page;
+    const nextBtn = document.createElement('button');
+    nextBtn.id = 'next-btn';
+    nextBtn.innerText = 'Next';
+    nextBtn.onclick = nextPage;
+    nextBtn.disabled = currentPage === totalPages;
+    paginationDiv.appendChild(nextBtn);
+}
+
+function goToPage(page) {
+    currentPage = page;
+    displayTable(currentPage);
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
         displayTable(currentPage);
     }
+}
 
-    function prevPage() {
-        if (currentPage > 1) {
-            currentPage--;
-            displayTable(currentPage);
-        }
+function nextPage() {
+    const totalPages = Math.ceil(filterData().length / rowsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayTable(currentPage);
     }
+}
 
-    function nextPage() {
-        const totalPages = Math.ceil(tableData.length / rowsPerPage);
-        if (currentPage < totalPages) {
-            currentPage++;
-            displayTable(currentPage);
-        }
+document.querySelector('.close').onclick = closeModal;
+window.onclick = function(event) {
+    const modal = document.getElementById('problemModal');
+    if (event.target == modal) {
+        closeModal();
     }
+}
 
-    document.querySelector('.close').onclick = closeModal;
-    window.onclick = function(event) {
-        const modal = document.getElementById('problemModal');
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
+document.getElementById('category-filter').addEventListener('change', function() {
+    currentPage = 1;
+    displayTable(currentPage);
+});
 
-    // Initial fetch and display
-    fetchData();
-
+// Initial fetch and display
+fetchData();
 
 
     // animation H,S
@@ -420,6 +443,21 @@
     animateCount(hardwareElement, 0, 25, 2500);
     animateCount(softwareElement, 0, 25, 2500);
 });
+document.getElementById('category-filter').addEventListener('change', function() {
+    const selectedCategory = this.value.toLowerCase();  // Get the selected category
+    const rows = document.querySelectorAll('#table-body tr');  // Select all rows in the table body
+
+    rows.forEach(row => {
+        const category = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+        if (selectedCategory === 'all' || category === selectedCategory) {
+            row.style.display = '';  // Show the row if it matches the selected category or if 'All' is selected
+        } else {
+            row.style.display = 'none';  // Hide the row if it doesn't match
+        }
+    });
+});
+
+
 
 </script>
 

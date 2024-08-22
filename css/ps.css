@@ -70,7 +70,7 @@
 
 
 .heading-spacing {
-    margin-top: 100px; 
+    margin-top: 100px !important; 
     font-family: "greycliff-cf", sans-serif;
     font-weight: 600;
     background-image: linear-gradient(45deg, #e8c942, rgb(148, 98, 209));
@@ -81,6 +81,10 @@
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     font-size: 2.5vw;
+    
+   
+  
+    
 
 }
 
@@ -90,6 +94,7 @@
     font-style: normal;
     
     font-size: 3.25vw;
+  
 }
 
 
@@ -107,7 +112,10 @@
 
 
 .table-section {
-    padding: 60px 0;
+    padding: 60px 0;    
+    font-family: "source-code-pro", monospace !important;
+    min-height: 600px;
+ 
 }
 
 .table-section h2 {
@@ -165,6 +173,42 @@ tbody tr:hover {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* A,S,H */
+
+
+.table-filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 30px; /* Align with table container padding */
+}
+
+.table-filter h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px; /* Space between label and dropdown */
+    font-family: "source-code-pro", monospace !important;
+}
+
+.category-dropdown {
+    padding: 5px;       
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: "source-code-pro", monospace !important;
+}
+
+.category-dropdown:focus {
+    outline: none;
+    border-color: #000000;
+}
+
+
+
 
 
 .container.mt-5 {
@@ -467,7 +511,7 @@ tbody tr:hover {
 /* Pagination Styles */
 .pagination {
     text-align: center;
-    margin-top: 20px;
+    margin-top: -35px;
     margin-left: 20px;
 }
 
@@ -565,6 +609,7 @@ tbody tr:hover {
 .footer {
     background: url(../img/footer.png) center center no-repeat;
     background-size: contain;
+    
 }
 
 .footer .btn.btn-social {
@@ -601,7 +646,6 @@ tbody tr:hover {
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
-    font-family: "source-code-pro", monospace;
     font-weight: 900;
     margin-right: 10px;
 }
@@ -637,11 +681,21 @@ tbody tr:hover {
     border-right: none;
 }
 
+.problem-title{
 
+    text-decoration: underline;
+}
 
+.problem-title:hover{
+
+    cursor: pointer;
+    
+}
 footer {
     background: linear-gradient(to right, #e2d6d6 0%, #e4dbb2 100%);
     color: #000000; /* White text color */
+    margin-top: 60px;
+    font-family: "source-code-pro", monospace !important;
 }
 
 .follow-box {
@@ -651,6 +705,7 @@ footer {
 .follow-box h3 {
     color: #000000; /* White heading color */
     margin-bottom: 15px;
+    font-family: "source-code-pro", monospace !important;
     
 }
 
@@ -708,8 +763,15 @@ footer a:hover {
 
 /* pop up  */
 
+
+
+
 /* Modal Background */
 /* Modal Background */
+
+
+
+
 .modal {
     display: none;
     position: fixed;
