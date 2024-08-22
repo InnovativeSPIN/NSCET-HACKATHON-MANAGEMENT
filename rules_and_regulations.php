@@ -187,16 +187,16 @@ a:hover {
     color: #e74c3c;
     text-decoration: underline;
 }
+footer {
+    padding-top: 30px;
+}
+
 
 #particles-js {
     width: 100vw; /* Ensure it takes full viewport width */
     position: absolute;
     z-index: 1;
-    height:250vh;
-}
-
-footer {
-    padding-top: 30px;
+    height: 270vh; /* Default height for larger screens */
 }
 
 /* Responsive Styles */
@@ -205,6 +205,9 @@ footer {
         --columns: 20;
         --page-padding: 1.5rem;
     }
+    #particles-js {
+        height: 120vh; /* Slightly increased height for medium screens */
+    }
 }
 
 @media (max-width: 768px) {
@@ -212,7 +215,7 @@ footer {
         --columns: 10;
         --page-padding: 1rem;
     }
-    
+
     .container {
         padding: 10px;
         width: 100%; /* Ensure container uses full width */
@@ -223,7 +226,18 @@ footer {
         text-align: center;
         padding-top: 10px;
     }
+    
+    #particles-js {
+        height: 190vh; /* Reduced height for smaller screens */
+    }
 }
+
+@media (max-width: 480px) {
+    #particles-js {
+        height: 190vh; /* Further reduced height for very small screens */
+    }
+}
+
 
     </style>
 </head>
