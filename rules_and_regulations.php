@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Problem Statements</title>
+    <title>Rules & Regulations</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" type="text/css" href="css/ps.css" />
@@ -30,6 +30,25 @@
         supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
     <style>
+
+*{
+     font-family: "source-code-pro", monospace !important;
+}
+
+
+@media (max-width: 1200px) {
+    :root {
+        --columns: 20;
+        --page-padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --columns: 10;
+        --page-padding: 1rem;
+    }
+}
         /* Hero Section */
         .hero {
             background: url('img/hero-bg.jpg') no-repeat center center/cover;
@@ -54,34 +73,55 @@
             color: #e74c3c;
         }
 
+     
         /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            z-index: 99 ;
-            position: relative;
-        }
-        .section {
-            background: #fff;
+        body {
+    font-family: "source-code-pro", monospace !important;
+    background-color: #f4f6f7; /* Light background for the body */
+    color: #2c3e50; /* Default text color */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    z-index: 99;
+    position: relative;
+
+}
+.section {
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a light border for better effect */
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-           
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            color: #fff;
+            font-family: "source-code-pro", monospace !important;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .section h2 {
             font-size: 1.75em;
             color: #2980b9;
             margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .section ul {
             list-style-type: none;
             padding: 0;
+            margin-left: 20px;
         }
         .section ul li {
             margin-bottom: 10px;
             font-size: 1.1em;
+            line-height: 1.4;
         }
         .section ul li:before {
             content: "\2022";
@@ -94,9 +134,20 @@
         .highlight {
             color: #e74c3c;
             font-weight: bold;
+            text-decoration: underline;
         }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
         #particles-js{
-    width: 100%;
+    width: 250%;
     
    position: absolute;
     z-index: 1;
@@ -128,8 +179,11 @@
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
     <div id="particles-js"></div>
     <section class="hero">
-        <h1 style='margin-top: 128px'>Hackathon Rules & Regulations</h1>
-        <div class="line"></div>
+    <div class="col-md-12 text-center mb-4">
+    <h2 class="heading-spacing">
+        <i>H</i>ackathon <i>R</i>ules & <i>R</i>egulations
+    </h2>
+</div>
     </section>
 
     <div class="container">

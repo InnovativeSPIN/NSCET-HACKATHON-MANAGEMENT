@@ -1001,9 +1001,7 @@ body {
     .heading-spacing{
         margin-top: 20px;
     }
-    .heading-spacing i {
-        font-size: ; 
-    }
+ 
     .heading{
         font-size: 28px;
     }
@@ -1047,3 +1045,6 @@ body {
 #theme-select{
     margin-left: -90px;
 }
+
+
+/* ani */

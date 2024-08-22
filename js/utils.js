@@ -21,3 +21,4 @@ export {
     getWinSize,
     isFirefox,
 };
+
