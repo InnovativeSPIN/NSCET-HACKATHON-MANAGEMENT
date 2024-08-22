@@ -1,5 +1,5 @@
 <?php 
-    require_once('./resources/connection.php')
+    // require_once('./resources/connection.php')
 ?>
 
 <!DOCTYPE html>
@@ -36,10 +36,22 @@
             color: #fff;
             padding: 60px 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+           
+            align-items: center;
+
+        }
+        .line{
+            height: 1.5px;
+            margin-top: 10px;
+            background: #2980b9;
+            width: 150px;
         }
         .hero h1 {
-            font-size: 2.5em;
+            font-size: 2.7em;
             margin: 0;
+            color: #e74c3c;
         }
 
         /* Main Content */
@@ -47,6 +59,8 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
+            z-index: 99 ;
+            position: relative;
         }
         .section {
             background: #fff;
@@ -54,6 +68,7 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+           
         }
         .section h2 {
             font-size: 1.75em;
@@ -80,7 +95,16 @@
             color: #e74c3c;
             font-weight: bold;
         }
-
+        #particles-js{
+    width: 100%;
+    
+   position: absolute;
+    z-index: 1;
+  }
+ 
+  body{
+    background:black;
+  }
         /* Responsive Styles */
         @media (max-width: 768px) {
             nav {
@@ -91,40 +115,21 @@
             .container {
                 padding: 10px;
             }
+           
         }
     </style>
 </head>
 <body>
     <main>
         <div class="demo-1">
-            <div class="frame frameNEW">
-                <div class="frame__title"> 
-                    <img class="logonscet" src="img/nscetlogo.png" alt="NSCET Logo" width="130px">
-                </div>
-                <nav class="frame__demos">
-                <!-- <span class="frame__demos-item">Variations: </span>	 -->
-                <span class="frame__demos-item">Home</span>
-                <!-- <a class="frame__demos-item" href="">About</a> -->
-                <a class="frame__demos-item" href="rules_and_regulations.php">Rules & Guidelines</a>
-                <a class="frame__demos-item" href="Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
-                <a class="frame__demos-item" href="mentorslist.php">Mentors</a>       
-                         <!-- <a class="frame__demos-item" href="">FAQs</a> -->
-                <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
-                <div class="up">
-                <div class="new">
-                    <div class="new1">
-                        <a class="frame__demos-item vutton-custine" href="">Register</a>
-                    </div>
-                </div>
-            </div>
-                    </nav>
-            </div>
+            <?php include("./resources/header.php") ?>
         </div>
     </main>
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
-    
+    <div id="particles-js"></div>
     <section class="hero">
         <h1 style='margin-top: 128px'>Hackathon Rules & Regulations</h1>
+        <div class="line"></div>
     </section>
 
     <div class="container">
@@ -180,6 +185,7 @@
                 <li><span class="highlight">Plagiarism</span> or any form of unethical behavior will lead to immediate disqualification.</li>
             </ul>
         </div>
+       
 
         <div class="section">
             <h2>Code of Conduct</h2>
@@ -493,6 +499,116 @@
     // Initial fetch and display
     fetchData();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value":200,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#FFA500"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": ""
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#FFA500",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 0.8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  
+ 
 
 
 </body>
