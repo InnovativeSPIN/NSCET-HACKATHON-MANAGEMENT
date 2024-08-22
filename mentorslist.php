@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Problem Statements</title>
+    <title>Mentor Lists</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" type="text/css" href="css/ps.css" />
@@ -41,6 +41,19 @@
     <style>
 
       
+
+body {
+  font-family: 'source-code-pro', monospace !important;
+  overflow-x: hidden !important;
+}
+
+
+.ag-courses_item,
+.ag-courses_item * {
+  font-family: 'source-code-pro', monospace !important;
+}
+
+
 .ag-format-container {
   width: 1142px;
   margin: 0 auto;
@@ -75,7 +88,7 @@
 /* Link styling inside cards */
 .ag-courses-item_link {
   display: block;
-  padding: 30px 20px;
+  padding: 10px 10px;
   background-color: #121212;
   overflow: hidden;
   position: relative;
@@ -99,7 +112,7 @@
 /* Title styling */
 .ag-courses-item_title {
   min-height: 87px;
-  margin: 0 0 25px;
+  margin-bottom: -30px;
   overflow: hidden;
   font-weight: bold;
   font-size: 30px;
@@ -108,8 +121,22 @@
   position: relative;
 }
 
+/* Designation styling */
+.ag-courses-item_designation {
+  min-height: 80px; /* Adjust if needed */
+  margin-top: -5px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+
 /* Date box styling */
 .ag-courses-item_date-box {
+  margin: -10px 0 20px;
   font-size: 18px;
   color: #FFF;
   z-index: 2;
@@ -129,7 +156,7 @@
   transition: all .5s ease;
 }
 
-.ag-courses-item_designation {
+/* .ag-courses-item_designation {
 
   min-height: 50px;
   margin: 0 0 0px;
@@ -140,7 +167,7 @@
   z-index: 2;
   position: relative;
 
-}
+} */
 
 /* Optional color variations for different course items */
 .ag-courses_item:nth-child(1n) .ag-courses-item_bg {
@@ -206,7 +233,7 @@
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 0px;
+  margin-top: -125px;
   padding-top: 0px;
   flex-wrap: wrap;
 }
@@ -232,42 +259,51 @@
 /* Specific color for active states */
 .department-btn.cse.active,
 .department-btn.cse.active:hover {
-  background-color: #f4a460; /* Sandal */
+  background-color: #ffab73; /* Sandal */
+  color: #000;
 }
 
 .department-btn.it.active,
 .department-btn.it.active:hover {
-  background-color: #e6e6fa; /* Lavender */
+  background-color: #c668fc; /* Lavender */
+  color: #000;
+
 }
 
 .department-btn.aids.active,
 .department-btn.aids.active:hover {
-  background-color: #007ba7; /* Cerulean */
+  background-color: #6effe4; /* Cerulean */
+  color: #000;
 }
 
 .department-btn.eee.active,
 .department-btn.eee.active:hover {
   background-color: #c0c0c0; /* Silver */
+  color: #000;
 }
 
 .department-btn.ece.active,
 .department-btn.ece.active:hover {
-  background-color: #ffc0cb; /* Pink */
+  background-color: #ff75e1; /* Pink */
+  color: #000;
 }
 
 .department-btn.mech.active,
 .department-btn.mech.active:hover {
-  background-color: #add8e6; /* Light Blue */
+  background-color: #5c6ef2; /* Light Blue */
+  color: #000;
 }
 
 .department-btn.civil.active,
 .department-btn.civil.active:hover {
-  background-color: #ffff00; /* Yellow */
+  background-color: #d2ff70; /* Yellow */
+  color: #000;
 }
 
 .department-btn.sh.active,
 .department-btn.sh.active:hover {
   background-color: #add8e6; /* Light Blue */
+  color: #000;
 }
 
 
@@ -337,6 +373,100 @@
     z-index: 1;
     background-color: transparent; /* Keep it transparent since the tint is on the link */
 }
+
+
+.heading-spacing {
+    padding: 160px;
+    margin:0px ;
+    font-size: clamp(45px.8vw,85px);
+    text-align: center;
+     
+  
+}
+body{
+    overflow-X:hidden !important;
+}
+@media  screen and (max-width:786px) {
+    .heading-spacing{
+        font-size: 45px !important;
+        /* display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center; */
+
+    }
+    .heading-spacing i{
+        font-size:45px !important;
+    }
+   
+
+}
+
+
+
+/* Desgination */
+
+/* Interested Topics Heading Styling */
+.ag-courses-item_interest-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9b234; /* Common color that doesn't change */
+  margin-bottom: 5px; /* Space between heading and topics list */
+  z-index: 2;
+  position: relative;
+}
+
+/* Mobile Responsive CSS */
+@media only screen and (max-width: 979px) {
+  .ag-courses-item_interest-heading {
+    font-size: 14px; /* Smaller font for tablets */
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-courses-item_interest-heading {
+    font-size: 13px; /* Smaller font for smaller devices */
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ag-courses-item_interest-heading {
+    font-size: 12px; /* Smaller font for mobile devices */
+    margin-bottom: 3px; /* Reduce space for compactness */
+  }
+}
+
+
+
+/* General footer styling */
+footer {
+    background: linear-gradient(to right, #e2d6d6 0%, #e4dbb2 100%);
+    color: #000000; /* Text color */
+    margin-top: 60px;
+    font-family: "source-code-pro", monospace !important;
+    padding: 20px; /* Add some padding for better spacing */
+    text-align: center; /* Center align text for better readability */
+}
+
+/* Ensure text is readable and aligned well on smaller screens */
+@media only screen and (max-width: 767px) {
+    footer {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for readability */
+    }
+}
+
+/* Further adjustments for very small screens, like mobile phones in portrait mode */
+@media only screen and (max-width: 480px) {
+    footer {
+        padding: 5px; /* Reduce padding for very small screens */
+        font-size: 12px; /* Further reduce font size for readability */
+    }
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -353,7 +483,7 @@
 </section> -->
 
 <div class="col-md-12 text-center mb-4">
-        <h1 class="heading-spacing" style='padding: 100px;margin:0px'>
+        <h1 class="heading-spacing" >
         <i>H</i>ackathon <i>M</i>entors
         </h1>
     </div>
@@ -367,6 +497,7 @@
   <button class="department-btn mech" onclick="selectButton(this)">MECH</button>
   <button class="department-btn civil" onclick="selectButton(this)">CIVIL</button>
   <button class="department-btn sh" onclick="selectButton(this)">S&H</button>
+  <button class="department-btn others" onclick="selectButton(this)">OTHERS</button>
 </div>
 
     
@@ -378,14 +509,26 @@
     
 
 
+    <!-- others Staffs -->
+  <div class="ag-courses_item others" data-department="others">
+    <a href="#" class="ag-courses-item_link bl ">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">N.Nagarathinam</div>
+        <div class="ag-courses-item_designation">Head of Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
+        <div class="ag-courses-item_date-box">Structural design ,Quantity Surveying,Surveying and Measurements,CAD Drafting </div>
+    </a>
+</div>
+
 
 
   <!-- CSE Staffs -->
   <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link bl ">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">J.Mathalai Raj  </div>
+        <div class="ag-courses-item_title">J.Mathalai Raj</div>
         <div class="ag-courses-item_designation">Head of Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Software Engineering, Data Structures, Algorithms, Machine Learning</div>
     </a>
 </div>
@@ -393,8 +536,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link bl ">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Arul Jothi S  </div>
+        <div class="ag-courses-item_title">S.Arul Jothi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Database Management Systems, Cloud Computing, Web Technologies</div>
     </a>
 </div>
@@ -404,6 +548,7 @@
         <div class="ag-courses-item_bg"></div>
         <div class="ag-courses-item_title">K.Deepiga  </div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Artificial Intelligence, Computer Networks, Cybersecurity</div>
     </a>
 </div>
@@ -411,8 +556,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.A.Solairaj  </div>
+        <div class="ag-courses-item_title">Dr.A.Solairaj</div>
         <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Computer Vision, Pattern Recognition, Data Mining</div>
     </a>
 </div>
@@ -420,8 +566,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">AYYANAPRABU J  </div>
+        <div class="ag-courses-item_title">J.Ayyanaprabu</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Embedded Systems, Internet of Things (IoT), Software Development</div>
     </a>
 </div>
@@ -429,8 +576,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Kesavamoorthy N  </div>
+        <div class="ag-courses-item_title">N.Kesavamoorthy</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Theoretical Computer Science, Compiler Design, Operating Systems</div>
     </a>
 </div>
@@ -438,8 +586,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">KEERTHANA. R  </div>
+        <div class="ag-courses-item_title">R.KEERTHANA</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Human-Computer Interaction, Mobile Computing, Augmented Reality</div>
     </a>
 </div>
@@ -447,8 +596,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Udhaya Kumar R  </div>
+        <div class="ag-courses-item_title">R.Udhaya Kumar</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Software Project Management, Agile Methodologies, System Design</div>
     </a>
 </div>
@@ -456,8 +606,9 @@
 <div class="ag-courses_item cse" data-department="cse">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">ARUNJUNAI KARTHICK K  </div>
+        <div class="ag-courses-item_title">K.Arunjunai Karthick</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Computer Architecture, Networking, Quantum Computing</div>
     </a>
 </div>
@@ -465,11 +616,23 @@
 
 <!-- IT Staffs -->
 
+
+<div class="ag-courses_item it" data-department="it">
+    <a href="#" class="ag-courses-item_link bl ">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Dr.M.Sathya</div>
+        <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
+        <div class="ag-courses-item_date-box">Networking ,Internet of Things ,Artificial Inteligence , OOPS </div>
+    </a>
+</div>
+
 <div class="ag-courses_item it" data-department="it">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Keerthana G  </div>
+        <div class="ag-courses-item_title">G.Keerthana</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">DBMS, OOPs, HTML</div>
     </a>
 </div>
@@ -477,8 +640,9 @@
 <div class="ag-courses_item it" data-department="it">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">J. KANIMOLI  </div>
+        <div class="ag-courses-item_title">J. Kanimoli</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Artificial Intelligence, Computer Networks, IoT</div>
     </a>
 </div>
@@ -486,8 +650,9 @@
 <div class="ag-courses_item it" data-department="it">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Sangeetha  </div>
+        <div class="ag-courses-item_title">A.Sangeetha</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Computer Network, Data Science, Artificial Intelligence</div>
     </a>
 </div>
@@ -497,8 +662,9 @@
 <div class="ag-courses_item aids" data-department="aids">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Vignesh L S  </div>
+        <div class="ag-courses-item_title">L.S.Vignesh</div>
         <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Artificial Intelligence and Machine Learning, Data Science and Big Data Analytics</div>
     </a>
 </div>
@@ -506,8 +672,9 @@
 <div class="ag-courses_item aids" data-department="aids">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Archana R  </div>
+        <div class="ag-courses-item_title">R.Archana</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Data Science, Artificial Intelligence</div>
     </a>
 </div>
@@ -515,8 +682,9 @@
 <div class="ag-courses_item aids" data-department="aids">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Vinoth Kumar J  </div>
+        <div class="ag-courses-item_title">J.Vinoth Kumar</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</div>
     </a>
 </div>
@@ -527,8 +695,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr R ATHILINGAM  </div>
+        <div class="ag-courses-item_title">Dr.R.Athilingam</div>
         <div class="ag-courses-item_designation">Head of Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">IOT, Image Processing, Embedded System</div>
     </a>
 </div>
@@ -536,8 +705,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Nishetha Jeflin Nixon  </div>
+        <div class="ag-courses-item_title">Nishetha Jeflin Nixon</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Power Electronics, Renewable Energy System, Inverter and Converters, Power and Energy Systems</div>
     </a>
 </div>
@@ -545,8 +715,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">SHIVA C  </div>
+        <div class="ag-courses-item_title">C.Shiva</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Power Electronics, Renewable Energy Resources, Power Quality, Smart Automation</div>
     </a>
 </div>
@@ -554,8 +725,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Chitra R  </div>
+        <div class="ag-courses-item_title">R.Chitra</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Smart Grid, Wireless Communication, Power System Management, Renewable Energy</div>
     </a>
 </div>
@@ -563,8 +735,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">ABIRAMI N  </div>
+        <div class="ag-courses-item_title">N.Abirami</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Digital Electronics, VLSI Design, Machine Learning</div>
     </a>
 </div>
@@ -572,8 +745,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Ganesh  </div>
+        <div class="ag-courses-item_title">K.Ganesh</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Power Systems, Renewable Energy, Energy Management</div>
     </a>
 </div>
@@ -581,8 +755,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Vijayalakshmi M  </div>
+        <div class="ag-courses-item_title">M.Vijayalakshmi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Power Factor Improvement through Capacitor Placement, Smart Grid, Restructuring of Power System, Robotics</div>
     </a>
 </div>
@@ -590,8 +765,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">RAJA KARTHICK R  </div>
+        <div class="ag-courses-item_title">R.Raja Karthick</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Distributed Control System, Renewable Energy, Electronic Devices and Circuits, PLC and SCADA</div>
     </a>
 </div>
@@ -599,8 +775,9 @@
 <div class="ag-courses_item eee" data-department="eee">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">PANDI PRABAKARAN R  </div>
+        <div class="ag-courses-item_title">R.Pandi Prabakaran</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">IOT, Arduino - Node Mcu, ESP32, Smart Grid, Embedded System</div>
     </a>
 </div>
@@ -611,16 +788,18 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr T Venish Kumar  </div>
+        <div class="ag-courses-item_title">Dr.T.Venish Kumar</div>
         <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">VLSI Design, Embedded Systems (Both Hardware and Software), Image Processing</div>
     </a>
 </div>
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">PRATHAP S  </div>
+        <div class="ag-courses-item_title">S.Prathap</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Network, Communication, Embedded</div>
     </a>
 </div>
@@ -630,8 +809,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Mathavan  </div>
+        <div class="ag-courses-item_title">N.Mathavan</div>
         <div class="ag-courses-item_designation">Vice Principal</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Internet of Things, RFID, Sensor</div>
     </a>
 </div>
@@ -639,8 +819,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">IDHAYACHANDRAN M  </div>
+        <div class="ag-courses-item_title">M.Idhayachandran</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">VLSI Design, Electronic Circuit Analysis, Digital Electronics, Digital Signal Processing</div>
     </a>
 </div>
@@ -648,8 +829,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Pradeep Kumar R  </div>
+        <div class="ag-courses-item_title">R.Pradeep Kumar</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Nanoparticles, Digital Systems Design, Digital Image Processing, Internet of Things</div>
     </a>
 </div>
@@ -657,8 +839,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">TAMILSELVI T  </div>
+        <div class="ag-courses-item_title">T.TAMILSELVI</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">VLSI Design, Wireless Communication, Signal Processing, Internet of Things</div>
     </a>
 </div>
@@ -666,8 +849,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Kalaivani  </div>
+        <div class="ag-courses-item_title">S.Kalaivani</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Signal Processing, Communication</div>
     </a>
 </div>
@@ -675,8 +859,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">P.Shantha Devi  </div>
+        <div class="ag-courses-item_title">P.Shantha Devi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">VLSI Design, Image Processing, IoT</div>
     </a>
 </div>
@@ -684,8 +869,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Gowthami P  </div>
+        <div class="ag-courses-item_title">P.Gowthami</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Image Processing, Communication Systems, Digital Electronics, Nanotechnology</div>
     </a>
 </div>
@@ -693,8 +879,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Monica Dhana Ranjini  </div>
+        <div class="ag-courses-item_title">M.Monica Dhana Ranjini</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Image Processing, Embedded Systems, Wearable Device</div>
     </a>
 </div>
@@ -702,8 +889,9 @@
 <div class="ag-courses_item ece" data-department="ece">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Bharathi Kannan  </div>
+        <div class="ag-courses-item_title">K.Bharathi Kannan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">VLSI Design, Signal Processing, Embedded Systems, Communication System</div>
     </a>
 </div>
@@ -715,8 +903,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.C.Mathalai Sundaram  </div>
+        <div class="ag-courses-item_title">Dr.C.Mathalai Sundaram</div>
         <div class="ag-courses-item_designation">Professor & Principal</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Composite Tool Material, Optimization, Internet of Things, Reverse Engineering</div>
     </a>
 </div>
@@ -724,8 +913,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr B.Radha Krishnan  </div>
+        <div class="ag-courses-item_title">Dr B.Radha Krishnan</div>
         <div class="ag-courses-item_designation">Associate Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Materials Science, Manufacturing Process, Waste Management, E-Car Technology</div>
     </a>
 </div>
@@ -733,8 +923,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A. Vembathurajesh  </div>
+        <div class="ag-courses-item_title">A. Vembathurajesh</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Materials, Thermal Engineering, Composites, High Temperature Application Materials</div>
     </a>
 </div>
@@ -742,8 +933,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A. VENNIMALAI RAJAN  </div>
+        <div class="ag-courses-item_title">A. Vennimalai Rajan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Composite Materials</div>
     </a>
 </div>
@@ -751,8 +943,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Surulimani P  </div>
+        <div class="ag-courses-item_title">P.Surulimani</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Manufacturing, Welding</div>
     </a>
 </div>
@@ -760,8 +953,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Harikishore  </div>
+        <div class="ag-courses-item_title">S.Harikishore</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Automated Manufacturing, Development of Tools, Optimization Process, Quality Control</div>
     </a>
 </div>
@@ -769,8 +963,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">SIVAGANESAN V  </div>
+        <div class="ag-courses-item_title">V.Sivaganesan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Engineering Design, Manufacturing Technology, Design Softwares</div>
     </a>
 </div>
@@ -778,8 +973,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">ARU KUMAR G  </div>
+        <div class="ag-courses-item_title">G.Arun Kumar</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Manufacturing Engineering</div>
     </a>
 </div>
@@ -787,8 +983,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Santhaseelan R  </div>
+        <div class="ag-courses-item_title">R.Santhaseelan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Manufacturing, Safety, Design</div>
     </a>
 </div>
@@ -796,8 +993,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">NAGARAJA R  </div>
+        <div class="ag-courses-item_title">R.Nagaraja</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Engineering Design, Composite Material, Machine Vision, Optimization</div>
     </a>
 </div>
@@ -805,8 +1003,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">NAGARAJAN B  </div>
+        <div class="ag-courses-item_title">B.Nagarajan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Coating, Composites, Manufacturing, Material Testing</div>
     </a>
 </div>
@@ -814,8 +1013,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">V.Thirumalairaj  </div>
+        <div class="ag-courses-item_title">V.Thirumalairaj</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Engineering Design, Manufacturing, Analysis</div>
     </a>
 </div>
@@ -823,8 +1023,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Mr. J. CHAKRAVARTHY SAMY DURAI  </div>
+        <div class="ag-courses-item_title">Mr.J.Chakravarthy Samy Durai</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Automobile Engineering, Manufacturing Engineering, Production Engineering, Thermal Engineering</div>
     </a>
 </div>
@@ -832,8 +1033,9 @@
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A. VENNIMALAI RAJAN  </div>
+        <div class="ag-courses-item_title">A.Vennimalai Rajan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Composite Materials, Production Engineering</div>
     </a>
 </div>
@@ -844,8 +1046,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr. E. Ananthakrishnan  </div>
+        <div class="ag-courses-item_title">Dr.E.Ananthakrishnan </div>
         <div class="ag-courses-item_designation">HOD</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Water analysis/structural engineer mni, Municipal solid waste</div>
     </a>
 </div>
@@ -853,8 +1056,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Kanimozhi M  </div>
+        <div class="ag-courses-item_title">M.Kanimozhi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Reinforced concrete structures, Waste Management</div>
     </a>
 </div>
@@ -862,8 +1066,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Nathirun Sabinash R  </div>
+        <div class="ag-courses-item_title">R.Nathirun Sabinash</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Waste Management, Water analysis</div>
     </a>
 </div>
@@ -871,8 +1076,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Shanmugapriyan R  </div>
+        <div class="ag-courses-item_title">R.Shanmugapriyan</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Structural analysis, Water treatment, Prototype creation</div>
     </a>
 </div>
@@ -880,8 +1086,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">P. Arul Jebaraj  </div>
+        <div class="ag-courses-item_title">P. Arul Jebaraj</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Structural engineering, Disaster management, Construction waste management</div>
     </a>
 </div>
@@ -889,8 +1096,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">SINDHU M  </div>
+        <div class="ag-courses-item_title">M.Sindhu</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Construction Materials, Smart Irrigation, Concrete Technology</div>
     </a>
 </div>
@@ -898,8 +1106,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Manimaran S  </div>
+        <div class="ag-courses-item_title">S.Manimaran</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Concrete / hardware, Concrete / software</div>
     </a>
 </div>
@@ -907,8 +1116,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Sowmiya B  </div>
+        <div class="ag-courses-item_title">B.Sowmiya</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Environmental Engineering</div>
     </a>
 </div>
@@ -916,8 +1126,9 @@
 <div class="ag-courses_item civil" data-department="civil">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Gayathri S  </div>
+        <div class="ag-courses-item_title">S.Gayathri</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Hydraulic engineering, Structural engineering</div>
     </a>
 </div>
@@ -928,16 +1139,18 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">PRATHAP.C </div>
+        <div class="ag-courses-item_title">C.Prathap</div>
         <div class="ag-courses-item_designation">Head of the Department</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Image Processing, Artificial Intelligence & Machine Learning</div>
     </a>
 </div>
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr. C. Chithra  </div>
+        <div class="ag-courses-item_title">Dr.C.Chithra</div>
         <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Statistics and Numerical Methods, Graph Theory, Applications of Differential Equations, Linear Algebra</div>
     </a>
 </div>
@@ -945,8 +1158,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Arulvizhi  </div>
+        <div class="ag-courses-item_title">M.Arulvizhi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Graph Theory, Stochastic Processes, Statistics, Real Analysis</div>
     </a>
 </div>
@@ -954,8 +1168,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R. C. Richard Britto   </div>
+        <div class="ag-courses-item_title">R.C.Richard Britto</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">English Language Teaching</div>
     </a>
 </div>
@@ -963,8 +1178,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S. Jothi  </div>
+        <div class="ag-courses-item_title">S.Jothi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Indian Writing in English, Language and Linguistics, Feminism, Children's Literature</div>
     </a>
 </div>
@@ -972,8 +1188,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dhandayuthapani. R  </div>
+        <div class="ag-courses-item_title">R.Dhandayuthapani</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Electronics, Semiconductor Physics, Atomic Physics, Crystal Physics</div>
     </a>
 </div>
@@ -981,8 +1198,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr. S. R. KRISHNAMOORTHI  </div>
+        <div class="ag-courses-item_title">Dr.S.R.Krishnamoorthi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Physics Models, Electronics, MFIS / MOS Device Fabrications</div>
     </a>
 </div>
@@ -990,8 +1208,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Mahalakshmi M  </div>
+        <div class="ag-courses-item_title">M.Mahalakshmi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Operations Research, Differential Calculus, Complex Analysis, Linear Algebra</div>
     </a>
 </div>
@@ -999,8 +1218,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Fathima Beevi  </div>
+        <div class="ag-courses-item_title">M.Fathima Beevi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">English Language Teaching, Technical English, English Literature, Linguistics</div>
     </a>
 </div>
@@ -1008,8 +1228,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R. Karunyah  </div>
+        <div class="ag-courses-item_title">R.Karunyah</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Mathematics</div>
     </a>
 </div>
@@ -1017,8 +1238,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.V. ANANTHI  </div>
+        <div class="ag-courses-item_title">Dr.V.Ananthi</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Operations Research, Topology, Discrete Mathematics, Statistics and Numerical Methods</div>
     </a>
 </div>
@@ -1026,8 +1248,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">RAJAGURU K  </div>
+        <div class="ag-courses-item_title">K.Rajaguru</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Thin Film, Electronics</div>
     </a>
 </div>
@@ -1035,8 +1258,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr. N. David Mathan  </div>
+        <div class="ag-courses-item_title">Dr.N.David Mathan</div>
         <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Composites, Water Treatment, Polymers for Medicines, Municipal Solid Waste Management</div>
     </a>
 </div>
@@ -1044,8 +1268,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">MALLAIYASAMY B  </div>
+        <div class="ag-courses-item_title">B.Mallayasamy</div>
         <div class="ag-courses-item_designation">Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Topology, Graph Theory, Statistics, Operation Research</div>
     </a>
 </div>
@@ -1053,8 +1278,9 @@
 <div class="ag-courses_item sh" data-department="sh">
     <a href="#" class="ag-courses-item_link">
         <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">B.Abinaya  </div>
+        <div class="ag-courses-item_title">B.Abinaya </div>
         <div class="ag-courses-item_designation">Teaching Fellow</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
         <div class="ag-courses-item_date-box">Water Treatment, Synthesis of Nanoparticles Based on Green Engineering</div>
     </a>
 </div>
@@ -1075,7 +1301,7 @@
 
     </section>
     
-<footer style="padding-top: 30px;">
+    <footer style="padding-top: 30px;">
     <div class="container">
         <div class="row">
             <!-- Follow Us Section -->
@@ -1120,11 +1346,11 @@
                     <h3>Contact Us</h3>
                     <ul class="follow-box-contact">
                         <li>
-                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <i class="fa fa-phone" style="color: black;" aria-hidden="true"></i>
                             <a href="tel:+91 4546 263900">+91 4546 263900</a>
                         </li>
                         <li>
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-envelope " style="color: black;">  </i>
                             <a href="mailto:principal@nscet.org">principal@nscet.org</a>
                         </li>
                     </ul>
@@ -1140,20 +1366,20 @@
 
     
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        VANTA.NET({
-      el: "#vanta-background",
-      mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0xfffe3f,
-  backgroundColor: 0x0
-    })
-});
+//     document.addEventListener("DOMContentLoaded", function() {
+//         VANTA.NET({
+//       el: "#vanta-background",
+//       mouseControls: true,
+//   touchControls: true,
+//   gyroControls: false,
+//   minHeight: 200.00,
+//   minWidth: 200.00,
+//   scale: 1.00,
+//   scaleMobile: 1.00,
+//   color: 0xfffe3f,
+//   backgroundColor: 0x0
+//     })
+// });
 
 // _strk.push(function() {
 //   setVanta()
