@@ -192,6 +192,7 @@ a:hover {
     width: 100vw; /* Ensure it takes full viewport width */
     position: absolute;
     z-index: 1;
+    height:250vh;
 }
 
 footer {
