@@ -42,6 +42,13 @@
         --page-padding: 1.5rem;
     }
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
 
 @media (max-width: 768px) {
     :root {
@@ -75,99 +82,148 @@
 
      
         /* Main Content */
-        body {
+        * {
     font-family: "source-code-pro", monospace !important;
-    background-color: #f4f6f7; /* Light background for the body */
-    color: #2c3e50; /* Default text color */
-    line-height: 1.6;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
 }
 
+body {
+    font-family: "source-code-pro", monospace !important;
+    background-color: black; /* Light background for the body */
+    color: #2c3e50; /* Default text color */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 .container {
-    max-width: 1200px;
-    margin: 20px auto;
+    max-width: 1200px; /* Restrict the maximum width */
+    margin: 0 auto; /* Center the container */
     padding: 20px;
     z-index: 99;
     position: relative;
-
 }
+
+.hero {
+    background: url('img/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    height: 1.5px;
+    margin-top: 10px;
+    background: #2980b9;
+    width: 150px;
+}
+
+.hero h1 {
+    font-size: 2.7em;
+    margin: 0;
+    color: #e74c3c;
+}
+
 .section {
     background: rgba(0, 0, 0, 0.1); /* Semi-transparent white */
     backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add a light border for better effect */
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            color: #fff;
-            font-family: "source-code-pro", monospace !important;
-        }
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .section h2 {
-            font-size: 1.75em;
-            color: #2980b9;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-            margin-left: 20px;
-        }
-        .section ul li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            line-height: 1.4;
-        }
-        .section ul li:before {
-            content: "\2022";
-            color: #2980b9;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        a {
-            color: #2980b9;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #e74c3c;
-            text-decoration: underline;
-        }
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #fff;
+}
 
-        #particles-js{
-    width: 250%;
-    
-   position: absolute;
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    font-size: 1.75em;
+    color: #2980b9;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.section ul li:before {
+    content: "\2022";
+    color: #2980b9;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.highlight {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+#particles-js {
+    width: 100vw; /* Ensure it takes full viewport width */
+    position: absolute;
     z-index: 1;
-  }
- 
-  body{
-    background:black;
-  }
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav {
-                float: none;
-                text-align: center;
-                padding-top: 10px;
-            }
-            .container {
-                padding: 10px;
-            }
-           
-        }
+}
+
+footer {
+    padding-top: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    :root {
+        --columns: 20;
+        --page-padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --columns: 10;
+        --page-padding: 1rem;
+    }
+    
+    .container {
+        padding: 10px;
+        width: 100%; /* Ensure container uses full width */
+    }
+
+    nav {
+        float: none;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -323,27 +379,6 @@
     <!-- <script type="module" src="js/index.js"></script> -->
 
     
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        VANTA.NET({
-      el: "#vanta-background",
-      mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  color: 0xfffe3f,
-  backgroundColor: 0x0
-    })
-});
-
-// _strk.push(function() {
-//   setVanta()
-//   window.edit_page.Event.subscribe( "Page.beforeNewOneFadeIn", setVanta )
-// })
-</script>
 
 
 <!-- <script>
