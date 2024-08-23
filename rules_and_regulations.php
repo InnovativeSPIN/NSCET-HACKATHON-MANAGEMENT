@@ -219,7 +219,8 @@ footer {
 
     .container {
         padding: 10px;
-        width: 100%; /* Ensure container uses full width */
+        width: 100%;
+         /* Ensure container uses full width */
     }
 
     nav {
@@ -229,13 +230,13 @@ footer {
     }
     
     #particles-js {
-        height: 190vh; /* Reduced height for smaller screens */
+        height: 380vh; /* Reduced height for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     #particles-js {
-        height: 190vh; /* Further reduced height for very small screens */
+        height: 280vh; /* Further reduced height for very small screens */
     }
 }
 
