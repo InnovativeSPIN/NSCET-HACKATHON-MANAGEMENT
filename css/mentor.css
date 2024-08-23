@@ -1,295 +1,394 @@
-@import url('./nav.css');
-@import url('./mobilenav.css');
+  
+@import url("./mobilenav.css");
+@import url("./nav.css");
+@import url("./ps.css");
+@import url("./footersec.css");
+body {
+  font-family: 'source-code-pro', monospace !important;
+  overflow-x: hidden !important;
+}
+
+
+.ag-courses_item,
+.ag-courses_item * {
+  font-family: 'source-code-pro', monospace !important;
+}
+
+
+
+/* Container styling */
 .ag-format-container {
-    width: 1142px;
-    margin: 0 auto;
-  }
-  /* Container styling */
-  .ag-format-container {
-    
-    width: 1142px;
-    margin: 0 auto;
-    padding-top: none;
-  }
+  width: 1142px;
+  margin: 0 auto;
+
+}
+
+
+/* Box styling */
+.ag-courses_box {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px 0;
+
+}
+
+/* Individual card styling */
+.ag-courses_item {
+  flex-basis: calc(33.33333% - 30px);
+  margin: 0 15px 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important ;
   
-  /* Box styling */
-  .ag-courses_box {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 50px 0;
-  }
-  
-  /* Individual card styling */
+  overflow: hidden;
+  border-radius: 28px;
+  position: relative; /* Required for background positioning */
+}
+
+/* Link styling inside cards */
+.ag-courses-item_link {
+  display: block;
+  padding: 10px 10px;
+  background-color: #121212;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  color: #FFF;
+  height:300px
+}
+
+/* Hover effects */
+.ag-courses-item_link:hover {
+  color: #FFF;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_date {
+  color: #f9b234;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  transform: scale(10);
+}
+
+/* Title styling */
+.ag-courses-item_title {
+  min-height: 87px;
+  margin-bottom: -30px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+/* Designation styling */
+.ag-courses-item_designation {
+  min-height: 80px; /* Adjust if needed */
+  margin-top: -5px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+
+/* Date box styling */
+.ag-courses-item_date-box {
+  margin: -10px 0 20px;
+  font-size: 18px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+/* Background styling */
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  transition: all .5s ease;
+}
+
+/* .ag-courses-item_designation {
+
+  min-height: 50px;
+  margin: 0 0 0px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+
+} */
+
+/* Optional color variations for different course items */
+.ag-courses_item:nth-child(1n) .ag-courses-item_bg {
+  background-color: #4c49ea;
+}
+
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #e44002;
+}
+
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #952aff;
+}
+
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #cd3e94;
+}
+
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #4c49ea;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 979px) {
   .ag-courses_item {
-    flex-basis: calc(33.33333% - 30px);
-    margin: 0 15px 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important ;
-    width: 50px;
-    overflow: hidden;
-    border-radius: 28px;
-    position: relative; /* Required for background positioning */
+    flex-basis: calc(50% - 30px);
   }
-  
-  /* Link styling inside cards */
-  .ag-courses-item_link {
-    display: block;
-    padding: 30px 20px;
-    background-color: #121212;
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    color: #FFF;
-  }
-  
-  /* Hover effects */
-  .ag-courses-item_link:hover {
-    color: #FFF;
-  }
-  
-  .ag-courses-item_link:hover .ag-courses-item_date {
-    color: #f9b234;
-  }
-  
-  .ag-courses-item_link:hover .ag-courses-item_bg {
-    transform: scale(10);
-  }
-  
-  /* Title styling */
   .ag-courses-item_title {
-    min-height: 87px;
-    margin: 0 0 25px;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 30px;
-    color: #FFF;
-    z-index: 2;
-    position: relative;
+    font-size: 24px;
   }
-  
-  /* Date box styling */
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
   .ag-courses-item_date-box {
-    font-size: 18px;
-    color: #FFF;
-    z-index: 2;
-    position: relative;
-  }
-  
-  /* Background styling */
-  .ag-courses-item_bg {
-    height: 128px;
-    width: 128px;
-    background-color: #f9b234;
-    z-index: 1;
-    position: absolute;
-    top: -75px;
-    right: -75px;
-    border-radius: 50%;
-    transition: all .5s ease;
-  }
-  
-  .ag-courses-item_designation {
-  
-    min-height: 50px;
-    margin: 0 0 0px;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 20px;
-    color: #FFF;
-    z-index: 2;
-    position: relative;
-  
-  }
-  
-  /* Optional color variations for different course items */
-  .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-    background-color: #3ecd5e;
-  }
-  
-  .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #e44002;
-  }
-  
-  .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-    background-color: #952aff;
-  }
-  
-  .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-    background-color: #cd3e94;
-  }
-  
-  .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-    background-color: #4c49ea;
-  }
-  
-  /* Media Queries */
-  @media only screen and (max-width: 979px) {
-    .ag-courses_item {
-      flex-basis: calc(50% - 30px);
-    }
-    .ag-courses-item_title {
-      font-size: 24px;
-    }
-  }
-  
-  @media only screen and (max-width: 767px) {
-    .ag-format-container {
-      width: 96%;
-    }
-  }
-  
-  @media only screen and (max-width: 639px) {
-    .ag-courses_item {
-      flex-basis: 100%;
-    }
-    .ag-courses-item_title {
-      min-height: 72px;
-      line-height: 1;
-      font-size: 24px;
-    }
-    .ag-courses-item_link {
-      padding: 22px 40px;
-    }
-    .ag-courses-item_date-box {
-      font-size: 16px;
-    }
-  }
-  
-  
-  /*department button */
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 0px;
-    padding-top: 0px;
-  }
-  
-  .department-btn {
-    background-color: #121212;
-    color: #FFF;
-    border: 2px solid #f9b234;
-    border-radius: 8px;
-    padding: 10px 20px;
-    margin: 0 10px;
     font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
   }
-  
-  .department-btn:hover {
-    background-color: #f9b234;
-    color: #000;
-  }
-  
-  /* Specific color for active states */
-  .department-btn.cse.active,
-  .department-btn.cse.active:hover {
-    background-color: #f4a460; /* Sandal */
-  }
-  
-  .department-btn.it.active,
-  .department-btn.it.active:hover {
-    background-color: #e6e6fa; /* Lavender */
-  }
-  
-  .department-btn.aids.active,
-  .department-btn.aids.active:hover {
-    background-color: #007ba7; /* Cerulean */
-  }
-  
-  .department-btn.eee.active,
-  .department-btn.eee.active:hover {
-    background-color: #c0c0c0; /* Silver */
-  }
-  
-  .department-btn.ece.active,
-  .department-btn.ece.active:hover {
-    background-color: #ffc0cb; /* Pink */
-  }
-  
-  .department-btn.mech.active,
-  .department-btn.mech.active:hover {
-    background-color: #add8e6; /* Light Blue */
-  }
-  
-  .department-btn.civil.active,
-  .department-btn.civil.active:hover {
-    background-color: #ffff00; /* Yellow */
-  }
-  
-  .department-btn.sh.active,
-  .department-btn.sh.active:hover {
-    background-color: #add8e6; /* Light Blue */
-  }
-  
-  
-  /* Title Container */
-  .title-container {
-    text-align: center; /* Center align the title */
-    margin: 0px 0; /* Add margin to separate from other content */
-    padding: 150px ;
-  }
-  
-  /* Title Styling */
-  .title {
-    font-size: 100px; /* Adjust font size as needed */
-    font-weight: bold;
-    color: #f9b234; /* Match with your existing color scheme or adjust */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better readability */
-    margin: 0;
-  }
-  
-  /* vanta js animation */
-  #vanta-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 210%;
-        z-index: -1;
-        opacity: 0.8;
-      }
-  
-      .ag-courses-item_link {
-      position: relative;
-      display: block;
-      color: #fff; /* White text color for contrast */
-      text-decoration: none;
-      overflow: hidden; /* Prevents tint from spilling out */
-      border-radius: 8px; /* Optional: Adds rounded corners */
-      background-color: rgba(0, 0, 0, 0.3); /* Light black tint with 30% opacity */
-      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  /* Ensure background color remains consistent on hover */
-  .ag-courses-item_link:hover {
-      background-color: rgba(0, 0, 0, 0.5); /* Darker light black tint on hover with 50% opacity */
-  }
-  
-  /* Optional: Remove or modify the :active styling if it affects the background */
-  .ag-courses-item_link:active {
-      background-color: rgba(0, 0, 0, 0.3); /* Ensure background color is consistent on click */
-  }
-  
-  /* Ensure text is not affected by click */
-  .ag-courses-item_title,
-  .ag-courses-item_designation,
-  .ag-courses-item_date-box {
-      position: relative;
-      z-index: 2; /* Ensure text is above the tint */
-      padding: 10px;
-  }
-  
-  .ag-courses-item_bg {
-      position: absolute;
+}
+
+
+/*department button */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -125px;
+  padding-top: 0px;
+  flex-wrap: wrap;
+}
+
+
+.department-btn {
+  background-color: #121212;
+  color: #FFF;
+  border: 2px solid #f9b234;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.department-btn:hover {
+  background-color: #f9b234;
+  color: #000;
+}
+
+/* Specific color for active states */
+.department-btn.cse.active,
+.department-btn.cse.active:hover {
+  background-color: #ffab73; /* Sandal */
+  color: #000;
+}
+
+.department-btn.it.active,
+.department-btn.it.active:hover {
+  background-color: #c668fc; /* Lavender */
+  color: #000;
+
+}
+
+.department-btn.aids.active,
+.department-btn.aids.active:hover {
+  background-color: #6effe4; /* Cerulean */
+  color: #000;
+}
+
+.department-btn.eee.active,
+.department-btn.eee.active:hover {
+  background-color: #c0c0c0; /* Silver */
+  color: #000;
+}
+
+.department-btn.ece.active,
+.department-btn.ece.active:hover {
+  background-color: #ff75e1; /* Pink */
+  color: #000;
+}
+
+.department-btn.mech.active,
+.department-btn.mech.active:hover {
+  background-color: #5c6ef2; /* Light Blue */
+  color: #000;
+}
+
+.department-btn.civil.active,
+.department-btn.civil.active:hover {
+  background-color: #d2ff70; /* Yellow */
+  color: #000;
+}
+
+.department-btn.sh.active,
+.department-btn.sh.active:hover {
+  background-color: #add8e6; /* Light Blue */
+  color: #000;
+}
+
+
+/* Title Container */
+.title-container {
+  text-align: center; /* Center align the title */
+  margin: 0px 0; /* Add margin to separate from other content */
+  padding: 150px ;
+}
+
+/* Title Styling */
+.title {
+  font-size: 100px; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #f9b234; /* Match with your existing color scheme or adjust */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better readability */
+  margin: 0;
+}
+
+/* vanta js animation */
+#vanta-background {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;
-      background: transparent; /* Keep it transparent since the tint is on the link */
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    .ag-courses-item_link {
+    position: relative;
+    display: block;
+    color: #fff; /* White text color for contrast */
+    text-decoration: none;
+    overflow: hidden; /* Prevents tint from spilling out */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    background-color: rgba(0, 0, 0, 0.6); /* Light black tint with 30% opacity */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Ensure background color remains consistent on hover */
+.ag-courses-item_link:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker light black tint on hover with 50% opacity */
+}
+
+/* Optional: Remove or modify the :active styling if it affects the background */
+.ag-courses-item_link:active {
+    background-color: rgba(0, 0, 0, 0.3); /* Ensure background color is consistent on click */
+}
+
+/* Ensure text is not affected by click */
+.ag-courses-item_title,
+.ag-courses-item_designation,
+.ag-courses-item_date-box {
+    position: relative;
+    z-index: 2; /* Ensure text is above the tint */
+    padding: 10px;
+}
+
+.ag-courses-item_bg {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+    background-color: transparent; /* Keep it transparent since the tint is on the link */
+}
+
+
+.heading-spacing {
+    padding: 90px;
+    margin-bottom:90px ;
+    font-size: clamp(45px.8vw,85px);
+    text-align: center;
+     
+  
+}
+@media  screen and (max-width:786px) {
+    .heading-spacing{
+        font-size: 45px !important;
+        /* display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center; */
+
+    }
+    .heading-spacing i{
+        font-size:45px !important;
+    }
+   
+
+}
+
+
+
+/* Desgination */
+
+/* Interested Topics Heading Styling */
+.ag-courses-item_interest-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9b234; /* Common color that doesn't change */
+  margin-bottom: 5px; /* Space between heading and topics list */
+  z-index: 2;
+  position: relative;
+}
+
+/* Mobile Responsive CSS */
+@media only screen and (max-width: 979px) {
+  .ag-courses-item_interest-heading {
+    font-size: 14px; /* Smaller font for tablets */
   }
-  
-  
-  
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-courses-item_interest-heading {
+    font-size: 13px; /* Smaller font for smaller devices */
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ag-courses-item_interest-heading {
+    font-size: 12px; /* Smaller font for mobile devices */
+    margin-bottom: 3px; /* Reduce space for compactness */
+  }
+}
