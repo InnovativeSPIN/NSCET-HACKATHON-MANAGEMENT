@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | NSCET-Hackathon</title>
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/mobilenav.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+<style>
+    a{
+        text-decoration: none !important;
+    }
+</style>
+</head>
+<body>
+    <?php include("./resources/header.php") ?>
+    <div class="main-body">
+<div class="container">
+        <div class="inner-content">
+        <h2 class="title">Login</h2>
+        <form action="#" class="form-container">
+            <div class="input-box email">
+                <input type="email"  id="email-input" required placeholder="Username">
+                <img src="https://cdn-icons-png.flaticon.com/512/6325/6325109.png" alt="user-image" width="25px">
+            </div>
+            <div class="input-box password">
+                <input type="password"  id="password-input" required placeholder="Password">
+                <img src="https://cdn-icons-png.flaticon.com/512/2489/2489659.png" alt="lock-image" width="22px">
+            </div>
+          <div class="input-box password role">
+    <select name="" id="password-input" class="roleselection">
+        <option value="" hidden>Select</option>
+        <option value="Team Leader">Team Leader</option>
+        <option value="Mentor">Mentor</option>
+        <option value="Admin">Admin</option>
+    </select>
+    <img src="./img/down.png" alt="lock-image" width="22px">
+
+</div>
+
+            <div class="remember-forgot">
+                <div class="remember">
+                    <!-- <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label> -->
+                </div>
+                <div class="forgot">
+                    <a href="#">forgot Password ?</a>
+                </div>
+            </div>
+            <div class="button">
+                <button class="login">Login</button>
+            </div>
+            <div class="register">
+                <p>Don't you have an account ?<a href="#">Register</a></p>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
