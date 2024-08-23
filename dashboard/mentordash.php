@@ -6,28 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <title>
-    
-  </title>
-  <!--     Fonts and icons     -->
+  <title>Mentor Dashboard</title>
+  <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-  <style>
+  <link href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+<script src="./assets/js/core/popper.min.js"></script>
 
-.dashboard {
+  <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Dashboard Styles */
+    .dashboard {
         width: 100%;
         max-width: 1000px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
+        margin: 20px auto; /* Center the dashboard and add spacing */
     }
 
     .header {
@@ -42,78 +51,68 @@
         animation: fadeIn 1s ease-in-out;
     }
 
-    .team-details, .idea-details {
+    .mentor-details {
         width: 48%;
         padding: 20px;
         background-color: #f8f9fa;
         border-radius: 8px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s, font-size 0.3s;
-        font-size: 24px;
+        font-size: 18px;
     }
 
-    .team-details:hover, .idea-details:hover {
+    .mentor-details:hover {
         transform: translateY(-5px);
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
     }
 
-    .team-details h2, 
-    .idea-details h2 {
+    .mentor-details h2 {
         margin: 0 0 10px;
-        font-size: 24px;
+        font-size: 20px;
         color: #344767;
     }
 
-    .team-details p, 
-    .idea-details p {
+    .mentor-details p {
         margin: 0;
-        font-size: 24px;
+        font-size: 16px;
         color: #344767;
     }
 
-    .team-details span, 
-    .idea-details span {
+    .mentor-details span {
         color: #007bff;
         font-weight: bold;
     }
 
-    .team-members {
+    .team-list {
         background-color: #f8f9fa;
         border-radius: 8px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
         animation: fadeIn 1.5s ease-in-out;
+        margin-bottom: 20px; /* Add spacing below the section */
     }
 
-    .members-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .add-member-btn {
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .add-member-btn:hover {
-        background-color: #0056b3;
+    .team-list h2 {
+        margin-bottom: 20px;
     }
 
     ul {
         list-style: none;
         padding: 0;
+        margin: 0;
     }
 
     li {
         padding: 10px;
         border-bottom: 1px solid #ddd;
+        color: #344767;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    li:hover {
+        background-color: #e9ecef;
     }
 
     li:last-child {
@@ -126,45 +125,27 @@
         color: #666;
     }
 
-    /* Animation */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     /* Modal Styles */
     .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1; 
+        display: none;
+        position: fixed;
+        z-index: 1;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto; 
-        background-color: rgb(0,0,0); 
-        background-color: rgba(0,0,0,0.4); 
-        padding-top: 60px; 
-    }
-    transition: background-color 0.3s;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
     }
 
-    .form-group button:hover {
-        background-color: #0056b3;
-    }
     .modal-content {
         background-color: #fefefe;
-        margin: 5% auto; 
+        margin: 5% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%; 
-        max-width: 600px; 
+        width: 80%;
+        max-width: 600px;
         border-radius: 8px;
     }
 
@@ -182,34 +163,33 @@
         cursor: pointer;
     }
 
-    .form-group {
-        margin-bottom: 15px;
+    /* Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .container {
+            display: block; /* Stack elements vertically */
+        }
 
-    .form-group input, .form-group select {
-        width: 100%;
-        padding: 8px;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-    }
+        .mentor-details {
+            width: 100%; /* Full width for each element */
+            margin-bottom: 20px; /* Add some space between stacked elements */
+        }
 
-    .form-group button {
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .form-group button:hover {
-        background-color: #0056b3;
+        .team-list {
+            width: 100%; /* Full width for team list */
+            margin-bottom: 20px; /* Add space below team list section */
+        }
     }
   </style>
 </head>
@@ -219,308 +199,133 @@
     <?php include("./resources/sidebar.php") ?>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div> -->
-          </div>
-          <ul class="navbar-nav  justify-content-end">
-            <!-- <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
-              </a>
-            </li> -->
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="false">
+  <div class="container-fluid py-1 px-3">
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="main-content">
+        <div class="dashboard">
+            <header class="header">
+                <h1>Mentor Details</h1>
+            </header>
+            <div class="container">
+                <div class="mentor-details">
+                    <h2>Mentor Name: <span id="mentorName">L.s.Vignesh</span></h2>
+                    <p>Email: <span id="mentorEmail">@example.com</span></p>
+                    <p>Department: <span id="mentorDept">Artificial Intelligence and Data Science</span></p>
                 </div>
-              </a>
-            </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-              </a>
-            </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell cursor-pointer"></i>
-              </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="./assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New message</span> from Laur
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          13 minutes ago
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="./assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New album</span> by Travis Scott
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          1 day
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>credit-card</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                              <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                  <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                  <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+            </div>
+            <div class="team-list">
+                <h2>Teams Under Control</h2>
+                <ul id="teamList">
+                    <li data-team-id="1">Team Alpha</li>
+                    <li data-team-id="2">Team Beta</li>
+                    <li data-team-id="3">Team Gamma</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer py-3">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              &copy; 2024 <a href="https://www.creedtech.com" class="font-weight-bold">Creed Tech</a>, All Rights Reserved.
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-
-    <div class="dashboard">
-        <header class="header">
-            <h1>Team Dashboard</h1>
-        </header>
-        
-
-        <div class="container">
-            <!-- Team Details Section (Left) -->
-            <div class="team-details">
-                <h2>Team Name: <span>TechCreed</span></h2>
-                <p>Team Leader: <span>Mukilan</span></p>
-            </div>
-
-            <!-- Idea Details Section (Right) -->
-            <div class="idea-details">
-                <p>Mentor: <span>L.S.Vignesh</span></p>
-                <p>Submitted Idea: <span>AI-based Smart Irrigation System</span></p>
-            </div>
-        </div>
-
-        <!-- Team Members Section -->
-        <div class="team-members">
-            <div class="members-header">
-                <h2>Team Members</h2>
-                <button class="add-member-btn">Add Member</button>
-            </div>
-            <ul id="membersList">
-                <li>Mukilan</li>
-                <li>Tenshkumar</li>
-                <li>Srihari</li>
-                <li>Mark</li>
-                <li>Sandhosh</li>
-            </ul>
-        </div>
-
-        <footer class="footer">
-            <p>&copy; 2024 Team Dashboard</p>
-        </footer>
-    </div>
-
-    <!-- Modal -->
-    <div id="memberModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New Member</h2>
-            <div class="form-group">
-                <label for="regNumber">Registration Number:</label>
-                <input type="text" id="regNumber" placeholder="Enter registration number">
-            </div>
-            <div class="form-group">
-                <label for="memberName">Name:</label>
-                <input type="text" id="memberName" placeholder="Enter member name">
-            </div>
-            <div class="form-group">
-                <label for="department">Department:</label>
-                <select id="department">
-                    <option value="">Select Department</option>
-                    <option value="CSE">Computer Science</option>
-                    <option value="IT">Information Technology</option>
-                    <option value="ECE">Electronics & Communication</option>
-                    <option value="EEE">Electrical & Electronics</option>
-                    <!-- Add more options as needed -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="year">Year:</label>
-                <select id="year">
-                    <option value="">Select Year</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="email">Email ID:</label>
-                <input type="email" id="email" placeholder="Enter email ID">
-            </div>
-            <div class="form-group">
-                <button id="submitMemberBtn">Add Member</button>
-            </div>
-        </div>
-    </div>
-    <!-- End Navbar -->
+    </footer>
+  </main>
   
-  <!--   Core JS Files   -->
+  <!-- Modal -->
+  <div id="teamModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTeamName">Team Alpha</h2>
+      <p>Team Leader: <span id="modalTeamLeader">Alice Smith</span></p>
+      <p>Members:</p>
+      <ul id="modalTeamMembers">
+        <li>Bob Johnson</li>
+        <li>Charlie Davis</li>
+        <li>David Wilson</li>
+      </ul>
+      <p>Problem Statement: <span id="modalProblemStatement">Build a solar-powered charger</span></p>
+    </div>
+  </div>
+
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/chartjs.min.js"></script>
   <script>
-    var ctx1 = document.getElementById("chart-line").getContext("2d");
 
-    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
 
-    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    new Chart(ctx1, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0.4,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#5e72e4",
-          backgroundColor: gradientStroke1,
-          borderWidth: 3,
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#fbfbfb',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#ccc',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
+var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="./assets/js/argon-dashboard.min.js?v=2.0.4"></script>
-</body>
 
+   
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // Modal functionality
+      const modal = document.getElementById('teamModal');
+      const closeModal = document.querySelector('.close');
+      const teamList = document.getElementById('teamList');
+      
+      teamList.addEventListener('click', function(event) {
+        if (event.target && event.target.nodeName == 'LI') {
+          const teamId = event.target.getAttribute('data-team-id');
+          // Fetch team details based on teamId (for demo purposes, using static data)
+          document.getElementById('modalTeamName').textContent = event.target.textContent;
+          document.getElementById('modalTeamLeader').textContent = 'Mukilan';
+          document.getElementById('modalTeamMembers').innerHTML = `
+            <li>Mukilan</li>
+            <li>Tenshkumar</li>
+            <li>Hari</li>
+            <li>mark</li>
+            <li>sandhosh</li>
+          `;
+          document.getElementById('modalProblemStatement').textContent = 'Build a solar-powered charger';
+          modal.style.display = 'block';
+        }
+      });
+      
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+      
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+    });
+  </script>
+</body>
 </html>

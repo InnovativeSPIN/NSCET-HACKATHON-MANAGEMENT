@@ -21,196 +21,244 @@
   <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
   <style>
 
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Styles */
 .dashboard {
-        width: 100%;
-        max-width: 1000px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto; /* Center the dashboard and add spacing */
+}
 
-    .header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        animation: fadeIn 1s ease-in-out;
-    }
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
 
-    .team-details, .idea-details {
-        width: 48%;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, font-size 0.3s;
-        font-size: 24px;
-    }
+.team-details, 
+.idea-details {
+    width: 48%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, font-size 0.3s;
+    font-size: 18px;
+}
 
-    .team-details:hover, .idea-details:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-    }
+.team-details:hover, 
+.idea-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
 
-    .team-details h2, 
-    .idea-details h2 {
-        margin: 0 0 10px;
-        font-size: 24px;
-        color: #344767;
-    }
+.team-details h2, 
+.idea-details h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #344767;
+}
 
-    .team-details p, 
-    .idea-details p {
-        margin: 0;
-        font-size: 24px;
-        color: #344767;
-    }
+.team-details p, 
+.idea-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #344767;
+}
 
-    .team-details span, 
-    .idea-details span {
-        color: #007bff;
-        font-weight: bold;
-    }
+.team-details span, 
+.idea-details span {
+    color: #007bff;
+    font-weight: bold;
+}
 
-    .team-members {
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        animation: fadeIn 1.5s ease-in-out;
-    }
+/* Team Members Section */
+.team-members {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 20px; /* Add spacing below the section */
+}
 
-    .members-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
+.members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-    .add-member-btn {
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .add-member-btn:hover {
-        background-color: #0056b3;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    li:last-child {
-        border-bottom: none;
-    }
-
-    .footer {
-        text-align: center;
-        padding-top: 20px;
-        color: #666;
-    }
-
-    /* Animation */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Modal Styles */
-    .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1; 
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto; 
-        background-color: rgb(0,0,0); 
-        background-color: rgba(0,0,0,0.4); 
-        padding-top: 60px; 
-    }
+.add-member-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.add-member-btn:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #344767;
+    font-size: 16px;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 20px;
+    color: #666;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.form-group button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        display: block; /* Stack elements vertically */
     }
 
-    .form-group button:hover {
-        background-color: #0056b3;
+    .team-details, 
+    .idea-details {
+        width: 100%; /* Full width for each element */
+        margin-bottom: 20px; /* Add some space between stacked elements */
     }
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto; 
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; 
-        max-width: 600px; 
-        border-radius: 8px;
+    
+    .team-members {
+        width: 100%; /* Full width for team members */
+        margin-bottom: 20px; /* Add space below team members section */
     }
+}
 
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
 
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
+.validate-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-    .form-group {
-        margin-bottom: 15px;
-    }
+.validate-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+  
 
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .form-group input, .form-group select {
-        width: 100%;
-        padding: 8px;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-    }
-
-    .form-group button {
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .form-group button:hover {
-        background-color: #0056b3;
-    }
   </style>
 </head>
 
@@ -219,155 +267,59 @@
     <?php include("./resources/sidebar.php") ?>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div> -->
-          </div>
-          <ul class="navbar-nav  justify-content-end">
-            <!-- <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
-              </a>
-            </li> -->
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-              </a>
-            </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell cursor-pointer"></i>
-              </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="./assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New message</span> from Laur
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          13 minutes ago
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="./assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New album</span> by Travis Scott
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          1 day
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>credit-card</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                              <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                  <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                  <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="dashboard">
-        <header class="header">
-            <h1>Team Dashboard</h1>
-        </header>
-        
-
-        <div class="container">
-            <!-- Team Details Section (Left) -->
-            <div class="team-details">
-                <h2>Team Name: <span>TechCreed</span></h2>
-                <p>Team Leader: <span>Mukilan</span></p>
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="false">
+  <div class="container-fluid py-1 px-3">
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
             </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <!-- Idea Details Section (Right) -->
-            <div class="idea-details">
-                <p>Mentor: <span>L.S.Vignesh</span></p>
-                <p>Submitted Idea: <span>AI-based Smart Irrigation System</span></p>
-            </div>
+
+<div class="dashboard">
+    <header class="header">
+        <h1>Team Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <!-- Team Details Section (Left) -->
+        <div class="team-details">
+            <h2>Team Name: <span>TechCreed</span></h2>
+            <p>Team Leader: <span>Mukilan</span></p>
         </div>
 
-        <!-- Team Members Section -->
-        <div class="team-members">
-            <div class="members-header">
-                <h2>Team Members</h2>
-                <button class="add-member-btn">Add Member</button>
-            </div>
-            <ul id="membersList">
-                <li>Mukilan</li>
-                <li>Tenshkumar</li>
-                <li>Srihari</li>
-                <li>Mark</li>
-                <li>Sandhosh</li>
-            </ul>
+        <!-- Idea Details Section (Right) -->
+        <div class="idea-details">
+            <p>Mentor: <span>L.S.Vignesh</span></p>
+            <p>Submitted Idea: <span>AI-based Smart Irrigation System</span></p>
         </div>
+    </div>
+
+    <!-- Team Members Section -->
+    <div class="team-members">
+        <div class="members-header">
+            <h2>Team Members</h2>
+            <button class="add-member-btn">Add Member</button>
+        </div>
+        <ul id="membersList">
+            <li>Mukilan</li>
+            <li>Tenshkumar</li>
+            <li>Srihari</li>
+            <li>Mark</li>
+            <li>Sandhosh</li>
+        </ul>
+    </div>
+</div>
 
         <footer class="footer">
             <p>&copy; 2024 Team Dashboard</p>
@@ -375,48 +327,55 @@
     </div>
 
     <!-- Modal -->
-    <div id="memberModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New Member</h2>
-            <div class="form-group">
-                <label for="regNumber">Registration Number:</label>
-                <input type="text" id="regNumber" placeholder="Enter registration number">
-            </div>
-            <div class="form-group">
-                <label for="memberName">Name:</label>
-                <input type="text" id="memberName" placeholder="Enter member name">
-            </div>
-            <div class="form-group">
-                <label for="department">Department:</label>
-                <select id="department">
-                    <option value="">Select Department</option>
-                    <option value="CSE">Computer Science</option>
-                    <option value="IT">Information Technology</option>
-                    <option value="ECE">Electronics & Communication</option>
-                    <option value="EEE">Electrical & Electronics</option>
-                    <!-- Add more options as needed -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="year">Year:</label>
-                <select id="year">
-                    <option value="">Select Year</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="email">Email ID:</label>
-                <input type="email" id="email" placeholder="Enter email ID">
-            </div>
-            <div class="form-group">
-                <button id="submitMemberBtn">Add Member</button>
-            </div>
+   
+<div id="memberModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Member</h2>
+        <div class="form-group">
+    <label for="regNumber">Registration Number:</label>
+    <input type="text" id="regNumber" placeholder="Enter registration number">
+    <button type="button" class="validate-btn">Validate</button>
+</div>
+        <div class="form-group">
+            <label for="StudentName">Name:</label>
+            <input type="text" id="StudentName" placeholder="Enter Student name">
+        </div>
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <select id="department">
+                <option value="">Select Department</option>
+                <option value="CSE">Computer Science</option>
+                <option value="IT">Information Technology</option>
+                <option value="EEE">Artificial Intelligence and Data Science</option>
+                <option value="ECE">Electronics & Communication</option>
+                <option value="EEE">Electrical & Electronics</option>
+                <option value="EEE">Civil</option>
+                <option value="EEE">Mechanical</option>
+                
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <select id="year">
+                <option value="">Select Year</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" placeholder="Enter email ID">
+        </div>
+        <div class="form-group">
+            <button id="submitMemberBtn">Add Member</button>
         </div>
     </div>
+</div>
+
     <!-- End Navbar -->
   
   <!--   Core JS Files   -->
@@ -516,6 +475,74 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+
+    // Get the modal element
+    const modal = document.getElementById("memberModal");
+    // Get the button that opens the modal
+    const btn = document.querySelector(".add-member-btn");
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+    // Get the submit button inside the modal
+    const submitBtn = document.getElementById("submitMemberBtn");
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Example function to handle form submission with non-empty validation
+    submitBtn.onclick = function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        const regNumber = document.getElementById("regNumber").value.trim();
+        const StudentName = document.getElementById("StudentName").value.trim();
+        const department = document.getElementById("department").value;
+        const year = document.getElementById("year").value;
+        const email = document.getElementById("email").value.trim();
+
+        // Validate if all fields are filled
+        if (!regNumber || !StudentName || !department || !year || !email) {
+            alert("Please fill in all fields.");
+            return; // Stop the function if validation fails
+        }
+
+        // Perform actions with the collected data (if all fields are filled)
+        console.log("Member Details:", {
+            regNumber,
+            StudentName,
+            department,
+            year,
+            email
+        });
+
+        // You can add functionality here to process or store the form data
+
+        // Clear form fields after submission
+        document.getElementById("regNumber").value = '';
+        document.getElementById("StudentName").value = '';
+        document.getElementById("department").value = '';
+        document.getElementById("year").value = '';
+        document.getElementById("email").value = '';
+
+        // Close the modal after submission
+        modal.style.display = "none";
+    }
+
+
+
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

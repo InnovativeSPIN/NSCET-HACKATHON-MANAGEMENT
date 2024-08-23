@@ -133,7 +133,7 @@
      <main>
         <?php include('./resources/header.php') ?>
         <div class="content">
-        <h2><i>N S C E T</i> <i>H</i>ackthon</h2>
+        <h2><i>N S C E T</i> <i>H</i>ackathon</h2>
         <p>A 36 Hours Tech MARATHON</p>
     </div>
         <!-- <div class="robo-content" id="model-container">
