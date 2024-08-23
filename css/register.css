@@ -9,7 +9,6 @@
 }
 .main-body{
   background-repeat: no-repeat;
-  background: black;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -31,7 +30,7 @@
   border-radius: 10px;
   backdrop-filter: blur(5px);
   color: #fff;
-  height: 420px;
+  height: 460px;
   width: 380px !important;
   padding: 20px;
 
