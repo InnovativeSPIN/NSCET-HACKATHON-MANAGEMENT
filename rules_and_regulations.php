@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
     <link rel="stylesheet" type="text/css" href="css/ps.css" />
     <link rel="stylesheet" href="css/footersec.css">
+    <link rel="stylesheet" href="./css/mobilenav.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
@@ -211,6 +212,7 @@ footer {
     }
 }
 
+
 @media (max-width: 768px) {
     :root {
         --columns: 10;
@@ -222,6 +224,12 @@ footer {
         width: 100%;
          /* Ensure container uses full width */
     }
+    .container{
+    z-index: -1;
+}
+.nav-icon{
+    z-index: 10 !important;
+   }
 
     nav {
         float: none;
