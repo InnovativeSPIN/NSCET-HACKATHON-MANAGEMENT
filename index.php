@@ -48,7 +48,12 @@
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
         <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
-    
+       <!-- AOS -->
+  
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- slider js lib-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -158,7 +163,7 @@
         <marquee>
             <a href="Problem_Statements.html" style="text-decoration: none; color: inherit;">
                 <img class="img_scroll" src="img/newstar.gif" alt="Announcement"> 
-                The problem statements for NSCET Hackathon 2024 will be released at 8:00 PM, and the full website will be live right after that.
+                "NSCET - HACKATHON 2024 Problem Statements are Live!"
             </a>
         </marquee>
     </div>
@@ -171,11 +176,11 @@
 <div class="container-fluid py-5">
     <div class="container">
         <div class="row g-5 align-items-center">
-            <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
-                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">WHAT IS NSCET HACKATHON 2024?</div>
-                <h1 class="mb-4">NSCET Hackathon 2024</h1>
-                <p class="mb-4 text-justify">NSCET Hackathon 2024 is a premier event organized by Nadar Saraswathi College of Engineering and Technology (NSECT) aimed at fostering innovation and creativity among students. This hackathon provides a dynamic platform for participants to tackle real-world challenges and develop practical solutions. By encouraging critical thinking and collaborative problem-solving, NSCET Hackathon 2024 seeks to bridge the gap between theoretical knowledge and practical application.</p>
-                <p class="mb-4 text-justify ">Since its inception, NSCET Hackathon has become a significant event for showcasing the skills of engineering students from NSECT. Each edition builds on the previous one, refining its approach and expanding its impact. The hackathon not only allows students to demonstrate their abilities but also fosters collaboration with industry experts, academic professionals, and other stakeholders.</p>
+            <div class="col-lg-12  what-hack">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3 k" data-aos="fade-right">WHAT IS NSCET HACKATHON 2024?</div>
+                <h1 class="mb-4" data-aos="fade-left">NSCET Hackathon 2024</h1>
+                <p class="mb-4 text-justify" data-aos="zoom-in">NSCET Hackathon 2024 is a premier event organized by Nadar Saraswathi College of Engineering and Technology (NSECT) aimed at fostering innovation and creativity among students. This hackathon provides a dynamic platform for participants to tackle real-world challenges and develop practical solutions. By encouraging critical thinking and collaborative problem-solving, NSCET Hackathon 2024 seeks to bridge the gap between theoretical knowledge and practical application.</p>
+                <p class="mb-4 text-justify " data-aos="zoom-in">Since its inception, NSCET Hackathon has become a significant event for showcasing the skills of engineering students from NSECT. Each edition builds on the previous one, refining its approach and expanding its impact. The hackathon not only allows students to demonstrate their abilities but also fosters collaboration with industry experts, academic professionals, and other stakeholders.</p>
             </div>
         </div>
     </div>
@@ -185,61 +190,91 @@
 
    <!-- Themes Slider Section Start -->
    <section id="themes-section">
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" data-aos="zoom-in">
         <h1 class="mb-3">THEMES</h1>
         <p>No problem is too big... No idea is too small</p>
     </div>
-   <div class="slider-container">
+   <div class="slider-container" data-aos="flip-right">
    <div class="slider">
     <!-- Artificial Intelligence (AI) -->
     <div class="slider-item">
+    <div class="slider-item-img">
         <img src="img/icon_ai.png" alt="Artificial Intelligence (AI)" title="Artificial Intelligence (AI)" class="img-item">
+    </div>
+    <div class="slider-item-content">
         <h3>Artificial Intelligence (AI)</h3>
         <p>Innovative applications of AI to enhance automation, data analysis, and decision-making processes in various industries.</p>
     </div>
+</div>
 
-    <!-- Internet of Things (IoT) -->
-    <div class="slider-item">
+<!-- Internet of Things (IoT) -->
+<div class="slider-item">
+    <div class="slider-item-img">
         <img src="img/icon_iot.png" alt="Internet of Things (IoT)" title="Internet of Things (IoT)" class="img-item">
+    </div>
+    <div class="slider-item-content">
         <h3>Internet of Things (IoT)</h3>
         <p>Ideas for smart devices and systems that connect and communicate over the internet to improve efficiency and data collection.</p>
     </div>
+</div>
 
-    <!-- Cybersecurity -->
-    <div class="slider-item">
+<!-- Cybersecurity -->
+<div class="slider-item">
+    <div class="slider-item-img">
         <img src="img/icon_secure.png" alt="Cybersecurity" title="Cybersecurity">
+    </div>
+    <div class="slider-item-content">
         <h3>Cybersecurity</h3>
         <p>Solutions focused on protecting digital information and systems from cyber threats and vulnerabilities.</p>
     </div>
+</div>
 
-    <!-- Sustainable Energy -->
-    <div class="slider-item">
+<!-- Sustainable Energy -->
+<div class="slider-item">
+    <div class="slider-item-img">
         <img src="img/icon_renewa.png" alt="Sustainable Energy" title="Sustainable Energy">
+    </div>
+    <div class="slider-item-content">
         <h3>Sustainable Energy</h3>
         <p>Innovations in managing and generating renewable energy sources more effectively and efficiently.</p>
     </div>
+</div>
 
-    <!-- Augmented Reality (AR) -->
-    <div class="slider-item">
-        <img src="img/icon_ar.png" alt="Augmented Reality (AR)" title="Augmented Reality (AR)" width="img-item">
+<!-- Augmented Reality (AR) -->
+<div class="slider-item">
+    <div class="slider-item-img">
+        <img src="img/icon_ar.png" alt="Augmented Reality (AR)" title="Augmented Reality (AR)" class="img-item">
+    </div>
+    <div class="slider-item-content">
         <h3>Augmented Reality (AR)</h3>
         <p>Applications of AR technology to enhance user experiences by overlaying digital information onto the real world.</p>
     </div>
+</div>
 
-    <!-- HealthTech -->
-    <div class="slider-item">
+<!-- HealthTech -->
+<div class="slider-item">
+    <div class="slider-item-img">
         <img src="img/icon_health.png" alt="HealthTech" title="HealthTech" class="img-item">
+    </div>
+    <div class="slider-item-content">
         <h3>HealthTech</h3>
         <p>Advancements in technology aimed at improving healthcare delivery, medical research, and patient outcomes.</p>
     </div>
+</div>
 
-    <!-- Robotics and Automation -->
-    <div class="slider-item">
-        <img src="img/icon_robotics.png" alt="Robotics and Automation" title="Robotics and Automation"  class="img-item">
+<!-- Robotics and Automation -->
+<div class="slider-item">
+    <div class="slider-item-img">
+        <img src="img/icon_robotics.png" alt="Robotics and Automation" title="Robotics and Automation" class="img-item">
+    </div>
+    <div class="slider-item-content">
         <h3>Robotics and Automation</h3>
         <p>Designs and ideas for robots and automated systems that streamline processes and solve complex challenges.</p>
     </div>
 </div>
+
+</div>
+
 
 
     <button class="slider-btn left-btn">&lt;</button>
@@ -279,28 +314,28 @@
             </h1>
         </div>
         <div class="row g-5">
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-right">
                 <div class="feature-box">
                     <img src="img/inovative-solution-1.png" alt="inovative-solution" class="heading-logo">
                     <h3 class="feature-title">Innovative Solutions</h3>
                     <p>Hackathons offer cost-effective and creative solutions to complex problems, leveraging diverse perspectives and cutting-edge technologies.</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-left">
                 <div class="feature-box">
                     <img src="img/collaboration.png" alt="recog-visiblity-1" class="heading-logo">
                     <h3 class="feature-title">Focusing on collaboration</h3>
                     <p>Participating in hackathons fosters collaboration that contributes to nation-building and enhances your company's brand visibility among top talent and premier institutions.</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-right">
                 <div class="feature-box">
                     <img src="img/Thinking.png" alt="out-of-box-solution-1" class="heading-logo">
                     <h3 class="feature-title">Thinking Beyond Boundaries</h3>
                     <p>Elevate your company's presence by gaining national recognition and visibility across key institutions and networks in India, positioning yourself as a leader in innovative thinking and impactful solutions.</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-left">
                 <div class="feature-box">
                     <img src="img/out-of-box-solution-1.png" alt="out-of-box-solution-1" class="heading-logo">
                     <h3 class="feature-title">Out-of-the-Box Solutions</h3>
@@ -320,20 +355,20 @@
         </div>
         <div class="row">
             <div class="col-md-4 text-center mb-4">
-                <div class="committee-member">
+                <div class="committee-member" data-aos="zoom-in-right"> 
                     <img src="img/Principal-photo.jpg" alt="Dr. C. Mathalai Sundaram" class="img-fluid">
                     <h5>Dr. C. Mathalai Sundaram</h5>
                     <p>Principal, NSCET</p>
                 </div>
             </div>
-            <div class="col-md-4 text-center mb-4">
+            <div class="col-md-4 text-center mb-4" data-aos="zoom-in-down">
                 <div class="committee-member">
                     <img src="img/mathavan.jpg" alt="Mathavan" class="img-fluid">
                     <h5>Mr.N.MATHAVAN</h5>
                     <p>Vice Principal,NSCET</p>
                 </div>
             </div>
-            <div class="col-md-4 text-center mb-4">
+            <div class="col-md-4 text-center mb-4" data-aos="zoom-in-left">
                 <div class="committee-member">
                     <img src="img/Sathya.jpg" alt="Sathya" class="img-fluid">
                     <h5>Dr.M.Sathya</h5>
@@ -352,11 +387,11 @@
         </div>
             <div class="logo-section">
                 <!-- NSCET Logo -->
-                <div class="logo-wrapper">
+                <div class="logo-wrapper" data-aos="zoom-in-left">
                     <img class="img-fluid logo-img" src="img/nscetlogo.png" alt="NSCET Logo" width="380px">
                 </div>
                 <!-- TMHNU Logo -->
-                <div class="logo-wrapper">
+                <div class="logo-wrapper" data-aos="zoom-in-right">
                     <img class="img-fluid logo-img" src="img/tmhnu.png" alt="TMHNU Logo" width="380px">
                 </div>
             </div>
@@ -369,7 +404,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class=" back-to-top pt-2"><img src="./img/rocket.png" alt="" width="120px"></a>
 
 
     <!-- JavaScript Libraries -->
@@ -385,7 +420,14 @@
     <script src="js/main.js"></script>
     <script src="js/gsap.min.js"></script>
 		<script type="module" src="js/index.js"></script>
-    
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    AOS.init({
+        duration: 800,
+    })
+  </script>
+
 </body>
 
 </html>
