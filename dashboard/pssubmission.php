@@ -10,6 +10,8 @@
     
   </title>
   <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
@@ -19,91 +21,8 @@
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-  <style>
-
-.dashboard {
-        width: 100%;
-        max-width: 1000px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
-
-   
-
-  .form-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-top: 25px;
-      font-family: "source-code-pro", monospace !important;
-
-    
-      
-      width: 100%;
-    }
-    .form-content{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .form-group label {
-      
-      margin-bottom: 5px;
-    }
-    .form-group select, .form-group input[type="file"], .form-group input[type="submit"] {
-      width: 100%;
-      padding: 8px;
-      font-size: 16px;
-    }
-    .form-group input[type="submit"] {
-      background-color: #000000;
-      border-radius: 6px;
-      padding: 10px ;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .form-group input[type="submit"]:hover {
-      background-color: #000000;
-    } 
-    
-.heading-spacing {
-    
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 600;
-    background-image: linear-gradient(45deg, #e8c942, rgb(148, 98, 209));
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    font-size: 2.5vw;
-    
-   
-  
-    
-
-}
-
-.heading-spacing i {
-    font-family: "lores-9-plus-wide", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    
-    font-size: clamp(28px,3.25vw,35px);
-  
-}
-  </style>
+  <link href="./pssubmisson.css" rel="stylesheet"/>
+ 
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -113,13 +32,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
-        </nav>
+  
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <!-- <div class="input-group">
@@ -254,24 +167,252 @@
 
       <!-- Submit Button -->
       <div class="form-group">
-        <input type="submit" value="Submit">
+      <button class="button-64" role="button"><span class="text">Submit</span></button>
+
       </div>
     </form>
   </div>
     
     </div>
-            
-    <!-- End Navbar -->
-  
-  <!--   Core JS Files   -->
-  <script src="./assets/js/core/popper.min.js"></script>
-  <script src="./assets/js/core/bootstrap.min.js"></script>
-  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="./assets/js/plugins/chartjs.min.js"></script>
-  
 
-  <script src="./assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    
+<div class="table-section">
+    <div class="table-container">
+        <div class="col-md-12 text-center mb-4">
+            <h2 class="heading-spacing  psl" style="margin:0px">
+                <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
+            </h2>
+        </div>
+
+        <div class="table-filter">
+           <!-- <div class="ideappt">
+         <a href="./NSCET HACKATHON 2024 - Idea PPT.pptx" download style="border-bottom: 1px solid #121212;">Idea Submission Format PPT</a>
+           </div> -->
+           <div class="category">
+           <h4>Category:</h4>
+            <select class="category-dropdown" id="category-filter">
+                <option value="all">All</option>
+                <option value="software">Software</option>
+                <option value="hardware">Hardware</option>
+            </select>
+           </div>
+        </div>
+
+        <table class="custom-table">
+            <thead class="custom-header">
+                <tr>
+                    <th class="custom-header-cell">S.No.</th>
+                    <th class="custom-header-cell">Problem Statement ID</th>
+                    <th class="custom-header-cell">Problem Statement Title</th>
+                    <th class="custom-header-cell">Category</th>
+                    <th class="custom-header-cell">Submitted Idea(s) Count</th>
+                    <th class="custom-header-cell">Theme</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+        <!-- Pagination buttons will be populated by JavaScript -->
+    </div>
+</div>
+<script>
+ let tableData = [];
+let currentPage = 1;
+const rowsPerPage = 10;
+
+async function fetchData() {
+    try {
+        const response = await fetch('./resources/ps_fetch.php');
+        tableData = await response.json();
+        displayTable(currentPage); // Display data after fetching
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+function displayTable(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const tableBody = document.getElementById('table-body');
+    tableBody.innerHTML = '';
+
+    const filteredData = filterData();
+    const paginatedData = filteredData.slice(start, end);
+
+    paginatedData.forEach((row, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${index + start + 1}</td>
+            <td>${row.ps_id}</td>
+            <td class="problem-title" data-description="${row.ps_description}" data-ps-id="${row.ps_id}" data-ps-title="${row.ps}">${row.ps}</td>
+            <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
+            <td>${'0'}</td>
+            <td>${row.ps_domain}</td>
+        `;
+        tableBody.appendChild(tr);
+    });
+
+    attachTitleClickEvents();
+    updatePagination(filteredData.length);
+}
+
+function filterData() {
+    const selectedCategory = document.getElementById('category-filter').value.toLowerCase();
+    if (selectedCategory === 'all') {
+        return tableData;
+    } else {
+        return tableData.filter(row => {
+            return row.ps_type == (selectedCategory === 'software' ? 0 : 1);
+        });
+    }
+}
+
+function attachTitleClickEvents() {
+    const titles = document.querySelectorAll('.problem-title');
+    titles.forEach(title => {
+        title.addEventListener('click', function() {
+            const description = this.getAttribute('data-description');
+            document.getElementById('modal-description').textContent = description;
+
+            const ps_id = this.getAttribute('data-ps-id');
+            document.getElementById('modal-ps-id').textContent = ps_id;
+
+            const ps_title = this.getAttribute('data-ps-title');
+            document.getElementById('modal-ps-title').textContent = ps_title;
+            openModal();
+        });
+    });
+}
+
+function openModal() {
+    const modal = document.getElementById('problemModal');
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById('problemModal');
+    modal.style.display = "none";
+}
+
+function updatePagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / rowsPerPage);
+    const paginationDiv = document.getElementById('pagination');
+    paginationDiv.innerHTML = '';
+
+    const prevBtn = document.createElement('button');
+    prevBtn.id = 'prev-btn';
+    prevBtn.innerText = 'Previous';
+    prevBtn.onclick = prevPage;
+    prevBtn.disabled = currentPage === 1;
+    paginationDiv.appendChild(prevBtn);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('span');
+        pageLink.innerText = i;
+        pageLink.className = 'page-link';
+        if (i === currentPage) {
+            pageLink.classList.add('active');
+        }
+        pageLink.onclick = () => goToPage(i);
+        paginationDiv.appendChild(pageLink);
+    }
+
+    const nextBtn = document.createElement('button');
+    nextBtn.id = 'next-btn';
+    nextBtn.innerText = 'Next';
+    nextBtn.onclick = nextPage;
+    nextBtn.disabled = currentPage === totalPages;
+    paginationDiv.appendChild(nextBtn);
+}
+
+function goToPage(page) {
+    currentPage = page;
+    displayTable(currentPage);
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        displayTable(currentPage);
+    }
+}
+
+function nextPage() {
+    const totalPages = Math.ceil(filterData().length / rowsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayTable(currentPage);
+    }
+}
+
+document.querySelector('.close').onclick = closeModal;
+window.onclick = function(event) {
+    const modal = document.getElementById('problemModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+document.getElementById('category-filter').addEventListener('change', function() {
+    currentPage = 1;
+    displayTable(currentPage);
+});
+
+// Initial fetch and display
+fetchData();
+
+
+    // animation H,S
+
+    document.addEventListener("DOMContentLoaded", function() {
+    function animateCount(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            element.innerText = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    const hardwareElement = document.querySelector('.hard h3');
+    const softwareElement = document.querySelector('.soft h3');
+    animateCount(hardwareElement, 0, 25, 2500);
+    animateCount(softwareElement, 0, 25, 2500);
+});
+document.getElementById('category-filter').addEventListener('change', function() {
+    const selectedCategory = this.value.toLowerCase();  // Get the selected category
+    const rows = document.querySelectorAll('#table-body tr');  // Select all rows in the table body
+
+    rows.forEach(row => {
+        const category = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+        if (selectedCategory === 'all' || category === selectedCategory) {
+            row.style.display = '';  // Show the row if it matches the selected category or if 'All' is selected
+        } else {
+            row.style.display = 'none';  // Hide the row if it doesn't match
+        }
+    });
+});
+
+
+
+
+
+  
+</script>
+
 </body>
 
 </html>
+
+
+
