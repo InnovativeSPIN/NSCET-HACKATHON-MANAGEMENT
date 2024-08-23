@@ -260,6 +260,15 @@
     </a>
 </div>
 
+<div class="ag-courses_item aids" data-department="aids">
+    <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <div class="ag-courses-item_title">Abirami Gayathri</div>
+        <div class="ag-courses-item_designation">Assistant Professor</div>
+        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
+        <div class="ag-courses-item_date-box">Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</div>
+    </a>
+</div>
 
 <!-- EEE Staffs -->
 
@@ -501,15 +510,7 @@
     </a>
 </div>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A. Vennimalai Rajan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Composite Materials</div>
-    </a>
-</div>
+
 
 <div class="ag-courses_item mech" data-department="mech">
     <a href="#" class="ag-courses-item_link">

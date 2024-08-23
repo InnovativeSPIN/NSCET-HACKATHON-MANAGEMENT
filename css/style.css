@@ -11,6 +11,7 @@ body{
 
     overflow-x: hidden !important;
 }
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
