@@ -20,12 +20,16 @@
    }
    .frame__demos{
     display: inline-block;
+    z-index: 99;
+
+   
    }
    .frame__demos-item{
        font-family: "source-code-pro", monospace;
        font-size: clamp(18px, 2.5vw, 17px) !important;
        margin-right:40px ;
        color: white !important;
+       
    }
    .up{
        position: absolute !important;
@@ -34,15 +38,21 @@
    
    }
 
+
    @media screen and (max-width:786px){
 
-    .frame__demos{
-        display: none;
-    }
+        .frame__demos{
+            display: none;
+            z-index: -1;
+
+            
+        }
     .nav-icon{
         display: block;
         z-index: 299;
+        
     }
+  
     .frame{
         z-index: 99;
     }

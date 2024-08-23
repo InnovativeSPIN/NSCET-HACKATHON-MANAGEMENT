@@ -1,91 +1,33 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <title>
-    Hackathon Dashboard 
+    
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
-    <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
-        <img src="../nscetlogo.png" class="navbar-brand-img h-100" alt="" style="font-size: 20px;">
-        <span class="ms-1 font-weight-bold">NSCET Hackathon</span>
-      </a>
-    </div>
-    <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="../pages/dashboard.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/billing.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Mentor</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">PS submission</span>
-          </a>
-        </li>
-
-
-      </ul>
-    </div>
-         
-      </div>
-
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Logout</a>
-    </div>
-  </aside>
+    <?php include("./resources/sidebar.php") ?>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    <!-- <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -131,7 +73,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        <img src="./assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -149,7 +91,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        <img src="./assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -198,9 +140,9 @@
           </ul>
         </div>
       </div>
-    </nav> -->
+    </nav>
     <!-- End Navbar -->
-    <!-- <div class="container-fluid py-4">
+    <div class="container-fluid py-4">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
@@ -323,7 +265,7 @@
           <div class="card card-carousel overflow-hidden h-100 p-0">
             <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
               <div class="carousel-inner border-radius-lg h-100">
-                <div class="carousel-item h-100 active" style="background-image: url('../assets/img/carousel-1.jpg');
+                <div class="carousel-item h-100 active" style="background-image: url('./assets/img/carousel-1.jpg');
       background-size: cover;">
                   <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
@@ -333,7 +275,7 @@
                     <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
                   </div>
                 </div>
-                <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-2.jpg');
+                <div class="carousel-item h-100" style="background-image: url('./assets/img/carousel-2.jpg');
       background-size: cover;">
                   <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
@@ -343,7 +285,7 @@
                     <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
                   </div>
                 </div>
-                <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-3.jpg');
+                <div class="carousel-item h-100" style="background-image: url('./assets/img/carousel-3.jpg');
       background-size: cover;">
                   <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
@@ -365,8 +307,8 @@
             </div>
           </div>
         </div>
-      </div> -->
-      <!-- <div class="row mt-4">
+      </div>
+      <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card ">
             <div class="card-header pb-0 p-3">
@@ -381,7 +323,7 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
-                          <img src="../assets/img/icons/flags/US.png" alt="Country flag">
+                          <img src="./assets/img/icons/flags/US.png" alt="Country flag">
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Country:</p>
@@ -412,7 +354,7 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
-                          <img src="../assets/img/icons/flags/DE.png" alt="Country flag">
+                          <img src="./assets/img/icons/flags/DE.png" alt="Country flag">
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Country:</p>
@@ -443,7 +385,7 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
-                          <img src="../assets/img/icons/flags/GB.png" alt="Country flag">
+                          <img src="./assets/img/icons/flags/GB.png" alt="Country flag">
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Country:</p>
@@ -474,7 +416,7 @@
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
-                          <img src="../assets/img/icons/flags/BR.png" alt="Country flag">
+                          <img src="./assets/img/icons/flags/BR.png" alt="Country flag">
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Country:</p>
@@ -573,8 +515,8 @@
             </div>
           </div>
         </div>
-      </div> -->
-      <!-- <footer class="footer pt-3  ">
+      </div>
+      <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
@@ -605,390 +547,7 @@
             </div>
           </div>
         </div>
-      </footer> -->
-
-
-
-
-
-
-
-<!-- input details -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Dashboard</title>
-    <style>
-      body {
-        font-family: "source-code-pro", monospace !important;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .dashboard {
-        width: 100%;
-        max-width: 1000px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
-
-    .header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .container {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    .team-details, .idea-details {
-        width: 48%;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, font-size 0.3s;
-        font-size: 24px;
-    }
-
-    .team-details:hover, .idea-details:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .team-details h2, 
-    .idea-details h2 {
-        margin: 0 0 10px;
-        font-size: 24px;
-        color: #344767;
-    }
-
-    .team-details p, 
-    .idea-details p {
-        margin: 0;
-        font-size: 24px;
-        color: #344767;
-    }
-
-    .team-details span, 
-    .idea-details span {
-        color: #007bff;
-        font-weight: bold;
-    }
-
-    .team-members {
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        animation: fadeIn 1.5s ease-in-out;
-    }
-
-    .members-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .add-member-btn {
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .add-member-btn:hover {
-        background-color: #0056b3;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    li:last-child {
-        border-bottom: none;
-    }
-
-    .footer {
-        text-align: center;
-        padding-top: 20px;
-        color: #666;
-    }
-
-    /* Animation */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Modal Styles */
-    .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1; 
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto; 
-        background-color: rgb(0,0,0); 
-        background-color: rgba(0,0,0,0.4); 
-        padding-top: 60px; 
-    }
-
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto; 
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; 
-        max-width: 600px; 
-        border-radius: 8px;
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .form-group input, .form-group select {
-        width: 100%;
-        padding: 8px;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-    }
-
-    .form-group button {
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .form-group button:hover {
-        background-color: #0056b3;
-    }
-    </style>
-</head>
-<body>
-    <div class="dashboard">
-        <header class="header">
-            <h1>Team Dashboard</h1>
-        </header>
-
-        <div class="container">
-            <!-- Team Details Section (Left) -->
-            <div class="team-details">
-                <h2>Team Name: <span>TechCreed</span></h2>
-                <p>Team Leader: <span>Mukilan</span></p>
-            </div>
-
-            <!-- Idea Details Section (Right) -->
-            <div class="idea-details">
-                <p>Mentor: <span>L.S.Vignesh</span></p>
-                <p>Submitted Idea: <span>AI-based Smart Irrigation System</span></p>
-            </div>
-        </div>
-
-        <!-- Team Members Section -->
-        <div class="team-members">
-            <div class="members-header">
-                <h2>Team Members</h2>
-                <button class="add-member-btn">Add Member</button>
-            </div>
-            <ul id="membersList">
-                <li>Mukilan</li>
-                <li>Tenshkumar</li>
-                <li>Srihari</li>
-                <li>Mark</li>
-                <li>Sandhosh</li>
-            </ul>
-        </div>
-
-        <footer class="footer">
-            <p>&copy; 2024 Team Dashboard</p>
-        </footer>
-    </div>
-
-    <!-- Modal -->
-    <div id="memberModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New Member</h2>
-            <div class="form-group">
-                <label for="regNumber">Registration Number:</label>
-                <input type="text" id="regNumber" placeholder="Enter registration number">
-            </div>
-            <div class="form-group">
-                <label for="memberName">Name:</label>
-                <input type="text" id="memberName" placeholder="Enter member name">
-            </div>
-            <div class="form-group">
-                <label for="department">Department:</label>
-                <select id="department">
-                    <option value="">Select Department</option>
-                    <option value="CSE">Computer Science</option>
-                    <option value="IT">Information Technology</option>
-                    <option value="ECE">Electronics & Communication</option>
-                    <option value="EEE">Electrical & Electronics</option>
-                    <!-- Add more options as needed -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="year">Year:</label>
-                <select id="year">
-                    <option value="">Select Year</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="email">Email ID:</label>
-                <input type="email" id="email" placeholder="Enter email ID">
-            </div>
-            <div class="form-group">
-                <button id="submitMemberBtn">Add Member</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const addMemberButton = document.querySelector('.add-member-btn');
-        const modal = document.getElementById('memberModal');
-        const closeButton = document.querySelector('.close');
-        const submitButton = document.getElementById('submitMemberBtn');
-        const membersList = document.getElementById('membersList');
-
-        addMemberButton.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
-
-        closeButton.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        submitButton.addEventListener('click', () => {
-            const regNumber = document.getElementById('regNumber').value;
-            const memberName = document.getElementById('memberName').value;
-            const department = document.getElementById('department').value;
-            const year = document.getElementById('year').value;
-            const email = document.getElementById('email').value;
-
-            if (regNumber && memberName && department && year && email) {
-                const newMember = `${memberName} (${regNumber})`;
-                const li = document.createElement('li');
-                li.textContent = newMember;
-                membersList.appendChild(li);
-                modal.style.display = 'none';
-                document.querySelectorAll('.form-group input, .form-group select').forEach(input => input.value = '');
-            } else {
-                alert('Please fill out all fields.');
-            }
-        });
-    });
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </footer>
     </div>
   </main>
   <div class="fixed-plugin">
@@ -1064,101 +623,107 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <!-- <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script> -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/chartjs.min.js"></script>
   <script>
-    // var ctx1 = document.getElementById("chart-line").getContext("2d");
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
 
-    // var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
 
-    // gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-    // gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-    // gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    // new Chart(ctx1, {
-    //   type: "line",
-    //   data: {
-    //     labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    //     datasets: [{
-    //       label: "Mobile apps",
-    //       tension: 0.4,
-    //       borderWidth: 0,
-    //       pointRadius: 0,
-    //       borderColor: "#5e72e4",
-    //       backgroundColor: gradientStroke1,
-    //       borderWidth: 3,
-    //       fill: true,
-    //       data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-    //       maxBarThickness: 6
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#5e72e4",
+          backgroundColor: gradientStroke1,
+          borderWidth: 3,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
 
-    //     }],
-    //   },
-    //   options: {
-    //     responsive: true,
-    //     maintainAspectRatio: false,
-    //     plugins: {
-    //       legend: {
-    //         display: false,
-    //       }
-    //     },
-    //     interaction: {
-    //       intersect: false,
-    //       mode: 'index',
-    //     },
-    //     scales: {
-    //       y: {
-    //         grid: {
-    //           drawBorder: false,
-    //           display: true,
-    //           drawOnChartArea: true,
-    //           drawTicks: false,
-    //           borderDash: [5, 5]
-    //         },
-    //         ticks: {
-    //           display: true,
-    //           padding: 10,
-    //           color: '#fbfbfb',
-    //           font: {
-    //             size: 11,
-    //             family: "Open Sans",
-    //             style: 'normal',
-    //             lineHeight: 2
-    //           },
-    //         }
-    //       },
-    //       x: {
-    //         grid: {
-    //           drawBorder: false,
-    //           display: false,
-    //           drawOnChartArea: false,
-    //           drawTicks: false,
-    //           borderDash: [5, 5]
-    //         },
-    //         ticks: {
-    //           display: true,
-    //           color: '#ccc',
-    //           padding: 20,
-    //           font: {
-    //             size: 11,
-    //             family: "Open Sans",
-    //             style: 'normal',
-    //             lineHeight: 2
-    //           },
-    //         }
-    //       },
-    //     },
-    //   },
-    // });
-
-
-   
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fbfbfb',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="./assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
 </html>

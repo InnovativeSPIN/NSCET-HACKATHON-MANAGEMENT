@@ -54,6 +54,7 @@
 
     <!-- slider js lib-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+   
 </head>
 
 <body>
@@ -132,9 +133,9 @@
      <main>
         <?php include('./resources/header.php') ?>
         <div class="content">
-            <h2><i>N S C E T</i> <i>H</i>ackathon</h2>
-            <p>A 36 Hours Tech MARATHON</p>
-        </div>
+        <h2><i>N S C E T</i></h2>
+        <p>A 36 Hours Tech MARATHON</p>
+    </div>
         <!-- <div class="robo-content" id="model-container">
         <model-viewer src="./robo/scene.gltf" alt="A 3D model of a car" shadow-intensity="1"   disable-zoom  camera-controls auto-rotate   camera-orbit="4000deg  " style=" height: 80%;">
         </model-viewer>
@@ -427,6 +428,28 @@
         duration: 800,
     })
   </script>
+   <script>
+        const textElement = document.getElementById('hackathon-text');
+        const text = textElement.textContent;
+        textElement.textContent = ''; // Clear the initial text
+
+        function revealText(element, text) {
+            element.classList.remove('hidden'); // Show the element
+            let index = 0;
+
+            function showNextLetter() {
+                if (index < text.length) {
+                    element.textContent += text[index];
+                    index++;
+                    setTimeout(showNextLetter, 200); // Adjust the delay as needed
+                }
+            }
+
+            showNextLetter();
+        }
+
+        revealText(textElement, text);
+    </script>
 
 </body>
 

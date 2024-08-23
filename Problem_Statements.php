@@ -32,6 +32,7 @@
     </script>
     <style>
      
+     
     </style>
 </head>
 <body>
@@ -135,12 +136,17 @@
         </div>
 
         <div class="table-filter">
-            <h4>Category:</h4>
+           <div class="ideappt">
+         <a href="./NSCET HACKATHON 2024 - Idea PPT.pptx" download style="border-bottom: 1px solid #121212;">Idea Submission Format PPT</a>
+           </div>
+           <div class="category">
+           <h4>Category:</h4>
             <select class="category-dropdown" id="category-filter">
                 <option value="all">All</option>
                 <option value="software">Software</option>
                 <option value="hardware">Hardware</option>
             </select>
+           </div>
         </div>
 
         <table class="custom-table">
