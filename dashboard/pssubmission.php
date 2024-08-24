@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+
   <title>
     PSsubmission|NSCET HACKATHON
   </title>
@@ -151,11 +150,11 @@
       <!-- Dropdown Section -->
       <div class="form-group">
         <label for="dropdown">Select an PS ID :</label>
-        <input list="browsers" name="browser" id="browser">
+        <input list="browsers" name="browser" id="browser" maxlength="8" >
         <datalist  id="browsers" name="dropdown">
-          <option value="PSID">
-          <option value="PSID">
-          <option value="PSID">  
+          <option value="PSID21">
+          <option value="PSID43">
+          <option value="PSID12">  
         </datalist >
       </div>
 
@@ -228,7 +227,7 @@ const rowsPerPage = 10;
 
 async function fetchData() {
     try {
-        const response = await fetch('./resources/ps_fetch.php');
+        const response = await fetch('../resources/ps_fetch.php');
         tableData = await response.json();
         displayTable(currentPage); // Display data after fetching
     } catch (error) {

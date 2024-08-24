@@ -10512,7 +10512,7 @@ fieldset:disabled .btn {
 }
 
 .text-secondary {
-  color: #8392ab !important;
+  color: #8392ab ;
 }
 
 .text-success {

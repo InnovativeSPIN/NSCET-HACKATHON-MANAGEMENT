@@ -19,7 +19,7 @@
         header('location:404.php');
     }
 
-    date_default_timezone_set('Asia/Calcutta');
+    date_default_timezone_set('Asia/Calcutta'); 
     function siteURL() 
     {
         $protocol =((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";

@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+ 
+ 
+  <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
+
   <title>Mentor Selection</title>
   <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -411,6 +413,27 @@ body {
   display: none;
 }
 
+.heading-spacing {
+    font-family: "greycliff-cf", sans-serif;
+    font-weight: 600;
+    background-image: linear-gradient(45deg, #e8c942, rgb(148, 98, 209));
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-size: 2.5vw;
+  }
+  
+  .heading-spacing i {
+    font-family: "lores-9-plus-wide", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: clamp(28px, 3.25vw, 35px);
+  }
+  
+
 
   </style>
 </head>
@@ -419,9 +442,11 @@ body {
   <?php include("./resources/sidebar.php") ?>
   <main class="main-content position-relative border-radius-lg">
     <div class="dashboard">
-      <div class="header">
-        <h1>Select a Mentor</h1>
-      </div>
+    <div class="col-md-12 text-center mb-4">
+            <h2 class="heading-spacing  psl" style="margin:0px">
+                 <i>S</i>elect  a  <i>M</i>entor
+            </h2>
+        </div>
       <div class="button-container">
       <div class="button-container">
   <button class="department-btn cse active" onclick="selectButton(this)">CSE</button>

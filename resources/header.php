@@ -21,7 +21,7 @@
             </div>
             <nav class="frame__demos">
                 <!-- <span class="frame__demos-item">Variations: </span>	 -->
-                <a class="frame__demos-item" href="/hackathon" class="homeicon">Home</a>
+                <a class="frame__demos-item" href="./index.php" class="homeicon">Home</a>
                 <!-- <a class="frame__demos-item" href="">About</a> -->
                 <a class="frame__demos-item" href="./rules_and_regulations.php">Rules & Guidelines</a>
                 <a class="frame__demos-item" href="./Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
