@@ -64,7 +64,7 @@
         if (index < texts.length) {
             hacktext.textContent += texts[index];
             index++;
-            setTimeout(animateText, 300); // Adjust the time interval if needed
+            setTimeout(animateText, 200); // Adjust the time interval if needed
         }
     }
 

@@ -1,6 +1,7 @@
 <div class="frame">
             <div class="frame__title"> 
                 <img class="logonscet" src="img/nscetlogo.png" alt="nscetLogo" >
+                <img class="logonscet" src="img/logoHack.png" alt="nscetLogo" >
             </div>
             <div class="nav-icon">
 
@@ -20,20 +21,20 @@
             </div>
             <nav class="frame__demos">
                 <!-- <span class="frame__demos-item">Variations: </span>	 -->
-                <a class="frame__demos-item" href="/hackathons" class="homeicon">Home</a>
+                <a class="frame__demos-item" href="/hackathon" class="homeicon">Home</a>
                 <!-- <a class="frame__demos-item" href="">About</a> -->
                 <a class="frame__demos-item" href="./rules_and_regulations.php">Rules & Guidelines</a>
                 <a class="frame__demos-item" href="./Problem_Statements.php">Problem Statements</a>                <a class="frame__demos-item" href="">FAQs</a>
                 <a class="frame__demos-item" href="./mentorslist.php">Mentors</a>       
                          <!-- <a class="frame__demos-item" href="">FAQs</a> -->
                 <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
-                <div class="up">
+                <!-- <div class="up">
                 <div class="new">
                     <div class="new1">
                         <a class="frame__demos-item vutton-custine" href="">Register</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
                     </nav>
         </div>
 

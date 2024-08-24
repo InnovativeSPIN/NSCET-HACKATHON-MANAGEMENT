@@ -272,7 +272,10 @@ footer {
             <h2>Team Composition</h2>
             <ul>
                 <li>Each team must consist of <span class="highlight">6 members</span>.</li>
-                <li>Teams must include members from at least <span class="highlight">two different departments</span>.</li>
+                <li>Teams must include members from at least <span class="highlight">two
+different departments</span>, with at least <span class="highlight">one member from a different department</span>
+than the others. For this purpose, <span class="highlight">AI&DS, CSE, and IT</span> are treated as a <span class="highlight">single
+department</span>.</li>
                 <li>If a team primarily consists of male members, it must include at least <span class="highlight">2 female members</span>.</li>
                 <li>If a team primarily consists of female members, it must include at least <span class="highlight">2 male members</span>.</li>
             </ul>
@@ -300,8 +303,9 @@ footer {
             <ul>
                 <li>No changes in team composition are allowed once registered.</li>
                 <li>Each team can participate in only one edition of the hackathon, either <span class="highlight">Software or Hardware</span>.</li>
-                <li>Teams must select and work on <span class="highlight">one problem statement only</span> for the duration of the hackathon.</li>
-                <li>The problem statements will be allotted on a <span class="highlight">First Come First Serve</span> basis.</li>
+                <li>Teams must select and work on <span class="highlight">one problem statement only</span> for the duration of the hackathon. <span class="highlight">Each problem statement is limited to a
+maximum of 3 teams</span>.</li>
+                <li>Problem statements will be assigned to teams on a <span class="highlight">first-come, first-served</span> basis. This approach ensures that no more than three teams tackle the same problem, promoting <span class="highlight">diversity in approaches and solutions</span> throughout the competition.</li>
             </ul>
         </div>
 
