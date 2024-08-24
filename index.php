@@ -335,6 +335,7 @@
                     <p>Vice Principal,NSCET</p>
                 </div>
             </div>
+
             <div class="col-md-4 text-center mb-4" >
                 <div class="committee-member" data-aos="flip-left">
                     <img src="img/Sathya.jpg" alt="Sathya" class="img-fluid">
@@ -342,9 +343,41 @@
                     <p>Vice Principal,NSCET</p>
                 </div>
             </div>
+            <div class="col-md-6 text-center mb-6" >
+                <div class="committee-member" data-aos="flip-left">
+                    <img src="img/vignesh.jpg" alt="vignesh" class="img-fluid">
+                    <h5>L.S.Vignesh</h5>
+                    <p>Hackathon Coordinator</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center mb-6" >
+                <div class="committee-member" data-aos="flip-left">
+                    <img src="img/Dr athilingam.jpg" alt="Dr athilingam" class="img-fluid">
+                    <h5>Dr.R.Athilingam</h5>
+                    <p>Hackathon Coordinator</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!-- ispin  -->
+
+<div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="mb-4">Our Tech Team</h1>
+        </div>
+            <div class="logo-section">
+                <!-- NSCET Logo -->
+                <div class="logo-wrapper" data-aos="zoom-in-down">
+                    <img class="img-fluid logo-img" src="https://nscet.org/waves23/public/images/logos/ispin-logo.png" alt="NSCET Logo" width="380px">
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Organizing Committee End -->
 
 <div class="container-xxl py-5">
@@ -359,6 +392,11 @@
                 </div>
                 <!-- TMHNU Logo -->
                 <div class="logo-wrapper" data-aos="zoom-in-up">
+                    <img class="img-fluid logo-img" src="img/tmhnu.png" alt="TMHNU Logo" width="380px">
+                </div>
+                
+                 <!-- TMHNU Logo -->
+                 <div class="logo-wrapper" data-aos="zoom-in-up">
                     <img class="img-fluid logo-img" src="img/tmhnu.png" alt="TMHNU Logo" width="380px">
                 </div>
             </div>
