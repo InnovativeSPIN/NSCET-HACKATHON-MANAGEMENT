@@ -36,7 +36,7 @@
     <div class="main-body">
 <div class="container">
         <div class="inner-content">
-        <h2 class="title">Team Registration</h2>
+        <h2 class="title">Registration</h2>
         <form action="#" class="form-container">
             <div class="input-box email">
                 <input type="text"  id="email-input" required placeholder="Team leader Reg No">
