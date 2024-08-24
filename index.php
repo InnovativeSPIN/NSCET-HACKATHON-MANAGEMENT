@@ -12,7 +12,6 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <meta name="generator" content="Geany 1.37.1" />
-
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -54,8 +53,28 @@
 
     <!-- slider js lib-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-   
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    let hacktext = document.querySelector("#hack-text");
+    let texts = "ackathon";
+    let index = 0;
+
+    function animateText() {
+        if (index < texts.length) {
+            hacktext.textContent += texts[index];
+            index++;
+            setTimeout(animateText, 300); // Adjust the time interval if needed
+        }
+    }
+
+    animateText(); // Start the animation
+});
+
+    </script>
+
 </head>
+
 
 <body>
 
@@ -74,8 +93,14 @@
      <main>
         <?php include('./resources/header.php') ?>
         <div class="content">
-        <h2><i>N S C E T</i> <i>H</i>ackathon</h2>
+        <div class="inner-content">
+        <h2><i>N S C E T</i> </h2><br>
+        <h2><i>H</i><span id="hack-text"></span></h2>
+        </div>
+        <div class="tag-line">
         <p>A 36 Hours Tech MARATHON</p>
+        </div>
+
     </div>
         <!-- <div class="robo-content" id="model-container">
         <model-viewer src="./robo/scene.gltf" alt="A 3D model of a car" shadow-intensity="1"   disable-zoom  camera-controls auto-rotate   camera-orbit="4000deg  " style=" height: 80%;">
@@ -236,8 +261,8 @@
         <h1 class="mb-4">NSCET Hackathon Process Flow and Timeline</h1>
         <div class="row g-5 align-items-center">
             <div class="col-12">
-                <h1 style='text-align:center'>To be Updated !!</h1>
-                <!-- <img src="img/flow-chart.png" alt="Nscet hackathon Process Flow and Timeline" class="img-fluid w-100"> -->
+                <!-- <h1 style='text-align:center'>To be Updated !!</h1> -->
+                <img src="img/flow-chart.png" alt="Nscet hackathon Process Flow and Timeline" class="img-fluid w-100" data-aos="zoom-in-up">
             </div>
         </div>
     </div>
