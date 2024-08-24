@@ -26,139 +26,6 @@ body {
   overflow-x: hidden !important;
 }
 
-.ag-courses_item,
-.ag-courses_item * {
-  font-family: 'source-code-pro', monospace !important;
-}
-
-/* Container styling */
-.ag-format-container {
-  width: 1142px;
-  margin: 0 auto;
-}
-
-/* Box styling */
-.ag-courses_box {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 50px 0;
-  margin-top: 80px; /* Add margin-top to push content down */
-}
-
-/* Individual card styling */
-.ag-courses_item {
-  flex-basis: calc(33.33333% - 30px);
-  margin: 0 15px 30px;
-  overflow: hidden;
-  border-radius: 28px;
-  position: relative; /* Required for background positioning */
-}
-
-/* Link styling inside cards */
-.ag-courses-item_link {
-  display: block;
-  padding: 10px 10px;
-  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
-  border: 2px solid #ccc; /* Silver border */
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  color: #333; /* Dark grey text */
-  height: 300px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
-/* Hover effects */
-.ag-courses-item_link:hover {
-  color: #000;
-  background-color: rgba(255, 255, 255, 1); /* Solid white background on hover */
-}
-
-.ag-courses-item_link:hover .ag-courses-item_date {
-  color: #333; /* Darker text color on hover */
-}
-
-.ag-courses-item_link:hover .ag-courses-item_bg {
-  transform: scale(10);
-}
-
-/* Title styling */
-.ag-courses-item_title {
-  min-height: 87px;
-  margin-bottom: -30px;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 30px;
-  color: #333; /* Dark grey text */
-  z-index: 2;
-  position: relative;
-}
-
-/* Designation styling */
-.ag-courses-item_designation {
-  min-height: 80px;
-  margin-top: -5px;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 20px;
-  color: #333; /* Dark grey text */
-  z-index: 2;
-  position: relative;
-}
-
-/* Date box styling */
-.ag-courses-item_date-box {
-  margin: -10px 0 20px;
-  font-size: 18px;
-  color: #333; /* Dark grey text */
-  z-index: 2;
-  position: relative;
-}
-
-/* Background styling */
-.ag-courses-item_bg {
-  height: 128px;
-  width: 128px;
-  background-color: rgba(192, 192, 192, 0.5); /* Semi-transparent silver */
-  z-index: 1;
-  position: absolute;
-  top: -75px;
-  right: -75px;
-  border-radius: 50%;
-  transition: all .5s ease;
-}
-
-/* Optional color variations for different course items */
-.ag-courses_item:nth-child(1n) .ag-courses-item_bg {
-  background-color: #ffb380; /* Light orange */
-}
-
-.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #c861ff; /* Purple */
-}
-
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #3dff98; /* Light green */
-}
-
-.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #828282; /* Gray */
-}
-
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #ff54f6; /* Pink */
-}
-
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #057eff; /* Blue */
-}
-
-.ag-courses_item:nth-child(7n) .ag-courses-item_bg {
-  background-color: #d1ff3b; /* Light yellow-green */
-}
-
-
 /* Media Queries */
 @media only screen and (max-width: 979px) {
   .ag-courses_item {
@@ -193,24 +60,38 @@ body {
 }
 
 /* Department button */
+/* Container for department buttons */
 .button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px; /* Adjusted to ensure buttons are visible */
-  padding-top: 0px;
-  flex-wrap: wrap;
+  position: sticky; /* Makes the container stick to the top as you scroll */
+  top: 0;
+  background-color: #fff; /* Ensure it stays visible */
+  z-index: 100; /* Ensure it appears above other content */
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Optional: Add a border for separation */
 }
 
+/* Individual department button styles */
 .department-btn {
   background-color: rgba(192, 192, 192, 0.5); /* Semi-transparent silver */
   color: #333; /* Dark grey text */
   border: 2px solid #ccc; /* Silver border */
   border-radius: 8px;
   padding: 10px 20px;
-  margin: 10px 10px;
+  margin: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.department-btn:hover {
+  background-color: #c861ff; /* Purple */
+  color: #fff; /* White text */
+}
+
+/* Active state colors */
+.department-btn.active {
+  background-color: #ffb380; /* Light orange */
+  color: #000; /* Black text */
 }
 
 /* Hover effect for department buttons */
@@ -267,7 +148,6 @@ body {
   background-color: #c861ff; /* Purple */
   color: #fff; /* White text */
 }
-
 
 .dashboard {
   width: 100%;
@@ -364,6 +244,174 @@ body {
   color: #000;
 }
 
+.staff-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.staff-item {
+  display: block;
+  margin-bottom: 15px;
+  display: none; /* Hide all by default */
+}
+
+.staff-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative; /* Added to ensure buttons inside are positioned relative to this */
+}
+
+.staff-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.staff-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.staff-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.staff-details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.select-btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.select-btn:hover {
+  background-color: #0056b3;
+}
+
+.department-btn {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.department-btn.active {
+  background-color: #0056b3;
+}
+
+.department-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above all other content */
+  animation: fadeIn 0.3s ease; /* Animation for popup appearance */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow for a 3D effect */
+  max-width: 400px; /* Limiting max width for better design */
+  width: 90%; /* Responsive width */
+  animation: popup-appear 0.3s ease; /* Animation for popup content appearance */
+}
+
+@keyframes popup-appear {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between buttons */
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.popup-buttons button:first-child {
+  background-color: #28a745; /* Green for confirm */
+  color: white;
+}
+
+.popup-buttons button:first-child:hover {
+  background-color: #218838;
+}
+
+.popup-buttons button:last-child {
+  background-color: #dc3545; /* Red for cancel */
+  color: white;
+}
+
+.popup-buttons button:last-child:hover {
+  background-color: #c82333;
+}
+
+
+/* Hide popup content when not active */
+.hidden {
+  display: none;
+}
+
+
   </style>
 </head>
 
@@ -391,797 +439,1094 @@ body {
 
 
 <section class="content">
-    <div class="ag-format-container">
-    <div class="ag-courses_box">
+  <div class="ag-format-container">
+    <ul class="staff-list">
     
 
 
-    <!-- others Staffs -->
-  <div class="ag-courses_item others" data-department="others">
-    <a href="#" class="ag-courses-item_link bl ">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">N.Nagarathinam</div>
-        <div class="ag-courses-item_designation">Head of Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Structural design ,Quantity Surveying,Surveying and Measurements,CAD Drafting </div>
-    </a>
-</div>
+    <!-- Others Staffs -->
+    <li class="staff-item others" data-department="others">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">N.Nagarathinam</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'N.Nagarathinam')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> OTHERS</p>
+            <p><strong>Designation:</strong> Head of Department</p>
+            <p><strong>Area of Interest:</strong> Structural design, Quantity Surveying, Surveying and Measurements, CAD Drafting</p>
+          </div>
+        </div>
+      </li>
 
 
 
   <!-- CSE Staffs -->
-  <div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link bl ">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">J.Mathalai Raj</div>
-        <div class="ag-courses-item_designation">Head of Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Software Engineering, Data Structures, Algorithms, Machine Learning</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link bl ">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Arul Jothi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Database Management Systems, Cloud Computing, Web Technologies</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Deepiga  </div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Artificial Intelligence, Computer Networks, Cybersecurity</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.A.Solairaj</div>
-        <div class="ag-courses-item_designation">Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Computer Vision, Pattern Recognition, Data Mining</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">J.Ayyanaprabu</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Embedded Systems, Internet of Things (IoT), Software Development</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">N.Kesavamoorthy</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Theoretical Computer Science, Compiler Design, Operating Systems</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.KEERTHANA</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Human-Computer Interaction, Mobile Computing, Augmented Reality</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Udhaya Kumar</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Software Project Management, Agile Methodologies, System Design</div>
-    </a>
-</div>
-
-<div class="ag-courses_item cse" data-department="cse">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Arunjunai Karthick</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Computer Architecture, Networking, Quantum Computing</div>
-    </a>
-</div>
+  <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">J.Mathalai Raj</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'J.Mathalai Raj')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Head of Department</p>
+            <p><strong>Area of Interest:</strong> Software Engineering, Data Structures, Algorithms, Machine Learning</p>
+          </div>
+        </div>
+      </li>
 
 
-<!-- IT Staffs -->
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">K.Deepiga</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'K.Deepiga')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Artificial Intelligence, Computer Networks, Cybersecurity</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">Dr.A.Solairaj</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.A.Solairaj')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Professor</p>
+            <p><strong>Area of Interest:</strong> Computer Vision, Pattern Recognition, Data Mining</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">J.Ayyanaprabu</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'J.Ayyanaprabu')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Embedded Systems, Internet of Things (IoT), Software Development</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">N.Kesavamoorthy</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'N.Kesavamoorthy')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Theoretical Computer Science, Compiler Design, Operating Systems</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">R.KEERTHANA</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.KEERTHANA')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Human-Computer Interaction, Mobile Computing, Augmented Reality</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">R.Udhaya Kumar</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Udhaya Kumar')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Software Project Management, Agile Methodologies, System Design</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item cse" data-department="cse">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">K.Arunjunai Karthick</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'K.Arunjunai Karthick')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> CSE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Computer Architecture, Networking, Quantum Computing</p>
+          </div>
+        </div>
+      </li>
 
 
-<div class="ag-courses_item it" data-department="it">
-    <a href="#" class="ag-courses-item_link bl ">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.M.Sathya</div>
-        <div class="ag-courses-item_designation">Head of the Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Networking ,Internet of Things ,Artificial Inteligence , OOPS </div>
-    </a>
-</div>
+      <!-- IT-staffs -->
 
-<div class="ag-courses_item it" data-department="it">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">G.Keerthana</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">DBMS, OOPs, HTML</div>
-    </a>
-</div>
+      <li class="staff-item it" data-department="it">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">Dr.M.Sathya</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.M.Sathya')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> IT</p>
+            <p><strong>Designation:</strong> Head of the Department</p>
+            <p><strong>Area of Interest:</strong> Networking, Internet of Things, Artificial Intelligence, OOPS</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item it" data-department="it">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">J. Kanimoli</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Artificial Intelligence, Computer Networks, IoT</div>
-    </a>
-</div>
+      <li class="staff-item it" data-department="it">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">G.Keerthana</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'G.Keerthana')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> IT</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> DBMS, OOPs, HTML</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item it" data-department="it">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A.Sangeetha</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Computer Network, Data Science, Artificial Intelligence</div>
-    </a>
-</div>
+      <li class="staff-item it" data-department="it">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">J. Kanimoli</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'J. Kanimoli')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> IT</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Artificial Intelligence, Computer Networks, IoT</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="staff-item it" data-department="it">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">A.Sangeetha</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'A.Sangeetha')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> IT</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Computer Network, Data Science, Artificial Intelligence</p>
+          </div>
+        </div>
+      </li>
 
 <!-- AI&DS Staffs -->
+<li class="staff-item aids" data-department="aids">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">L.S.Vignesh</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'L.S.Vignesh')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> AI&DS</p>
+            <p><strong>Designation:</strong> Head of the Department</p>
+            <p><strong>Area of Interest:</strong> Artificial Intelligence and Machine Learning, Data Science and Big Data Analytics</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item aids" data-department="aids">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">L.S.Vignesh</div>
-        <div class="ag-courses-item_designation">Head of the Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Artificial Intelligence and Machine Learning, Data Science and Big Data Analytics</div>
-    </a>
-</div>
+      <li class="staff-item aids" data-department="aids">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">R.Archana</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Archana')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> AI&DS</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Data Science, Artificial Intelligence</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item aids" data-department="aids">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Archana</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Data Science, Artificial Intelligence</div>
-    </a>
-</div>
+      <li class="staff-item aids" data-department="aids">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">J.Vinoth Kumar</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'J.Vinoth Kumar')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> AI&DS</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item aids" data-department="aids">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">J.Vinoth Kumar</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</div>
-    </a>
-</div>
-
-<div class="ag-courses_item aids" data-department="aids">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Abirami Gayathri</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</div>
-    </a>
-</div>
+      <li class="staff-item aids" data-department="aids">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">Abirami Gayathri</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Abirami Gayathri')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> AI&DS</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</p>
+          </div>
+        </div>
+      </li>
 
 <!-- EEE Staffs -->
+<li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">Dr.R.Athilingam</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.R.Athilingam')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Head of Department</p>
+            <p><strong>Area of Interest:</strong> IOT, Image Processing, Embedded System</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.R.Athilingam</div>
-        <div class="ag-courses-item_designation">Head of Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">IOT, Image Processing, Embedded System</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">Nishetha Jeflin Nixon</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Nishetha Jeflin Nixon')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Power Electronics, Renewable Energy System, Inverter and Converters, Power and Energy Systems</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Nishetha Jeflin Nixon</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Power Electronics, Renewable Energy System, Inverter and Converters, Power and Energy Systems</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">C.Shiva</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'C.Shiva')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Power Electronics, Renewable Energy Resources, Power Quality, Smart Automation</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">C.Shiva</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Power Electronics, Renewable Energy Resources, Power Quality, Smart Automation</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">R.Chitra</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Chitra')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Smart Grid, Wireless Communication, Power System Management, Renewable Energy</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Chitra</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Smart Grid, Wireless Communication, Power System Management, Renewable Energy</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">N.Abirami</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'N.Abirami')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Digital Electronics, VLSI Design, Machine Learning</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">N.Abirami</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Digital Electronics, VLSI Design, Machine Learning</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">K.Ganesh</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'K.Ganesh')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Power Systems, Renewable Energy, Energy Management</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Ganesh</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Power Systems, Renewable Energy, Energy Management</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">M.Vijayalakshmi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'M.Vijayalakshmi')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Power Factor Improvement through Capacitor Placement, Smart Grid, Restructuring of Power System, Robotics</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Vijayalakshmi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Power Factor Improvement through Capacitor Placement, Smart Grid, Restructuring of Power System, Robotics</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">R.Raja Karthick</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Raja Karthick')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Distributed Control System, Renewable Energy, Electronic Devices and Circuits, PLC and SCADA</p>
+          </div>
+        </div>
+      </li>
 
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Raja Karthick</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Distributed Control System, Renewable Energy, Electronic Devices and Circuits, PLC and SCADA</div>
-    </a>
-</div>
-
-<div class="ag-courses_item eee" data-department="eee">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Pandi Prabakaran</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">IOT, Arduino - Node Mcu, ESP32, Smart Grid, Embedded System</div>
-    </a>
-</div>
-
-
-<!-- ECE Staffs -->
-
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.T.Venish Kumar</div>
-        <div class="ag-courses-item_designation">Head of the Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">VLSI Design, Embedded Systems (Both Hardware and Software), Image Processing</div>
-    </a>
-</div>
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Prathap</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Network, Communication, Embedded</div>
-    </a>
-</div>
+      <li class="staff-item eee" data-department="eee">
+        <div class="staff-box" onclick="toggleDetails(this)">
+          <div class="staff-info">
+            <span class="staff-name">R.Pandi Prabakaran</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Pandi Prabakaran')">Select</button>
+          </div>
+          <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> EEE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> IOT, Arduino - Node Mcu, ESP32, Smart Grid, Embedded System</p>
+          </div>
+        </div>
+      </li>
 
 
+<<!-- ECE Staffs -->
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">N.Mathavan</div>
-        <div class="ag-courses-item_designation">Vice Principal</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Internet of Things, RFID, Sensor</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">Dr.T.Venish Kumar</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.T.Venish Kumar')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Head of the Department</p>
+            <p><strong>Area of Interest:</strong> VLSI Design, Embedded Systems (Both Hardware and Software), Image Processing</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Idhayachandran</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">VLSI Design, Electronic Circuit Analysis, Digital Electronics, Digital Signal Processing</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">S.Prathap</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'S.Prathap')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Network, Communication, Embedded</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Pradeep Kumar</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Nanoparticles, Digital Systems Design, Digital Image Processing, Internet of Things</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">N.Mathavan</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'N.Mathavan')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Vice Principal</p>
+            <p><strong>Area of Interest:</strong> Internet of Things, RFID, Sensor</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">T.TAMILSELVI</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">VLSI Design, Wireless Communication, Signal Processing, Internet of Things</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">M.Idhayachandran</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'M.Idhayachandran')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> VLSI Design, Electronic Circuit Analysis, Digital Electronics, Digital Signal Processing</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Kalaivani</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Signal Processing, Communication</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">R.Pradeep Kumar</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Pradeep Kumar')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Nanoparticles, Digital Systems Design, Digital Image Processing, Internet of Things</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">P.Shantha Devi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">VLSI Design, Image Processing, IoT</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">T.TAMILSELVI</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'T.TAMILSELVI')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> VLSI Design, Wireless Communication, Signal Processing, Internet of Things</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">P.Gowthami</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Image Processing, Communication Systems, Digital Electronics, Nanotechnology</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">S.Kalaivani</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'S.Kalaivani')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Signal Processing, Communication</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Monica Dhana Ranjini</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Image Processing, Embedded Systems, Wearable Device</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">P.Shantha Devi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'P.Shantha Devi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> VLSI Design, Image Processing, IoT</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item ece" data-department="ece">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Bharathi Kannan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">VLSI Design, Signal Processing, Embedded Systems, Communication System</div>
-    </a>
-</div>
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">P.Gowthami</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'P.Gowthami')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Image Processing, Communication Systems, Digital Electronics, Nanotechnology</p>
+        </div>
+    </div>
+</li>
 
- 
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">M.Monica Dhana Ranjini</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'M.Monica Dhana Ranjini')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Image Processing, Embedded Systems, Wearable Device</p>
+        </div>
+    </div>
+</li>
+
+<li class="staff-item ece" data-department="ece">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">K.Bharathi Kannan</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'K.Bharathi Kannan')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> ECE</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> VLSI Design, Signal Processing, Embedded Systems, Communication System</p>
+        </div>
+    </div>
+</li>
+
 
 <!-- MECH Staffs -->
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.C.Mathalai Sundaram</div>
-        <div class="ag-courses-item_designation">Professor & Principal</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Composite Tool Material, Optimization, Internet of Things, Reverse Engineering</div>
-    </a>
-</div>
+<ul class="staff-list">
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">Dr.C.Mathalai Sundaram</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'Dr.C.Mathalai Sundaram')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Professor & Principal</p>
+        <p><strong>Area of Interest:</strong> Composite Tool Material, Optimization, Internet of Things, Reverse Engineering</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr B.Radha Krishnan</div>
-        <div class="ag-courses-item_designation">Associate Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Materials Science, Manufacturing Process, Waste Management, E-Car Technology</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">Dr B.Radha Krishnan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'Dr B.Radha Krishnan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Associate Professor</p>
+        <p><strong>Area of Interest:</strong> Materials Science, Manufacturing Process, Waste Management, E-Car Technology</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A. Vembathurajesh</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Materials, Thermal Engineering, Composites, High Temperature Application Materials</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">A. Vembathurajesh</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'A. Vembathurajesh')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Materials, Thermal Engineering, Composites, High Temperature Application Materials</p>
+      </div>
+    </div>
+  </li>
 
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">P.Surulimani</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'P.Surulimani')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Manufacturing, Welding</p>
+      </div>
+    </div>
+  </li>
 
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">S.Harikishore</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'S.Harikishore')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Automated Manufacturing, Development of Tools, Optimization Process, Quality Control</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">P.Surulimani</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Manufacturing, Welding</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">V.Sivaganesan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'V.Sivaganesan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Engineering Design, Manufacturing Technology, Design Softwares</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Harikishore</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Automated Manufacturing, Development of Tools, Optimization Process, Quality Control</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">G.Arun Kumar</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'G.Arun Kumar')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Manufacturing Engineering</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">V.Sivaganesan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Engineering Design, Manufacturing Technology, Design Softwares</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">R.Santhaseelan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'R.Santhaseelan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Manufacturing, Safety, Design</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">G.Arun Kumar</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Manufacturing Engineering</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">R.Nagaraja</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'R.Nagaraja')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Engineering Design, Composite Material, Machine Vision, Optimization</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Santhaseelan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Manufacturing, Safety, Design</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">B.Nagarajan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'B.Nagarajan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Coating, Composites, Manufacturing, Material Testing</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Nagaraja</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Engineering Design, Composite Material, Machine Vision, Optimization</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">V.Thirumalairaj</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'V.Thirumalairaj')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Engineering Design, Manufacturing, Analysis</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">B.Nagarajan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Coating, Composites, Manufacturing, Material Testing</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">Mr.J.Chakravarthy Samy Durai</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'Mr.J.Chakravarthy Samy Durai')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Automobile Engineering, Manufacturing Engineering, Production Engineering, Thermal Engineering</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">V.Thirumalairaj</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Engineering Design, Manufacturing, Analysis</div>
-    </a>
-</div>
-
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Mr.J.Chakravarthy Samy Durai</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Automobile Engineering, Manufacturing Engineering, Production Engineering, Thermal Engineering</div>
-    </a>
-</div>
-
-<div class="ag-courses_item mech" data-department="mech">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">A.Vennimalai Rajan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Composite Materials, Production Engineering</div>
-    </a>
-</div>
+  <li class="staff-item mech" data-department="mech">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">A.Vennimalai Rajan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'A.Vennimalai Rajan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> MECH</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Composite Materials, Production Engineering</p>
+      </div>
+    </div>
+  </li>
 
 <!-- CIVIL Staffs -->
 
+<ul class="staff-list">
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">Dr.E.Ananthakrishnan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'Dr.E.Ananthakrishnan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> HOD</p>
+        <p><strong>Area of Interest:</strong> Water analysis/structural engineer mni, Municipal solid waste</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.E.Ananthakrishnan </div>
-        <div class="ag-courses-item_designation">HOD</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Water analysis/structural engineer mni, Municipal solid waste</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">M.Kanimozhi</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'M.Kanimozhi')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Reinforced concrete structures, Waste Management</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Kanimozhi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Reinforced concrete structures, Waste Management</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">R.Nathirun Sabinash</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'R.Nathirun Sabinash')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Waste Management, Water analysis</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Nathirun Sabinash</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Waste Management, Water analysis</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">R.Shanmugapriyan</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'R.Shanmugapriyan')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Structural analysis, Water treatment, Prototype creation</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Shanmugapriyan</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Structural analysis, Water treatment, Prototype creation</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">P. Arul Jebaraj</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'P. Arul Jebaraj')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Structural engineering, Disaster management, Construction waste management</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">P. Arul Jebaraj</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Structural engineering, Disaster management, Construction waste management</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">M.Sindhu</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'M.Sindhu')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Construction Materials, Smart Irrigation, Concrete Technology</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Sindhu</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Construction Materials, Smart Irrigation, Concrete Technology</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">S.Manimaran</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'S.Manimaran')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Concrete / hardware, Concrete / software</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Manimaran</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Concrete / hardware, Concrete / software</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">B.Sowmiya</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'B.Sowmiya')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Environmental Engineering</p>
+      </div>
+    </div>
+  </li>
 
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">B.Sowmiya</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Environmental Engineering</div>
-    </a>
-</div>
-
-<div class="ag-courses_item civil" data-department="civil">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Gayathri</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Hydraulic engineering, Structural engineering</div>
-    </a>
-</div>
+  <li class="staff-item civil" data-department="civil">
+    <div class="staff-box" onclick="toggleDetails(this)">
+      <div class="staff-info">
+        <span class="staff-name">S.Gayathri</span>
+        <button class="select-btn" onclick="showConfirmation(event, 'S.Gayathri')">Select</button>
+      </div>
+      <div class="staff-details" style="display: none;">
+        <p><strong>Department:</strong> CIVIL</p>
+        <p><strong>Designation:</strong> Assistant Professor</p>
+        <p><strong>Area of Interest:</strong> Hydraulic engineering, Structural engineering</p>
+      </div>
+    </div>
+  </li>
 
 
 <!-- S&H Staffs -->
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">C.Prathap</div>
-        <div class="ag-courses-item_designation">Head of the Department</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Image Processing, Artificial Intelligence & Machine Learning</div>
-    </a>
-</div>
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.C.Chithra</div>
-        <div class="ag-courses-item_designation">Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Statistics and Numerical Methods, Graph Theory, Applications of Differential Equations, Linear Algebra</div>
-    </a>
-</div>
+<!-- SH Staffs -->
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Arulvizhi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Graph Theory, Stochastic Processes, Statistics, Real Analysis</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">C.Prathap</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'C.Prathap')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Head of the Department</p>
+            <p><strong>Area of Interest:</strong> Image Processing, Artificial Intelligence & Machine Learning</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.C.Richard Britto</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">English Language Teaching</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">Dr.C.Chithra</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.C.Chithra')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Professor</p>
+            <p><strong>Area of Interest:</strong> Statistics and Numerical Methods, Graph Theory, Applications of Differential Equations, Linear Algebra</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">S.Jothi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Indian Writing in English, Language and Linguistics, Feminism, Children's Literature</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">M.Arulvizhi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'M.Arulvizhi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Graph Theory, Stochastic Processes, Statistics, Real Analysis</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Dhandayuthapani</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Electronics, Semiconductor Physics, Atomic Physics, Crystal Physics</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">R.C.Richard Britto</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.C.Richard Britto')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> English Language Teaching</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.S.R.Krishnamoorthi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Physics Models, Electronics, MFIS / MOS Device Fabrications</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">S.Jothi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'S.Jothi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Indian Writing in English, Language and Linguistics, Feminism, Children's Literature</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Mahalakshmi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Operations Research, Differential Calculus, Complex Analysis, Linear Algebra</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">R.Dhandayuthapani</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Dhandayuthapani')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Electronics, Semiconductor Physics, Atomic Physics, Crystal Physics</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">M.Fathima Beevi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">English Language Teaching, Technical English, English Literature, Linguistics</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">Dr.S.R.Krishnamoorthi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.S.R.Krishnamoorthi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Physics Models, Electronics, MFIS / MOS Device Fabrications</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">R.Karunyah</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Mathematics</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">M.Mahalakshmi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'M.Mahalakshmi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Operations Research, Differential Calculus, Complex Analysis, Linear Algebra</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.V.Ananthi</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Operations Research, Topology, Discrete Mathematics, Statistics and Numerical Methods</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">M.Fathima Beevi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'M.Fathima Beevi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> English Language Teaching, Technical English, English Literature, Linguistics</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">K.Rajaguru</div>
-        <div class="ag-courses-item_designation">Assistant Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Thin Film, Electronics</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">R.Karunyah</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'R.Karunyah')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Mathematics</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">Dr.N.David Mathan</div>
-        <div class="ag-courses-item_designation">Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Composites, Water Treatment, Polymers for Medicines, Municipal Solid Waste Management</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">Dr.V.Ananthi</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.V.Ananthi')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Operations Research, Topology, Discrete Mathematics, Statistics and Numerical Methods</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">B.Mallayasamy</div>
-        <div class="ag-courses-item_designation">Professor</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Topology, Graph Theory, Statistics, Operation Research</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">K.Rajaguru</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'K.Rajaguru')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Assistant Professor</p>
+            <p><strong>Area of Interest:</strong> Thin Film, Electronics</p>
+        </div>
+    </div>
+</li>
 
-<div class="ag-courses_item sh" data-department="sh">
-    <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title">B.Abinaya </div>
-        <div class="ag-courses-item_designation">Teaching Fellow</div>
-        <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Water Treatment, Synthesis of Nanoparticles Based on Green Engineering</div>
-    </a>
-</div>
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">Dr.N.David Mathan</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'Dr.N.David Mathan')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Professor</p>
+            <p><strong>Area of Interest:</strong> Composites, Water Treatment, Polymers for Medicines, Municipal Solid Waste Management</p>
+        </div>
+    </div>
+</li>
+
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">B.Mallayasamy</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'B.Mallayasamy')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Professor</p>
+            <p><strong>Area of Interest:</strong> Topology, Graph Theory, Statistics, Operation Research</p>
+        </div>
+    </div>
+</li>
+
+<li class="staff-item sh" data-department="sh">
+    <div class="staff-box" onclick="toggleDetails(this)">
+        <div class="staff-info">
+            <span class="staff-name">B.Abinaya</span>
+            <button class="select-btn" onclick="showConfirmation(event, 'B.Abinaya')">Select</button>
+        </div>
+        <div class="staff-details" style="display: none;">
+            <p><strong>Department:</strong> SH</p>
+            <p><strong>Designation:</strong> Teaching Fellow</p>
+            <p><strong>Area of Interest:</strong> Water Treatment, Synthesis of Nanoparticles Based on Green Engineering</p>
+        </div>
+    </div>
+</li>
+
+
+<!-- Confirmation Popup -->
+<div id="confirmationPopup" class="popup" style="display: none;">
+  <div class="popup-content">
+    <h3>Confirmation</h3>
+    <p id="confirmationMessage"></p>
+    <div class="popup-buttons">
+      <button id="confirmBtn">Confirm</button>
+      <button id="cancelBtn">Cancel</button>
     </div>
   </div>
+</div>
+
+
+
 </section>
 
        
 
         
-      </div>
-    </div>
-  </main>
+
 
   <!-- Core JS Files -->
   <script src="./assets/js/core/popper.min.js"></script>
@@ -1190,36 +1535,73 @@ body {
   <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/chartjs.min.js"></script>
 <script>
-  // JavaScript for department buttons
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".department-btn");
-  const cards = document.querySelectorAll(".ag-courses_item");
+// JavaScript for department buttons
 
-  function selectButton(button) {
-    buttons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    const department = button.classList[1];
-
-    cards.forEach(card => {
-      if (card.dataset.department === department) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
+// Function to toggle the visibility of staff details
+function toggleDetails(element) {
+  const details = element.querySelector('.staff-details');
+  if (details.style.display === 'none' || details.style.display === '') {
+    details.style.display = 'block';
+  } else {
+    details.style.display = 'none';
   }
+}
 
-  // Attach event listeners to buttons
-  buttons.forEach(button => {
-    button.addEventListener("click", function() {
-      selectButton(button);
-    });
+// Function to show confirmation when a staff member is selected
+function showConfirmation(event, staffName) {
+  event.stopPropagation(); // Prevent click event from bubbling up
+  document.getElementById('confirmationMessage').textContent = `Are you sure you want to select ${staffName}?`;
+  document.getElementById('confirmationPopup').style.display = 'flex';
+
+  // Set up event listeners for the buttons
+  document.getElementById('confirmBtn').onclick = function() {
+    alert(`${staffName} has been selected.`);
+    closePopup();
+  };
+
+  document.getElementById('cancelBtn').onclick = function() {
+    closePopup();
+  };
+}
+
+// Function to close the popup
+function closePopup() {
+  document.getElementById('confirmationPopup').style.display = 'none';
+}
+
+
+// Function to filter staff members by department
+function filterByDepartment(department) {
+  const items = document.querySelectorAll('.staff-item');
+  items.forEach(item => {
+    if (department === 'all' || item.dataset.department === department) {
+      item.style.display = 'block'; // Ensure item is visible
+    } else {
+      item.style.display = 'none'; // Hide item
+    }
   });
 
-  // Initially display CSE department cards
-  selectButton(document.querySelector(".department-btn.cse"));
+  // Update active state for buttons
+  document.querySelectorAll('.department-btn').forEach(btn => btn.classList.remove('active'));
+  if (department !== 'all') {
+    document.querySelector('.department-btn.' + department).classList.add('active');
+  }
+}
+
+// Ensure staff items are filtered correctly on page load
+document.addEventListener('DOMContentLoaded', () => {
+  filterByDepartment('cse'); // Set default department to 'cse'
 });
+
+// Attach event listeners to department filter buttons
+document.querySelectorAll('.department-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const department = this.classList.contains('active') ? 'all' : this.classList[1];
+    filterByDepartment(department);
+  });
+});
+
+
 
 </script>
 
