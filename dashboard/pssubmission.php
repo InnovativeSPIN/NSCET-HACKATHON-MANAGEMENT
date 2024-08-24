@@ -160,10 +160,10 @@
       </div>
 
       <!-- File Upload Section -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="fileUpload">Upload a file:</label>
         <input type="file" id="fileUpload" name="fileUpload">
-      </div>
+      </div> -->
 
       <!-- Submit Button -->
       <div class="form-group">
