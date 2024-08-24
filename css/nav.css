@@ -1,371 +1,329 @@
+/* Global Styles */
 *,
 *::after,
 *::before {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-	font-size: 14px;
-	--color-text: #000;
-	--color-bg: #f2f1eb;
-	--color-link: #000;
-	--color-link-hover: #000;
-	--page-padding: 1rem;
-	--columns: 15;
-	--cursor-blend-mode: difference;
-	--cursor-radius: 0;
+    --color-text: #000;
+    --color-bg: #f2f1eb;
+    --color-link: #000;
+    --color-link-hover: #000;
+    --page-padding: 1rem;
+    --columns: 15;
+    --cursor-blend-mode: difference;
+    --cursor-radius: 0;
 }
 
+/* Demo Specific Styles */
 .demo-1 {
-	--color-text: #cdbcbc;
-	--color-bg: #000;
-	--color-link: #fff;
-	--color-link-hover: #fff;
-	--cursor-bg: #5cafc1;
-	--cursor-blend-mode: exclusion;
-	--gradient-text-1: #e8c942;
-	--gradient-text-2: rgb(148 98 209);
-	background: url(../img/BG/bg1.jpg) no-repeat center/cover ;
-	
+    --color-text: #cdbcbc;
+    --color-bg: #000;
+    --color-link: #fff;
+    --color-link-hover: #fff;
+    --cursor-bg: #5cafc1;
+    --cursor-blend-mode: exclusion;
+    --gradient-text-1: #e8c942;
+    --gradient-text-2: rgb(148, 98, 209);
+    background: url(../img/BG/bg1.jpg) no-repeat center/cover;
 }
 
 body {
-	margin: 0;
-	color: var(--color-text);
-	background-color: var(--color-bg);
-	font-family: "source-code-pro", monospace;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-size: cover;
-	background-position: 50% 50%;
-     
+    font-family: "source-code-pro", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-/* nav icon */
 
-
+/* Navigation Icon */
 .ham {
-	cursor: pointer;
-	-webkit-tap-highlight-color: transparent;
-	transition: transform 400ms;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  }
-  .hamRotate.active {
-	transform: rotate(45deg);
-  }
-  .hamRotate180.active {
-	transform: rotate(180deg);
-  }
-  .line {
-	fill:none;
-	transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-	stroke:#fff;
-	stroke-width:5.5;
-	stroke-linecap:round;
-  }
-  
-  .ham4 .top {
-	stroke-dasharray: 40 121;
-  }
-  .ham4 .bottom {
-	stroke-dasharray: 40 121;
-  }
-  .ham4.active .top {
-	stroke-dashoffset: -68px;
-  }
-  .ham4.active .bottom {
-	stroke-dashoffset: -68px;
-  }
+    cursor: pointer;
+    transition: transform 400ms;
+    user-select: none;
+}
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #fff;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham4 .top,
+.ham4 .bottom {
+    stroke-dasharray: 40 121;
+}
+.ham4.active .top,
+.ham4.active .bottom {
+    stroke-dashoffset: -68px;
+}
+
 /* Page Loader */
 .js .loading::before,
 .js .loading::after {
-	content: '';
-	position: fixed;
-	z-index: 1000;
+    content: '';
+    position: fixed;
+    z-index: 1000;
 }
 
 .js .loading::before {
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: var(--color-bg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
 }
 
 .js .loading::after {
-	top: 50%;
-	left: 50%;
-	width: 60px;
-	height: 60px;
-	margin: -30px 0 0 -30px;
-	border-radius: 50%;
-	opacity: 0.4;
-	background: var(--color-link);
-	animation: loaderAnim 0.7s linear infinite alternate forwards;
-
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: var(--color-link);
+    animation: loaderAnim 0.7s linear infinite alternate forwards;
 }
-
 
 @keyframes loaderAnim {
-	to {
-		opacity: 1;
-		transform: scale3d(0.5,0.5,1);
-	}
+    to {
+        opacity: 1;
+        transform: scale3d(0.5, 0.5, 1);
+    }
 }
 
+/* Anchor Tags */
 a {
-	text-decoration: none;
-	color: var(--color-link);
-	outline: none;
-	cursor: pointer;
+    text-decoration: none;
+    color: var(--color-link);
+    outline: none;
+    cursor: pointer;
 }
-
 a:hover {
-	color: var(--color-link-hover);
-	outline: none;
+    color: var(--color-link-hover);
 }
-
-/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
 a:focus {
-	/* Provide a fallback style for browsers
-	 that don't support :focus-visible */
-	outline: none;
-	background: lightgrey;
+    outline: none;
+    background: lightgrey;
 }
-
-a:focus:not(:focus-visible) {
-	/* Remove the focus indicator on mouse-focus for browsers
-	 that do support :focus-visible */
-	background: transparent;
-}
-
 a:focus-visible {
-	/* Draw a very noticeable focus style for
-	 keyboard-focus on browsers that do support
-	 :focus-visible */
-	outline: 2px solid red;
-	background: transparent;
+    outline: 2px solid red;
+    background: transparent;
 }
 
-.unbutton {
-	background: none;
-	border: 0;
-	padding: 0;
-	margin: 0;
-	font: inherit;
-	cursor: pointer;
-}
-
-.unbutton:focus {
-	outline: none;
-}
-
+/* Frame Styles */
 .frame {
-	position: absolute;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 	
 }
 
-body #cdawrap {
-    justify-self: start;
-}
-
-.frame a {
-	pointer-events: auto;
-}
 
 .frame__title {
-	grid-area: title;
-	position: relative;
-	flex-basis: 60%;
-	display: flex;
-	justify-content: start;	
-	align-items: center;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+    position: relative;
     z-index: 99;
-    
-}
-.frame__title img{
-margin-left: 20px;
-width: 180px;
-height: 120px;
-}
-.frame__title::before{
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	width: 88%;
-	height: 100%;
-	background: url('../img/BG/navleft.svg') no-repeat center/cover ;
-}
-.frame__demos {
-	grid-area: demos;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2%;
-	position: relative;
-	background: url('../img/BG/navright.svg') no-repeat;
-	padding: 50px;
-	width: 100%;
-    justify-content: space-between;
-	z-index: 99;
-	cursor:  default;
 }
 
-.frame__demos-item:first-child {
-	width: 100%;
+.frame__title img {
+    margin-left: 20px;
+    width: 180px;
+    height: 120px;
 }
-.nav-icon{
-	display: none;
+
+.frame__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 88%;
+    height: 100%;
+    background: url('../img/BG/navleft.svg') no-repeat center/cover;
 }
-.frame__demos span{
-	
-	color: var(--color-link);
-	
-	font-weight: bold;
+
+.frame__demos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    position: relative;
+    background: url('../img/BG/navright.svg') no-repeat;
+    padding: 50px;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 99;
+    cursor: default;
+}
+
+.frame__demos.active {
+    display: flex;
+}
+
+.nav-icon {
+    display: none;
+}
+
+.frame__demos span {
+    color: var(--color-link);
+    font-weight: bold;
 }
 
 a.frame__demos-item {
-	font-weight: bolder;
-	text-decoration: none !important;
+    font-weight: bolder;
+    text-decoration: none !important;
 }
+
 .frame__demos-item {
-	font-size: clamp(12px, 2.5vw, 17px);
-	position: relative;
-	padding-bottom: 5px; 	
-  }
-  
-  .frame__demos-item::before {
-	content: '';
-	position: absolute;
-	left: 50%;
-	right: 50%;
-	bottom: 0;
-	
-	background: rgba(205, 188, 188);
-	height: 1px;
-	transition: 0.9s ease;
-  }
-  .frame__demos-item:hover::before{
-      left: 0;
-	  right: 0;
-  }
-  .new1 .frame__demos-item::before {
-	content: none;
-  }
+    font-size: clamp(12px, 2.5vw, 17px);
+    position: relative;
+    padding-bottom: 5px;
+}
 
-  .button-register {
-	  background-color: #000000; 
-	  color: white;
-	  border: 1px solid rgb(255, 255, 255);
-	  border-radius: 5px;
-	  cursor: pointer;
-	  text-align: center;
-	  font-size: 16px;
-	  transition: background-color 0.3s ease;
-  
-  }
-  
-  
-  .vutton-custine {
-	  font-family: "source-code-pro", monospace;
-	  border: 2px solid #cea167; 
-	  padding: 10px 10px; 
-	  font-size: clamp(12px, 2.5vw, 17px);    
-	  color: #fff;
-	  background-color: rgba(0, 0, 0, 0.4); 
-	  display: flex; 
-	  justify-content: center; 
-	  align-items: center; 
-	  transform: translate(-7px, 3px); 
-	  transition: transform 0.4s ease;
-  }
-  
-  .new:hover .vutton-custine {
-	  transform: translate(0px, 0px) scale(1.1); 
-  
-  
-  }
-  .new:hover .new1{
-	  border: none;
-  }
-  .new1, .vutton-custine {
-	  border: 2px solid #cea167; 
-	  height: 45px; 
-	  width: 100px; 
-  }
-  
-  @media (max-width: 1672px) {
-	  .new1, .vutton-custine {
-		  height: 40px; 
-		  width: 90px;
-	  }
-  
-	  .vutton-custine {
-		  font-size: 12px; 
-	  }
-  }
-  
-  .up
-  {
-	  margin-top: -13px;
-  }
+.frame__demos-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: rgba(205, 188, 188);
+    height: 1px;
+    transition: 0.9s ease;
+}
 
-  @media  screen and (max-width:786px) {
-	.frame__title{
-		flex-basis: 150%;
-		width: 800px;
-	}
-	
-  }
-  @media  screen and (max-width:768px) {
-	  .frame__demos{
-		  display: none;
-		  position: absolute;
-		  flex-direction: column;
-		  background: rgba(0, 0, 0, 0.8);
-		  text-align: center;
-	  }
-	  .frame__demos-item{
-		  font-size: clamp(18px,3vw,32px);
-		  margin-bottom: 10px;
-	  }
-	  .up{
-		  display: flex;
-		  justify-content: center;
-		  margin-top: 10px;
-	  }
-	  .vutton-custine{
-		  border: none;
-		  transform: translate(0,0);
-		  background: none;
-	  }
-	  .new1{
-		  border: none;
-	  }
-	  .new{
-		  padding: 5px 20px;
-		  border: 1px solid #cdbcbc;
-		  background: #cea167;
-	  }
-	  .frame__demos-item::before{
-		  animation: none;
-	  }
-	  .frame__title img{
-		  width: 100px;
-		  height: 80px;
-	  }
-	  .frame__title{
-		  flex-basis:75% ;
-		  height: 80px;
-	  }
-	  .nav-icon{
-		  display: block;
-		  z-index: 999;
-	  }
-  }
+.frame__demos-item:hover::before {
+    left: 0;
+    right: 0;
+}
+
+/* Button Styles */
+.button-register {
+    background-color: #000000;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.vutton-custine {
+    font-family: "source-code-pro", monospace;
+    border: 2px solid #cea167;
+    padding: 10px;
+    font-size: clamp(12px, 2.5vw, 17px);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-7px, 3px);
+    transition: transform 0.4s ease;
+}
+
+.new:hover .vutton-custine {
+    transform: translate(0px, 0px) scale(1.1);
+}
+
+.new:hover .new1 {
+    border: none;
+}
+
+.new1,
+.vutton-custine {
+    border: 2px solid #cea167;
+    height: 45px;
+    width: 100px;
+}
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 45px;
+    z-index: 99;
+    background: none  !important;
+}
+
+
+@media (max-width: 1672px) {
+    .new1,
+    .vutton-custine {
+        height: 40px;
+        width: 90px;
+    }
+
+    .vutton-custine {
+        font-size: 12px;
+    }
+}
+
+.up {
+    margin-top: -13px;
+}
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .frame__demos {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+		
+		
+    }
+    .frame__demos-item {
+        font-size: clamp(18px, 3vw, 32px);
+        margin-bottom: 10px;
+    }
+    .up {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .vutton-custine {
+        border: none;
+        transform: translate(0, 0);
+        background: none;
+    }
+    .new1 {
+        border: none;
+    }
+    .new {
+        padding: 5px 20px;
+        border: 1px solid #cdbcbc;
+        background: #cea167;
+    }
+    .frame__demos-item::before {
+        animation: none;
+    }
+    .frame__title img {
+        width: 100px;
+        height: 80px;
+    }
+    .frame__title {
+        flex-basis: 75%;
+        height: 80px;
+    }
+    .nav-icon {
+        display: block;
+        z-index: 999;
+		overflow: hidden;
+    }
+	.back-to-top{
+        right: 0px;
+        bottom: 15px;
+
+    }
+}
