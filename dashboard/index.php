@@ -23,7 +23,7 @@
 
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "source-code-pro", monospace !important;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -31,6 +31,7 @@ body {
 
 /* Dashboard Styles */
 .dashboard {
+    font-family: "source-code-pro", monospace !important;
     width: 100%;
     max-width: 1000px;
     background-color: #fff;
@@ -41,6 +42,7 @@ body {
 }
 
 .header {
+    font-family: "source-code-pro", monospace !important;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -98,6 +100,97 @@ body {
     animation: fadeIn 1.5s ease-in-out;
     margin-bottom: 20px; /* Add spacing below the section */
 }
+
+/* Team Members Section */
+.team-members {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+}
+
+/* Table Styling */
+#membersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 600px; /* Minimum width to ensure readability */
+}
+
+/* Table Header Styling */
+#membersTable th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px; /* Adjust font size for readability */
+}
+
+/* Table Body Styling */
+#membersTable td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px; /* Adjust font size for readability */
+}
+
+/* Alternate Row Colors */
+#membersTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover Effect for Rows */
+#membersTable tr:hover {
+    background-color: #ddd;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .team-members {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    #membersTable {
+        width: 100%;
+        min-width: unset; /* Remove minimum width to allow it to shrink */
+        display: block; /* Display the table as a block element */
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+
+    #membersTable thead {
+        display: none; /* Hide the table headers */
+    }
+
+    #membersTable tr {
+        display: block; /* Display rows as block for stacking */
+        margin-bottom: 15px; /* Add spacing between stacked rows */
+        border-bottom: 1px solid #ddd; /* Add border for better separation */
+    }
+
+    #membersTable td {
+        display: flex; /* Use flexbox to align pseudo-label and value */
+        justify-content: space-between; /* Space between label and value */
+        align-items: center; /* Align items vertically in the center */
+        padding: 10px; /* Padding for table cells */
+        font-size: 14px; /* Font size for readability */
+        border-bottom: none; /* Remove bottom border for cleaner look */
+        position: relative; /* Position relative for pseudo-element alignment */
+    }
+
+    #membersTable td::before {
+        content: attr(data-label); /* Use data-label to create pseudo-labels */
+        flex-shrink: 0; /* Prevent shrinking of the label */
+        font-weight: bold; /* Bold font for label */
+        color: #333; /* Color for label */
+        text-align: left; /* Align text to the left */
+        width: 50%; /* Adjust width for label */
+    }
+}
+
+
 
 .members-header {
     display: flex;
@@ -305,20 +398,63 @@ li:last-child {
         </div>
     </div>
 
-    <!-- Team Members Section -->
-    <div class="team-members">
+<!-- Team Members Section -->
+<div class="team-members">
         <div class="members-header">
             <h2>Team Members</h2>
             <button class="add-member-btn">Add Member</button>
         </div>
-        <ul id="membersList">
-            <li>Mukilan</li>
-            <li>Tenshkumar</li>
-            <li>Srihari</li>
-            <li>Mark</li>
-            <li>Sandhosh</li>
-        </ul>
+        
+        <table id="membersTable">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="S.No">1</td>
+                    <td data-label="Name">Mukilan</td>
+                    <td data-label="Department">Computer Science</td>
+                    <td data-label="Year">3rd Year</td>
+                    <td data-label="Mail">mukilan@example.com</td>
+                </tr>
+                <tr>
+                    <td data-label="S.No">2</td>
+                    <td data-label="Name">Tenshkumar</td>
+                    <td data-label="Department">Information Technology</td>
+                    <td data-label="Year">2nd Year</td>
+                    <td data-label="Mail">tenshkumar@example.com</td>
+                </tr>
+                <tr>
+                    <td data-label="S.No">3</td>
+                    <td data-label="Name">Srihari</td>
+                    <td data-label="Department">Mechanical Engineering</td>
+                    <td data-label="Year">4th Year</td>
+                    <td data-label="Mail">srihari@example.com</td>
+                </tr>
+                <tr>
+                    <td data-label="S.No">4</td>
+                    <td data-label="Name">Mark</td>
+                    <td data-label="Department">Electrical Engineering</td>
+                    <td data-label="Year">1st Year</td>
+                    <td data-label="Mail">mark@example.com</td>
+                </tr>
+                <tr>
+                    <td data-label="S.No">5</td>
+                    <td data-label="Name">Sandhosh</td>
+                    <td data-label="Department">Civil Engineering</td>
+                    <td data-label="Year">3rd Year</td>
+                    <td data-label="Mail">sandhosh@example.com</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
 </div>
 
         <footer class="footer">

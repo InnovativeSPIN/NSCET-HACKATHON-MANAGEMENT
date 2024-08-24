@@ -30,6 +30,7 @@
 
     /* Dashboard Styles */
     .dashboard {
+      font-family: "source-code-pro", monospace !important;
         width: 100%;
         max-width: 1000px;
         background-color: #fff;
@@ -40,11 +41,13 @@
     }
 
     .header {
+      font-family: "source-code-pro", monospace !important;
         text-align: center;
         margin-bottom: 20px;
     }
 
     .container {
+      font-family: "source-code-pro", monospace !important;
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
