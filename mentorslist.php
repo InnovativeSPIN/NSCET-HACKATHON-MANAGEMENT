@@ -266,7 +266,7 @@
         <div class="ag-courses-item_title">Abirami Gayathri</div>
         <div class="ag-courses-item_designation">Assistant Professor</div>
         <div class="ag-courses-item_interest-heading">Area of Interest:</div>
-        <div class="ag-courses-item_date-box">Artificial Intelligence, Deep Learning, Intelligent Systems, Internet of Things</div>
+        <div class="ag-courses-item_date-box">Cryptography, Internet of Things</div>
     </a>
 </div>
 
