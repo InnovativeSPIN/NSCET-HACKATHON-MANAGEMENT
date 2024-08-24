@@ -1,6 +1,8 @@
 .demo-1{
     background: none;
    
+   }a{
+    background: none !important;
    }
    .frame{
        display: flex;
@@ -15,7 +17,7 @@
        display: flex;
        justify-content: start;	
        align-items: center;
-       z-index: 99;
+       z-index: -1;
        height: 130px;
    }
    .frame__demos{
@@ -29,13 +31,11 @@
        font-size: clamp(18px, 2.5vw, 17px) !important;
        margin-right:40px ;
        color: white !important;
-       
    }
    .up{
        position: absolute !important;
        right: 40px;
        top: 50px;
-   
    }
 
 
@@ -50,6 +50,7 @@
     .nav-icon{
         display: block;
         z-index: 299;
+        transform:translateX(-10px);
         
     }
   
@@ -68,4 +69,5 @@
     width: 100px;
     height: 80px;
    }
+  
    }

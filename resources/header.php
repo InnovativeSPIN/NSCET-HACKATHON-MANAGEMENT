@@ -1,7 +1,7 @@
 <div class="frame">
             <div class="frame__title"> 
-                <img class="logonscet" src="img/nscetlogo.png" alt="nscetLogo" >
-                <img class="logonscet" src="img/logoHack.png" alt="nscetLogo" >
+                <img class="logonscet" src="img/nscetlogo.png" alt="nscetLogo" style="filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.7))" >
+                <img class="logonscet" src="img/logoHack.png" alt="nscetLogo" style="filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.7))" >
             </div>
             <div class="nav-icon">
 
