@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/nav.css">
   <link rel="stylesheet" href="./css/mobilenav.css">
   <link rel="stylesheet" href="./css/login.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
@@ -18,7 +19,19 @@
 </head>
 <body>
     <?php include("./resources/header.php") ?>
+
+<div class="animation-bg">
+<div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+</div>
+    
+
+
+
+
     <div class="main-body">
+   
 <div class="container">
         <div class="inner-content">
         <h2 class="title">Login</h2>
