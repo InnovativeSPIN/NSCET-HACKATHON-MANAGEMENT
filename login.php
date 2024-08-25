@@ -15,6 +15,9 @@
     a{
         text-decoration: none !important;
     }
+    .frame__title{
+        z-index: 1;
+    }
   
 </style>
 </head>
