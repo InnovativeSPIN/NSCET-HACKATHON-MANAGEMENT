@@ -98,7 +98,7 @@
      <main>
         <?php include('./resources/header.php') ?>
         <div class="content">
-        <div class="inner-content " data-aos="fade-down-right">
+        <div class="inner-content " >
         <h2><i>N S C E T</i> </h2><br>
         <h2><i>H</i><span id="hack-text"></span></h2>
         </div>
@@ -369,13 +369,13 @@
 
 <div class="container-xxl py-5">
     <div class="container py-5">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <h1 class="mb-4">Our Tech Team</h1>
         </div>
             <div class="logo-section">
                 <!-- NSCET Logo -->
-                <div class="logo-wrapper" data-aos="zoom-in-down">
-                    <img class="img-fluid logo-img" src="https://nscet.org/waves23/public/images/logos/ispin-logo.png" alt="NSCET Logo" width="380px">
+                <div class="logo-wrapper techteam" data-aos="zoom-in-down" >
+                    <img class="img-fluid logo-img" src="https://nscet.org/waves23/public/images/logos/ispin-logo.png" alt="NSCET Logo" width="280px">
                 </div>
                
             </div>

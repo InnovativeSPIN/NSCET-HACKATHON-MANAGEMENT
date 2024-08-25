@@ -41,16 +41,14 @@
             <div class="col-md-6">
                 <div class="follow-box flo-box">
                     <h3>Contact Us</h3>
-                    <ul class="follow-box-contact">
-                        <li>
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <a href="tel:+91 4546 263900">+91 4546 263900</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope"></i>
-                            <a href="mailto:principal@nscet.org">principal@nscet.org</a>
-                        </li>
-                    </ul>
+                    <div class="follow-box-contact with-links">
+                       
+                            
+                           <span><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+91 4546 263900">+91 4546 263900</a></span>
+                   
+                <span><i class="fa fa-envelope"></i><a href="mailto:principal@nscet.org">principal@nscet.org</a></span>
+                            
+                    </div>
                 </div>
             </div>
         </div>

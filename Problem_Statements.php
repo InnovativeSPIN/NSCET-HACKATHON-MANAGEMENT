@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script>
         document.documentElement.className="js";
         var supportsCssVars=function(){
@@ -378,13 +377,9 @@ document.getElementById('category-filter').addEventListener('change', function()
     });
 });
 
-    AOS.init();
-    AOS.init({
-        duration: 800,
-    })
+  
 </script>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 
 </body>
