@@ -90,7 +90,7 @@
       <!-- Dropdown Section -->
       <div class="form-group">
         <label for="dropdown">Select an PS ID :</label>
-        <input list="browsers" name="browser" id="browser" maxlength="8" >
+        <input list="browsers" name="browser" id="browser" maxlength="10" >
         <datalist  id="browsers" name="dropdown">
           <option value="PSID21">
           <option value="PSID43">

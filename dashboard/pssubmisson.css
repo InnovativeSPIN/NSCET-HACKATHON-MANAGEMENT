@@ -41,7 +41,7 @@
     display: block;
     font-size: 14px;
     font-weight: bold; 
-    color: #333; 
+    color: #5e72e4; 
   }
   
   
@@ -344,7 +344,7 @@ tbody tr:hover {
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    color: #333;
+    color:#5e72e4;
     margin-right: 10px; /* Space between label and dropdown */
     font-family: "source-code-pro", monospace !important;
 }
@@ -355,6 +355,7 @@ tbody tr:hover {
     border: 1px solid #ccc;
     font-size: 14px;
     font-family: "source-code-pro", monospace !important;
+    
 }
 
 .category-dropdown:focus {
@@ -393,7 +394,7 @@ tbody tr:hover {
 }
 
 .custom-table th {
-    color: #f5da40; 
+    color:#5e72e4; 
     font-size: 16px;
     font-weight: bold; 
     padding: 12px;
