@@ -1,48 +1,79 @@
 <?php
 require_once('../resources/connection.php');
 
-$team_lead = $_POST["team_lead"];
-$team_name = $_POST["team_name"];
-$email = $_POST["email"];
-$password = $_POST["password"];
+function generateTeamID($conn) {
+    $sql = "SELECT COUNT(*) AS team_count FROM teams";
+    $result = $conn->query($sql);
+    if ($result) {
+        $row = $result->fetch_assoc();
+        $team_count = $row['team_count'] + 1;
+        return 'NH-T' . str_pad($team_count, 2, '0', STR_PAD_LEFT);
+    }
+    return false;
+}
 
-try {
-    $checkSql = "SELECT `reg_no` FROM `students` WHERE `reg_no` = ?";
-    $checkStmt = $conn->prepare($checkSql);
-    $checkStmt->bind_param("s", $team_lead);
-    $checkStmt->execute();
-    $result = $checkStmt->get_result();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $team_name = $conn->real_escape_string(trim($_POST["team_name"]));
+    $team_lead_reg_no = $conn->real_escape_string(trim($_POST["team_lead"]));
+    $email = $conn->real_escape_string(trim($_POST["email"]));
+    $password = password_hash(trim($_POST["password"]), PASSWORD_BCRYPT);
 
+    $sql = "SELECT * FROM teams WHERE team_name = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $team_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
     if ($result->num_rows > 0) {
-        $sql = "INSERT INTO `teams` (`team_name`, `team_lead`, `email`, `password`) 
-                VALUES (?, ?, ?, ?)";
+        echo "<script>
+                alert('Team name already exists. Please choose a different name.');
+                window.location.href = 'https://nscet.org/hackathon/register.php';
+              </script>";
+        exit();
+    }
 
+    $sql = "SELECT * FROM students WHERE reg_no = ? AND team_id IS NULL";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $team_lead_reg_no);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows == 0) {
+        echo "<script>
+                alert('Invalid team lead register number or student already assigned to a team.');
+                window.location.href = 'https://nscet.org/hackathon/register.php';
+              </script>";
+        exit();
+    }
+
+    $team_id = generateTeamID($conn);
+    if (!$team_id) {
+        echo "<script>
+                alert('Error generating team ID.');
+                window.location.href = 'https://nscet.org/hackathon/register.php';
+              </script>";
+        exit();
+    }
+
+    $sql = "INSERT INTO teams (team_name, team_lead, team_id, email, password) 
+            VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $team_name, $team_lead_reg_no, $team_id, $email, $password);
+    if ($stmt->execute()) {
+        $last_inserted_id = $stmt->insert_id;
+        $sql = "UPDATE students SET team_id = ? WHERE reg_no = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $team_name, $team_lead, $email, $password);
-
-        if ($stmt->execute()) {
-            echo "<script>alert('Registered successfully! Check your email for confirmation.');
-            window.location.href='https://nscet.org/hackathon/';
-            </script>";
-        } else {
-            throw new Exception("Database error: Unable to register the team.");
-        }
+        $stmt->bind_param("is", $last_inserted_id, $team_lead_reg_no);
+        $stmt->execute();
+        
+        echo "<script>
+                alert('Team registered successfully! Your team ID is: $team_id');
+                window.location.href = 'https://nscet.org/hackathon/';
+              </script>";
     } else {
-        // If the reg_no doesn't exist in students table
-        echo "<script>alert('Team lead registration number not found in students database.');
-        window.location.href = 'https://nscet.org/hackathon';</script>";
+        echo "<script>
+                alert('Database error: Unable to register the team. Please contact the Hackathon Tech Team.');
+                window.location.href = 'https://nscet.org/hackathon/register.php';
+              </script>";
     }
-} catch (mysqli_sql_exception $e) {
-    if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
-        echo "<script>alert('Your team name, team lead has already been registered. Please wait and check your email for confirmation.');
-        window.location.href = 'https://nscet.org/hackathon';</script>";
-    } else {
-        echo "<script>alert('Registration failed! Please try again. Contact Hackathon Tech Team');
-        window.location.href = 'https://nscet.org/hackathon';</script>";
-    }
-} catch (Exception $e) {
-    echo "<script>alert('An unexpected server error occurred. Please try again later.');
-    window.location.href = 'https://nscet.org/hackathon';</script>";
 }
 
 $conn->close();

@@ -1,61 +1,75 @@
 <?php
 require_once('../resources/connection.php');
 
-// Collect POST data
-$email = $_POST["email"];
-$password = $_POST["password"];
-$role = $_POST["role"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $role = $conn->real_escape_string(trim($_POST["role"]));
+    $email = $conn->real_escape_string(trim($_POST["email"]));
+    $password = trim($_POST["password"]);
 
-// Admin constant password
-define('ADMIN_PASSWORD', 'YourAdminPasswordHere');
-
-try {
-    // SQL query based on role
-    if ($role === 'Team Leader') {
-        $sql = "SELECT * FROM `teams` WHERE `email` = ? AND `password` = ?";
-    } elseif ($role === 'Mentor') {
-        $sql = "SELECT * FROM `mentors` WHERE `email` = ? AND `password` = ?";
+    if ($role === "Team Leader") {
+        $table = "teams";
+        $redirect_url = "https://nscet.org/hackathon/dashboard/teamLead.php";
+    } elseif ($role === "Mentor") {
+        $table = "mentors";
+        $redirect_url = "https://nscet.org/hackathon/dashboard/mentordash.php";
     } elseif ($role === 'Admin') {
-        // Check if the password matches the admin password
-        if ($password === ADMIN_PASSWORD) {
+        if ($email !== 'hackathon@nscet.org') {
+            echo "<script>
+                alert('Invalid admin email id');
+                window.location.href = 'https://nscet.org/hackathon/login.php';
+              </script>";
+            exit();
+        }
+        if ($password === 'ADMIN_NSCET_HACKATHON') {
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['role'] = $role;
-            header("Location: admin_dashboard.php");
+            header("Location: https://nscet.org/hackathon/dashboard/admin_dashboard.php");
             exit;
         } else {
-            throw new Exception("Invalid admin password");
+            echo "<script>
+                alert('Invalid admin password');
+                window.location.href = 'https://nscet.org/hackathon/login.php';
+              </script>";
+            exit();
         }
     } else {
-        throw new Exception("Invalid role selected");
+        echo "<script>
+                alert('Invalid role selected');
+                window.location.href = 'https://nscet.org/hackathon/login.php';
+              </script>";
+        exit();
     }
 
-    // If the role is 'Team Leader' or 'Mentor', proceed with DB check
+    $sql = "SELECT * FROM $table WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $email, $password);
-
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        // Successful login
-        session_start();
-        $_SESSION['email'] = $email;
-        $_SESSION['role'] = $role;
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['role'] = $role;
 
-        if ($role === 'Team Leader') {
-            header("Location: ../dashboard/teamLead.php");
-        } elseif ($role === 'Mentor') {
-            header("Location: mentor_dashboard.php");
+            header("Location: $redirect_url");
+            exit();
+        } else {
+            echo "<script>
+                    alert('Incorrect password');
+                    window.location.href = 'https://nscet.org/hackathon/login.php';
+                  </script>";
+            exit();
         }
-        exit;
     } else {
-        throw new Exception("Invalid email or password");
+        echo "<script>
+                alert('No user found with this email');
+                window.location.href = 'https://nscet.org/hackathon/login.php';
+              </script>";
+        exit();
     }
-
-} catch (Exception $e) {
-    echo "<script>alert('Error: " . $e->getMessage() . ". Please try again.');
-    window.location.href = '../login.php';</script>";
 }
 
 $conn->close();

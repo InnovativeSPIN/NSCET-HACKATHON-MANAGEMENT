@@ -18,15 +18,12 @@
     .frame__title{
         z-index: 1;
     }
-    @media screen and (max-width:768px) {
-        .frame__title{
-        z-index: -1;
-    }        
-}
-  
+
+    .error {
+      border: 2px solid red !important;
+    }
 </style>
 </head>
-<body>
     <?php include("./resources/header.php") ?>
 
 <div class="animation-bg">
@@ -34,11 +31,6 @@
     <div id='stars2'></div>
     <div id='stars3'></div>
 </div>
-    
-
-
-
-
     <div class="main-body">
    
 <div class="container">
@@ -46,7 +38,7 @@
         <h2 class="title">Login</h2>
         <form action="./controllers/login.php" method="POST" class="form-container">
             <div class="input-box email">
-                <input type="email" id="email-input" required placeholder="Email" name="email">
+                <input type="email" id="emailInput" id="email-input" required placeholder="Email" name="email">
             </div>
             <div class="input-box password">
                 <input type="password" id="password-input" required placeholder="Password" name="password">
@@ -62,12 +54,37 @@
             <div class="button">
                 <button type="submit" class="login">Login</button>
             </div>
-            <div class="register">
+            <!-- <div class="register">
                 <p>Don't Register yet? <a href="./register.php">Register</a></p>
-            </div>
+            </div> -->
         </form>
         </div>
     </div>
 </div>
+
+<script>
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    function showError(inputElement, message) {
+          inputElement.classList.add('error');
+      }
+
+      function clearError(inputElement) {
+          inputElement.classList.remove('error');
+      }
+
+      function validateInput(inputElement, regex, message) {
+          if (!regex.test(inputElement.value)) {
+              showError(inputElement, message);
+          } else {
+              clearError(inputElement);
+          }
+      }
+
+    document.getElementById('emailInput').addEventListener('input', function() {
+          validateInput(this, emailRegex, "Please enter a valid email address");
+      });
+    
+
+</script>
 </body>
 </html>

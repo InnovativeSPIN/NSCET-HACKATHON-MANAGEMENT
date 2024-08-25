@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2024 at 06:19 AM
+-- Generation Time: Aug 25, 2024 at 06:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -117,7 +117,7 @@ INSERT INTO `mentors` (`id`, `name`, `dept`, `mentoring_teams`, `area_of_interes
 (72, 'V.Thirumalairaj', 'MECH', NULL, '[\"Engineering Design\", \"Manufacturing \", \"Analysis \"]', 'thirumalairaj.in@gmail.com', 'Assistant Professor', ''),
 (73, 'Mr. J. CHAKRAVARTHY SAMY DURAI', 'MECH', NULL, '[\"Automobile Engineering \", \"Manufacturing Engineering\", \"Production Engineering \", \"Thermal Engineering \"]', 'chakravarthysamydurai@nscet.org', 'Assistant Professor', ''),
 (74, 'A. VENNIMALAI RAJAN', 'MECH', NULL, '[\"Composite Materials\", \"Production Engineering\"]', 'vennimalairajan@nscet.org', 'Assistant Professor', ''),
-(75, 'Dr.M.Sathya', 'IT', NULL, '[\"Networking\", \"Internet of Things\", \"Artificial Inteligence\", \"OOPS\"]', 'test@nscet.org', 'Vice Principal & HOD - IT', '');
+(75, 'Dr.M.Sathya', 'IT', NULL, '[\"Networking\", \"Internet of Things\", \"Artificial Inteligence\", \"OOPS\"]', 'hodit@nscet.org', 'Vice Principal & HOD - IT', '');
 
 -- --------------------------------------------------------
 
