@@ -35,7 +35,7 @@
 <div class="container">
         <div class="inner-content">
         <h2 class="title">Login</h2>
-        <form action="./resources/login.php" method="POST" class="form-container">
+        <form action="./controllers/login.php" method="POST" class="form-container">
             <div class="input-box email">
                 <input type="email" id="email-input" required placeholder="Email" name="email">
             </div>

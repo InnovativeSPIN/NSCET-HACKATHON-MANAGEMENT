@@ -37,7 +37,7 @@
       <div class="container">
         <div class="inner-content">
           <h2 class="title">Registration</h2>
-          <form action="./resources/register.php"  method="POST"  class="form-container">
+          <form action="./controllers/register.php"  method="POST"  class="form-container">
               <div class="input-box email">
                   <input type="text"  id="email-input" required placeholder="Team leader Reg No" name='team_lead'>
               </div>

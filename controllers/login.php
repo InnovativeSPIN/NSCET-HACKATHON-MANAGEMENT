@@ -1,5 +1,5 @@
 <?php
-require_once('./connection.php');
+require_once('../resources/connection.php');
 
 // Collect POST data
 $email = $_POST["email"];
