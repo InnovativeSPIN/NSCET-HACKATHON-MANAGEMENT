@@ -87,7 +87,7 @@ body {
 
 .team-details span, 
 .idea-details span {
-    color: #007bff;
+    color: #5E72E4;
     font-weight: bold;
 }
 
@@ -122,7 +122,7 @@ body {
 
 /* Table Header Styling */
 #membersTable th {
-    background-color: #007bff;
+    background-color: #5E72E4;
     color: white;
     padding: 10px;
     text-align: left;
@@ -201,7 +201,7 @@ body {
 
 .add-member-btn {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #5E72E4;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -293,7 +293,7 @@ li:last-child {
 
 .form-group button {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #5E72E4;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -339,7 +339,7 @@ li:last-child {
 .validate-btn {
     margin-top: 10px;
     padding: 8px 15px;
-    background-color: #007bff; /* Blue background */
+    background-color: #5E72E4; /* Blue background */
     color: #fff; /* White text */
     border: none;
     border-radius: 4px;

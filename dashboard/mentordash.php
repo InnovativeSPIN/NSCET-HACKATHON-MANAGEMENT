@@ -82,7 +82,7 @@
     }
 
     .mentor-details span {
-        color: #007bff;
+        color: #5E72E4;
         font-weight: bold;
     }
 

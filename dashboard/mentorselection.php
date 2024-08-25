@@ -23,10 +23,37 @@
 
 
 
+
+/* General Styles */
 body {
-  font-family: 'source-code-pro', monospace !important;
   overflow-x: hidden !important;
+    font-family: "source-code-pro", monospace !important;
+    background: linear-gradient(to bottom, #5E72E4 50%, #f4f4f4 50%);
+    margin: 0;
+    padding: 0;
 }
+
+/* Dashboard Styles */
+.dashboard {
+    font-family: "source-code-pro", monospace !important;
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white to blend better with blue */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto; /* Center the dashboard and add spacing */
+}
+
+/* Other Styles Remain the Same */
+.header {
+    font-family: "source-code-pro", monospace !important;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Remaining styles as per your original CSS */
+
 
 /* Media Queries */
 @media only screen and (max-width: 979px) {
@@ -153,7 +180,7 @@ body {
 
 .dashboard {
   width: 100%;
-  max-width: 2000px;
+  max-width: 1000px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -299,7 +326,7 @@ body {
 
 .select-btn {
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color: #5E72E4;
   color: white;
   border: none;
   border-radius: 5px;
@@ -314,7 +341,7 @@ body {
 .department-btn {
   margin: 5px;
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #5E72E4;
   color: white;
   border: none;
   cursor: pointer;
