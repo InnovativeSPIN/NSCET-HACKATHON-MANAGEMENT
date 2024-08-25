@@ -29,6 +29,8 @@ body {
   overflow-x: hidden !important;
     font-family: "source-code-pro", monospace !important;
     background: linear-gradient(to bottom, #5E72E4 50%, #f4f4f4 50%);
+    background-attachment: fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
@@ -43,6 +45,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px auto; /* Center the dashboard and add spacing */
+    height: 80vh;
+    overflow-y: auto;
 }
 
 /* Other Styles Remain the Same */
