@@ -423,12 +423,7 @@ footer a:hover {
     text-decoration: underline;
     color: #007bff; /* Changes link color on hover */
 }
-.secondone{
-    transform: translateX(-20%);
-}
-.firstone{
-    transform: translateX(20%);
-}
+
 @media (max-width: 768px) {
     .follow-box, .flo-box {
         text-align: center; /* Center align on smaller screens */

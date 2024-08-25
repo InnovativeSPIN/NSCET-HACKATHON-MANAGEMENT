@@ -18,6 +18,11 @@
     .frame__title{
         z-index: 1;
     }
+    @media screen and (max-width:768px) {
+        .frame__title{
+        z-index: -1;
+    }        
+}
   
 </style>
 </head>
