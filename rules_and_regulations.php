@@ -19,6 +19,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script>
         document.documentElement.className="js";
         var supportsCssVars=function(){
@@ -35,8 +36,9 @@
 
 *{
      font-family: "source-code-pro", monospace !important;
+}body{
+    overflow-x: hidden;
 }
-
 
 @media (max-width: 1200px) {
     :root {
@@ -189,17 +191,15 @@ a:hover {
     color: #e74c3c;
     text-decoration: underline;
 }
-footer {
-    padding-top: 30px;
-}
 
 
 #particles-js {
-    width: 100vw; /* Ensure it takes full viewport width */
+    width: 100vw; 
     position: absolute;
     z-index: 1;
-    height: 270vh; /* Default height for larger screens */
+    height: 270vh; 
 }
+
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -208,7 +208,7 @@ footer {
         --page-padding: 1.5rem;
     }
     #particles-js {
-        height: 120vh; /* Slightly increased height for medium screens */
+        height: 120vh;
     }
 }
 
@@ -246,6 +246,10 @@ footer {
     #particles-js {
         height: 280vh; /* Further reduced height for very small screens */
     }
+    .heading-spacing i,.heading-spacing{
+        font-size: 38px;
+    }
+    
 }
 
 
@@ -261,14 +265,14 @@ footer {
     <div id="particles-js"></div>
     <section class="hero">
     <div class="col-md-12 text-center mb-4">
-    <h2 class="heading-spacing">
-        <i>H</i>ackathon <i>R</i>ules & <i>R</i>egulations
+    <h2 class="heading-spacing" data-aos="zoom-in">
+        Hackathon Rules & Regulations
     </h2>
 </div>
     </section>
 
     <div class="container">
-        <div class="section">
+        <div class="section" data-aos="zoom-in-down">
             <h2>Team Composition</h2>
             <ul>
                 <li>Each team must consist of <span class="highlight">6 members</span>.</li>
@@ -281,7 +285,7 @@ department</span>.</li>
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-left">
             <h2>Team Registration</h2>
             <ul>
                 <li>Each team must register with a <span class="highlight">unique team name</span>.</li>
@@ -291,14 +295,14 @@ department</span>.</li>
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-right">
             <h2>Inter-Departmental Collaboration</h2>
             <ul>
                 <li>Teams must include members from at least two different engineering departments to foster collaboration.</li>
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-left">
             <h2>Team Registration and Participation</h2>
             <ul>
                 <li>No changes in team composition are allowed once registered.</li>
@@ -309,7 +313,7 @@ maximum of 3 teams</span>.</li>
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-right">
             <h2>Team Responsibilities</h2>
             <ul>
                 <li>Teams are responsible for managing their internal communication and task distribution.</li>
@@ -317,7 +321,7 @@ maximum of 3 teams</span>.</li>
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-left">
             <h2>Disqualification Criteria</h2>
             <ul>
                 <li>Teams that do not adhere to the team composition rules or attempt unauthorized changes will be disqualified.</li>
@@ -326,14 +330,14 @@ maximum of 3 teams</span>.</li>
         </div>
        
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-right">
             <h2>Code of Conduct</h2>
             <ul>
                 <li>All participants must maintain a <span class="highlight">respectful and collaborative environment</span> throughout the hackathon.</li>
             </ul>
         </div>
 
-        <div class="section">
+        <div class="section" data-aos="zoom-in-left">
             <h2>Mentor Responsibilities</h2>
             <ul>
                 <li>Each mentor can guide a maximum of two teams.</li>
@@ -460,8 +464,17 @@ maximum of 3 teams</span>.</li>
         // Initial display
         // displayTable(currentPage);
         fetchData();
-</script> -->
+</script> -->    <a href="" class=" back-to-top pt-2" ><img src="./img/rocket.png" alt="" width="120px"></a>
 
+<script src="./js/scripts.js"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    AOS.init({
+        duration: 800,
+    })
+  </script>
 <script>
     let tableData = [];
     let currentPage = 1;

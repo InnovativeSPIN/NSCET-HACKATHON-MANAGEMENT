@@ -39,8 +39,12 @@
     });
   </script>
     <style>
-
-    
+ html{
+    overflow-x: hidden;
+ }
+    .ag-courses_item{
+        background: rgba(0,0,0,0.7);
+    }
 
     </style>
 </head>
@@ -858,7 +862,9 @@
 </div>
 
   
+<a href="" class=" back-to-top pt-2"><img src="./img/rocket.png" alt="" width="120px"></a>
 
+<script src="./js/scripts.js"></script>
  
 
   

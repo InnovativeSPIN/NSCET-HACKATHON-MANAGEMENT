@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script>
         document.documentElement.className="js";
         var supportsCssVars=function(){
@@ -32,17 +33,17 @@
     </script>
     <style>
      
-     
+     .frame{
+        z-index: 2;
+     }
+   
+    
     </style>
 </head>
 <body>
 <div class="demo-1">
      <main>
      <?php include('./resources/header.php') ?> 
-        <!-- <div class="robo-content" id="model-container">
-        <model-viewer src="./robo/scene.gltf" alt="A 3D model of a car" shadow-intensity="1"   disable-zoom  camera-controls auto-rotate   camera-orbit="4000deg  " style=" height: 80%;">
-        </model-viewer>
-        </div> -->
     </main>
     <!-- <div id="vanta-background" style="width: 100vw; height: 100vh;"></div> -->
     
@@ -60,9 +61,9 @@
 </div>
 
                
-                <div class="row">
+                <div class="row" >
     <div class="col-md-12">
-        <div class="statement-box">
+        <div class="statement-box" >
             <div class="row">
                 <div class="col-md-6">
                     <h3 class="ts">Total Statements</h3>
@@ -93,44 +94,13 @@
         </section>
     </div>
     <div class="container mt-5">
-    <!-- <div class="section-container">
     
-        <div class="section-one">
-            <label for="theme-select">Select Theme</label>
-            <select id="theme-select" class="form-select">
-         
-                <option value="MTAx">Artificial Intelligence (AI)</option>
-                <option value="MTAy">Augmented Reality (AR)</option>
-                <option value="MTAz">Cybersecurity</option>
-                <option value="MTA0">HealthTech</option>
-                <option value="MTA1">Internet of Things (IoT)</option>
-                <option value="MTA2">Robotics and Automation</option>
-                <option value="MTA3">Safety</option>
-                <option value="MTA4">Signal Processing</option>
-                <option value="MTA5">Smart City</option>
-                <option value="MTA2">Sustainable Energy</option>
-                <option value="MTA3">Waste Management</option>
-            </select>
-        </div>
-    
-
-
-        <div class="section-two">
-            <label for="category-select">Select Category</label>
-            <select id="category-select" class="form-select">
-             
-                <option value="" disabled selected hidden>Select Category</option>
-                <option value="Hardware">Hardware</option>
-                <option value="Software">Software</option>
-            </select>
-        </div>
-    </div> -->
 </div>
 
 <div class="table-section">
     <div class="table-container">
-        <div class="col-md-12 text-center mb-4">
-            <h2 class="heading-spacing  psl" style="margin:0px">
+        <div class="col-md-12 text-center mb-4 mt-5">
+            <h2 class="heading-spacing pslist psl" style="">
                 <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
             </h2>
         </div>
@@ -201,7 +171,9 @@
         </div>
     </div>
 </div>
+<a href="" class=" back-to-top pt-2" ><img src="./img/rocket.png" alt="" width="120px"></a>
 
+<script src="./js/scripts.js"></script>
     <!-- End of PS Section -->
     <script src="js/gsap.min.js"></script>
     <!-- <script type="module" src="js/index.js"></script> -->
@@ -406,9 +378,13 @@ document.getElementById('category-filter').addEventListener('change', function()
     });
 });
 
-
-
+    AOS.init();
+    AOS.init({
+        duration: 800,
+    })
 </script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 
 </body>

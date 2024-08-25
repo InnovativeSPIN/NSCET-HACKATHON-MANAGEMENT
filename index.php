@@ -38,7 +38,7 @@
     <link href="css/style.css" rel="stylesheet">   
     <link rel="stylesheet" href="./css/base.css">
 
-     
+     <script src="./js/scripts.js"></script>
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     <script>
         
@@ -72,6 +72,11 @@
 });
 
     </script>
+    <style>
+       .frame__demos-item{
+            background: none !important;
+        }
+    </style>
 
 </head>
 
@@ -93,7 +98,7 @@
      <main>
         <?php include('./resources/header.php') ?>
         <div class="content">
-        <div class="inner-content">
+        <div class="inner-content " data-aos="fade-down-right">
         <h2><i>N S C E T</i> </h2><br>
         <h2><i>H</i><span id="hack-text"></span></h2>
         </div>
@@ -343,14 +348,14 @@
                     <p>Vice Principal,NSCET</p>
                 </div>
             </div>
-            <div class="col-md-6 text-center mb-6" >
+            <div class="col-md-6 text-center mb-6 mt-3" >
                 <div class="committee-member" data-aos="flip-left">
                     <img src="img/vignesh.jpg" alt="vignesh" class="img-fluid">
                     <h5>L.S.Vignesh</h5>
                     <p>Hackathon Coordinator</p>
                 </div>
             </div>
-            <div class="col-md-6 text-center mb-6" >
+            <div class="col-md-6 text-center mb-6 mt-3" >
                 <div class="committee-member" data-aos="flip-left">
                     <img src="img/Dr athilingam.jpg" alt="Dr athilingam" class="img-fluid">
                     <h5>Dr.R.Athilingam</h5>
@@ -396,8 +401,8 @@
                 </div>
                 
                  <!-- TMHNU Logo -->
-                 <div class="logo-wrapper" data-aos="zoom-in-up">
-                    <img class="img-fluid logo-img" src="img/tmhnu.png" alt="TMHNU Logo" width="380px">
+                 <div class="logo-wrapper mt-5" data-aos="zoom-in-up" >
+                    <img class="img-fluid logo-img" src="img/ieee.png" alt="TMHNU Logo" width="480px">
                 </div>
             </div>
         </div>
