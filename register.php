@@ -65,11 +65,11 @@
         <h2 class="title">Registration</h2>
         <form id="registrationForm"action="./controllers/register.php" method="POST" class="form-container">
           <div class="input-box email">
-            <input type="text" id="teamLeadInput" required placeholder="Team leader Reg No" name='team_lead'>
+            <input type="text" id="teamLeadInput" required placeholder="Team Leader Reg No" name='team_lead'>
             <!-- <span id="teamLeadError" class="error-message"></span> -->
           </div>
           <div class="input-box password">
-            <input type="text" id="teamNameInput" style="text-transform:uppercase" required placeholder="Team Name"
+            <input type="text" id="teamNameInput" required placeholder="Team Name"
               name='team_name'>
               <!-- <span id="teamNameError" class="error-message"></span> -->
           </div>
