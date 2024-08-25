@@ -26,7 +26,9 @@
         margin: 0;
         padding: 0;
     }
-  
+    .frame__title{
+        z-index: 1;
+    }
 </style>
 </head>
 <body>
