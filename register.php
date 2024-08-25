@@ -34,45 +34,36 @@
     <?php include("./resources/header.php") ?>
     <canvas id="test"></canvas>
     <div class="main-body">
-<div class="container">
+      <div class="container">
         <div class="inner-content">
-        <h2 class="title">Registration</h2>
-        <form action="#" class="form-container">
-            <div class="input-box email">
-                <input type="text"  id="email-input" required placeholder="Team leader Reg No">
-               
-            </div>
-            <div class="input-box password">
-                <input type="text"  id="password-input" required placeholder="Team Name">
-                
-            </div>
-            <div class="input-box email">
-                <input type="email"  id="email-input" required placeholder="Email">
-                
-            </div>
-            <div class="input-box email">
-                <input type="text"  id="email-input" required placeholder="Password">
-                
-            </div>
-
-
-
-
-  
-</div>
-
+          <h2 class="title">Registration</h2>
+          <form action="./resources/register.php"  method="POST"  class="form-container">
+              <div class="input-box email">
+                  <input type="text"  id="email-input" required placeholder="Team leader Reg No" name='team_lead'>
+              </div>
+              <div class="input-box password">
+                  <input type="text"  id="password-input" required placeholder="Team Name" name='team_name'>
+                  
+              </div>
+              <div class="input-box email">
+                  <input type="email"  id="email-input" required placeholder="Email" name="email">
+                  
+              </div>
+              <div class="input-box email">
+                  <input type="text"  id="email-input" required placeholder="Password" name="password">
+                  
+              </div>
             <div class="remember-forgot">
                 <div class="remember">
                     <!-- <input type="checkbox" id="remember">
                     <label for="remember">Remember me</label> -->
                 </div>
-
             </div>
             <div class="button">
                 <button class="login">Register for hackathon</button>
             </div>
 
-        </form>
+          </form>
         </div>
     </div>
 </div>
@@ -83,13 +74,13 @@ var w = window.innerWidth,
     canvas = document.getElementById('test'),
     ctx = canvas.getContext('2d'),
     rate = 60,
-    arc = 200,
+    arc = 100,
     time,
     count,
-    size = 15,
-    speed = 20,
+    size = 20,
+    speed = 15,
     parts = new Array,
-    colors = ['red','#f57900','yellow','#ce5c00','#5c3566'];
+    colors = ['yellow','#ce5c00','#5c3566'];
 var mouse = { x: 0, y: 0 };
 
 canvas.setAttribute('width',w);

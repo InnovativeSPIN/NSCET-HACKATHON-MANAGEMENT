@@ -35,40 +35,26 @@
 <div class="container">
         <div class="inner-content">
         <h2 class="title">Login</h2>
-        <form action="#" class="form-container">
+        <form action="./resources/login.php" method="POST" class="form-container">
             <div class="input-box email">
-                <input type="email"  id="email-input" required placeholder="Username">
-                
+                <input type="email" id="email-input" required placeholder="Email" name="email">
             </div>
             <div class="input-box password">
-                <input type="password"  id="password-input" required placeholder="Password">
-                
+                <input type="password" id="password-input" required placeholder="Password" name="password">
             </div>
-          <div class="input-box password role">
-    <select name="" id="password-input" class="roleselection">
-        <option value="" hidden>Select</option>
-        <option value="Team Leader">Team Leader</option>
-        <option value="Mentor">Mentor</option>
-        <option value="Admin">Admin</option>
-    </select>
-    
-
-</div>
-
-            <div class="remember-forgot">
-                <div class="remember">
-                    <!-- <input type="checkbox" id="remember">
-                    <label for="remember">Remember me</label> -->
-                </div>
-                <div class="forgot">
-                    <a href="#">forgot Password ?</a>
-                </div>
+            <div class="input-box password role">
+                <select id="password-input" class="roleselection" name="role" required>
+                    <option value="" hidden>Select</option>
+                    <option value="Team Leader">Team Leader</option>
+                    <option value="Mentor">Mentor</option>
+                    <option value="Admin">Admin</option>
+                </select>
             </div>
             <div class="button">
-                <button class="login">Login</button>
+                <button type="submit" class="login">Login</button>
             </div>
             <div class="register">
-                <p>Don't you have an account ?<a href="#">Register</a></p>
+                <p>Don't Register yet? <a href="./register.php">Register</a></p>
             </div>
         </form>
         </div>
