@@ -348,15 +348,15 @@
                     <p>Vice Principal,NSCET</p>
                 </div>
             </div>
-            <div class="col-md-6 text-center mb-6 mt-3" >
-                <div class="committee-member" data-aos="flip-left">
+            <div class="col-md-6 text-center mb-6 mt-3 firstone" >
+                <div class="committee-member " data-aos="flip-left">
                     <img src="img/vignesh.jpg" alt="vignesh" class="img-fluid">
                     <h5>L.S.Vignesh</h5>
                     <p>Hackathon Coordinator</p>
                 </div>
             </div>
-            <div class="col-md-6 text-center mb-6 mt-3" >
-                <div class="committee-member" data-aos="flip-left">
+            <div class="col-md-6 text-center mb-6 mt-3 secondone" >
+                <div class="committee-member " data-aos="flip-left">
                     <img src="img/Dr athilingam.jpg" alt="Dr athilingam" class="img-fluid">
                     <h5>Dr.R.Athilingam</h5>
                     <p>Hackathon Coordinator</p>
