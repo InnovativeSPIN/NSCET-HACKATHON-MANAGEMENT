@@ -36,6 +36,9 @@
         z-index: 2;
      }
    
+     .demo-1{
+        background: none !important;
+     }
     
     </style>
 </head>

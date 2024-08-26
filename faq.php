@@ -34,6 +34,11 @@
 }body{
     overflow-x: hidden;
 }
+.frame__demos,.frame__title{
+  z-index:99  !important;
+}
+
+
 
 @media (max-width: 1200px) {
     :root {
@@ -46,6 +51,7 @@
     width: 100%;
     padding: 0 10px;
   }
+
 }
 
 
@@ -223,7 +229,7 @@ a:hover {
     z-index: -1;
 }
 .nav-icon{
-    z-index: 10 !important;
+    z-index: 101 !important;
    }
 
     nav {

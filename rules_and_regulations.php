@@ -228,7 +228,7 @@ a:hover {
     z-index: -1;
 }
 .nav-icon{
-    z-index: 10 !important;
+    z-index: 101 !important;
    }
 
     nav {
