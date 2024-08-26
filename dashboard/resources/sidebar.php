@@ -1,8 +1,8 @@
 <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href=" # " target="_blank">
-        <img src="./nscetlogo.png" class="navbar-brand-img h-100" alt="" style="font-size: 20px;">
+      <a class="navbar-brand  d-flex align-items-center  flex-column" href=" # " target="_blank">
+        <img src="./nscetlogo.png" class="nscetlogo h-100" alt="" style="font-size: 20px;" width="80px" height="80px">
         <span class="ms-1 font-weight-bold">NSCET Hackathon</span>
       </a>
     </div>
@@ -34,13 +34,17 @@
             <span class="nav-link-text ms-1">PS submission</span>
           </a>
         </li>
+      
+        <li class="d-flex justify-content-center mt-2">
+        <img src="/dashboard/logoHack.png" alt="" style="z-index: 99;display:flex;justify-content:center; " width="180px"  >
+
+        </li>
 
 
       </ul>
     </div>
          
       </div>
-
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="" type="button">Logout</a>
+      <a class="btn btn-primary btn-sm mb-0 w-100 mt-5" href="" type="button">Logout</a>
     </div>
   </aside>

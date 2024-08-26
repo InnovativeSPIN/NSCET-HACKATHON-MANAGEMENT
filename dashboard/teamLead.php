@@ -99,7 +99,7 @@ if ($team_result->num_rows > 0) {
             margin: 0;
             padding: 0;
         }
-
+      
         /* Dashboard Styles */
         .dashboard {
             font-family: "source-code-pro", monospace !important;
