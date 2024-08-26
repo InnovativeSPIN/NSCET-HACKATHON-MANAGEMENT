@@ -1,6 +1,6 @@
 <?php
 require_once('../resources/connection.php');
-
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $teams_array[] = $team_id;
         $updated_teams_json = json_encode($teams_array);
+        $submission_count = count($teams_array);
 
         $conn->begin_transaction();
         try {
@@ -50,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_team_sql = "UPDATE teams SET ps_id = '$id', updated_at = NOW() WHERE id = '$team_id'";
             $conn->query($update_team_sql);
 
-            $update_ps_sql = "UPDATE problem_statements SET teams_id = '$updated_teams_json', updated_at = NOW() WHERE ps_id = '$ps_id'";
+            $update_ps_sql = "UPDATE problem_statements SET teams_id = '$updated_teams_json', updated_at = NOW(), submission_count = '$submission_count' WHERE ps_id = '$ps_id'";
             $conn->query($update_ps_sql);
 
             $conn->commit();

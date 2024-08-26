@@ -1,3 +1,10 @@
+<?php
+session_start();
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +28,28 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
   <link href="./pssubmisson.css" rel="stylesheet" />
+  <style>
+    .alert {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 1000;
+      font-size: 16px;
+      font-weight: bold;
+    }
 
+    .alert.success {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .alert.error {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -57,13 +85,14 @@
 
       </style>
       <div class="form-container">
-        <form action="#" method="post" enctype="multipart/form-data" class="form-content">
+        <form action="#" id="problem-form" method="post" class="form-content">
           <!-- Dropdown Section -->
           <div class="form-group">
             <label for="dropdown">Select a PS ID :</label>
-            <select id="browsers" name="browser" style="width: 100%; padding: 10px; font-size: 16px;">
+            <select id="browsers" name="ps_id" style="width: 100%; padding: 10px; font-size: 16px;">
               <option value="" hidden></option>
             </select>
+            <input type="text" hidden name="team_id" value="<?php echo $user_id ?>">
           </div>
 
 
@@ -310,12 +339,47 @@
         });
       });
 
-
-
-
-
-
     </script>
+
+    <script>
+      document.getElementById("problem-form").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formData = new FormData(form);
+        // const data = Object.fromEntries(formData.entries());
+
+        // console.log(data)
+
+        fetch('../controllers/ps_selection.php', {
+          method: 'POST',
+          body: formData
+        }).then(response => response.json())
+          .then(result => {
+            if (result.success) {
+              showAlert(result.message, 'success');
+            } else {
+              showAlert(result.message, 'error');
+            }
+          }).catch(error => {
+            console.error('Error:', error);
+            showAlert('An unexpected error occurred. Please try again later', 'error')
+          });
+      });
+
+      function showAlert(message, type) {
+        const alertBox = document.createElement('div');
+        alertBox.className = `alert ${type}`;
+        alertBox.textContent = message;
+
+        document.body.appendChild(alertBox);
+
+        setTimeout(() => {
+          alertBox.remove();
+        }, 3000);
+      }
+    </script>
+
     <script src="./assets/js/core/popper.min.js"></script>
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
