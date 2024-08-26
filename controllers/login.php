@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($role === "Team Leader") {
         $table = "teams";
-        $redirect_url = "https://nscet.org/hackathon/dashboard/teamLead.php";
+        $redirect_url = "../dashboard/teamLead.php";
     } elseif ($role === "Mentor") {
         $table = "mentors";
-        $redirect_url = "https://nscet.org/hackathon/dashboard/mentordash.php";
+        $redirect_url = "../dashboard/mentordash.php";
     } elseif ($role === 'Admin') {
         if ($email !== 'hackathon@nscet.org') {
             echo "<script>
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['role'] = $role;
-            header("Location: https://nscet.org/hackathon/dashboard/admin_dashboard.php");
+            header("Location: ../dashboard/admin_dashboard.php");
             exit;
         } else {
             echo "<script>

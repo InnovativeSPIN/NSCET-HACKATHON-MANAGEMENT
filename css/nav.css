@@ -254,6 +254,9 @@ a.frame__demos-item {
     background: none  !important;
 }
 
+.vutton-custine2{
+    border: 2px solid #67c2ce;
+}
 
 @media (max-width: 1672px) {
     .new1,
