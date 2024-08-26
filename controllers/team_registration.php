@@ -59,11 +59,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $gender_count[strtolower($new_member['gender'])]++;
 
-    if ($team_members_result->num_rows >= 4) {
-        if ($gender_count['male'] < 2 || $gender_count['female'] < 2) {
+    if (($team_members_result->num_rows + 1) > 4) {
+        $temp_gender_count = $gender_count;
+        $temp_gender_count[strtolower($new_member['gender'])]++;
+
+        if ($temp_gender_count['male'] < 2 || $temp_gender_count['female'] < 2) {
             echo json_encode([
                 'success' => false,
-                'message' => 'The team must consist of at least 2 boys or 2 girls'
+                'message' => 'The team must consist of at least 2 boys and 2 girls'
             ]);
             exit();
         }
@@ -91,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $updated_team_members_json = json_encode($team_members);
 
-    $update_team_sql = "UPDATE teams SET team_members = '$updated_team_members_json' WHERE id = '$team_id'";
+    $update_team_sql = "UPDATE teams SET team_members = '$updated_team_members_json', updated_at = NOW() WHERE id = '$team_id'";
     if ($conn->query($update_team_sql) === TRUE) {
         $update_sql = "UPDATE students SET team_id = '$team_id' WHERE reg_no = '$new_member_reg_no'";
         if ($conn->query($update_sql) === TRUE) {
@@ -103,14 +106,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo json_encode([
                 'success' => false,
-                'message' => 'Unable to add the member. Please contact the Hackathon Tech Team.'
+                'message' => 'Unable to add the member. Please contact the Hackathon Tech Team'
             ]);
             exit();
         }
     } else {
         echo json_encode([
             'success' => false,
-            'message' => 'Unable to add the member. Please contact the Hackathon Tech Team.'
+            'message' => 'Unable to add the member. Please contact the Hackathon Tech Team'
         ]);
         exit();
     }

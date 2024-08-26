@@ -7,7 +7,7 @@ $reg_no = isset($_GET['reg_no']) ? $conn->real_escape_string($_GET['reg_no']) : 
 if (empty($reg_no)) {
     echo json_encode([
         'success' => false,
-        'message' => 'Registration number is required.'
+        'message' => 'Registration number is required'
     ]);
     exit();
 }
@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 } else {
     echo json_encode([
         'success' => false,
-        'message' => 'Student not found.'
+        'message' => 'Student not found'
     ]);
 }
 

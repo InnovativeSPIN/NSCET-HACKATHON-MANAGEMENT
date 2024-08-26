@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         echo "<script>
                 alert('Team registered successfully! Your team ID is: $team_id');
-                window.location.href = 'https://nscet.org/hackathon/';
+                window.location.href = 'https://nscet.org/hackathon/login.php';
               </script>";
     } else {
         echo "<script>
