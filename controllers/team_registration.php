@@ -11,15 +11,18 @@ function getDepartmentGroup($dept)
     }
 }
 
+$team_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $team_id = $conn->real_escape_string(trim($_POST["team_id"]));
-    $new_member_reg_no = $conn->real_escape_string(trim($_POST["new_member_reg_no"]));
+    $new_member_reg_no = $conn->real_escape_string(trim($_POST["reg_no"]));
 
     $check_member_sql = "SELECT * FROM students WHERE reg_no = '$new_member_reg_no' AND team_id IS NULL";
     $check_member_result = $conn->query($check_member_sql);
     if ($check_member_result->num_rows == 0) {
-        echo "<script>alert('Invalid registration number');
-        window.location.href = 'https://nscet.org/hackathon/dashboard/teamLead.php';</script>";
+        echo json_encode([
+            'success' => false,
+            'message' => 'Invalid registration number'
+        ]);
         exit();
     }
 
@@ -27,8 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $team_members_result = $conn->query($team_members_sql);
 
     if ($team_members_result->num_rows >= 6) {
-        echo "<script>alert('The team already has 6 members');
-        window.location.href = 'https://nscet.org/hackathon/dashboard/teamLead.php';</script>";
+        echo json_encode([
+            'success' => false,
+            'message' => 'The team already has 6 members'
+        ]);
         exit();
     }
 
@@ -56,8 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($team_members_result->num_rows + 1 >= 4) {
         if ($gender_count['male'] < 2 || $gender_count['female'] < 2) {
-            echo "<script>alert('The team must consist of at least 2 boys or 2 girls');
-            window.location.href = 'https://nscet.org/hackathon/dashboard/teamLead.php';</script>";
+            echo json_encode([
+                'success' => false,
+                'message' => 'The team must consist of at least 2 boys or 2 girls'
+            ]);
             exit();
         }
     }
@@ -67,8 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ($new_member_dept_group === 'Group1' && $group1_count > 0 && $group2_count == 0) ||
             ($new_member_dept_group === 'Group2' && $group2_count > 0 && $group1_count == 0)
         ) {
-            echo "<script>alert('The team must include at least one member from a different department');
-        window.location.href = 'https://nscet.org/hackathon/dashboard/teamLead.php';</script>";
+            echo json_encode([
+                'success' => false,
+                'message' => 'The team must include at least one member from a different department'
+            ]);
             exit();
         }
     }
@@ -86,15 +95,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($update_team_sql) === TRUE) {
         $update_sql = "UPDATE students SET team_id = '$team_id' WHERE reg_no = '$new_member_reg_no'";
         if ($conn->query($update_sql) === TRUE) {
-            echo "<script>alert('Team Member added successfully');
-        window.location.href = 'https://nscet.org/hackathon/dashboard/teamLead.php';</script>";
+            echo json_encode([
+                'success' => true,
+                'message' => 'Team Member added successfully'
+            ]);
+            exit();
         } else {
-            echo "<script>alert('Database error: Unable to add the member. Please contact the Hackathon Tech Team.');
-        window.location.href = 'https://nscet.org/hackathon/dashboard/teamLead.php';</script>";
+            echo json_encode([
+                'success' => false,
+                'message' => 'Unable to add the member. Please contact the Hackathon Tech Team.'
+            ]);
+            exit();
         }
     } else {
-        echo "<script>alert('Database error: Unable to add the member. Please contact the Hackathon Tech Team.');
-    window.location.href = 'add_team_member.php';</script>";
+        echo json_encode([
+            'success' => false,
+            'message' => 'Unable to add the member. Please contact the Hackathon Tech Team.'
+        ]);
+        exit();
     }
 }
 
