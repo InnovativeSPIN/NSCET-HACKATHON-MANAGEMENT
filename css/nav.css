@@ -232,6 +232,10 @@ a.frame__demos-item {
     transform: translate(-7px, 3px);
     transition: transform 0.4s ease;
 }
+.frame__demos-item{
+    color:  white !important;
+    background: none !important;
+}
 
 .new:hover .vutton-custine {
     transform: translate(0px, 0px) scale(1.1);
@@ -288,11 +292,14 @@ a.frame__demos-item {
         background: rgba(0, 0, 0, 0.8);
         text-align: center;
 		
-		
+
     }
+
     .frame__demos-item {
         font-size: clamp(18px, 3vw, 32px);
         margin-bottom: 10px;
+        color:  white !important;
+        background: none !important;
     }
     .up {
         display: flex;
