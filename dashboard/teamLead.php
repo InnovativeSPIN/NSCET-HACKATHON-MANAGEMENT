@@ -1,4 +1,73 @@
+<?php
+require_once('../resources/connection.php');
 
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
+$team_sql = "
+    SELECT 
+        t.team_name, 
+        t.team_lead, 
+        s.name AS team_lead_name, 
+        t.team_id, 
+        t.ps_id, 
+        ps.ps AS ps_title,
+        t.mentor_id, 
+        m.name AS mentor_name,
+        t.team_members, 
+        t.idea_ppt
+    FROM 
+        teams t
+    JOIN 
+        students s ON t.team_lead = s.reg_no
+    LEFT JOIN 
+        problem_statements ps ON t.ps_id = ps.id
+    LEFT JOIN 
+        mentors m ON t.mentor_id = m.id
+    WHERE 
+        t.id = '$user_id'
+";
+
+$team_result = $conn->query($team_sql);
+
+if ($team_result->num_rows > 0) {
+    $team_row = $team_result->fetch_assoc();
+
+    $team_members_json = $team_row['team_members'];
+
+    $team_members = json_decode($team_members_json, true);
+
+    if (!empty($team_members)) {
+        $placeholders = implode(',', array_fill(0, count($team_members), '?'));
+
+        $members_sql = "
+            SELECT 
+                reg_no, 
+                name, 
+                dept, 
+                year
+            FROM 
+                students 
+            WHERE 
+                reg_no IN ($placeholders)
+        ";
+
+        $stmt = $conn->prepare($members_sql);
+        $stmt->bind_param(str_repeat('s', count($team_members)), ...$team_members);
+
+        $stmt->execute();
+        $members_result = $stmt->get_result();
+
+        $team_member_details = [];
+        while ($row = $members_result->fetch_assoc()) {
+            $team_member_details[] = $row;
+        }
+
+    } else {
+        $team_member_details = [];
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
