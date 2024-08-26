@@ -4712,6 +4712,17 @@ fieldset:disabled .btn {
   margin-bottom: 0;
   list-style: none;
 }
+.nav-link{
+  color: #051139 !important;
+  border-radius: 5px;
+}
+.nav-link:hover{
+ background: #d4d4d4 !important;
+
+}
+.mentordashboard:hover{
+ background: none !important;
+}
 
 .navbar-nav .show>.nav-link,
 .navbar-nav .nav-link.active {

@@ -1,8 +1,8 @@
 <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
-    <div class="sidenav-header">
+    <div class="">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand  d-flex align-items-center  flex-column" href=" # " target="_blank">
-        <img src="./nscetlogo.png" class="nscetlogo h-100" alt="" style="font-size: 20px;" width="80px" height="80px">
+      <a class=" d-flex align-items-center flex-column" href=" # " target="_blank">
+        <img src="./nscetlogo.png" class="nscetlogo" width="160px" height="110px">
         <span class="ms-1 font-weight-bold">NSCET Hackathon</span>
       </a>
     </div>
@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="../dashboard/teamLead.php">
+          <a class="nav-link " href="../dashboard/teamLead.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -19,7 +19,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="../dashboard/mentorselection.php">
+          <a class="nav-link " href="../dashboard/mentorselection.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -27,7 +27,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="../dashboard/pssubmission.php">
+          <a class="nav-link  " href="../dashboard/pssubmission.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
