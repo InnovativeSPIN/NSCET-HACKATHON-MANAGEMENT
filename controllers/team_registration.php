@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $team_members_sql = "SELECT dept, gender FROM students WHERE team_id = '$team_id'";
     $team_members_result = $conn->query($team_members_sql);
 
-    if ($team_members_result->num_rows >= 6) {
+    if ($team_members_result->num_rows > 6) {
         echo json_encode([
             'success' => false,
             'message' => 'The team already has 6 members'
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $gender_count[strtolower($new_member['gender'])]++;
 
-    if ($team_members_result->num_rows + 1 >= 4) {
+    if ($team_members_result->num_rows >= 4) {
         if ($gender_count['male'] < 2 || $gender_count['female'] < 2) {
             echo json_encode([
                 'success' => false,

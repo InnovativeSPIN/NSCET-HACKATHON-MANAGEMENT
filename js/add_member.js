@@ -56,7 +56,7 @@ submitMemberBtn.addEventListener("click", function () {
         .then(data => {
             if (data.success) {
                 alert("Member added successfully");
-                // Optionally, close the modal or clear the form here
+                location.reload();
             } else {
                 alert(data.message);
             }
