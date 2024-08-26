@@ -1,6 +1,8 @@
 <?php
 require_once('../resources/connection.php');
 
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
 $team_sql = "
@@ -61,7 +63,7 @@ if ($team_result->num_rows > 0) {
         while ($row = $members_result->fetch_assoc()) {
             $team_member_details[] = $row;
         }
-
+        $memberCount = count($team_member_details);
     } else {
         $team_member_details = [];
     }
@@ -507,7 +509,9 @@ if ($team_result->num_rows > 0) {
             <div class="team-members">
                 <div class="members-header">
                     <h2>Team Members</h2>
-                    <button class="add-member-btn">Add Member</button>
+                    <?php if ($memberCount < 5): ?>
+                        <button class="add-member-btn">Add Member</button>
+                    <?php endif; ?>
                 </div>
 
                 <table id="membersTable">
@@ -558,6 +562,7 @@ if ($team_result->num_rows > 0) {
                 <div class="form-group">
                     <label for="regNumber">Registration Number:</label>
                     <input type="text" id="regNumber" placeholder="Enter registration number">
+                    <input type="text" id="team_id" hidden value="<?php echo $user_id ?>">
                     <button type="button" class="validate-btn">Get Info</button>
                 </div>
                 <div class="member-detail" style="display: none;">

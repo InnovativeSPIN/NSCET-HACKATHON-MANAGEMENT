@@ -2,6 +2,7 @@ const memberDetailDiv = document.querySelector(".member-detail");
 const validateBtn = document.querySelector(".validate-btn");
 const submitMemberBtn = document.getElementById("submitMemberBtn");
 const regNumberInput = document.getElementById("regNumber");
+const team_id_input = document.getElementById("team_id");
 const studentNameInput = document.getElementById("StudentName");
 const departmentInput = document.getElementById("department");
 const yearInput = document.getElementById("year");
@@ -39,6 +40,7 @@ validateBtn.addEventListener("click", function () {
 
 submitMemberBtn.addEventListener("click", function () {
     const regNumber = regNumberInput.value.trim();
+    const team_id = team_id_input.value
 
     if (!regNumber) {
         alert("Registration number or Team ID missing.");
@@ -47,6 +49,7 @@ submitMemberBtn.addEventListener("click", function () {
 
     const formData = new FormData();
     formData.append("reg_no", regNumber);
+    formData.append("team_id", team_id);
 
     fetch("../controllers/team_registration.php", {
         method: "POST",

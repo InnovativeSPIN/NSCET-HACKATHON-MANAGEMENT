@@ -1,20 +1,38 @@
 <?php
 require_once('../resources/connection.php');
 
-function getDepartmentGroup($dept)
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
+// session_start();
+header('Content-Type: application/json');
+function getDepartmentCategory($dept)
 {
-    $group1 = ['AI&DS', 'CSE', 'IT'];
-    if (in_array($dept, $group1)) {
-        return 'Group1';
+    $cse_domain = ['AI&DS', 'CSE', 'IT'];
+    $civil = 'CIVIL';
+    $mech = 'MECH';
+    $eee = 'EEE';
+    $ece = 'ECE';
+
+    if (in_array($dept, $cse_domain)) {
+        return 'CSE_DOMAIN';
+    } elseif ($dept === $civil) {
+        return 'CIVIL';
+    } elseif ($dept === $mech) {
+        return 'MECH';
+    } elseif ($dept === $eee) {
+        return 'EEE';
+    } elseif ($dept === $ece) {
+        return 'ECE';
     } else {
-        return 'Group2';
+        return 'UNKNOWN';
     }
 }
 
-$team_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+// $team_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_member_reg_no = $conn->real_escape_string(trim($_POST["reg_no"]));
+    $team_id = $conn->real_escape_string($_POST["team_id"]);
 
     $check_member_sql = "SELECT * FROM students WHERE reg_no = '$new_member_reg_no' AND team_id IS NULL";
     $check_member_result = $conn->query($check_member_sql);
@@ -25,7 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
         exit();
     }
-
+    $dept_categories = [];
+    // rule 1
     $team_members_sql = "SELECT dept, gender FROM students WHERE team_id = '$team_id'";
     $team_members_result = $conn->query($team_members_sql);
 
@@ -37,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    // rule 2
     $gender_count = ['male' => 0, 'female' => 0];
 
     $group1_count = 0;
@@ -44,42 +64,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     while ($member = $team_members_result->fetch_assoc()) {
         $gender_count[strtolower($member['gender'])]++;
 
-        $member_dept_group = getDepartmentGroup($member['dept']);
-        if ($member_dept_group === 'Group1') {
-            $group1_count++;
-        } else {
-            $group2_count++;
+        $dept_category = getDepartmentCategory($member['dept']);
+        if (!in_array($dept_category, $dept_categories)) {
+            $dept_categories[] = $dept_category;
         }
     }
 
     $new_member_sql = "SELECT dept, gender FROM students WHERE reg_no = '$new_member_reg_no'";
     $new_member_result = $conn->query($new_member_sql);
     $new_member = $new_member_result->fetch_assoc();
-    $new_member_dept_group = getDepartmentGroup($new_member['dept']);
 
-    $gender_count[strtolower($new_member['gender'])]++;
+    $temp_gender_count = $gender_count;
+    $temp_gender_count[strtolower($new_member['gender'])]++;
 
-    if (($team_members_result->num_rows + 1) > 4) {
-        $temp_gender_count = $gender_count;
-        $temp_gender_count[strtolower($new_member['gender'])]++;
+    $current_team_size = $team_members_result->num_rows;
+    if ($current_team_size >= 4) {
+        if ($current_team_size == 4) {
+            if ($temp_gender_count['male'] > 4 || $temp_gender_count['female'] > 4) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Adding this member will violate the gender balance rule for the final team'
+                ]);
+                exit();
+            }
+        }
 
-        if ($temp_gender_count['male'] < 2 || $temp_gender_count['female'] < 2) {
-            echo json_encode([
-                'success' => false,
-                'message' => 'The team must consist of at least 2 boys and 2 girls'
-            ]);
-            exit();
+        if ($current_team_size == 5) {
+            if ($temp_gender_count['male'] < 2 || $temp_gender_count['female'] < 2) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'The team must have at least 2 males and 2 females'
+                ]);
+                exit();
+            }
         }
     }
 
-    if ($team_members_result->num_rows == 5) {
-        if (
-            ($new_member_dept_group === 'Group1' && $group1_count > 0 && $group2_count == 0) ||
-            ($new_member_dept_group === 'Group2' && $group2_count > 0 && $group1_count == 0)
-        ) {
+    // rule 3
+    if ($current_team_size == 5) {
+        $new_member_dept_category = getDepartmentCategory($new_member['dept']);
+        if (!in_array($new_member_dept_category, $dept_categories)) {
+            $dept_categories[] = $new_member_dept_category;
+        }
+
+        if (count($dept_categories) < 2) {
             echo json_encode([
                 'success' => false,
-                'message' => 'The team must include at least one member from a different department'
+                'message' => 'The team must include members from at least two different departments'
             ]);
             exit();
         }
