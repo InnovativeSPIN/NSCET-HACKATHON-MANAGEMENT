@@ -28,13 +28,13 @@
                 <a class="frame__demos-item" href="./faq.php">FAQs</a>
                 <a class="frame__demos-item" href="./mentorslist.php">Mentors</a>       
                 <!-- <a class="frame__demos-item" href="">Project Implementation</a> -->
-                <!-- <div class="up">
+                <div class="up">
                 <div class="new">
                     <div class="new1">
-                        <a class="frame__demos-item vutton-custine" href="">Register</a>
+                        <a class="frame__demos-item vutton-custine" href="./register.php">Register</a>
                     </div>
                 </div>
-            </div> -->
+            </div>
                     </nav>
         </div>
 
