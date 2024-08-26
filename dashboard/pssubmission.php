@@ -1,8 +1,3 @@
-<?php
-header("Location: https://nscet.org/hackathon");
-exit();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,28 +49,29 @@ exit();
         </nav>
     <div class="dashboard">
     <div class="col-md-12 text-center mb-4">
-    <h2 class="heading-spacing heading">
-        <i>P</i>roblem <i>S</i>tatement <i>S</i>ubmission
+    <h2 class="heading-spacing psl">
+        <i></i>Problem <i></i>Statement <i></i>Submission
     </h2>
 </div>
-
+<style>
+  
+</style>
   <div class="form-container">
     <form action="#" method="post" enctype="multipart/form-data" class="form-content">
       <!-- Dropdown Section -->
       <div class="form-group">
-        <label for="dropdown">Select an PS ID :</label>
-        <input list="browsers" name="browser" id="browser" maxlength="10" >
-        <datalist  id="browsers" name="dropdown">
-          <option value="PSID21">
-          <option value="PSID43">
-          <option value="PSID12">  
-        </datalist >
+        <label for="dropdown">Select a PS ID :</label>
+        <select id="browsers" name="browser" style="width: 100%; padding: 10px; font-size: 16px;">
+        <option value="" hidden></option>
+    </select>
       </div>
 
      
       <!-- Submit Button -->
       <div class="form-group">
-      <button class="button-64" role="button"><span class="text">Submit</span></button>
+      <button class="button-64" role="button" style="width: 100%; font-size: 16px; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    <span class="text">Submit Problem</span>
+</button>
 
       </div>
     </form>
@@ -85,12 +81,13 @@ exit();
 
     
 <div class="table-section">
-    <div class="table-container">
-        <div class="col-md-12 text-center mb-4">
+  <div class="col-md-12 text-center mb-4">
             <h2 class="heading-spacing  psl" style="margin:0px">
-                <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
+            <i>A</i>vailable <i>P</i>roblem <i>S</i>tatements <i>L</i>ist
             </h2>
         </div>
+    <div class="table-container">
+        
 
         <div class="table-filter">
            <!-- <div class="ideappt">
@@ -136,7 +133,7 @@ const rowsPerPage = 10;
 
 async function fetchData() {
     try {
-        const response = await fetch('../resources/ps_fetch.php');
+        const response = await fetch('../resources/ps_fetch_submission.php');
         tableData = await response.json();
         displayTable(currentPage); // Display data after fetching
     } catch (error) {
@@ -153,6 +150,8 @@ function displayTable(page) {
     const filteredData = filterData();
     const paginatedData = filteredData.slice(start, end);
 
+    const select = document.getElementById('browsers');
+
     paginatedData.forEach((row, index) => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -160,10 +159,15 @@ function displayTable(page) {
             <td>${row.ps_id}</td>
             <td class="problem-title" data-description="${row.ps_description}" data-ps-id="${row.ps_id}" data-ps-title="${row.ps}">${row.ps}</td>
             <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
-            <td>${'0'}</td>
+            <td>${row.submission_count}</td>
             <td>${row.ps_domain}</td>
         `;
         tableBody.appendChild(tr);
+
+        const option = document.createElement('option');
+        option.value = row.ps_id;
+        option.textContent = row.ps_id;
+        select.appendChild(option);
     });
 
     attachTitleClickEvents();
@@ -259,13 +263,7 @@ function nextPage() {
     }
 }
 
-document.querySelector('.close').onclick = closeModal;
-window.onclick = function(event) {
-    const modal = document.getElementById('problemModal');
-    if (event.target == modal) {
-        closeModal();
-    }
-}
+
 
 document.getElementById('category-filter').addEventListener('change', function() {
     currentPage = 1;

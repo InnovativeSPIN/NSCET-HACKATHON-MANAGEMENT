@@ -229,7 +229,7 @@ function displayTable(page) {
             <td>${row.ps_id}</td>
             <td class="problem-title" data-description="${row.ps_description}" data-ps-id="${row.ps_id}" data-ps-title="${row.ps}">${row.ps}</td>
             <td>${row.ps_type == 0 ? "Software" : "Hardware"}</td>
-            <td>${'0'}</td>
+            <td>${row.submission_count}</td>
             <td>${row.ps_domain}</td>
         `;
         tableBody.appendChild(tr);
