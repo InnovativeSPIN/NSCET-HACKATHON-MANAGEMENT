@@ -1,3 +1,75 @@
+<?php
+require_once('../resources/connection.php');
+
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
+$team_sql = "
+    SELECT 
+        t.team_name, 
+        t.team_lead, 
+        s.name AS team_lead_name, 
+        t.team_id, 
+        t.ps_id, 
+        ps.ps AS ps_title,
+        t.mentor_id, 
+        m.name AS mentor_name,
+        t.team_members, 
+        t.idea_ppt
+    FROM 
+        teams t
+    JOIN 
+        students s ON t.team_lead = s.reg_no
+    LEFT JOIN 
+        problem_statements ps ON t.ps_id = ps.id
+    LEFT JOIN 
+        mentors m ON t.mentor_id = m.id
+    WHERE 
+        t.id = '$user_id'
+";
+
+$team_result = $conn->query($team_sql);
+
+if ($team_result->num_rows > 0) {
+    $team_row = $team_result->fetch_assoc();
+
+    $team_members_json = $team_row['team_members'];
+
+    $team_members = json_decode($team_members_json, true);
+
+    if (!empty($team_members)) {
+        $placeholders = implode(',', array_fill(0, count($team_members), '?'));
+
+        $members_sql = "
+            SELECT 
+                reg_no, 
+                name, 
+                dept, 
+                year
+            FROM 
+                students 
+            WHERE 
+                reg_no IN ($placeholders)
+        ";
+
+        $stmt = $conn->prepare($members_sql);
+        $stmt->bind_param(str_repeat('s', count($team_members)), ...$team_members);
+
+        $stmt->execute();
+        $members_result = $stmt->get_result();
+
+        $team_member_details = [];
+        while ($row = $members_result->fetch_assoc()) {
+            $team_member_details[] = $row;
+        }
+
+    } else {
+        $team_member_details = [];
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -421,14 +493,14 @@
             <div class="container">
                 <!-- Team Details Section (Left) -->
                 <div class="team-details">
-                    <h2>Team Name: <span>TechCreed</span></h2>
-                    <p>Team Leader: <span>Mukilan</span></p>
+                    <h2>Team Name: <span><?php echo $team_row['team_name'] ?></span></h2>
+                    <p>Team Leader: <span><?php echo $team_row['team_lead_name'] ?></span></p>
                 </div>
 
                 <!-- Idea Details Section (Right) -->
                 <div class="idea-details">
-                    <p>Mentor: <span>L.S.Vignesh</span></p>
-                    <p>Submitted Idea: <span>AI-based Smart Irrigation System</span></p>
+                    <p>Mentor: <span><?php echo $team_row['mentor_name'] ?></span></p>
+                    <p>Submitted Idea: <span><?php echo $team_row['ps_title'] ?></span></p>
                 </div>
             </div>
 
@@ -446,45 +518,27 @@
                             <th>Name</th>
                             <th>Department</th>
                             <th>Year</th>
-                            <th>Mail</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td data-label="S.No">1</td>
-                            <td data-label="Name">Mukilan</td>
-                            <td data-label="Department">Computer Science</td>
-                            <td data-label="Year">3rd Year</td>
-                            <td data-label="Mail">mukilan@example.com</td>
-                        </tr>
-                        <tr>
-                            <td data-label="S.No">2</td>
-                            <td data-label="Name">Tenshkumar</td>
-                            <td data-label="Department">Information Technology</td>
-                            <td data-label="Year">2nd Year</td>
-                            <td data-label="Mail">tenshkumar@example.com</td>
-                        </tr>
-                        <tr>
-                            <td data-label="S.No">3</td>
-                            <td data-label="Name">Srihari</td>
-                            <td data-label="Department">Mechanical Engineering</td>
-                            <td data-label="Year">4th Year</td>
-                            <td data-label="Mail">srihari@example.com</td>
-                        </tr>
-                        <tr>
-                            <td data-label="S.No">4</td>
-                            <td data-label="Name">Mark</td>
-                            <td data-label="Department">Electrical Engineering</td>
-                            <td data-label="Year">1st Year</td>
-                            <td data-label="Mail">mark@example.com</td>
-                        </tr>
-                        <tr>
-                            <td data-label="S.No">5</td>
-                            <td data-label="Name">Sandhosh</td>
-                            <td data-label="Department">Civil Engineering</td>
-                            <td data-label="Year">3rd Year</td>
-                            <td data-label="Mail">sandhosh@example.com</td>
-                        </tr>
+                        <?php
+                        if (!empty($team_member_details)) {
+                            $serial_no = 1;
+                        
+                            foreach ($team_member_details as $member) {
+                                echo '<tr>';
+                                echo '<td data-label="S.No">' . $serial_no . '</td>';
+                                echo '<td data-label="Name">' . htmlspecialchars($member['name']) . '</td>';
+                                echo '<td data-label="Department">' . htmlspecialchars($member['dept']) . '</td>';
+                                echo '<td data-label="Year">' . htmlspecialchars($member['year']) . '</td>';
+                                echo '</tr>';
+
+                                $serial_no++;
+                            }
+                        } else {
+                            echo '<tr><td colspan="5">No team members found</td></tr>';
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -665,7 +719,7 @@
                 const year = document.getElementById("year").value;
 
                 // Validate if all fields are filled
-                if (!regNumber || !StudentName || !department || !year ) {
+                if (!regNumber || !StudentName || !department || !year) {
                     alert("Please fill in all fields.");
                     return; // Stop the function if validation fails
                 }
