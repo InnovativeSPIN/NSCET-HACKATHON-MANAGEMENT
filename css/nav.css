@@ -141,7 +141,9 @@ a:focus-visible {
     width: 200px;
     height: 120px;
 }
-
+.vutton-custine::before{
+    content: none !important;
+}
 .frame__title::before {
     content: '';
     position: absolute;
@@ -274,7 +276,9 @@ a.frame__demos-item {
     margin-top: -13px;
 }
 
-
+.logincontent{
+    border: 2px solid #2fbdbc;
+}
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .frame__demos {
@@ -301,7 +305,7 @@ a.frame__demos-item {
         background: none;
     }
     .new1 {
-        border: none;
+        border: none !important;
     }
     .new {
         padding: 5px 20px;
@@ -329,4 +333,8 @@ a.frame__demos-item {
         bottom: 15px;
 
     }
+    .logincontent{
+        border: none;
+    }
+    
 }
