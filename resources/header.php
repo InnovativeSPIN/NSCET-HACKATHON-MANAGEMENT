@@ -34,9 +34,11 @@
                         <a class="frame__demos-item vutton-custine" href="./register.php">Register</a>
                     </div>
                 </div>
-                <div class="new">
-                    <div class="new1" style='border: 2px solid #2fbdbc;margin-top:32px' >
-                        <a class="frame__demos-item vutton-custine" style='border: 2px solid #2fbdbc;' href="./login.php">Login</a>
+            </div>
+            <div class="up" style="">
+                <div class="new" >
+                    <div class="new1" style="border: 2px solid #2fbdbc;">
+                    <a class="frame__demos-item vutton-custine logincontent" style='' href="./login.php">Login</a>
                     </div>
                 </div>
             </div>
