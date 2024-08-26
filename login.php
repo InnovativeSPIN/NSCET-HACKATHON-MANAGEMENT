@@ -1,3 +1,8 @@
+<?php
+header("Location: https://nscet.org/hackathon");
+exit();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
