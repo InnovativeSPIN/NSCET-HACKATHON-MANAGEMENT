@@ -1,5 +1,6 @@
 <?php
 require_once('../resources/connection.php');
+require_once("../utils/check_login.php");
 
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 

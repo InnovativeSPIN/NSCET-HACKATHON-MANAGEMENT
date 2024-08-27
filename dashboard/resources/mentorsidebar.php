@@ -41,6 +41,6 @@
          
       </div>
 
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="" type="button">Logout</a>
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="../../controllers/logout.php" type="button">Logout</a>
     </div>
   </aside>
