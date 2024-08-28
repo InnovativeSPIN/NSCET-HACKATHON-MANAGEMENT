@@ -17,7 +17,7 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
-<!-- 
+
         <li class="nav-item">
           <a class="nav-link " href="../dashboard/mentorselection.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -33,7 +33,7 @@
             </div>
             <span class="nav-link-text ms-1">PS submission</span>
           </a>
-        </li> -->
+        </li>
 
 
       </ul>
