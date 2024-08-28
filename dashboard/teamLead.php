@@ -2,7 +2,8 @@
 require_once('../resources/connection.php');
 require_once("../utils/check_login.php");
 
-header("Location: ../underMaintaince.html");
+$url = "https://www.nscet.org/hackathon/underMaintaince.html";
+header("Location: $url");
 
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 
