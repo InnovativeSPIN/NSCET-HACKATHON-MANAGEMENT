@@ -2,9 +2,6 @@
 require_once('../resources/connection.php');
 require_once("../utils/check_login.php");
 
-$url = "https://www.nscet.org/hackathon/underMaintaince.html";
-header("Location: $url");
-
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
