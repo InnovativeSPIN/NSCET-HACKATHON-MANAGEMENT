@@ -1,8 +1,8 @@
 <?php
-require_once('../resources/connection.php');
-require_once("../utils/check_login.php");
-
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
+require_once("../utils/check_login.php");
+require_once('../resources/connection.php');
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
@@ -12,7 +12,7 @@ $team_sql = "
         t.team_lead, 
         s.name AS team_lead_name, 
         t.team_id, 
-        t.ps_id, 
+        ps.ps_id, 
         ps.ps AS ps_title,
         t.mentor_id, 
         m.name AS mentor_name,
@@ -81,7 +81,7 @@ if ($team_result->num_rows > 0) {
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <title>
-        Dashboard | Nscet hackathon
+        Dashboard | NSCET Hackathon
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -496,12 +496,14 @@ if ($team_result->num_rows > 0) {
                 <!-- Team Details Section (Left) -->
                 <div class="team-details">
                     <h2>Team Name: <span><?php echo $team_row['team_name'] ?></span></h2>
+                    <h2>Team ID: <span><?php echo $team_row['team_id'] ?></span></h2>
                     <p>Team Leader: <span><?php echo $team_row['team_lead_name'] ?></span></p>
                 </div>
 
                 <!-- Idea Details Section (Right) -->
                 <div class="idea-details">
                     <p>Mentor: <span><?php echo $team_row['mentor_name'] ?></span></p>
+                    <p>Problem Statement ID: <span><?php echo $team_row['ps_id'] ?></span></p>
                     <p>Submitted Idea: <span><?php echo $team_row['ps_title'] ?></span></p>
                 </div>
             </div>

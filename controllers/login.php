@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $redirect_url = "../dashboard/teamLead.php";
     } elseif ($role === "Mentor") {
         $table = "mentors";
-        $redirect_url = "../dashboard/mentordash.php";
+        $redirect_url = "../dashboard/mentor_dashboard.php";
     } elseif ($role === 'Admin') {
         if ($email !== 'hackathon@nscet.org') {
             echo "<script>

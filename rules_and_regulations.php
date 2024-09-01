@@ -266,12 +266,66 @@ a:hover {
     <section class="hero">
     <div class="col-md-12 text-center mb-4">
     <h2 class="heading-spacing" data-aos="zoom-in">
-        Hackathon Rules & Regulations
+        Mentor Rules & Regulations
     </h2>
 </div>
     </section>
 
     <div class="container">
+    <div class="section" data-aos="zoom-in-down">
+        <h2>Online Meetings</h2>
+        <ul>
+            <li>You may conduct online meetings with your team members to discuss progress and provide guidance.</li>
+            <li>All online meetings must be approved by the relevant Department Head (HOD) and Hackathon Coordinators.</li>
+            <li>Share the meeting link with the Hackathon Coordinators in advance.</li>
+        </ul>
+    </div>
+
+    <div class="section" data-aos="zoom-in-left">
+        <h2>Physical Meetings</h2>
+        <ul>
+            <li>Physical meetings with your team members are only permitted on the college campus.</li>
+            <li>Meetings outside the college campus are not allowed.</li>
+        </ul>
+    </div>
+
+    <div class="section" data-aos="zoom-in-right">
+        <h2>Scheduled Discussion Slots</h2>
+        <ul>
+            <li>Starting from <span class="highlight">02/09/2024</span>, two time slots have been designated for team discussions:</li>
+            <li>Tuesdays: <span class="highlight">3rd and 4th hours</span></li>
+            <li>Wednesdays: <span class="highlight">6th and 7th hours</span></li>
+            <li>During these hours, teams must be present with their mentors and are not allowed to wander around the college campus unnecessarily.</li>
+        </ul>
+    </div>
+
+    <div class="section" data-aos="zoom-in-left">
+        <h2>Requesting Items for Problem Solutions</h2>
+        <ul>
+            <li>If your team requires any items for their problem solution, ensure that a formal request is made.</li>
+            <li>This request must be approved by both you (the Mentor) and the Department Head (HOD).</li>
+        </ul>
+    </div>
+
+    <div class="section" data-aos="zoom-in-right">
+        <h2>Utilization of College Resources</h2>
+        <ul>
+            <li>If your team needs to use any college resources (labs, equipment, etc.), they must obtain proper permission.</li>
+            <li>This permission should be sought from you (the Mentor) and the HOD of the resource-providing department.</li>
+        </ul>
+    </div>
+</div>
+
+
+    <!-- Hackathon rules and requlations -->
+
+    <div class="col-md-12 text-center mb-4">
+    <h2 class="heading-spacing" data-aos="zoom-in">
+        Hackathon Rules & Regulations
+    </h2>
+</div>
+
+<div class="container">
         <div class="section" data-aos="zoom-in-down">
             <h2>Team Composition</h2>
             <ul>
@@ -345,6 +399,11 @@ maximum of 3 teams</span>.</li>
             </ul>
         </div>
     </div>
+
+   
+
+
+
 
     
   <?php include("./resources/footersec.php") ?>
