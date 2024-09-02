@@ -6,40 +6,67 @@ require_once('../resources/connection.php');
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
-$query = "
+$mentor_id = $user_id;
+
+$sql = "SELECT mentoring_teams FROM mentors WHERE id = ?";
+$stmt = $conn->prepare($sql);
+if ($stmt === false) {
+    die("Prepare failed: " . $mysqli->error);
+}
+
+$stmt->bind_param('i', $mentor_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$mentor_data = $result->fetch_assoc();
+
+$mentoring_teams = json_decode($mentor_data['mentoring_teams'], true);
+$stmt->close();
+
+if ($mentoring_teams === null) {
+    die("Error decoding JSON or no teams found.");
+}
+
+// Construct dynamic SQL query
+$team_ids_placeholders = implode(',', array_fill(0, count($mentoring_teams), '?'));
+$sql = "
     SELECT 
-      t.team_name, 
-      t.team_lead, 
-      t.team_id, 
-      t.id,
-      ps.ps AS problem_statement_title, 
-      ps.ps_id AS problem_statement_id,
-      ps.ps_description AS problem_statement_description, 
-      s.name AS student_name, 
-      s.year AS student_year, 
-      s.dept AS student_dept,
-      lead.name AS team_lead_name,
-      lead.dept AS team_lead_dept, 
-      lead.year AS team_lead_year 
+        t.team_name, 
+        t.team_lead, 
+        t.team_id, 
+        t.id,
+        ps.ps AS problem_statement_title, 
+        ps.ps_id AS problem_statement_id,
+        ps.ps_description AS problem_statement_description, 
+        s.name AS student_name, 
+        s.year AS student_year, 
+        s.dept AS student_dept,
+        tl.name AS team_lead_name,
+        tl.dept AS team_lead_dept, 
+        tl.year AS team_lead_year 
     FROM 
-      teams t 
+        teams t
     LEFT JOIN 
-      problem_statements ps ON t.ps_id = ps.id 
+        problem_statements ps ON t.ps_id = ps.id 
     LEFT JOIN 
-      students s ON t.id = s.team_id 
+        students s ON t.id = s.team_id 
     LEFT JOIN 
-      students lead ON t.team_lead = lead.reg_no
+        students tl ON t.team_lead = tl.reg_no
     WHERE 
-      t.mentor_id = ? 
+        t.id IN ($team_ids_placeholders)
     ORDER BY 
-      t.team_name, s.reg_no;
+        t.team_name, s.reg_no;
 ";
 
-$stmt = $conn->prepare($query);
-$stmt->bind_param("i", $user_id);
-if (!$stmt->execute()) {
-  die("Execution error: " . $stmt->error);
+$stmt = $conn->prepare($sql);
+if ($stmt === false) {
+    die("Prepare failed: " . $mysqli->error);
 }
+
+// Bind the team IDs dynamically
+$types = str_repeat('i', count($mentoring_teams));
+$stmt->bind_param($types, ...$mentoring_teams);
+
+$stmt->execute();
 $result = $stmt->get_result();
 
 $teams = [];
