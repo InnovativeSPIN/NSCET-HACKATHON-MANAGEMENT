@@ -1,7 +1,6 @@
 <?php
 require_once('../resources/connection.php'); // Database connection
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
-header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and sanitize input data
@@ -29,7 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->commit();
 
         // Success response
-        header('Location: ../dashboard/mentor_dashboard.php');
+        echo '<script>
+            alert("Form Submitted !!");
+            window.location.href = "../dashboard/mentor_dashboard.php";
+        </script>';
+        exit();
     } catch (Exception $e) {
         // Rollback transaction if any error occurs
         $conn->rollback();

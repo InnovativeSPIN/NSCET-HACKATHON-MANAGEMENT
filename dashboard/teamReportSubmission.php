@@ -496,7 +496,7 @@ $conn->close();
             <div class="form-group">
                 <label for="absent-students">Absent Students:</label>
                 <?php foreach ($teams as $team_id => $team): ?>
-                <div class="checkbox-group" id="team-<?= htmlspecialchars($team_id) ?>">
+                <div class="checkbox-group" id="team-NH-T<?= htmlspecialchars($team_id) ?>">
                     <?php foreach ($team['members'] as $member): ?>
                     <label>
                         <input type="checkbox" name="absent_students[]" value="<?= htmlspecialchars($member['name']) ?>">
@@ -530,7 +530,8 @@ $conn->close();
 
         // Show the selected team's checkbox group
         if (selectedTeamId) {
-            document.getElementById('team-NH-T' + selectedTeamId).style.display = 'block';
+            console.log(selectedTeamId)
+            document.getElementById('team-' + selectedTeamId).style.display = 'block';
         }
     });
 </script>

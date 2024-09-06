@@ -61,7 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Commit the transaction
         $conn->commit();
 
-        header('Location: ../dashboard/teamLead.php');
+        echo '<script>
+            alert("Form Submitted... All the Best !!");
+            window.location.href = "../dashboard/teamLead.php";
+        </script>';
+        exit();
     } catch (Exception $e) {
         // Rollback transaction if any error occurs
         $conn->rollback();
