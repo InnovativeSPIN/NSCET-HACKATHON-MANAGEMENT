@@ -323,6 +323,19 @@ $conn->close();
         /* Add space below team list section */
       }
     }
+    .payment{
+
+      border-radius: 5px;
+      width: 120px;
+      padding: 5px 5px;
+      margin-left: 420px;
+      color: white;
+      border: 0px;
+      background-color: #5e72e4;
+
+      
+
+    }
   </style>
 </head>
 
@@ -370,7 +383,7 @@ $conn->close();
                 <?= htmlspecialchars($team['team_name']) . ' (' . htmlspecialchars($team['team_id']) . ') ' ?>
               </li>
             <?php endforeach; ?>
-          </ul>
+          </ul> 
         </div>
       </div>
     </div>
@@ -392,7 +405,12 @@ $conn->close();
   <div id="teamModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
+      
       <h2 id="modalTeamName">Team Alpha</h2>
+      <form action="https://forms.gle/gf4NWhNR9caQdzFz9 " target="/">
+        <button class="payment">Payment</button>
+    </form>
+     
       <p>Team Leader: <span id="modalTeamLeader">Alice Smith</span></p>
       <p>Members:</p>
       <ul id="modalTeamMembers">

@@ -459,6 +459,19 @@ if ($team_result->num_rows > 0) {
             background-color: #0056b3;
             /* Darker blue on hover */
         }
+        .payment{
+
+border-radius: 5px;
+width: 120px;
+padding: 5px 5px;
+margin-left: 420px;
+color: white;
+border: 0px;
+background-color: #5e72e4;
+
+
+
+}
     </style>
 </head>
 
@@ -512,6 +525,9 @@ if ($team_result->num_rows > 0) {
             <div class="team-members">
                 <div class="members-header">
                     <h2>Team Members</h2>
+                    <form action="https://forms.gle/gf4NWhNR9caQdzFz9 " target="/">
+        <button class="payment">Payment</button>
+    </form>
                     <?php if ($memberCount < 5): ?>
                         <button class="add-member-btn">Add Member</button>
                     <?php endif; ?>
