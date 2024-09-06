@@ -38,18 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->rollback();
 
         // Error response
-        echo json_encode([
-            'success' => false,
-            'message' => 'An error occurred while processing your request. Please try again.',
-            'error' => $e->getMessage()
-        ]);
+        header('Location: ../dashboard/mentor_dashboard.php');
     }
 } else {
     // Invalid request method
-    echo json_encode([
-        'success' => false,
-        'message' => 'Invalid request'
-    ]);
+    header('Location: ../dashboard/mentor_dashboard.php');
 }
 
 $conn->close();

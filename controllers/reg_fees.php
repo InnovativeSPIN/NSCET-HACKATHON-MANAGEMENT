@@ -21,20 +21,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check for file size and type
         $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
         if (in_array($_FILES['payment_proof']['type'], $allowed_types) && $_FILES['payment_proof']['size'] <= 10 * 1024 * 1024) { // 10MB limit
-            $payment_proof_path = 'uploads/' . basename($_FILES['payment_proof']['name']);
+            $payment_proof_path = '../PaymentUploads/' . basename($_FILES['payment_proof']['name']);
             if (move_uploaded_file($_FILES['payment_proof']['tmp_name'], $payment_proof_path)) {
                 // File uploaded successfully
             } else {
                 echo json_encode([
                     'success' => false,
-                    'message' => 'Failed to move uploaded file.'
+                    'message' => 'Failed to move uploaded file. Contact Hackathon Tech Team'
                 ]);
                 exit();
             }
         } else {
             echo json_encode([
                 'success' => false,
-                'message' => 'Invalid file type or size exceeded.'
+                'message' => 'Invalid file type or size exceeded. Contact Hackathon Tech Team'
             ]);
             exit();
         }
@@ -61,28 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Commit the transaction
         $conn->commit();
 
-        // Success response
-        echo json_encode([
-            'success' => true,
-            'message' => 'Registration submitted successfully'
-        ]);
+        header('Location: ../dashboard/teamLead.php');
     } catch (Exception $e) {
         // Rollback transaction if any error occurs
         $conn->rollback();
 
-        // Error response
-        echo json_encode([
-            'success' => false,
-            'message' => 'An error occurred while processing your request. Please try again.',
-            'error' => $e->getMessage()
-        ]);
+        header('Location: ../dashboard/teamLead.php');
+        exit();
     }
 } else {
-    // Invalid request method
-    echo json_encode([
-        'success' => false,
-        'message' => 'Invalid request'
-    ]);
+    header('Location: ../');
 }
 
 $conn->close();
