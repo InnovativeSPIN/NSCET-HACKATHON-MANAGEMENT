@@ -530,7 +530,7 @@ $conn->close();
 
         // Show the selected team's checkbox group
         if (selectedTeamId) {
-            document.getElementById('team-' + selectedTeamId).style.display = 'block';
+            document.getElementById('team-NH-T' + selectedTeamId).style.display = 'block';
         }
     });
 </script>
