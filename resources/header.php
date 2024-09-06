@@ -31,7 +31,9 @@
                 <div class="up">
                 <div class="new">
                     <div class="new1">
-                        <a class="frame__demos-item vutton-custine" href="./register.php">Register</a>
+                        <!-- <a class="frame__demos-item vutton-custine" href="./register.php">Register</a> -->
+                        <a class="frame__demos-item vutton-custine" href="img\NSCET HACKATHON 2024 - Idea PPT.pptx">Idea PPT</a>
+
                     </div>
                 </div>
             </div>
