@@ -29,10 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->commit();
 
         // Success response
-        echo json_encode([
-            'success' => true,
-            'message' => 'Report submitted successfully'
-        ]);
+        header('Location: ../dashboard/mentor_dashboard.php');
     } catch (Exception $e) {
         // Rollback transaction if any error occurs
         $conn->rollback();

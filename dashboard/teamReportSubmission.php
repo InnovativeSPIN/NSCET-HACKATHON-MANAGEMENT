@@ -467,7 +467,7 @@ $conn->close();
                 <select id="team-id" name="team_id" required>
                 <option value="">Select a Team</option>
                 <?php foreach ($teams as $team_id => $team): ?>
-                    <option value="<?= htmlspecialchars($team_id) ?>">
+                    <option value="NH-T<?= htmlspecialchars($team_id) ?>">
                     <?= htmlspecialchars($team['team_name']) . ' (' . htmlspecialchars($team['id']) . ')' ?>
                     </option>
                 <?php endforeach; ?>
