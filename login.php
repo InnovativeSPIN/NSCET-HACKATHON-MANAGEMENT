@@ -1,3 +1,8 @@
+<?php
+header("Location: underMaintaince.html");
+exit(); // Always use exit() after a redirect
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

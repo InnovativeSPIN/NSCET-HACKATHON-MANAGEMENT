@@ -366,17 +366,10 @@ $conn->close();
     <div class="main-content">
       <div class="dashboard">
         <header class="header">
-          <h1>Mentor Details</h1>
+          <h1>Meet Report Submission</h1>
         </header>
-        <div class="container">
-          <div class="mentor-details">
-            <h2>Mentor Name: <span id="mentorName"><?php echo $mentor['name']?></span></h2>
-            <p><span id="mentorEmail"><?php echo $mentor['designation']?></span></p>
-            <p>Department: <span id="mentorDept"><?php echo $mentor['dept']?></span></p>
-          </div>
-        </div>
-        <div class="team-list">
-          <h2>Teams Under Control</h2>
+        <!-- <div class="team-list">
+          <h3>Yours Teams</h3>
           <ul id="teamList">
             <?php foreach ($teams as $team): ?>
               <li data-team-id="<?= htmlspecialchars($team['id']) ?>">
@@ -384,9 +377,164 @@ $conn->close();
               </li>
             <?php endforeach; ?>
           </ul> 
-        </div>
+        </div> -->
       </div>
     </div>
+    <style>
+        /* Basic styles for the form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            margin-top: 10px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="main-content">
+    <div class="dashboard">
+        <div class="team-list">
+        <div class="form-container">
+            <!-- <h3>Submit Report</h3> -->
+            
+            <!-- Start of the form -->
+            <form action="../controllers/teamMeet_reportSubmission.php" method="POST">
+            <!-- Input for Date -->
+            <div class="form-group">
+                <label for="report-date">Date:</label>
+                <input type="date" id="report-date" name="report_date" required>
+            </div>
+
+            <!-- Dropdown for Team Selection -->
+            <div class="form-group">
+                <label for="team-id">Team:</label>
+                <select id="team-id" name="team_id" required>
+                <option value="">Select a Team</option>
+                <?php foreach ($teams as $team_id => $team): ?>
+                    <option value="<?= htmlspecialchars($team_id) ?>">
+                    <?= htmlspecialchars($team['team_name']) . ' (' . htmlspecialchars($team['id']) . ')' ?>
+                    </option>
+                <?php endforeach; ?>
+                </select>
+            </div>
+
+            <!-- Textarea for Work Assigned -->
+            <div class="form-group">
+                <label for="work-assigned">Work Assigned:</label>
+                <textarea id="work-assigned" name="work_assigned" rows="3" required></textarea>
+            </div>
+
+            <!-- Textarea for Work Completed -->
+            <div class="form-group">
+                <label for="work-completed">Work Completed:</label>
+                <textarea id="work-completed" name="work_completed" rows="3" required></textarea>
+            </div>
+
+            <!-- Textarea for Work Pending -->
+            <div class="form-group">
+                <label for="work-pending">Work Pending:</label>
+                <textarea id="work-pending" name="work_pending" rows="3" required></textarea>
+            </div>
+
+            <!-- Checkboxes for Absent Students -->
+            <div class="form-group">
+                <label for="absent-students">Absent Students:</label>
+                <?php foreach ($teams as $team_id => $team): ?>
+                <div class="checkbox-group" id="team-<?= htmlspecialchars($team_id) ?>">
+                    <?php foreach ($team['members'] as $member): ?>
+                    <label>
+                        <input type="checkbox" name="absent_students[]" value="<?= htmlspecialchars($member['name']) ?>">
+                        <?= htmlspecialchars($member['name']) . ' (' . htmlspecialchars($member['year']) . ', ' . htmlspecialchars($member['dept']) . ')' ?>
+                    </label><br>
+                    <?php endforeach; ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit Report</button>
+            </div>
+            </form>
+            <!-- End of the form -->
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+    // JavaScript to dynamically display absent students based on team selection
+    document.getElementById('team-id').addEventListener('change', function () {
+        const selectedTeamId = this.value;
+
+        // Hide all checkbox groups
+        document.querySelectorAll('.checkbox-group').forEach(group => {
+            group.style.display = 'none';
+        });
+
+        // Show the selected team's checkbox group
+        if (selectedTeamId) {
+            document.getElementById('team-' + selectedTeamId).style.display = 'block';
+        }
+    });
+</script>
+
     <!-- Footer -->
     <footer class="footer py-3">
       <div class="container-fluid">

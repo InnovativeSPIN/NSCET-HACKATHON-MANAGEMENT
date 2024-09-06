@@ -34,6 +34,15 @@
             <span class="nav-link-text ms-1">PS submission</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link  " href="../dashboard/reg_fees.php">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Fee Payment</span>
+          </a>
+        </li>
       
         <li class="d-flex justify-content-center mt-2">
         <img src="/dashboard/logoHack.png" alt="" style="z-index: 99;display:flex;justify-content:center; " width="180px"  >

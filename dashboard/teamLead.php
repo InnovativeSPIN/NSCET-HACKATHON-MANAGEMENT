@@ -526,7 +526,7 @@ background-color: #5e72e4;
                 <div class="members-header">
                     <h2>Team Members</h2>
                     <form action="https://forms.gle/gf4NWhNR9caQdzFz9 " target="/">
-        <button class="payment">Payment</button>
+        <!-- <button class="payment">Payment</button> -->
     </form>
                     <?php if ($memberCount < 5): ?>
                         <button class="add-member-btn">Add Member</button>

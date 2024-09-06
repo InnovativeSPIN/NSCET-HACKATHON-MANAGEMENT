@@ -341,7 +341,7 @@ $conn->close();
 
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-  <?php include("./resources/mentorsidebar.php") ?>
+  <?php include("./resources/sidebar.php") ?>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
@@ -366,17 +366,10 @@ $conn->close();
     <div class="main-content">
       <div class="dashboard">
         <header class="header">
-          <h1>Mentor Details</h1>
+          <h1>Team Registration and Payment</h1>
         </header>
-        <div class="container">
-          <div class="mentor-details">
-            <h2>Mentor Name: <span id="mentorName"><?php echo $mentor['name']?></span></h2>
-            <p><span id="mentorEmail"><?php echo $mentor['designation']?></span></p>
-            <p>Department: <span id="mentorDept"><?php echo $mentor['dept']?></span></p>
-          </div>
-        </div>
-        <div class="team-list">
-          <h2>Teams Under Control</h2>
+        <!-- <div class="team-list">
+          <h3>Yours Teams</h3>
           <ul id="teamList">
             <?php foreach ($teams as $team): ?>
               <li data-team-id="<?= htmlspecialchars($team['id']) ?>">
@@ -384,9 +377,149 @@ $conn->close();
               </li>
             <?php endforeach; ?>
           </ul> 
-        </div>
+        </div> -->
       </div>
     </div>
+    <style>
+        /* Basic styles for the form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="file"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .qr-code-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .qr-code-container img {
+            max-width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+    <div class="main-content">
+  <div class="dashboard">
+    <div class="form-container">      
+      <!-- Start of the form -->
+      <form action="../controllers/reg_fees.php" method="POST" enctype="multipart/form-data">
+        <!-- Input for Email -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Input for Team ID -->
+        <div class="form-group">
+          <label for="team-id">Team ID:</label>
+          <input type="text" id="team-id" name="team_id" required>
+        </div>
+
+        <!-- Input for Team Name -->
+        <div class="form-group">
+          <label for="team-name">Team Name:</label>
+          <input type="text" id="team-name" name="team_name" required>
+        </div>
+
+        <!-- Input for Team Lead Register Number -->
+        <div class="form-group">
+          <label for="team-lead-reg-no">Team Lead Register Number:</label>
+          <input type="text" id="team-lead-reg-no" name="team_lead_reg_no" required>
+        </div>
+
+        <!-- Input for Team Lead Name -->
+        <div class="form-group">
+          <label for="team-lead-name">Team Lead Name:</label>
+          <input type="text" id="team-lead-name" name="team_lead_name" required>
+        </div>
+
+        <!-- Display QR Code for Payment -->
+        <div class="qr-code-container">
+          <label>QR Code for Payment:</label>
+          <img src="path/to/qr-code-image.png" alt="QR Code for Payment">
+        </div>
+
+        <!-- Input for Bank Account Number -->
+        <div class="form-group">
+          <label for="account-number">Bank Account Number:</label>
+          <input type="text" id="account-number" name="account_number" required>
+        </div>
+
+        <!-- Input for Bank Name -->
+        <div class="form-group">
+          <label for="bank-name">Bank Name:</label>
+          <input type="text" id="bank-name" name="bank_name" required>
+        </div>
+
+        <!-- Input for Reference / Transaction ID -->
+        <div class="form-group">
+          <label for="transaction-id">Reference / Transaction ID:</label>
+          <input type="text" id="transaction-id" name="transaction_id" required>
+        </div>
+
+        <!-- Input for Screenshot for Payment Proof -->
+        <div class="form-group">
+          <label for="payment-proof">Screenshot for Payment Proof:</label>
+          <input type="file" id="payment-proof" name="payment_proof" accept="image/*" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit">Submit Registration</button>
+        </div>
+      </form>
+      <!-- End of the form -->
+    </div>
+  </div>
+</div>
+
     <!-- Footer -->
     <footer class="footer py-3">
       <div class="container-fluid">
