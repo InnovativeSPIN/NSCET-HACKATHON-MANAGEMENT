@@ -291,6 +291,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       border-radius: 5px;
       width: 100%;
       cursor: pointer;
+      appearance: none;
     }
 
     .custom-select option {
@@ -451,6 +452,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         border-color: #007bff;
         outline: none;
       }
+      .custom-select-container select {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .custom-select-container select option {
+        color: black; /* Default text color for options */
+      }
+
+      .custom-select-container select option.selected {
+        background-color: transparent; /* Ensure selected option color remains consistent */
+        color: black; /* Ensure text color remains consistent */
+      }
     </style>
     <div class="main-content">
       <div class="dashboard">
@@ -494,36 +510,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="form-group">
-              <label for="tshirt_color">T-shirt Color:</label><br>
-              <div class="custom-select-container">
-                <select class="custom-select" id="tshirt_color" name="tshirt_color" required>
-                  <option value="Light Blue" class="color-option" style="background: #add8e6;">
-                    Light Blue
-                  </option>
-                  <option value="Bright Orange" class="color-option" style="background: #ffa500;">
-                    Bright Orange
-                  </option>
-                  <option value="Mint Green" class="color-option" style="background: #98ff98;">
-                    Mint Green
-                  </option>
-                  <option value="Sunshine Yellow" class="color-option" style="background: #ffdf00;">
-                    Sunshine Yellow
-                  </option>
-                  <option value="Sky Blue" class="color-option" style="background: #87ceeb;">
-                    Sky Blue
-                  </option>
-                  <option value="Baby Pink" class="color-option" style="background: #ffb6c1;">
-                    Baby Pink
-                  </option>
-                  <option value="Purple" class="color-option" style="background: #800080;">
-                    Purple
-                  </option>
-                  <option value="White" class="color-option" style="color: #000; background: #ffffff;">
-                    White
-                  </option>
-                </select>
-              </div>
+            <label for="tshirt_color">T-shirt Color:</label><br>
+            <div class="custom-select-container">
+              <select class="custom-select" id="tshirt_color" name="tshirt_color" required>
+                <option value="Light Blue|#add8e6" class="color-option" style="background: #add8e6;">
+                  Light Blue
+                </option>
+                <option value="Bright Orange|#ffa500" class="color-option" style="background: #ffa500;">
+                  Bright Orange
+                </option>
+                <option value="Mint Green|#98ff98" class="color-option" style="background: #98ff98;">
+                  Mint Green
+                </option>
+                <option value="Cyan|#00ffff" class="color-option" style="background: #00ffff;">
+                  Cyan
+                </option>
+                <option value="Magenta|#ff00ff" class="color-option" style="color: #ffffff; background: #ff00ff;">
+                  Magenta
+                </option>
+                <option value="Sky Blue|#87ceeb" class="color-option" style="background: #87ceeb;">
+                  Sky Blue
+                </option>
+                <option value="Baby Pink|#ffb6c1" class="color-option" style="background: #ffb6c1;">
+                  Baby Pink
+                </option>
+                <option value="Purple|#800080" class="color-option" style="background: #800080;">
+                  Purple
+                </option>
+                <option value="White|#ffffff" class="color-option" style="color: #000; background: #ffffff;">
+                  White
+                </option>
+              </select>
             </div>
+          </div>
 
             <div class="form-group">
               <button type="submit">Submit Registration</button>
@@ -546,7 +565,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </footer>
   </main>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const selectElement = document.getElementById('tshirt_color');
+    
+    selectElement.addEventListener('click', (event) => {
+      const selectedValue = event.target.value;
+      const options = event.target.querySelectorAll('custom-select');
 
+      selectElement.style.backgroundColor = getColorFromValue(selectedValue);
+      selectElement.style.color = getTextColorFromValue(selectedValue);
+    });
+
+    function getColorFromValue(value) {
+      return value.split('|')[1] || 'transparent';
+    }
+
+    function getTextColorFromValue(value) {
+      return value.includes('White') ? 'black' : 'white';
+    }
+  });
+</script>
   <!-- Modal -->
   <div id="teamModal" class="modal">
     <div class="modal-content">
