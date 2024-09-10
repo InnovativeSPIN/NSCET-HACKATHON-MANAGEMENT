@@ -30,6 +30,46 @@ $team_sql = "
 $team_result = $conn->query($team_sql);
 
 $team_data = $team_result->fetch_assoc();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  $team_id = $_POST['team_id'];
+  $team_name = $_POST['team_name'];
+  $tshirt_small_qty = $_POST['tshirt_small_qty'];
+  $tshirt_medium_qty = $_POST['tshirt_medium_qty'];
+  $tshirt_large_qty = $_POST['tshirt_large_qty'];
+  $tshirt_xl_qty = $_POST['tshirt_xl_qty'];
+  $tshirt_xxl_qty = $_POST['tshirt_xxl_qty'];
+  $tshirt_color = $_POST['tshirt_color'];
+
+  $check_sql = "SELECT * FROM team_tshirt_details WHERE team_id = '$team_id'";
+  $result = $conn->query($check_sql);
+
+  if ($result->num_rows > 0) {
+    echo "<script>
+              window.onload = function() {
+                  alert('You have already registered.');
+              }
+            </script>";
+  } else {
+    $sql = "INSERT INTO team_tshirt_details 
+              (team_id, team_name, tshirt_small_qty, tshirt_medium_qty, tshirt_large_qty, tshirt_xl_qty, tshirt_xxl_qty, tshirt_color) 
+              VALUES 
+              ('$team_id', '$team_name', '$tshirt_small_qty', '$tshirt_medium_qty', '$tshirt_large_qty', '$tshirt_xl_qty', '$tshirt_xxl_qty', '$tshirt_color')";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "<script>
+                  window.onload = function() {
+                      alert('T-shirt details added successfully.');
+                  }
+                </script>";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  }
+
+  $conn->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +84,7 @@ $team_data = $team_result->fetch_assoc();
     Dashboard | NSCET Hackathon
   </title>
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
   <!-- Nucleo Icons -->
   <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -56,7 +96,7 @@ $team_data = $team_result->fetch_assoc();
   <style>
     /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
@@ -236,18 +276,31 @@ $team_data = $team_result->fetch_assoc();
         /* Add space below team list section */
       }
     }
-    .payment{
 
+    .custom-select-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .custom-select {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding: 10px;
       border-radius: 5px;
-      width: 120px;
-      padding: 5px 5px;
-      margin-left: 420px;
-      color: white;
-      border: 0px;
-      background-color: #5e72e4;
+      width: 100%;
+      cursor: pointer;
+    }
 
-      
+    .custom-select option {
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+    }
 
+    .custom-select option:hover {
+      background-color: #444;
     }
   </style>
 </head>
@@ -279,7 +332,7 @@ $team_data = $team_result->fetch_assoc();
     <div class="main-content">
       <div class="dashboard">
         <header class="header">
-          <h1>Team Registration and Payment</h1>
+          <h1>Team T-Shirt Details</h1>
         </header>
         <!-- <div class="team-list">
           <h3>Yours Teams</h3>
@@ -294,144 +347,191 @@ $team_data = $team_result->fetch_assoc();
       </div>
     </div>
     <style>
-        /* Basic styles for the form */
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-        }
+      /* Basic styles for the form */
+      .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+      }
 
-        .form-container h3 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+      .form-group-inline {
+        display: inline-block;
+        width: 48%;
+        vertical-align: top;
+        margin-bottom: 20px;
+      }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+      }
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+      select:focus {
+        border-color: #007bff;
+        outline: none;
+      }
 
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="file"],
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+      select option {
+        padding: 10px;
+        background-color: #fff;
+      }
 
-        .form-group button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+      .form-container h3 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-        .form-group button:hover {
-            background-color: #45a049;
-        }
+      .form-group {
+        margin-bottom: 15px;
+      }
 
-        .qr-code-container {
-            text-align: center;
-            margin-bottom: 15px;
-        }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
 
-        .qr-code-container img {
-            max-width: 200px;
-            margin-top: 10px;
-        }
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="file"],
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .form-group button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .form-group button:hover {
+        background-color: #45a049;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
     </style>
     <div class="main-content">
-  <div class="dashboard">
-    <div class="form-container">      
-      <!-- Start of the form -->
-      <form action="../controllers/reg_fees.php" method="POST" enctype="multipart/form-data">
-        <!-- Input for Email -->
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" value="<?php echo $team_data['email'] ?>" readonly required>
-        </div>
+      <div class="dashboard">
+        <div class="form-container">
+          <form action="" method="POST">
+            <div class="form-group">
+              <label for="team-id">Team ID:</label>
+              <input type="text" id="team-id" name="team_id" value="<?php echo $team_data['team_id'] ?>" readonly
+                required>
+            </div>
 
-        <!-- Input for Team ID -->
-        <div class="form-group">
-          <label for="team-id">Team ID:</label>
-          <input type="text" id="team-id" name="team_id" value="<?php echo $team_data['team_id'] ?>" readonly required>
-        </div>
+            <div class="form-group">
+              <label for="team-name">Team Name:</label>
+              <input type="text" id="team-name" name="team_name" value="<?php echo $team_data['team_name'] ?>" readonly
+                required>
+            </div>
 
-        <!-- Input for Team Name -->
-        <div class="form-group">
-          <label for="team-name">Team Name:</label>
-          <input type="text" id="team-name" name="team_name" value="<?php echo $team_data['team_name'] ?>" readonly required>
-        </div>
+            <div class="form-group form-group-inline">
+              <label for="tshirt_small_qty">Small T-shirts Quantity:</label><br>
+              <input type="number" id="tshirt_small_qty" name="tshirt_small_qty" min="0" value="0" required><br><br>
+            </div>
 
-        <!-- Input for Team Lead Register Number -->
-        <div class="form-group">
-          <label for="team-lead-reg-no">Team Lead Register Number:</label>
-          <input type="text" id="team-lead-reg-no" name="team_lead_reg_no" value="<?php echo $team_data['team_lead'] ?>" readonly required>
-        </div>
+            <div class="form-group form-group-inline">
+              <label for="tshirt_medium_qty">Medium T-shirts Quantity:</label><br>
+              <input type="number" id="tshirt_medium_qty" name="tshirt_medium_qty" min="0" value="0" required><br><br>
+            </div>
 
-        <!-- Input for Team Lead Name -->
-        <div class="form-group">
-          <label for="team-lead-name">Team Lead Name:</label>
-          <input type="text" id="team-lead-name" name="team_lead_name" value="<?php echo $team_data['team_lead_name'] ?>" readonly required>
-        </div>
+            <div class="form-group form-group-inline">
+              <label for="tshirt_large_qty">Large T-shirts Quantity:</label><br>
+              <input type="number" id="tshirt_large_qty" name="tshirt_large_qty" min="0" value="0" required><br><br>
+            </div>
 
-        <!-- Display QR Code for Payment -->
-        <div class="qr-code-container">
-          <label>QR Code for Payment:</label>
-          <img src="path/to/qr-code-image.png" alt="QR Code for Payment">
-        </div>
+            <div class="form-group form-group-inline">
+              <label for="tshirt_xl_qty">XL T-shirts Quantity:</label><br>
+              <input type="number" id="tshirt_xl_qty" name="tshirt_xl_qty" min="0" value="0" required><br><br>
+            </div>
 
-        <!-- Input for Bank Account Number -->
-        <div class="form-group">
-          <label for="account-number">Bank Account Number:</label>
-          <input type="text" id="account-number" name="account_number" required>
-        </div>
+            <div class="form-group">
+              <label for="tshirt_xxl_qty">XXL T-shirts Quantity:</label><br>
+              <input type="number" id="tshirt_xxl_qty" name="tshirt_xxl_qty" min="0" value="0" required><br><br>
+            </div>
 
-        <!-- Input for Bank Name -->
-        <div class="form-group">
-          <label for="bank-name">Bank Name:</label>
-          <input type="text" id="bank-name" name="bank_name" required>
-        </div>
+            <div class="form-group">
+              <label for="tshirt_color">T-shirt Color:</label><br>
+              <div class="custom-select-container">
+                <select class="custom-select" id="tshirt_color" name="tshirt_color" required>
+                  <option value="Light Blue" class="color-option" style="background: #add8e6;">
+                    Light Blue
+                  </option>
+                  <option value="Bright Orange" class="color-option" style="background: #ffa500;">
+                    Bright Orange
+                  </option>
+                  <option value="Mint Green" class="color-option" style="background: #98ff98;">
+                    Mint Green
+                  </option>
+                  <option value="Sunshine Yellow" class="color-option" style="background: #ffdf00;">
+                    Sunshine Yellow
+                  </option>
+                  <option value="Sky Blue" class="color-option" style="background: #87ceeb;">
+                    Sky Blue
+                  </option>
+                  <option value="Baby Pink" class="color-option" style="background: #ffb6c1;">
+                    Baby Pink
+                  </option>
+                  <option value="Purple" class="color-option" style="background: #800080;">
+                    Purple
+                  </option>
+                  <option value="White" class="color-option" style="color: #000; background: #ffffff;">
+                    White
+                  </option>
+                </select>
+              </div>
+            </div>
 
-        <!-- Input for Reference / Transaction ID -->
-        <div class="form-group">
-          <label for="transaction-id">Reference / Transaction ID:</label>
-          <input type="text" id="transaction-id" name="transaction_id" required>
+            <div class="form-group">
+              <button type="submit">Submit Registration</button>
+            </div>
+          </form>
         </div>
-
-        <!-- Input for Screenshot for Payment Proof -->
-        <div class="form-group">
-          <label for="payment-proof">Screenshot for Payment Proof:</label>
-          <input type="file" id="payment-proof" name="payment_proof" accept="image/*" required>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="form-group">
-          <button type="submit">Submit Registration</button>
-        </div>
-      </form>
-      <!-- End of the form -->
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- Footer -->
     <footer class="footer py-3">
@@ -451,12 +551,12 @@ $team_data = $team_result->fetch_assoc();
   <div id="teamModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      
+
       <h2 id="modalTeamName">Team Alpha</h2>
       <form action="https://forms.gle/gf4NWhNR9caQdzFz9 " target="/">
         <!-- <button class="payment">Payment</button> -->
-    </form>
-     
+      </form>
+
       <p>Team Leader: <span id="modalTeamLeader">Alice Smith</span></p>
       <p>Members:</p>
       <ul id="modalTeamMembers">
