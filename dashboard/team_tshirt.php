@@ -31,6 +31,21 @@ $team_result = $conn->query($team_sql);
 
 $team_data = $team_result->fetch_assoc();
 
+$team_id = $team_data['team_id'];
+
+function isTeamIdExists($team_id, $conn) {
+    $check_sql = "SELECT COUNT(*) as total FROM team_tshirt_details WHERE team_id = '$team_id'";
+    $check_result = $conn->query($check_sql);
+    $data = $check_result->fetch_assoc();
+    
+    return $data['total'] > 0;
+}
+
+if (isTeamIdExists($team_id, $conn)) {
+    header("Location: ./team_tshirt_details.php");
+    exit;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $team_id = $_POST['team_id'];
