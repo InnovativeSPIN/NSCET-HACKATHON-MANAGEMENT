@@ -12,6 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($role === "Mentor") {
         $table = "mentors";
         $redirect_url = "../dashboard/mentor_dashboard.php";
+    }elseif ($role === "Hackathon Jury") {
+        if ($password === 'JURY_NSCET') {
+            session_start();
+            $_SESSION['email'] = $email;
+            $_SESSION['role'] = $role;
+            $_SESSION['user_id'] = 'JURY';
+            header("Location: ../dashboard/juryDashboard.php");
+            exit;
+        }else{
+            header("Location: ../");
+        }
     } elseif ($role === 'Admin') {
         if ($email !== 'hackathon@nscet.org') {
             echo "<script>

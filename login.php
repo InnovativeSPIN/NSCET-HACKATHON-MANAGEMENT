@@ -49,6 +49,9 @@
                     <option value="Team Leader">Team Leader</option>
                     <option value="Mentor">Mentor</option>
                     <option value="Admin">Admin</option>
+                    <option value="Hackathon Jury">Hackathon Jury</option>
+
+                    
                 </select>
             </div>
             <div class="button">
