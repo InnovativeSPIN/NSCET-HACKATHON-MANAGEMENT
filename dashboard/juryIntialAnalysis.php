@@ -361,7 +361,7 @@ $result = $conn->query($sql);
         <form action="../controllers/initial_analysis_submit.php" id="problem-form" method="post" class="form-content">
           <h3>Select Problem Statement</h3>
               <div class="form-group">
-                  <input list="browsers" name="ps_id" id='ps_id' style="width: 100%; padding: 10px; font-size: 16px;" onchange="fetchTeams()">
+                  <input list="browsers" required name="ps_id" id='ps_id' style="width: 100%; padding: 10px; font-size: 16px;" onchange="fetchTeams()">
                   <datalist id="browsers">
                       <?php
                       if ($result->num_rows > 0) {
@@ -378,7 +378,7 @@ $result = $conn->query($sql);
 
               <h3>Select Team</h3>
               <div class="form-group">
-                  <input list="team_list" id="team_id" name="team_id" style="width: 100%; padding: 10px; font-size: 16px;">
+                  <input list="team_list" required id="team_id" name="team_id" style="width: 100%; padding: 10px; font-size: 16px;">
                   <datalist id="team_list">
                       <!-- Team options will be populated here -->
                   </datalist>
@@ -400,33 +400,33 @@ $result = $conn->query($sql);
         <tbody>
             <tr>
                 <td data-label="Criteria">Understanding</td>
-                <td data-label="Observations"><textarea name="understanding_observations"></textarea></td>
-                <td data-label="Suggestions"><textarea name="understanding_suggestions"></textarea></td>
+                <td data-label="Observations"><textarea required name="understanding_observations"></textarea></td>
+                <td data-label="Suggestions"><textarea required name="understanding_suggestions"></textarea></td>
             </tr>
             <tr>
                 <td data-label="Criteria">Technical Approach</td>
-                <td data-label="Observations"><textarea name="tech_approach_observations"></textarea></td>
-                <td data-label="Suggestions"><textarea name="tech_approach_suggestions"></textarea></td>
+                <td data-label="Observations"><textarea required name="tech_approach_observations"></textarea></td>
+                <td data-label="Suggestions"><textarea required name="tech_approach_suggestions"></textarea></td>
             </tr>
             <tr>
                 <td data-label="Criteria">Innovation</td>
-                <td data-label="Observations"><textarea name="innovation_observations"></textarea></td>
-                <td data-label="Suggestions"><textarea name="innovation_suggestions"></textarea></td>
+                <td data-label="Observations"><textarea required name="innovation_observations"></textarea></td>
+                <td data-label="Suggestions"><textarea required name="innovation_suggestions"></textarea></td>
             </tr>
             <tr>
                 <td data-label="Criteria">Progress</td>
-                <td data-label="Observations"><textarea name="progress_observations"></textarea></td>
-                <td data-label="Suggestions"><textarea name="progress_suggestions"></textarea></td>
+                <td data-label="Observations"><textarea required name="progress_observations"></textarea></td>
+                <td data-label="Suggestions"><textarea required name="progress_suggestions"></textarea></td>
             </tr>
             <tr>
                 <td data-label="Criteria">Team Collaboration</td>
-                <td data-label="Observations"><textarea name="team_collaboration_observations"></textarea></td>
-                <td data-label="Suggestions"><textarea name="team_collaboration_suggestions"></textarea></td>
+                <td data-label="Observations"><textarea required name="team_collaboration_observations"></textarea></td>
+                <td data-label="Suggestions"><textarea required name="team_collaboration_suggestions"></textarea></td>
             </tr>
             <tr>
                 <td data-label="Criteria">Challenges</td>
-                <td data-label="Observations"><textarea name="challenges_observations"></textarea></td>
-                <td data-label="Suggestions"><textarea name="challenges_suggestions"></textarea></td>
+                <td data-label="Observations"><textarea required name="challenges_observations"></textarea></td>
+                <td data-label="Suggestions"><textarea required name="challenges_suggestions"></textarea></td>
             </tr>
         </tbody>
         

@@ -222,6 +222,9 @@ $result = $conn->query($sql);
       border: 0px;
       background-color: #5e72e4;    
     }
+    table tbody tr td:first-child {
+    font-weight: bold;
+}
   </style>
   <style>
         h2 {
@@ -418,33 +421,14 @@ $result = $conn->query($sql);
             <!-- Data will be populated here -->
         </tbody>
     </table>
-    <h3>Hardware Evaluation</h3>
-    <table id="hardware_evaluation_table" border="1" style="width: 100%; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th>Criteria</th>
-                <th>Observations</th>
-                <th>Suggestions</th>
-            </tr>
-        </thead>
+    <h3>Evaluation Sessions</h3>
+    <table id="evaluation_table" border="1" style="width: 100%; border-collapse: collapse;">
+        
         <tbody>
             <!-- Hardware evaluation data will be populated here -->
         </tbody>
     </table>
 
-    <h3>Software Evaluation</h3>
-    <table id="software_evaluation_table" border="1" style="width: 100%; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th>Criteria</th>
-                <th>Observations</th>
-                <th>Suggestions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Software evaluation data will be populated here -->
-        </tbody>
-    </table>
 </div>
     <!-- Footer -->
     <footer class="footer py-3">
@@ -462,7 +446,7 @@ $result = $conn->query($sql);
 
   
   <script>
-    var container = document.getElementById('hardware_evaluation_table');
+    var container = document.getElementById('evaluation_table');
 
        function populateEvaluationTable(tableId, data, criteriaList) {
           var table = document.getElementById(tableId);
@@ -503,26 +487,29 @@ $result = $conn->query($sql);
             var tbody = document.createElement('tbody');
             criteriaList.forEach(function (criteria) {
                 var tr = document.createElement('tr');
+                
                 var tdCriteria = document.createElement('td');
                 tdCriteria.textContent = criteria.label;
+                
                 var tdObs = document.createElement('td');
-                var textareaObs = document.createElement('textarea');
-                textareaObs.name = criteria.obs;
-                textareaObs.value = row[criteria.obs] || ''; // Set the value from data
-                tdObs.appendChild(textareaObs);
+                var pObs = document.createElement('p');
+                pObs.textContent = row[criteria.obs] || ''; // Set the value from data
+                tdObs.appendChild(pObs);
+                
                 var tdSug = document.createElement('td');
-                var textareaSug = document.createElement('textarea');
-                textareaSug.name = criteria.sug;
-                textareaSug.value = row[criteria.sug] || ''; // Set the value from data
-                tdSug.appendChild(textareaSug);
+                var pSug = document.createElement('p');
+                pSug.textContent = row[criteria.sug] || ''; // Set the value from data
+                tdSug.appendChild(pSug);
 
                 tr.appendChild(tdCriteria);
                 tr.appendChild(tdObs);
                 tr.appendChild(tdSug);
+                
                 tbody.appendChild(tr);
             });
+
             table.appendChild(tbody);
-            
+
             // Append table to the container
             container.appendChild(table);
         });
@@ -530,7 +517,7 @@ $result = $conn->query($sql);
               var tr = document.createElement('tr');
               var td = document.createElement('td');
               td.colSpan = 3;
-              td.textContent = 'No data available';
+              td.textContent = '';
               tr.appendChild(td);
               tbody.appendChild(tr);
           }
@@ -557,7 +544,7 @@ $result = $conn->query($sql);
                           xhrHardware.onload = function () {
                               if (xhrHardware.status === 200) {
                                   var responseHardware = JSON.parse(xhrHardware.responseText);
-                                  populateEvaluationTable('hardware_evaluation_table', responseHardware.hardwareEvaluation, [
+                                  populateEvaluationTable('evaluation_table', responseHardware.hardwareEvaluation, [
                                       { label: 'Design', obs: 'design_observations', sug: 'design_suggestions' },
                                       { label: 'Functionality', obs: 'functionality_observations', sug: 'functionality_suggestions' },
                                       { label: 'Integration', obs: 'integration_observations', sug: 'integration_suggestions' },
@@ -574,7 +561,7 @@ $result = $conn->query($sql);
                           xhrSoftware.onload = function () {
                               if (xhrSoftware.status === 200) {
                                   var responseSoftware = JSON.parse(xhrSoftware.responseText);
-                                  populateEvaluationTable('software_evaluation_table', responseSoftware.softwareEvaluation, [
+                                  populateEvaluationTable('evaluation_table', responseSoftware.softwareEvaluation, [
                                       { label: 'Code Structure', obs: 'code_structure_observations', sug: 'code_structure_suggestions' },
                                       { label: 'UI', obs: 'ui_observations', sug: 'ui_suggestions' },
                                       { label: 'Functionality Testing', obs: 'functionality_testing_observations', sug: 'functionality_testing_suggestions' },
@@ -607,30 +594,37 @@ $result = $conn->query($sql);
             ];
 
             criteriaList.forEach(function (criteria) {
-                var tr = document.createElement('tr');
-                var tdCriteria = document.createElement('td');
-                tdCriteria.textContent = criteria.label;
-                var tdObs = document.createElement('td');
-                var textareaObs = document.createElement('textarea');
-                textareaObs.name = criteria.obs;
-                textareaObs.value = data[0][criteria.obs] || ''; // Set the value from data
-                tdObs.appendChild(textareaObs);
-                var tdSug = document.createElement('td');
-                var textareaSug = document.createElement('textarea');
-                textareaSug.name = criteria.sug;
-                textareaSug.value = data[0][criteria.sug] || ''; // Set the value from data
-                tdSug.appendChild(textareaSug);
+              var tr = document.createElement('tr');
 
-                tr.appendChild(tdCriteria);
-                tr.appendChild(tdObs);
-                tr.appendChild(tdSug);
-                tbody.appendChild(tr);
-            });
+              // Criteria column
+              var tdCriteria = document.createElement('td');
+              tdCriteria.textContent = criteria.label;
+
+              // Observations column
+              var tdObs = document.createElement('td');
+              var pObs = document.createElement('p');
+              pObs.textContent = data[0][criteria.obs] || ''; // Set the value from data
+              tdObs.appendChild(pObs);
+
+              // Suggestions column
+              var tdSug = document.createElement('td');
+              var pSug = document.createElement('p');
+              pSug.textContent = data[0][criteria.sug] || ''; // Set the value from data
+              tdSug.appendChild(pSug);
+
+              // Append columns to the row
+              tr.appendChild(tdCriteria);
+              tr.appendChild(tdObs);
+              tr.appendChild(tdSug);
+
+              // Append row to the tbody
+              tbody.appendChild(tr);
+          });
         } else {
             var tr = document.createElement('tr');
             var td = document.createElement('td');
             td.colSpan = 3;
-            td.textContent = 'No data available';
+            td.textContent = '';
             tr.appendChild(td);
             tbody.appendChild(tr);
         }

@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->commit();
         
         echo '<script>
-            alert("Initial team analysis submitted successfully!");
+            alert("Initial team analysis submitted successfully !");
             window.location.href = "../dashboard/juryIntialAnalysis.php";
         </script>';
         exit();
@@ -59,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->rollback();
         
         // Return error response
-        echo json_encode([
-            'success' => false,
-            'message' => 'Technical Error !!'
-        ]);
+        echo '<script>
+            alert("Team alredy done Intial Reporting !!");
+            window.location.href = "../dashboard/juryIntialAnalysis.php";
+        </script>';
         exit();
     }
 } else {

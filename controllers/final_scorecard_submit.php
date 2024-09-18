@@ -4,6 +4,8 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and sanitize input data from the form
+    $ps_id = $conn->real_escape_string($_POST["ps_id"]);
+
     $team_id = $conn->real_escape_string($_POST["team_id"]);
     $team_name = $conn->real_escape_string($_POST["team_name"]);
     $mentor_name = $conn->real_escape_string($_POST["mentor_name"]);
@@ -24,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Insert the evaluation data into the 'final_evaluation_scores' table
         $insert_evaluation_sql = "
-            INSERT INTO final_evaluation_scores (team_id, team_name, mentor_name, innovation_score, technical_implementation_score, functionality_testing_score, presentation_communication_score, scalability_potential_score, total_score, final_notes, evaluated_at) 
-            VALUES ('$team_id', '$team_name', '$mentor_name', $innovation_score, $technical_implementation_score, $functionality_testing_score, $presentation_communication_score, $scalability_potential_score, $total_score, '$final_notes', NOW())
+            INSERT INTO final_evaluation_scores (team_id, ps_id, team_name, mentor_name, innovation_score, technical_implementation_score, functionality_testing_score, presentation_communication_score, scalability_potential_score, total_score, final_notes, evaluated_at) 
+            VALUES ('$team_id', '$ps_id', '$team_name', '$mentor_name', $innovation_score, $technical_implementation_score, $functionality_testing_score, $presentation_communication_score, $scalability_potential_score, $total_score, '$final_notes', NOW())
         ";
         
         // Execute the query
@@ -44,11 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Rollback transaction in case of error
         $conn->rollback();
         
-        // Return error response
-        echo json_encode([
-            'success' => false,
-            'message' => 'Failed to submit evaluation. Please try again.'
-        ]);
+        echo '<script>
+            alert("Failed to submit evaluation. Please try again.");
+            window.location.href = "../dashboard/finalScoreCard.php";
+        </script>';
+
         exit();
     }
 } else {

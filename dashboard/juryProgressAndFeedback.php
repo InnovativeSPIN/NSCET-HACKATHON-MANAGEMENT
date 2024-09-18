@@ -377,7 +377,7 @@ $result = $conn->query($sql);
               </div>
               <div class="form-group">
               <h3>Problem Type</h3>
-                <select name="ps_type" id="ps_type" style="width: 100%; padding: 10px; font-size: 16px;">
+                <select name="ps_type" id="ps_type" required style="width: 100%; padding: 10px; font-size: 16px;">
                     <option value="" hidden></option>
                         
                     <option value="hardware">Hardware</option>
@@ -386,7 +386,7 @@ $result = $conn->query($sql);
               </div>
               <h3>Select Team</h3>
               <div class="form-group">
-                  <input list="team_list" id="team_id" name="team_id" style="width: 100%; padding: 10px; font-size: 16px;">
+                  <input list="team_list" id="team_id" required name="team_id" style="width: 100%; padding: 10px; font-size: 16px;">
                   <datalist id="team_list">
                       <!-- Team options will be populated here -->
                   </datalist>

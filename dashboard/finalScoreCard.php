@@ -380,7 +380,7 @@ $result = $conn->query($sql);
         <form action="../controllers/final_scorecard_submit.php" id="problem-form" method="post" class="form-content">
           <h3>Select Problem Statement</h3>
               <div class="form-group">
-                  <input list="browsers" name="ps_id" id='ps_id' style="width: 100%; padding: 10px; font-size: 16px;" onchange="fetchTeams()">
+                  <input required list="browsers" name="ps_id" id='ps_id' style="width: 100%; padding: 10px; font-size: 16px;" onchange="fetchTeams()">
                   <datalist id="browsers">
                       <?php
                       if ($result->num_rows > 0) {
@@ -397,7 +397,7 @@ $result = $conn->query($sql);
 
               <h3>Select Team</h3>
               <div class="form-group">
-                  <input list="team_list" id="team_id" name="team_id" style="width: 100%; padding: 10px; font-size: 16px;" onchange="fetchTeamDetails()">
+                  <input required list="team_list" id="team_id" name="team_id" style="width: 100%; padding: 10px; font-size: 16px;" onchange="fetchTeamDetails()">
                   <datalist id="team_list">
                       <!-- Team options will be populated here -->
                   </datalist>
@@ -408,12 +408,12 @@ $result = $conn->query($sql);
               <h3>Team Details</h3>
               <div class="form-group">
                   <label for="team_details">Team Details:</label>
-                  <input type="text" id="team_name" name="team_name" style="width: 100%; padding: 10px; font-size: 16px;" readonly>
+                  <input type="text" required id="team_name" name="team_name" style="width: 100%; padding: 10px; font-size: 16px;" readonly>
               </div>
 
               <div class="form-group">
                   <label for="mentor_name">Mentor Name:</label>
-                  <input type="text" id="mentor_name" name="mentor_name" style="width: 100%; padding: 10px; font-size: 16px;" readonly>
+                  <input type="text" required id="mentor_name" name="mentor_name" style="width: 100%; padding: 10px; font-size: 16px;" readonly>
               </div>
       </div>
     </div>
@@ -436,31 +436,31 @@ $result = $conn->query($sql);
                     <td data-label="Criteria">Innovation & Creativity</td>
                     <td data-label="Description">How original and innovative is the hardware solution? Does it offer a novel approach to solving the problem?</td>
                     <td data-label="Max Score">20</td>
-                    <td data-label="Score Given"><input type="number" name="innovation_score" min="0" max="20"></td>
+                    <td data-label="Score Given"><input required type="number" name="innovation_score" min="0" max="20"></td>
                 </tr>
                 <tr>
                     <td data-label="Criteria">Technical Implementation</td>
                     <td data-label="Description">How well is the hardware solution built and implemented? Does the design demonstrate solid technical and engineering practices?</td>
                     <td data-label="Max Score">20</td>
-                    <td data-label="Score Given"><input type="number" name="technical_implementation_score" min="0" max="20"></td>
+                    <td data-label="Score Given"><input required type="number" name="technical_implementation_score" min="0" max="20"></td>
                 </tr>
                 <tr>
                     <td data-label="Criteria">Functionality & Testing</td>
                     <td data-label="Description">Does the hardware function as expected? Has the team tested the system thoroughly, and does it meet the requirements of the problem statement?</td>
                     <td data-label="Max Score">20</td>
-                    <td data-label="Score Given"><input type="number" name="functionality_testing_score" min="0" max="20"></td>
+                    <td data-label="Score Given"><input required type="number" name="functionality_testing_score" min="0" max="20"></td>
                 </tr>
                 <tr>
                     <td data-label="Criteria">Presentation & Communication</td>
                     <td data-label="Description">How effectively did the team present their hardware solution? Was the pitch clear, well-organized, and did they explain the technical details effectively?</td>
                     <td data-label="Max Score">20</td>
-                    <td data-label="Score Given"><input type="number" name="presentation_communication_score" min="0" max="20"></td>
+                    <td data-label="Score Given"><input required type="number" name="presentation_communication_score" min="0" max="20"></td>
                 </tr>
                 <tr>
                     <td data-label="Criteria">Scalability & Potential</td>
                     <td data-label="Description">Can the hardware solution be scaled or improved upon for future use? Does it have the potential to evolve into a more complex or market-ready product?</td>
                     <td data-label="Max Score">20</td>
-                    <td data-label="Score Given"><input type="number" name="scalability_potential_score" min="0" max="20"></td>
+                    <td data-label="Score Given"><input required type="number" name="scalability_potential_score" min="0" max="20"></td>
                 </tr>
             </tbody>
         </table>
@@ -472,7 +472,7 @@ $result = $conn->query($sql);
 
         <!-- Final Notes/Comments Section -->
         <div class="final-notes">
-            <label for="final-notes">Final Notes/Comments from Mentor</label>
+            <label for="final-notes">Final Notes/Comments</label>
             <textarea id="final-notes" name="mentor_comments" rows="5" placeholder="Enter final comments or notes here..."></textarea>
         </div>
 
