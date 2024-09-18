@@ -124,7 +124,7 @@ $conn->close();
         <img src="https://nscet.org/Home_Assets/img/nscet/College%20logo.png" alt="Logo 2">
     </div>
     <div class="logo top-right">
-        <img src="https://nscet.org/waves24/public/images/logos/waves-logo.png" alt="Logo 3">
+        <img src="https://www.nscet.org/hackathon/img/logoHack.png" alt="Logo 3">
     </div>
     <div class="logo bottom-right">
         <img src="https://nscet.org/ispin/assets/img/iSPIN_logo.png" alt="Logo 4">

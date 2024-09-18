@@ -43,7 +43,7 @@
             <span class="nav-link-text ms-1">View Team Progress</span>
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link " href="../dashboard/finalScoreCard.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -59,6 +59,6 @@
          
       </div>
 
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="../../controllers/logout.php" type="button">Logout</a>
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="../../index.php" type="button">Logout</a>
     </div>
   </aside>
