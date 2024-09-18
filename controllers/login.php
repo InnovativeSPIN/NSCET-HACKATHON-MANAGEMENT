@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $table = "mentors";
         $redirect_url = "../dashboard/mentor_dashboard.php";
     }elseif ($role === "Hackathon Jury") {
-        if ($password === 'JURY_NSCET') {
+        if ($password === 'JURY@NSCET' && $email === "hackathon@nscet.org") {
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['role'] = $role;
@@ -26,12 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($role === 'Admin') {
         if ($email !== 'hackathon@nscet.org') {
             echo "<script>
-                alert('Invalid admin email id');
+                alert('Invalid Admin Email Address');
                 window.location.href = 'https://nscet.org/hackathon/login.php';
               </script>";
             exit();
         }
-        if ($password === 'ADMIN_NSCET_HACKATHON') {
+        if ($password === 'ADMIN@NSCET') {
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['role'] = $role;

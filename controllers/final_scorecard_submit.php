@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->rollback();
         
         echo '<script>
-            alert("Failed to submit evaluation. Please try again.");
+            alert("Validation already done for this Team !!");
             window.location.href = "../dashboard/finalScoreCard.php";
         </script>';
 
